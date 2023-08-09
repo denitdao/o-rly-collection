@@ -37,7 +37,6 @@ const BookSearch = () => {
   // TODO: optimize search to make more exact matches
   const fuse = new Fuse(BOOKS_LIBRARY, {
     includeScore: true,
-    distance: 1,
     keys: ["title", "headline", "tags"],
   });
   const booksToShow = searchTerm
@@ -102,7 +101,7 @@ const BookSearch = () => {
                 <Image
                   src={book.image}
                   alt={book.title}
-                  layout="fill"
+                  fill
                   className="absolute w-auto transform transition-all duration-300 hover:scale-105"
                   style={{ objectFit: "cover" }}
                 />

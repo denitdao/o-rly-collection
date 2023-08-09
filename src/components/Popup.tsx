@@ -21,8 +21,8 @@ export const usePopup = () => {
 
 export const PopupProvider = ({ children }: { children: React.ReactNode }) => {
   const [popupState, setPopupState] = useState<PopupState>({
-    visible: true,
-    message: "null",
+    visible: false,
+    message: null,
   });
 
   const showPopup = (message: string, duration = 2500) => {
