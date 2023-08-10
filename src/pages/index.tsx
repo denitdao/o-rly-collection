@@ -2,13 +2,13 @@ import Fuse from "fuse.js";
 import { useState } from "react";
 import { copyImageToClipboard } from "~/utils/copy-image";
 import { MdOutlineClear, MdOutlineFileCopy } from "react-icons/md";
-import Image from "next/image";
 import { PopupProvider, usePopup } from "~/components/Popup";
 import { BOOKS_LIBRARY } from "~/utils/library";
-import { cn } from "~/utils/helpers";
 import OrlyFooter from "~/components/OrlyFooter";
 import OrlyHead from "~/components/OrlyHead";
 import { motion } from "framer-motion";
+import ImagePreview from "~/components/ImagePreview";
+import BlurringImage from "~/components/BlurringImage";
 
 export default function Home() {
   return (
@@ -23,7 +23,10 @@ export default function Home() {
 }
 
 const BookSearch = () => {
+  const { showPopup } = usePopup();
+
   const [searchTerm, setSearchTerm] = useState("");
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
 
   const fuse = new Fuse(BOOKS_LIBRARY, {
     threshold: 0.4,
@@ -43,18 +46,16 @@ const BookSearch = () => {
       },
     ],
   });
-  const booksToShow = searchTerm
-    ? fuse.search(searchTerm).map((result) => result.item)
-    : BOOKS_LIBRARY;
 
-  const [hoverIndex, setHoverIndex] = useState<number>(-1);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  const { showPopup } = usePopup();
-  const handleCopyClick = async (image: string) => {
+  const handleCopyClick = async (image: string | null) => {
+    if (image === null) return;
     await copyImageToClipboard(image);
     showPopup("Image copied to the clipboard!", 3000);
   };
+
+  const booksToShow = searchTerm
+    ? fuse.search(searchTerm).map((result) => result.item)
+    : BOOKS_LIBRARY;
 
   return (
     <main className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
@@ -69,122 +70,103 @@ const BookSearch = () => {
           </span>{" "}
           with compelling programming book covers
         </p>
-        <div className="relative mb-12 w-full max-w-lg">
-          <input
-            className="w-full rounded-md border py-2 pl-4 pr-8 font-mono"
-            type="text"
-            placeholder="Type your keywords..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          {searchTerm && (
-            <button
-              className="absolute inset-y-0 right-0 flex items-center pr-3 text-xl"
-              onClick={() => setSearchTerm("")}
-            >
-              <MdOutlineClear />
-            </button>
-          )}
-        </div>
+        <SearchBar value={searchTerm} onChange={setSearchTerm} />
       </div>
       {booksToShow && booksToShow.length !== 0 ? (
         <motion.div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          {booksToShow.map((book, index) => (
-            <motion.div
-              layout
+          {booksToShow.map((book) => (
+            <BookTile
               key={book.image}
-              className="group relative rounded-lg bg-white shadow"
-              onMouseOver={() => setHoverIndex(index)}
-              onMouseOut={() => setHoverIndex(-1)}
-            >
-              <button
-                className="absolute right-0 top-0 z-10 rounded-lg bg-gray-200 p-2 text-xl opacity-70 hover:opacity-90"
-                onClick={() => void handleCopyClick(book.image)}
-                hidden={index !== hoverIndex}
-              >
-                <MdOutlineFileCopy />
-              </button>
-              <BlurImage
-                title={book.title}
-                image={book.image}
-                setSelectedImage={setSelectedImage}
-              />
-              <h3 className="m-2 font-mono text-sm font-medium text-gray-900">
-                {book.title.length < 45
-                  ? book.title
-                  : book.title.slice(0, 40) + "..."}
-              </h3>
-            </motion.div>
+              title={book.title}
+              imageUrl={book.image}
+              onCopyClick={() => void handleCopyClick(book.image)}
+              onImageClick={() => setPreviewImage(book.image)}
+            />
           ))}
         </motion.div>
       ) : (
-        <div className="py-20 text-center font-mono">
-          <p className="text-gray-500">
-            Try another keyword or{" "}
-            <a
-              href="https://orly.nanmu.me/"
-              className="font-bold decoration-blue-400 decoration-2 hover:underline dark:decoration-blue-600"
-            >
-              create your own cover
-            </a>
-          </p>
-        </div>
+        <NoResultsMessage />
       )}
-
-      {selectedImage && (
-        <div
-          className="fixed inset-0 z-40 flex cursor-pointer items-center justify-center bg-black bg-opacity-70"
-          onClick={() => setSelectedImage(null)}
-        >
-          <div className="relative h-[80%] w-full max-w-screen-lg">
-            <Image
-              src={selectedImage}
-              alt={selectedImage}
-              fill
-              style={{ objectFit: "contain" }}
-            />
-          </div>
-          <button className="absolute right-5 top-5 z-50 text-3xl text-white">
-            <MdOutlineClear />
-          </button>
-          <button
-            className="absolute right-5 top-20 z-50 text-2xl text-white"
-            onClick={() => void handleCopyClick(selectedImage)}
-          >
-            <MdOutlineFileCopy />
-          </button>
-        </div>
-      )}
+      <ImagePreview
+        imageUrl={previewImage}
+        onClose={() => setPreviewImage(null)}
+        onCopy={() => void handleCopyClick(previewImage)}
+      />
     </main>
   );
 };
 
-const BlurImage = ({
-  title,
-  image,
-  setSelectedImage,
+const SearchBar = ({
+  value,
+  onChange,
 }: {
-  title: string;
-  image: string;
-  setSelectedImage: (image: string) => void;
+  value: string;
+  onChange: (value: string) => void;
 }) => {
-  const [isLoading, setLoading] = useState(true);
-
   return (
-    <div className="aspect-h-4 aspect-w-3 w-full overflow-hidden rounded-lg bg-gray-200 hover:cursor-pointer">
-      <Image
-        alt={title}
-        src={image}
-        fill
-        onClick={() => setSelectedImage(image)}
-        className={cn(
-          "rounded-lg object-cover duration-500 ease-in-out",
-          isLoading
-            ? "scale-105 blur-xl grayscale"
-            : "scale-100 blur-0 grayscale-0 group-hover:scale-95 group-hover:duration-200"
-        )}
-        onLoadingComplete={() => setLoading(false)}
+    <div className="relative mb-12 w-full max-w-lg">
+      <input
+        className="w-full rounded-md border py-2 pl-4 pr-8 font-mono"
+        type="text"
+        placeholder="Type your keywords..."
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
       />
+      {value && (
+        <button
+          className="absolute inset-y-0 right-0 flex items-center pr-3 text-xl"
+          onClick={() => onChange("")}
+        >
+          <MdOutlineClear />
+        </button>
+      )}
+    </div>
+  );
+};
+
+const BookTile = ({
+  key,
+  title,
+  imageUrl,
+  onCopyClick,
+  onImageClick,
+}: {
+  key: string;
+  title: string;
+  imageUrl: string;
+  onCopyClick: () => void;
+  onImageClick: () => void;
+}) => (
+  <motion.div
+    layout
+    key={key}
+    className="group relative rounded-lg bg-white shadow"
+  >
+    <button
+      className="absolute right-0 top-0 z-10 hidden rounded-lg bg-gray-200 p-2 text-xl opacity-70 hover:opacity-90 group-hover:block"
+      onClick={onCopyClick}
+    >
+      <MdOutlineFileCopy />
+    </button>
+    <BlurringImage alt={title} imageUrl={imageUrl} onClick={onImageClick} />
+    <h3 className="m-2 font-mono text-sm font-medium text-gray-900">
+      {title.length < 45 ? title : title.slice(0, 40) + "..."}
+    </h3>
+  </motion.div>
+);
+
+const NoResultsMessage = () => {
+  return (
+    <div className="py-20 text-center font-mono">
+      <p className="text-gray-500">
+        Try another keyword or{" "}
+        <a
+          href="https://orly.nanmu.me/"
+          className="font-bold decoration-blue-400 decoration-2 hover:underline dark:decoration-blue-600"
+        >
+          create your own cover
+        </a>
+      </p>
     </div>
   );
 };
