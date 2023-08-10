@@ -6,15 +6,16 @@ import { MdOutlineClear, MdOutlineFileCopy } from "react-icons/md";
 import Image from "next/image";
 import { PopupProvider, usePopup } from "~/components/Popup";
 import { BOOKS_LIBRARY } from "~/utils/library";
+import { cn } from "~/utils/helpers";
 
 export default function Home() {
   return (
-    <>
+    <div className="bg-gray-50">
       <OrlyHead />
       <PopupProvider>
         <BookSearch />
       </PopupProvider>
-    </>
+    </div>
   );
 }
 
@@ -49,93 +50,117 @@ const BookSearch = () => {
   const { showPopup } = usePopup();
   const handleCopyClick = async (image: string) => {
     await copyImageToClipboard(image);
-    showPopup("Image copied to the clipboard!");
+    showPopup("Image copied to the clipboard!", 3000);
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-white">
-      <div className="container flex min-h-screen flex-col items-center justify-start px-4 py-16">
-        <h1 className="mb-4 text-3xl font-extrabold tracking-tight text-black">
+    <main className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+      <div className="container flex w-full flex-col items-center justify-center px-4 py-16">
+        <h1 className="mb-8 text-3xl font-extrabold tracking-tight text-black">
           Search Meme Book Covers
         </h1>
-        <div className="mb-8 w-full max-w-lg">
-          <div className="relative">
-            <input
-              className="w-full rounded-md border border-gray-300 px-4 py-2 pr-8"
-              type="text"
-              placeholder="Type your keywords..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            {searchTerm && (
-              <button
-                className="absolute inset-y-0 right-0 flex items-center pr-3 text-xl"
-                onClick={() => setSearchTerm("")}
-              >
-                <MdOutlineClear />
-              </button>
-            )}
-          </div>
-        </div>
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-          {booksToShow.map((book, index) => (
-            <div
-              key={index}
-              className="relative flex flex-col items-center text-center hover:cursor-pointer"
-              style={{ height: "280px"}}
-              onMouseOver={() => setHoverIndex(index)}
-              onMouseOut={() => setHoverIndex(-1)}
+        <div className="relative w-full max-w-lg">
+          <input
+            className="w-full rounded-md border border-gray-300 py-2 pl-4 pr-8"
+            type="text"
+            placeholder="Type your keywords..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          {searchTerm && (
+            <button
+              className="absolute inset-y-0 right-0 flex items-center pr-3 text-xl"
+              onClick={() => setSearchTerm("")}
             >
-              <button
-                className="absolute right-0 top-0 z-10 rounded bg-gray-200 p-1 text-xl opacity-70 hover:opacity-90"
-                onClick={() => void handleCopyClick(book.image)}
-                hidden={index !== hoverIndex}
-              >
-                <MdOutlineFileCopy />
-              </button>
-              <div
-                className="relative w-full flex-grow"
-                style={{ paddingBottom: "75%" }}
-                onClick={() => setSelectedImage(book.image)}
-              >
-                <Image
-                  src={book.image}
-                  alt={book.title}
-                  fill
-                  className="absolute w-auto transform transition-all duration-300 hover:scale-105"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <div style={{ height: "60px", width: "100%" }}>
-                <h4 className="text-s text-black">
-                  {book.title.length < 40
-                    ? book.title
-                    : book.title.slice(0, 40) + "..."}
-                </h4>
-              </div>
-            </div>
-          ))}
+              <MdOutlineClear />
+            </button>
+          )}
         </div>
+      </div>
+      <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+        {booksToShow.map((book, index) => (
+          <div
+            key={index}
+            className="group relative rounded-lg bg-white shadow"
+            onMouseOver={() => setHoverIndex(index)}
+            onMouseOut={() => setHoverIndex(-1)}
+          >
+            <button
+              className="absolute right-0 top-0 z-10 rounded-lg bg-gray-200 p-2 text-xl opacity-70 hover:opacity-90"
+              onClick={() => void handleCopyClick(book.image)}
+              hidden={index !== hoverIndex}
+            >
+              <MdOutlineFileCopy />
+            </button>
+            <BlurImage
+              title={book.title}
+              image={book.image}
+              setSelectedImage={setSelectedImage}
+            />
+            <h3 className="m-2 text-sm font-medium text-gray-900">
+              {book.title.length < 40
+                ? book.title
+                : book.title.slice(0, 40) + "..."}
+            </h3>
+          </div>
+        ))}
       </div>
 
       {selectedImage && (
         <div
-          className="fixed inset-0 z-50 flex cursor-pointer items-center justify-center bg-black bg-opacity-70"
+          className="fixed inset-0 z-40 flex cursor-pointer items-center justify-center bg-black bg-opacity-70"
           onClick={() => setSelectedImage(null)}
         >
           <div className="relative h-[80%] w-full max-w-screen-lg">
             <Image
               src={selectedImage}
               alt={selectedImage}
-              layout="fill"
-              objectFit="contain"
+              fill
+              style={{ objectFit: "contain" }}
             />
           </div>
-          <button className="absolute right-4 top-4 text-3xl text-white">
+          <button className="absolute right-5 top-5 z-50 text-3xl text-white">
             <MdOutlineClear />
+          </button>
+          <button
+            className="absolute right-5 top-20 z-50 text-2xl text-white"
+            onClick={() => void handleCopyClick(selectedImage)}
+          >
+            <MdOutlineFileCopy />
           </button>
         </div>
       )}
     </main>
+  );
+};
+
+const BlurImage = ({
+  title,
+  image,
+  setSelectedImage,
+}: {
+  title: string;
+  image: string;
+  setSelectedImage: (image: string) => void;
+}) => {
+  const [isLoading, setLoading] = useState(true);
+
+  return (
+    <div className="aspect-h-4 aspect-w-3 w-full overflow-hidden rounded-lg bg-gray-200 hover:cursor-pointer">
+      <Image
+        alt={title}
+        src={image}
+        fill
+        objectFit="cover"
+        onClick={() => setSelectedImage(image)}
+        className={cn(
+          "duration-500 ease-in-out group-hover:scale-105",
+          isLoading
+            ? "scale-105 blur-xl grayscale"
+            : "scale-100 blur-0 grayscale-0"
+        )}
+        onLoadingComplete={() => setLoading(false)}
+      />
+    </div>
   );
 };
