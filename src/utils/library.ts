@@ -1,5 +1,3 @@
-// TODO: add headlines
-// TODO: add tags
 // TODO: optimize images
 export const BOOKS_LIBRARY = [
   {
@@ -11,103 +9,106 @@ export const BOOKS_LIBRARY = [
   {
     title: "Agile Project Micromanagement",
     image: "/book_covers/agile-micromanagement.png",
-    headline: "",
+    headline: 'Cognitive Dissonance as "Process" | Water-Fall with Stand-ups',
     tags: "",
   },
   {
     title: "Arbitrary Forecasts",
     image: "/book_covers/arbitrary-forecasts.jpg",
-    headline: "Because something may change",
+    headline: "Saying something so people feel better about giving you money",
     tags: "",
   },
   {
     title: "Getting an Arduino LED to Blink",
     image: "/book_covers/arduino-led-to-blink.jpg",
-    headline: "",
+    headline:
+      "Looks like it's back to pixels for you! | And Then Losing Interest",
     tags: "",
   },
   {
     title: "Avoid Using Dark Patterns",
     image: "/book_covers/avoid-using-dark-patterns.jpg",
-    headline: "",
-    tags: "",
+    headline: "Do. Or do not. There is no try.",
+    tags: "clean code",
   },
   {
     title: "Blaming the Architecture",
     image: "/book_covers/blaming-architecture.jpeg",
-    headline: "",
+    headline: "Fundamentals of establishing a scapegoat",
     tags: "",
   },
   {
     title: "Blaming the User",
     image: "/book_covers/blaming-the-user.jpg",
-    headline: "",
+    headline: "You're a 10x hacker and it must be someone else's fault.",
     tags: "",
   },
   {
     title: "Bloated JabbaScript Frameworks",
     image: "/book_covers/bloated-jabbascript.jpg",
-    headline: "",
+    headline:
+      "Han ma boo-kee, keelee ka-lya dooka. Wadja da boolya ra 1.9 Megabytes",
     tags: "",
   },
   {
     title: "Bracket Placement",
     image: "/book_covers/bracket-placement.png",
-    headline: "",
+    headline: "From Friend To Enemy In Just One Day",
     tags: "",
   },
   {
     title: "Breaking the Back Button",
     image: "/book_covers/breaking-back-button.jpg",
-    headline: "",
+    headline: "Ruining something the browser gave you for free",
     tags: "",
   },
   {
     title: "Resolving Broken Dependencies",
     image: "/book_covers/broken-dependencies.jpg",
-    headline: "",
+    headline: '"What did I do to deserve this?"',
     tags: "",
   },
   {
     title: "Building AI with HTML",
     image: "/book_covers/building-ai-with-html.jpg",
-    headline: "",
+    headline: "HyperText Machine Icarning",
     tags: "",
   },
   {
     title: "Buzzword-first Design",
     image: "/book_covers/buzzword-first-design.jpg",
-    headline: "",
+    headline: "Fashion-forward development",
     tags: "",
   },
   {
     title: "Casual Sexism",
     image: "/book_covers/casual-sexism.jpg",
-    headline: "",
+    headline:
+      "Ensuring half the potential talent force feels uncomfortable and alienated",
     tags: "",
   },
   {
     title: "Changing Sfugg and Seeing What Happens",
     image: "/book_covers/changing-stuff-and-seeing.jpg",
-    headline: "",
+    headline: "How to actually learn any new programming concept",
     tags: "",
   },
   {
     title: "Choosing Based on GitHub Stars",
     image: "/book_covers/choosing-based-on-github.jpg",
-    headline: "",
+    headline: "Depending on a vague popularity contest",
     tags: "",
   },
   {
     title: "Useless Code Quality Metrics",
     image: "/book_covers/code-quality.jpeg",
-    headline: "",
+    headline: "Blindly adhering to arbitrary standards",
     tags: "standard",
   },
   {
     title: "Coding Drunk",
     image: "/book_covers/coding-drunk.jpg",
-    headline: "",
+    headline: "Thinking Outside The Bottle | Make Programming Fun Again",
     tags: "",
   },
   {
@@ -120,7 +121,8 @@ export const BOOKS_LIBRARY = [
   {
     title: "Turning Coffee Into Code",
     image: "/book_covers/coffee-into-code.jpg",
-    headline: "",
+    headline:
+      "It would be a pure function if not for the side effects on your sanity",
     tags: "",
   },
   {
@@ -132,7 +134,7 @@ export const BOOKS_LIBRARY = [
   {
     title: "Compile Again and Pray to Work",
     image: "/book_covers/compile-and-pray.jpeg",
-    headline: "",
+    headline: "Because something may change",
     tags: "",
   },
   {
@@ -145,19 +147,20 @@ export const BOOKS_LIBRARY = [
     title:
       "Using Convoluted Coding Practices to Piece Together a Somehow Functional Product",
     image: "/book_covers/convoluted-coding-practices.jpg",
-    headline: "",
+    headline:
+      "Gain expertise using phrases similar to \"If it ain't broke, don t fix it",
     tags: "",
   },
   {
     title: "Cookie Consent and Other Ways to Obstruct the Web Page",
     image: "/book_covers/cookie-consent.png",
-    headline: "",
+    headline: "Because the Web isn't unusable enough yet",
     tags: "",
   },
   {
     title: "Copying and Pasting from Stack Overflow",
     image: "/book_covers/copying-and-pasting.jpg",
-    headline: "",
+    headline: "Cutting corners to meet arbitrary management deadlines",
     tags: "",
   },
   {
@@ -176,13 +179,14 @@ export const BOOKS_LIBRARY = [
   {
     title: "Deleting Code",
     image: "/book_covers/deleting-code.jpg",
-    headline: "Oh how good it feels",
+    headline:
+      "Oh how good it feels | Probably the most satisfying part of your job. Is that sad?",
     tags: "",
   },
   {
     title: "Demon Extraction",
     image: "/book_covers/demon-extraction.jpg",
-    headline: "",
+    headline: "A Guide To Removing Unwanted Evil Spirits",
     tags: "daemon",
   },
   {
@@ -206,13 +210,14 @@ export const BOOKS_LIBRARY = [
   {
     title: "Endless Boilerplate",
     image: "/book_covers/endless-boilerplate.jpg",
-    headline: "",
+    headline: "Hello, ridiculously complicated world",
     tags: "",
   },
   {
     title: "Excuses for Now Writing Documentation",
     image: "/book_covers/excuses-for-no-documentation.jpg",
-    headline: "",
+    headline:
+      "Where's the fun in just knowing what the code is supposed to do?",
     tags: "",
   },
   {
@@ -233,18 +238,19 @@ export const BOOKS_LIBRARY = [
     image: "/book_covers/faster-hardware.jpg",
     headline:
       "Speeding up your software without needing to actually optimize your code",
-    tags: "",
+    tags: "cpu gpu ram memory",
   },
   {
     title: "Fear of Missing Out",
     image: "/book_covers/fear-of-missing-out.jpg",
-    headline: "",
+    headline:
+      "If you're not running distributed Rust, Go, Elixir and Scala microservices with an elm front end, Apache Storm stream processing, and integrating with Facebook Messenger, Amazon Echo, and gathering machine learning data from my Samsung refrigerator, what are you even doing?",
     tags: "",
   },
   {
     title: "Fitting Actual User Data Into The Design",
     image: "/book_covers/fitting-actual-user-data.jpg",
-    headline: "",
+    headline: "People have names of varying lengths, who knew?",
     tags: "",
   },
   {
@@ -256,13 +262,13 @@ export const BOOKS_LIBRARY = [
   {
     title: "Forgetting how your Legacy Network Works",
     image: "/book_covers/forgetting-network.jpg",
-    headline: "",
+    headline: "The art of excuses",
     tags: "",
   },
   {
     title: "Being Friends with Gay Furries",
     image: "/book_covers/friend-gay-furries.jpg",
-    headline: "",
+    headline: "Learn to Accept That the Other Engineers Are Dogs",
     tags: "",
   },
   {
@@ -274,49 +280,49 @@ export const BOOKS_LIBRARY = [
   {
     title: "Getting it to Work",
     image: "/book_covers/getting-it-to-work.jpg",
-    headline: "",
+    headline: "Achievement despite ignorance",
     tags: "",
   },
   {
     title: "Good Enough to Ship",
     image: "/book_covers/good-enough-to-ship.jpg",
-    headline: "",
+    headline: "Letting your baby out of the nest - for better or worse",
     tags: "",
   },
   {
     title: "Googling the Error Message",
     image: "/book_covers/google-error-message.jpg",
-    headline: "",
+    headline: "The internet will make those bad words go away",
     tags: "",
   },
   {
     title: "Googling for the Regex",
     image: "/book_covers/googling-for-the-regex.jpg",
-    headline: "",
+    headline: "The Internet will do the remembering for you",
     tags: "",
   },
   {
     title: "The Guy Who Wrote This Is Gone",
     image: "/book_covers/guy-who-wrote-this-is-gone.jpg",
-    headline: "",
+    headline: "No comments, no documentation but 20 tickets",
     tags: "",
   },
   {
     title: "Hating on Languages You Don't Use",
     image: "/book_covers/hating-language.jpeg",
-    headline: "",
+    headline: "Your taste, experiences, and objectives are the absolute truth",
     tags: "",
   },
   {
     title: "Hating Other People's Code",
     image: "/book_covers/hating-other-code.jpg",
-    headline: "",
+    headline: "It's only a clever hack if you're the one who wrote it",
     tags: "",
   },
   {
     title: "Hoping Nobody Hacks You",
     image: "/book_covers/hoping-nobody-hacks.jpg",
-    headline: "",
+    headline: "Security by optimism and prayer",
     tags: "",
   },
   {
@@ -328,13 +334,13 @@ export const BOOKS_LIBRARY = [
   {
     title: "Hoping This Works",
     image: "/book_covers/hoping-this-works.jpg",
-    headline: "",
+    headline: "Solutions that might fix the problem without breaking anything",
     tags: "",
   },
   {
     title: "Ignoring Deprecation Warnings",
     image: "/book_covers/ignoring-deprecation-warnings.jpg",
-    headline: "",
+    headline: "Maybe they'll just go away on their own.",
     tags: "",
   },
   {
@@ -345,40 +351,35 @@ export const BOOKS_LIBRARY = [
     tags: "",
   },
   {
-    title: "Interactivity",
-    image: "/book_covers/interactivity.jpg",
-    headline: "",
-    tags: "",
-  },
-  {
     title: "It Depends",
     image: "/book_covers/it-depends.jpg",
-    headline: "",
+    headline: "The answer to every programming question ever conceived",
     tags: "",
   },
   {
     title: "Kubernetes for beginners",
     image: "/book_covers/kubernetes-beginners.jpg",
-    headline: "",
-    tags: "",
+    headline: "Containers, that'll fix it. | What could go wrong?",
+    tags: "docker",
   },
   {
     title: "Learning Machine Learning",
     image: "/book_covers/learn-ml.png",
-    headline: "",
+    headline: "Better buy 12 more GPUs | ",
     tags: "",
   },
   {
     title: "Losing Your Will To Live",
     image: "/book_covers/loosing-your-will-to-live.png",
-    headline: "Code Maintenance Guide",
+    headline:
+      "Code Maintenance Guide | The original developer isn't here for a reason",
     tags: "",
   },
   {
     title: "Thanklessly Maintaining Open Source Software",
     image: "/book_covers/maintaining-open-source.jpg",
-    headline: "",
-    tags: "",
+    headline: "Acting out of the goodness of your heart, or something",
+    tags: "github",
   },
   {
     title: "Managing IP Networks",
@@ -389,49 +390,50 @@ export const BOOKS_LIBRARY = [
   {
     title: "Managing Managers",
     image: "/book_covers/managing-managers.png",
-    headline: "",
+    headline: "Dealing With Bad Managers | How To Fix What Your Manager Did",
     tags: "",
   },
   {
     title: "Excuses to Miss Meetings",
     image: "/book_covers/miss-meeting.jpg",
-    headline: "",
+    headline: "Timing critical tasks to coincide with morning stand-up",
     tags: "",
   },
   {
     title: "Moving Fast and Breaking Things",
     image: "/book_covers/moving-fast-and-breaking.jpg",
-    headline: "",
+    headline: "Just put the technical debt on my credit card",
     tags: "",
   },
   {
     title: "Taking on Needless Dependencies",
     image: "/book_covers/needless-dependencies.jpeg",
-    headline: "",
+    headline: "Code written by some stranger on the internet is always perfect",
     tags: "",
   },
   {
     title: "Excuses for Not Writing Unit Tests",
     image: "/book_covers/not-writing-unit-tests.jpg",
-    headline: "",
+    headline: "Your application is a special snowflake",
     tags: "",
   },
   {
     title: "Overwriting your teammates' code",
     image: "/book_covers/overwriting-code.png",
-    headline: "",
+    headline: '"My code is better than yours anyway" | Be a team player',
     tags: "",
   },
   {
     title: "Making Your Own Parody Covers",
     image: "/book_covers/own-parody-covers.jpg",
-    headline: "",
+    headline: "Dont even leave Slack to do it",
     tags: "",
   },
   {
     title: "Pasting Code from Some Random 2012 Node.js Tutorial",
     image: "/book_covers/pasting-code-from-2012-tutorial.jpg",
-    headline: "",
+    headline:
+      "It was the first Google result and you only live once | And Hoping for the Best",
     tags: "googling",
   },
   {
@@ -450,25 +452,26 @@ export const BOOKS_LIBRARY = [
   {
     title: "Pointless Meetings",
     image: "/book_covers/pointless-meeting.jpg",
-    headline: "",
-    tags: "",
+    headline: "How To Survive All The Pointless Meetings",
+    tags: "guide",
   },
   {
     title: "Practical Testing",
     image: "/book_covers/practical-testing.jpg",
-    headline: "",
+    headline:
+      "It worked fine three months ago | Just click around and see if anything breaks",
     tags: "",
   },
   {
     title: "Pretending you know what you're doing",
     image: "/book_covers/pretending-you-know.jpeg",
-    headline: "",
+    headline: "Advanced stack overflow copy pasting for beginners",
     tags: "",
   },
   {
     title: "Solving Problems That Don't Exist",
     image: "/book_covers/problem-that-don't-exist.jpg",
-    headline: "",
+    headline: "The Why's and How's",
     tags: "",
   },
   {
@@ -480,67 +483,70 @@ export const BOOKS_LIBRARY = [
   {
     title: "Rationalizing Your Awful Hackjob",
     image: "/book_covers/rationalizing-hackjob.jpg",
-    headline: "",
+    headline:
+      "Not thinking about how much pain this is going to cause in the future",
     tags: "",
   },
   {
     title: "Regex by Trial and Error",
     image: "/book_covers/regex-by-error.jpg",
-    headline: "",
+    headline: "Combining slashes and dots until a thing happens",
     tags: "",
   },
   {
     title: "Remembering What to Google",
     image: "/book_covers/remembering-what-to-google.jpg",
-    headline: "",
+    headline: "How you get anything done ever",
     tags: "",
   },
   {
     title: "Resume Driven Development",
     image: "/book_covers/resume-driven-dev.jpg",
-    headline: "",
+    headline: "The passionate, functional, micro-serviced approach",
     tags: "",
   },
   {
     title: "Rewriting Your Front End Every Six Weeks",
     image: "/book_covers/rewriting-frontend.jpeg",
-    headline: "",
+    headline:
+      "This time you have definitely chosen the right libraries and build tools",
     tags: "",
   },
   {
     title: "Adding and Removing & and * at random until rustc is happy",
     image: "/book_covers/rust-is-happy.png",
     headline: "",
-    tags: "reference pointer",
+    tags: "reference pointer rust cpp",
   },
   {
     title: "SAAS Addiction",
     image: "/book_covers/saas-addiction.jpg",
-    headline: "",
-    tags: "",
+    headline: "Maybe there's an API for that",
+    tags: "aws cloud software",
   },
   {
     title: "Getting Around to Security Next Month",
     image: "/book_covers/security-next-month.jpg",
-    headline: "",
-    tags: "",
+    headline:
+      "Putting off critical tasks until everyone forgets about them | If there's time",
+    tags: "procrastination",
   },
   {
     title: "Loosing files",
     image: "/book_covers/server-down.png",
     headline: "",
-    tags: "image not found html",
+    tags: "image not found html error",
   },
   {
     title: "Restoring shitty .ddl references",
     image: "/book_covers/shitty-ddl-ref.jpg",
-    headline: "",
-    tags: "",
+    headline: "Inheritance isn't always a good thing",
+    tags: "cpp",
   },
   {
     title: "Startup Success",
     image: "/book_covers/startup-success.jpeg",
-    headline: "",
+    headline: "TechCrunch Said This Was A Billion Dollar Market",
     tags: "",
   },
   {
@@ -553,36 +559,36 @@ export const BOOKS_LIBRARY = [
     title: "Temporary Workarounds",
     image: "/book_covers/temporary-workarounds.jpeg",
     headline: "",
-    tags: "",
+    tags: "bad code",
   },
   {
     title: "Testing In Production",
     image: "/book_covers/testing-in-production.jpg",
-    headline: "",
-    tags: "",
+    headline: "Never worry about multiple environments again!",
+    tags: "guide error",
   },
   {
     title: "Thankfulness",
     image: "/book_covers/thankfulness.jpeg",
-    headline: "",
-    tags: "",
+    headline: "Recognizing how great we have it",
+    tags: "success win production",
   },
   {
     title: "Trivial Details",
     image: "/book_covers/trivial-details.jpeg",
-    headline: "",
+    headline: "Perfecting the parts that don't matter",
     tags: "",
   },
   {
     title: "Trying Stuff Until it Works",
     image: "/book_covers/trying-stuff-until-it-works.jpg",
-    headline: "",
+    headline: "Software can be chaotic, but we make it work",
     tags: "",
   },
   {
     title: "Upsetting Your Coworkers With Python",
     image: "/book_covers/upsetting-with-python.png",
-    headline: "",
+    headline: "Using list, map, lambda, and filter on a single line",
     tags: "",
   },
   {
@@ -594,44 +600,46 @@ export const BOOKS_LIBRARY = [
   {
     title: "Vague Understanding Of Computer Science",
     image: "/book_covers/vague-understanding-of-computer-science.jpg",
-    headline: "",
+    headline:
+      "Probably be able explain a sorting algorithm if it ever comes up",
     tags: "",
   },
   {
     title: "Variable Naming",
     image: "/book_covers/variable-naming.png",
-    headline: "",
+    headline: "The hardest part of coding | Shave Hours Off Any Project",
     tags: "",
   },
   {
     title: "What is Ligma",
     image: "/book_covers/what-is-ligma.png",
-    headline: "",
+    headline: "Prepare for the worst",
     tags: "",
   },
   {
     title: "Whiteboard Algorithms",
     image: "/book_covers/whiteboard-algo.jpeg",
-    headline: "",
+    headline: "Useless skills for interviews at public tech companies.",
     tags: "old",
   },
   {
     title: "Whiteboard Interviews",
     image: "/book_covers/whiteboard-interviews.png",
-    headline: "",
-    tags: "",
+    headline:
+      "Putting the candidate through the same bullshit you went through",
+    tags: "leetcode",
   },
   {
     title: "Keeping the Whole App in Your Head",
     image: "/book_covers/whole-app-in-head.jpg",
-    headline: "",
+    headline: 'Also known as "job security"',
     tags: "",
   },
   {
     title: "Using won't fix in your linter",
     image: "/book_covers/wont-fix-in-linter.png",
-    headline: "",
-    tags: "",
+    headline: "How to improve your code quality",
+    tags: "sonarqube",
   },
   {
     title: "Works on my machine",
@@ -642,7 +650,7 @@ export const BOOKS_LIBRARY = [
   {
     title: "Writing Code that Nobody Else Can Read",
     image: "/book_covers/writing-code-nobody-else-can-read.jpg",
-    headline: "",
+    headline: "Does it run? Just leave it alone.",
     tags: "",
   },
   {
@@ -654,7 +662,7 @@ export const BOOKS_LIBRARY = [
   {
     title: "Z-Index: 100000000000",
     image: "/book_covers/z-index-1000.jpg",
-    headline: "Real World CSS",
+    headline: "Real World CSS | You've come this far, no going back now.",
     tags: "",
   },
   {
@@ -666,13 +674,13 @@ export const BOOKS_LIBRARY = [
   {
     title: "ACK",
     image: "/book_covers/ack.jpg",
-    headline: "",
+    headline: "UNIX Power Tools",
     tags: "",
   },
   {
     title: "Angry Admin",
     image: "/book_covers/angry-admin.jpg",
-    headline: "",
+    headline: "Keeping Uppity Users At Bay | Find Your Inner Rage",
     tags: "",
   },
 ];
