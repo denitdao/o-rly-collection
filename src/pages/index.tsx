@@ -8,6 +8,7 @@ import { BOOKS_LIBRARY } from "~/utils/library";
 import { cn } from "~/utils/helpers";
 import OrlyFooter from "~/components/OrlyFooter";
 import OrlyHead from "~/components/OrlyHead";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -87,10 +88,11 @@ const BookSearch = () => {
         </div>
       </div>
       {booksToShow && booksToShow.length !== 0 ? (
-        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+        <motion.div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {booksToShow.map((book, index) => (
-            <div
-              key={index}
+            <motion.div
+              layout
+              key={book.image}
               className="group relative rounded-lg bg-white shadow"
               onMouseOver={() => setHoverIndex(index)}
               onMouseOut={() => setHoverIndex(-1)}
@@ -112,9 +114,9 @@ const BookSearch = () => {
                   ? book.title
                   : book.title.slice(0, 40) + "..."}
               </h3>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       ) : (
         <div className="py-20 text-center font-mono">
           <p className="text-gray-500">
