@@ -35,10 +35,23 @@ const OrlyHead = () => {
 const BookSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  // TODO: optimize search to make more exact matches
   const fuse = new Fuse(BOOKS_LIBRARY, {
+    threshold: 0.5,
     includeScore: true,
-    keys: ["title", "headline", "tags"],
+    keys: [
+      {
+        name: "title",
+        weight: 0.6,
+      },
+      {
+        name: "headline",
+        weight: 0.2,
+      },
+      {
+        name: "tags",
+        weight: 0.2,
+      },
+    ],
   });
   const booksToShow = searchTerm
     ? fuse.search(searchTerm).map((result) => result.item)
