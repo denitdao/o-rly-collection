@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Fuse from "fuse.js";
 import { useState } from "react";
 import { copyImageToClipboard } from "~/utils/copy-image";
@@ -7,36 +6,26 @@ import Image from "next/image";
 import { PopupProvider, usePopup } from "~/components/Popup";
 import { BOOKS_LIBRARY } from "~/utils/library";
 import { cn } from "~/utils/helpers";
+import OrlyFooter from "~/components/OrlyFooter";
+import OrlyHead from "~/components/OrlyHead";
 
 export default function Home() {
   return (
-    <div className="bg-gray-50">
+    <div className="flex min-h-screen flex-col bg-gray-50">
       <OrlyHead />
       <PopupProvider>
         <BookSearch />
       </PopupProvider>
+      <OrlyFooter />
     </div>
   );
 }
-
-const OrlyHead = () => {
-  return (
-    <Head>
-      <title>Meme Book Search</title>
-      <meta
-        name="description"
-        content="Search and explore meme books about programming"
-      />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-  );
-};
 
 const BookSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const fuse = new Fuse(BOOKS_LIBRARY, {
-    threshold: 0.5,
+    threshold: 0.4,
     includeScore: true,
     keys: [
       {
@@ -68,13 +57,20 @@ const BookSearch = () => {
 
   return (
     <main className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-      <div className="container mx-auto flex w-full flex-col items-center justify-center px-4 py-16">
-        <h1 className="mb-8 text-3xl font-extrabold tracking-tight text-black">
-          Search Meme Book Covers
+      <div className="container mx-auto flex w-full flex-col items-center justify-center px-4">
+        <h1 className="mb-5 text-4xl font-extrabold tracking-tight text-black">
+          Search O&apos;RLY Covers
         </h1>
-        <div className="relative w-full max-w-lg">
+        <p className="mb-16 text-center font-mono tracking-tight text-gray-600">
+          Strengthen your{" "}
+          <span className="underline-offset-3 underline decoration-blue-400 decoration-2 dark:decoration-blue-600">
+            arguments
+          </span>{" "}
+          with compelling programming book covers
+        </p>
+        <div className="relative mb-12 w-full max-w-lg">
           <input
-            className="w-full rounded-md border border-gray-300 py-2 pl-4 pr-8"
+            className="w-full rounded-md border py-2 pl-4 pr-8 font-mono"
             type="text"
             placeholder="Type your keywords..."
             value={searchTerm}
@@ -90,34 +86,48 @@ const BookSearch = () => {
           )}
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-        {booksToShow.map((book, index) => (
-          <div
-            key={index}
-            className="group relative rounded-lg bg-white shadow"
-            onMouseOver={() => setHoverIndex(index)}
-            onMouseOut={() => setHoverIndex(-1)}
-          >
-            <button
-              className="absolute right-0 top-0 z-10 rounded-lg bg-gray-200 p-2 text-xl opacity-70 hover:opacity-90"
-              onClick={() => void handleCopyClick(book.image)}
-              hidden={index !== hoverIndex}
+      {booksToShow && booksToShow.length !== 0 ? (
+        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+          {booksToShow.map((book, index) => (
+            <div
+              key={index}
+              className="group relative rounded-lg bg-white shadow"
+              onMouseOver={() => setHoverIndex(index)}
+              onMouseOut={() => setHoverIndex(-1)}
             >
-              <MdOutlineFileCopy />
-            </button>
-            <BlurImage
-              title={book.title}
-              image={book.image}
-              setSelectedImage={setSelectedImage}
-            />
-            <h3 className="m-2 text-sm font-medium text-gray-900">
-              {book.title.length < 40
-                ? book.title
-                : book.title.slice(0, 40) + "..."}
-            </h3>
-          </div>
-        ))}
-      </div>
+              <button
+                className="absolute right-0 top-0 z-10 rounded-lg bg-gray-200 p-2 text-xl opacity-70 hover:opacity-90"
+                onClick={() => void handleCopyClick(book.image)}
+                hidden={index !== hoverIndex}
+              >
+                <MdOutlineFileCopy />
+              </button>
+              <BlurImage
+                title={book.title}
+                image={book.image}
+                setSelectedImage={setSelectedImage}
+              />
+              <h3 className="m-2 font-mono text-sm font-medium text-gray-900">
+                {book.title.length < 45
+                  ? book.title
+                  : book.title.slice(0, 40) + "..."}
+              </h3>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="py-20 text-center font-mono">
+          <p className="text-gray-500">
+            Try another keyword or{" "}
+            <a
+              href="https://orly.nanmu.me/"
+              className="font-bold decoration-blue-400 decoration-2 hover:underline dark:decoration-blue-600"
+            >
+              create your own cover
+            </a>
+          </p>
+        </div>
+      )}
 
       {selectedImage && (
         <div
