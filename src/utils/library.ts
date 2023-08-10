@@ -4,8 +4,26 @@
 // TODO: optimize images
 export const BOOKS_LIBRARY = [
   {
+    title: "10x Engineering",
+    image: "/book_covers/10x-engineer.jpg",
+    headline: "Money, fame, maintainable code",
+    tags: "",
+  },
+  {
+    title: "Agile Project Micromanagement",
+    image: "/book_covers/agile-micromanagement.png",
+    headline: "",
+    tags: "",
+  },
+  {
     title: "Getting an Arduino LED to Blink",
     image: "/book_covers/arduino-led-to-blink.jpg",
+    headline: "",
+    tags: "",
+  },
+  {
+    title: "Avoid Using Dark Patterns",
+    image: "/book_covers/avoid-using-dark-patterns.jpg",
     headline: "",
     tags: "",
   },
@@ -46,6 +64,12 @@ export const BOOKS_LIBRARY = [
     tags: "",
   },
   {
+    title: "Useless Code Quality Metrics",
+    image: "/book_covers/code-quality.jpeg",
+    headline: "",
+    tags: "standard",
+  },
+  {
     title: "Coding Drunk",
     image: "/book_covers/coding-drunk.jpg",
     headline: "",
@@ -74,6 +98,13 @@ export const BOOKS_LIBRARY = [
     title:
       "Using Convoluted Coding Practices to Piece Together a Somehow Functional Product",
     image: "/book_covers/convoluted-coding-practices.jpg",
+    headline: "",
+    tags: "",
+  },
+  {
+    title:
+      "Cookie Consent and Other Ways to Obstruct the Web Page",
+    image: "/book_covers/cookie-consent.png",
     headline: "",
     tags: "",
   },
@@ -145,6 +176,12 @@ export const BOOKS_LIBRARY = [
     headline:
       "Speeding up your software without needing to actually optimize your code",
     tags: "",
+  },
+  {
+    title: "Fizz Buzz",
+    image: "/book_covers/fizz-buzz.jpeg",
+    headline: "Ensuring the futility of your interview process",
+    tags: "learn",
   },
   {
     title: "Being Friends with Gay Furries",
@@ -256,6 +293,12 @@ export const BOOKS_LIBRARY = [
     tags: "googling",
   },
   {
+    title: "Phishing",
+    image: "/book_covers/phishing.jpg",
+    headline: "Professional Identity Theft Techniques",
+    tags: "",
+  },
+  {
     title: "Pointless Meetings",
     image: "/book_covers/pointless-meeting.jpg",
     headline: "",
@@ -272,6 +315,12 @@ export const BOOKS_LIBRARY = [
     image: "/book_covers/problem-that-don't-exist.jpg",
     headline: "",
     tags: "",
+  },
+  {
+    title: "Procrastination",
+    image: "/book_covers/procrastination.png",
+    headline: "",
+    tags: "lazy",
   },
   {
     title: "Rationalizing Your Awful Hackjob",
@@ -292,10 +341,22 @@ export const BOOKS_LIBRARY = [
     tags: "",
   },
   {
+    title: "Rewriting Your Front End Every Six Weeks",
+    image: "/book_covers/rewriting-frontend.jpeg",
+    headline: "",
+    tags: "",
+  },
+  {
     title: "Getting Around to Security Next Month",
     image: "/book_covers/security-next-month.jpg",
     headline: "",
     tags: "",
+  },
+  {
+    title: "Loosing files",
+    image: "/book_covers/server-down.png",
+    headline: "",
+    tags: "image not found html",
   },
   {
     title: "Restoring shitty .ddl references",
@@ -340,6 +401,12 @@ export const BOOKS_LIBRARY = [
     tags: "",
   },
   {
+    title: "Whiteboard Algorithms",
+    image: "/book_covers/whiteboard-algo.jpeg",
+    headline: "",
+    tags: "old",
+  },
+  {
     title: "Whiteboard Interviews",
     image: "/book_covers/whiteboard-interviews.png",
     headline: "",
@@ -356,6 +423,12 @@ export const BOOKS_LIBRARY = [
     image: "/book_covers/writing-code-nobody-else-can-read.jpg",
     headline: "",
     tags: "",
+  },
+  {
+    title: "Writing documentation ",
+    image: "/book_covers/writing-documentation.png",
+    headline: "ToDo | Coming soon",
+    tags: "to do",
   },
   {
     title: "Z-Index: 100000000000",

@@ -55,7 +55,7 @@ const BookSearch = () => {
 
   return (
     <main className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-      <div className="container flex w-full flex-col items-center justify-center px-4 py-16">
+      <div className="container mx-auto flex w-full flex-col items-center justify-center px-4 py-16">
         <h1 className="mb-8 text-3xl font-extrabold tracking-tight text-black">
           Search Meme Book Covers
         </h1>
@@ -151,13 +151,12 @@ const BlurImage = ({
         alt={title}
         src={image}
         fill
-        objectFit="cover"
         onClick={() => setSelectedImage(image)}
         className={cn(
-          "duration-500 ease-in-out group-hover:scale-105",
+          "rounded-lg object-cover duration-500 ease-in-out",
           isLoading
             ? "scale-105 blur-xl grayscale"
-            : "scale-100 blur-0 grayscale-0"
+            : "scale-100 blur-0 grayscale-0 group-hover:scale-95 group-hover:duration-200"
         )}
         onLoadingComplete={() => setLoading(false)}
       />
