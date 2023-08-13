@@ -9,7 +9,7 @@ import OrlyHead from "~/components/OrlyHead";
 import { motion } from "framer-motion";
 import ImagePreview from "~/components/ImagePreview";
 import BlurringImage from "~/components/BlurringImage";
-import {env} from "~/env.mjs";
+import { env } from "~/env.mjs";
 
 export default function Home() {
   return (
@@ -30,20 +30,21 @@ const BookSearch = () => {
   const [previewImageUrl, setPreviewImageUrl] = useState<string | null>(null);
 
   const fuse = new Fuse(BOOKS_LIBRARY, {
-    threshold: 0.4,
+    threshold: 0.3,
     includeScore: true,
+    ignoreLocation: true,
     keys: [
       {
         name: "title",
-        weight: 0.6,
+        weight: 0.4,
       },
       {
         name: "headline",
-        weight: 0.2,
+        weight: 0.3,
       },
       {
         name: "tags",
-        weight: 0.2,
+        weight: 0.4,
       },
     ],
   });
@@ -71,7 +72,7 @@ const BookSearch = () => {
         </h1>
         <p className="mb-16 text-center font-mono tracking-tight text-gray-600">
           Strengthen your{" "}
-          <span className="underline-offset-3 underline decoration-blue-400 decoration-2 dark:decoration-blue-600">
+          <span className="underline decoration-blue-400 decoration-2 underline-offset-2 dark:decoration-blue-600">
             arguments
           </span>{" "}
           with compelling programming book covers
@@ -85,8 +86,16 @@ const BookSearch = () => {
               key={book.image}
               title={book.title}
               imageUrl={`${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`}
-              onCopyClick={() => void handleCopyClick(`${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`)}
-              onImageClick={() => setPreviewImageUrl(`${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`)}
+              onCopyClick={() =>
+                void handleCopyClick(
+                  `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`
+                )
+              }
+              onImageClick={() =>
+                setPreviewImageUrl(
+                  `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`
+                )
+              }
             />
           ))}
         </motion.div>
