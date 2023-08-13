@@ -9,6 +9,7 @@ import OrlyHead from "~/components/OrlyHead";
 import { motion } from "framer-motion";
 import ImagePreview from "~/components/ImagePreview";
 import BlurringImage from "~/components/BlurringImage";
+import {env} from "~/env.mjs";
 
 export default function Home() {
   return (
@@ -26,7 +27,7 @@ const BookSearch = () => {
   const { showPopup } = usePopup();
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const [previewImageUrl, setPreviewImageUrl] = useState<string | null>(null);
 
   const fuse = new Fuse(BOOKS_LIBRARY, {
     threshold: 0.4,
@@ -47,9 +48,9 @@ const BookSearch = () => {
     ],
   });
 
-  const handleCopyClick = async (image: string | null) => {
-    if (image === null) return;
-    await copyImageToClipboard(image)
+  const handleCopyClick = async (imageUrl: string | null) => {
+    if (imageUrl === null) return;
+    await copyImageToClipboard(imageUrl)
       .then(() => {
         showPopup("Image copied to the clipboard!", 3000);
       })
@@ -83,9 +84,9 @@ const BookSearch = () => {
             <BookTile
               key={book.image}
               title={book.title}
-              imageUrl={book.image}
-              onCopyClick={() => void handleCopyClick(book.image)}
-              onImageClick={() => setPreviewImage(book.image)}
+              imageUrl={`${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`}
+              onCopyClick={() => void handleCopyClick(`${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`)}
+              onImageClick={() => setPreviewImageUrl(`${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`)}
             />
           ))}
         </motion.div>
@@ -93,9 +94,9 @@ const BookSearch = () => {
         <NoResultsMessage />
       )}
       <ImagePreview
-        imageUrl={previewImage}
-        onClose={() => setPreviewImage(null)}
-        onCopy={() => void handleCopyClick(previewImage)}
+        imageUrl={previewImageUrl}
+        onClose={() => setPreviewImageUrl(null)}
+        onCopy={() => void handleCopyClick(previewImageUrl)}
       />
     </main>
   );
