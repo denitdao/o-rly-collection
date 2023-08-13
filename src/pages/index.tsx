@@ -49,8 +49,13 @@ const BookSearch = () => {
 
   const handleCopyClick = async (image: string | null) => {
     if (image === null) return;
-    await copyImageToClipboard(image);
-    showPopup("Image copied to the clipboard!", 3000);
+    await copyImageToClipboard(image)
+      .then(() => {
+        showPopup("Image copied to the clipboard!", 3000);
+      })
+      .catch(() => {
+        showPopup("Failed to copy image to the clipboard", 3000, "warning");
+      });
   };
 
   const booksToShow = searchTerm
@@ -125,23 +130,17 @@ const SearchBar = ({
 };
 
 const BookTile = ({
-  key,
   title,
   imageUrl,
   onCopyClick,
   onImageClick,
 }: {
-  key: string;
   title: string;
   imageUrl: string;
   onCopyClick: () => void;
   onImageClick: () => void;
 }) => (
-  <motion.div
-    layout
-    key={key}
-    className="group relative rounded-lg bg-white shadow"
-  >
+  <motion.div layout className="group relative rounded-lg bg-white shadow">
     <button
       className="absolute right-0 top-0 z-10 hidden rounded-lg bg-gray-200 p-2 text-xl opacity-70 hover:opacity-90 group-hover:block"
       onClick={onCopyClick}

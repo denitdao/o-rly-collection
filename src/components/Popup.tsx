@@ -1,12 +1,18 @@
 import React, { createContext, useContext, useState } from "react";
+import { cn } from "~/utils/helpers";
 
 type PopupContextType = {
-  showPopup: (message: string, duration?: number) => void;
+  showPopup: (
+    message: string,
+    duration?: number,
+    type?: "info" | "warning"
+  ) => void;
 };
 
 type PopupState = {
   visible: boolean;
   message: string | null;
+  type: "info" | "warning";
 };
 
 const PopupContext = createContext<PopupContextType | undefined>(undefined);
@@ -23,27 +29,36 @@ export const PopupProvider = ({ children }: { children: React.ReactNode }) => {
   const [popupState, setPopupState] = useState<PopupState>({
     visible: false,
     message: null,
+    type: "info",
   });
 
-  const showPopup = (message: string, duration = 2500) => {
+  const showPopup = (
+    message: string,
+    duration = 2500,
+    type: "info" | "warning" = "info"
+  ) => {
     const transitionTime = 500;
 
-    setPopupState({ visible: false, message });
+    setPopupState({ visible: false, message, type });
     setTimeout(() => {
-      setPopupState({ visible: true, message });
+      setPopupState({ visible: true, message, type });
     }, 100);
     setTimeout(() => {
-      setPopupState({ visible: false, message });
+      setPopupState({ visible: false, message, type });
     }, duration - transitionTime);
     setTimeout(() => {
-      setPopupState({ visible: false, message: null });
+      setPopupState({ visible: false, message: null, type });
     }, duration);
   };
 
   return (
     <PopupContext.Provider value={{ showPopup }}>
       {children}
-      <Popup message={popupState.message} visible={popupState.visible} />
+      <Popup
+        message={popupState.message}
+        visible={popupState.visible}
+        type={popupState.type}
+      />
     </PopupContext.Provider>
   );
 };
@@ -53,7 +68,12 @@ const Popup: React.FC<PopupState> = (props) => {
     <>
       {props.message && (
         <div
-          className="fixed bottom-6 right-6 mb-4 flex items-center rounded-lg bg-green-50 p-4 text-sm text-green-800 dark:bg-gray-800 dark:text-green-400"
+          className={cn(
+            "fixed bottom-6 right-6 mb-4 flex items-center rounded-lg p-4 text-sm",
+            props.type === "info"
+              ? "bg-green-50 text-green-800 dark:bg-gray-800 dark:text-green-400"
+              : "bg-red-50 text-red-800 dark:bg-gray-800 dark:text-red-400"
+          )}
           role="alert"
           style={{
             opacity: props.visible ? 1 : 0,
@@ -61,7 +81,12 @@ const Popup: React.FC<PopupState> = (props) => {
           }}
         >
           <span className="relative mr-3 flex h-4 w-4">
-            <span className="absolute h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+            <span
+              className={cn(
+                "absolute h-full w-full animate-ping rounded-full opacity-75",
+                props.type === "info" ? "bg-green-500" : "bg-red-500"
+              )}
+            />
             <svg
               className="absolute flex-shrink-0"
               aria-hidden="true"
