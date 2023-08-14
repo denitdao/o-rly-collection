@@ -40,7 +40,7 @@ const BookSearch = () => {
       },
       {
         name: "headline",
-        weight: 0.3,
+        weight: 0.4,
       },
       {
         name: "tags",

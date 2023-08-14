@@ -347,7 +347,7 @@ export const BOOKS_LIBRARY = [
     image: "imaginary-scaling-issues.jpg",
     headline:
       "At Scale | Getting the wrong idea from that conference talk you attended",
-    tags: "scaling, performance, development, misconceptions",
+    tags: "scaling, performance, development, misconceptions, conference",
   },
   {
     title: "It Depends",
