@@ -1,15 +1,16 @@
 import Fuse from "fuse.js";
 import { useState } from "react";
 import { copyImageToClipboard } from "~/utils/copy-image";
-import { MdOutlineClear, MdOutlineFileCopy } from "react-icons/md";
+import { MdOutlineClear } from "react-icons/md";
 import { PopupProvider, usePopup } from "~/components/Popup";
 import { BOOKS_LIBRARY } from "~/utils/library";
 import OrlyFooter from "~/components/OrlyFooter";
 import OrlyHead from "~/components/OrlyHead";
 import { motion } from "framer-motion";
 import ImagePreview from "~/components/ImagePreview";
-import BlurringImage from "~/components/BlurringImage";
 import { env } from "~/env.mjs";
+import Link from "next/link";
+import BookTile from "~/components/BookTile";
 
 export default function Home() {
   return (
@@ -139,42 +140,17 @@ const SearchBar = ({
   );
 };
 
-const BookTile = ({
-  title,
-  imageUrl,
-  onCopyClick,
-  onImageClick,
-}: {
-  title: string;
-  imageUrl: string;
-  onCopyClick: () => void;
-  onImageClick: () => void;
-}) => (
-  <motion.div layout className="group relative rounded-lg bg-white shadow">
-    <button
-      className="absolute right-0 top-0 z-10 hidden rounded-lg bg-gray-200 p-2 text-xl opacity-70 hover:opacity-90 group-hover:block"
-      onClick={onCopyClick}
-    >
-      <MdOutlineFileCopy />
-    </button>
-    <BlurringImage alt={title} imageUrl={imageUrl} onClick={onImageClick} />
-    <h3 className="m-2 font-mono text-sm font-medium text-gray-900">
-      {title.length < 45 ? title : title.slice(0, 40) + "..."}
-    </h3>
-  </motion.div>
-);
-
 const NoResultsMessage = () => {
   return (
     <div className="py-20 text-center font-mono">
       <p className="text-gray-500">
         Try another keyword or{" "}
-        <a
+        <Link
           href="https://orly.nanmu.me/"
           className="font-bold decoration-blue-400 decoration-2 hover:underline dark:decoration-blue-600"
         >
           create your own cover
-        </a>
+        </Link>
       </p>
     </div>
   );

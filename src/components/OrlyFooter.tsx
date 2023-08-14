@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const OrlyFooter = () => {
   return (
     <footer className="mt-auto bg-white p-4 dark:bg-gray-800 md:p-6 lg:p-8">
@@ -35,12 +37,12 @@ const OrlyFooter = () => {
         <p className="text-mono mb-6 text-gray-500 dark:text-gray-400"></p>
         <span className="mx-auto font-mono text-sm text-gray-500 dark:text-gray-400">
           © {new Date().getFullYear() + " "}
-          <a
+          <Link
             href="https://github.com/denitdao"
             className="decoration-blue-400 decoration-2 hover:underline dark:decoration-blue-600"
           >
             DenITDao
-          </a>
+          </Link>
         </span>
       </div>
     </footer>
