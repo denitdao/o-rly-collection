@@ -36,6 +36,8 @@ const OrlyHead = ({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
+
+      <meta name="google-site-verification" content="Mt9L1WzY67zBWzNiNw2jHQSoYBXYXp4VkNYbDWUYk5Q" />
     </Head>
   );
 };
