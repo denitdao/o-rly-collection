@@ -1,6 +1,3 @@
 User-Agent: *
 
 Allow: /
-
-Disallow: /api/
-Disallow: /oauth
