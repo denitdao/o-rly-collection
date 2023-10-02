@@ -86,6 +86,7 @@ const BookSearch = () => {
             <BookTile
               key={book.image}
               title={book.title}
+              alt={book.title + "|" + book.headline}
               imageUrl={`${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`}
               onCopyClick={() =>
                 void handleCopyClick(

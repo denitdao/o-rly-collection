@@ -4,11 +4,13 @@ import BlurringImage from "~/components/BlurringImage";
 
 const BookTile = ({
   title,
+  alt,
   imageUrl,
   onCopyClick,
   onImageClick,
 }: {
   title: string;
+  alt: string;
   imageUrl: string;
   onCopyClick: () => void;
   onImageClick: () => void;
@@ -20,7 +22,7 @@ const BookTile = ({
     >
       <MdOutlineFileCopy />
     </button>
-    <BlurringImage alt={title} imageUrl={imageUrl} onClick={onImageClick} />
+    <BlurringImage alt={alt} imageUrl={imageUrl} onClick={onImageClick} />
     <h3 className="m-2 font-mono text-sm font-medium text-gray-900">
       {title.length < 45 ? title : title.slice(0, 40) + "..."}
     </h3>
