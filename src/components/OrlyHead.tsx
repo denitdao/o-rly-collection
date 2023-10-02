@@ -15,7 +15,7 @@ type HeadProps = {
  */
 const OrlyHead = ({
   title = "O'RLY Covers",
-  description = "Find O'RLY meme book cover. Use for your programming arguments.",
+  description = "Find O'RLY meme book cover. Use for your programming arguments. ORLY book parodies. Funny programming book covers.",
   imageUrl = `${env.NEXT_PUBLIC_OG_SOURCE}/og.jpeg`,
 }: HeadProps) => {
   return (
@@ -36,8 +36,6 @@ const OrlyHead = ({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
-
-      <meta name="google-site-verification" content="Mt9L1WzY67zBWzNiNw2jHQSoYBXYXp4VkNYbDWUYk5Q" />
     </Head>
   );
 };
