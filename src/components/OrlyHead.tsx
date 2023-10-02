@@ -15,7 +15,7 @@ type HeadProps = {
  */
 const OrlyHead = ({
   title = "O'RLY Covers",
-  description = "Find O'RLY meme book cover. Use for your programming arguments. ORLY book parodies. Funny programming book covers.",
+  description = "Find O'RLY meme book cover. Use for your programming arguments. ORLY book parodies. Funny programming book covers. O RLY?",
   imageUrl = `${env.NEXT_PUBLIC_OG_SOURCE}/og.jpeg`,
 }: HeadProps) => {
   return (
