@@ -3,7 +3,7 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://orlybooks.com/</loc>
+        <loc>https://www.orlybooks.com/</loc>
         <lastmod>2023-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
