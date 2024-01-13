@@ -494,7 +494,7 @@ export const BOOKS_LIBRARY = [
   },
   {
     title: "Solving Problems That Don't Exist",
-    image: "problem-that-don't-exist.jpg",
+    image: "problem-that-dont-exist.jpg",
     headline: "The Why's and How's",
     tags: "problem-solving, overengineering, development, complexity",
   },
