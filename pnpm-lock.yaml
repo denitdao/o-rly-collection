@@ -17,6 +17,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': 6.0.0
   '@typescript-eslint/parser': 6.0.0
   '@vercel/analytics': ^1.0.1
+  '@vercel/speed-insights': ^1.0.3
   autoprefixer: ^10.4.14
   eslint: ^8.40.0
   eslint-config-next: ^13.4.2
@@ -44,6 +45,7 @@ dependencies:
   '@trpc/react-query': 10.37.1_osxhw6t56wwgdftg5wod3rvjuy
   '@trpc/server': 10.37.1
   '@vercel/analytics': 1.0.1
+  '@vercel/speed-insights': 1.0.3
   framer-motion: 10.15.1_biqbaboplfbrettd7655fr4n2y
   fuse.js: 6.6.2
   next: 13.4.13_biqbaboplfbrettd7655fr4n2y
@@ -636,6 +638,11 @@ packages:
 
   /@vercel/analytics/1.0.1:
     resolution: {integrity: sha512-Ux0c9qUfkcPqng3vrR0GTrlQdqNJ2JREn/2ydrVuKwM3RtMfF2mWX31Ijqo1opSjNAq6rK76PwtANw6kl6TAow==}
+    dev: false
+
+  /@vercel/speed-insights/1.0.3:
+    resolution: {integrity: sha512-bKIt0HDdF6hP2bJZyS+za3k6sKeAXNRLSIUbwVwvyvKdsHBWS6ILBvmD1wXHZZyTqjU1TP7dTE/F6lHM6rBdKA==}
+    requiresBuild: true
     dev: false
 
   /acorn-jsx/5.3.2_acorn@8.10.0:

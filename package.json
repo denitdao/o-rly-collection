@@ -18,6 +18,7 @@
     "@trpc/react-query": "^10.34.0",
     "@trpc/server": "^10.34.0",
     "@vercel/analytics": "^1.0.1",
+    "@vercel/speed-insights": "^1.0.3",
     "framer-motion": "^10.15.1",
     "fuse.js": "^6.6.2",
     "next": "^13.4.2",
