@@ -71,8 +71,8 @@ const Popup: React.FC<PopupState> = (props) => {
           className={cn(
             "fixed bottom-6 right-6 mb-4 flex items-center rounded-lg p-4 text-sm",
             props.type === "info"
-              ? "bg-green-50 text-green-800 dark:bg-gray-800 dark:text-green-400"
-              : "bg-red-50 text-red-800 dark:bg-gray-800 dark:text-red-400"
+              ? "bg-green-50 text-green-800"
+              : "bg-red-50 text-red-800"
           )}
           role="alert"
           style={{

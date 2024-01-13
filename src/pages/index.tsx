@@ -73,7 +73,7 @@ const BookSearch = () => {
         </h1>
         <p className="mb-16 text-center font-mono tracking-tight text-gray-600">
           Strengthen your{" "}
-          <span className="underline decoration-blue-400 decoration-2 underline-offset-2 dark:decoration-blue-600">
+          <span className="underline decoration-blue-400 decoration-2 underline-offset-2">
             arguments
           </span>{" "}
           with compelling programming book covers
@@ -148,7 +148,7 @@ const NoResultsMessage = () => {
         Try another keyword or{" "}
         <Link
           href="https://orly.nanmu.me/"
-          className="font-bold decoration-blue-400 decoration-2 hover:underline dark:decoration-blue-600"
+          className="font-bold decoration-blue-400 decoration-2 hover:underline"
         >
           create your own cover
         </Link>
