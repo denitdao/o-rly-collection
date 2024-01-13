@@ -213,6 +213,12 @@ export const BOOKS_LIBRARY = [
     tags: "boilerplate, code complexity, development, programming",
   },
   {
+    title: "Everything is a Fscking DNS Problem",
+    image: "everything-is-a-fscking-dns-problem.jpg",
+    headline: "Editing /etc/hosts for a living",
+    tags: "DNS, networking, troubleshooting, sysadmin",
+  },
+  {
     title: "Excuses for Now Writing Documentation",
     image: "excuses-for-no-documentation.jpg",
     headline:
@@ -225,6 +231,13 @@ export const BOOKS_LIBRARY = [
     headline:
       "Just memorize these fourteen contextually dependent instructions",
     tags: "Vim, text editor, commands, complexity",
+  },
+  {
+    title: "Explaining Monads to people who don't care",
+    image: "explaining-monads-to-people-who-dont-care.jpg",
+    headline:
+      "A dogmatic approach to nonexistent problems | Monad is just a monoid in the category of endofunctors. What's the problem?",
+    tags: "monads, functional programming, Haskell, category theory",
   },
   {
     title: "Exploiting Goodwill to advance your agenda",
@@ -393,6 +406,12 @@ export const BOOKS_LIBRARY = [
     tags: "management, leadership, organizational behavior, conflict resolution",
   },
   {
+    title: "Mastering the Go type system",
+    image: "mastering-the-go-type-system.jpg",
+    headline: "Because \"They are not capable of understanding a brilliant language\". | if err != nil",
+    tags: "Go, type system, programming, development, nil",
+  },
+  {
     title: "Excuses to Miss Meetings",
     image: "miss-meeting.jpg",
     headline: "Timing critical tasks to coincide with morning stand-up",
@@ -427,6 +446,12 @@ export const BOOKS_LIBRARY = [
     image: "own-parody-covers.jpg",
     headline: "Dont even leave Slack to do it",
     tags: "parody, creativity, design, humor",
+  },
+  {
+    title: "Parsing HTML using Regular Expressions",
+    image: "parsing-html-using-regex.jpg",
+    headline: "The ichor permeates MY FACE MY FACE oh god no NO NOO | No stop the angels are not real",
+    tags: "HTML, regex, parsing",
   },
   {
     title: "Pasting Code from Some Random 2012 Node.js Tutorial",
@@ -524,6 +549,12 @@ export const BOOKS_LIBRARY = [
     tags: "aws, SAAS, addiction, cloud, software, APIs",
   },
   {
+    title: "Shrodinger's backup",
+    image: "schrodingers-backup.jpg",
+    headline: "The condition of any backup is unknown until a restore is attempted.",
+    tags: "backup, restore, data, risk, devops",
+  },
+  {
     title: "Getting Around to Security Next Month",
     image: "security-next-month.jpg",
     headline:
@@ -571,6 +602,12 @@ export const BOOKS_LIBRARY = [
     image: "thankfulness.jpeg",
     headline: "Recognizing how great we have it",
     tags: "thankfulness, gratitude, success, positivity, win, production",
+  },
+  {
+    title: "The Cyber",
+    image: "the-cyber.jpg",
+    headline: "Great cyber, the best cyber, yuuuuuge cyber",
+    tags: "cyber, cybersecurity, internet, technology",
   },
   {
     title: "Trivial Details",
