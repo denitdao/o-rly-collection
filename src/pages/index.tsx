@@ -1,5 +1,5 @@
 import Fuse from "fuse.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { copyImageToClipboard } from "~/utils/copy-image";
 import { MdOutlineClear } from "react-icons/md";
 import { PopupProvider, usePopup } from "~/components/Popup";
@@ -11,6 +11,7 @@ import ImagePreview from "~/components/ImagePreview";
 import { env } from "~/env.mjs";
 import Link from "next/link";
 import BookTile from "~/components/BookTile";
+import { api } from "~/utils/api";
 
 export default function Home() {
   return (
@@ -28,7 +29,24 @@ const BookSearch = () => {
   const { showPopup } = usePopup();
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [previewImageUrl, setPreviewImageUrl] = useState<string | null>(null);
+  const [previewImage, setPreviewImage] = useState<{
+    url: string | null;
+    id: string | null;
+  }>({ url: null, id: null });
+
+  const { mutate: observeImageCopy } = api.observation.image_copy.useMutation();
+  const { mutate: observeImageView } = api.observation.image_view.useMutation();
+  const { mutate: observeSearch } = api.observation.user_search.useMutation();
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (searchTerm) {
+        observeSearch({ query: searchTerm });
+      }
+    }, 1500); // 2 seconds delay
+
+    return () => clearTimeout(timeoutId); // Clear timeout if searchTerm changes
+  }, [searchTerm, observeSearch]);
 
   const fuse = new Fuse(BOOKS_LIBRARY, {
     threshold: 0.3,
@@ -50,9 +68,19 @@ const BookSearch = () => {
     ],
   });
 
-  const handleCopyClick = async (imageUrl: string | null) => {
+  const handleCopyClick = ({
+    imageUrl,
+    imageId,
+  }: {
+    imageUrl: string;
+    imageId: string;
+  }) => {
     if (imageUrl === null) return;
-    await copyImageToClipboard(imageUrl)
+
+    // Non-blocking call to KV to increase counter for image copy
+    observeImageCopy({ imageName: imageId });
+
+    copyImageToClipboard(imageUrl)
       .then(() => {
         showPopup("Image copied to the clipboard!", 3000);
       })
@@ -89,15 +117,19 @@ const BookSearch = () => {
               alt={book.title + " | " + book.headline}
               imageUrl={`${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`}
               onCopyClick={() =>
-                void handleCopyClick(
-                  `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`
-                )
+                void handleCopyClick({
+                  imageUrl: `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`,
+                  imageId: book.image,
+                })
               }
-              onImageClick={() =>
-                setPreviewImageUrl(
-                  `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`
-                )
-              }
+              onImageClick={() => {
+                // Non-blocking call to KV to increase counter for image view
+                observeImageView({ imageName: book.image });
+                setPreviewImage({
+                  url: `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`,
+                  id: book.image,
+                });
+              }}
             />
           ))}
         </motion.div>
@@ -105,9 +137,14 @@ const BookSearch = () => {
         <NoResultsMessage />
       )}
       <ImagePreview
-        imageUrl={previewImageUrl}
-        onClose={() => setPreviewImageUrl(null)}
-        onCopy={() => void handleCopyClick(previewImageUrl)}
+        imageUrl={previewImage.url}
+        onClose={() => setPreviewImage({ url: null, id: null })}
+        onCopy={() =>
+          void handleCopyClick({
+            imageUrl: previewImage.url!,
+            imageId: previewImage.id!,
+          })
+        }
       />
     </main>
   );
