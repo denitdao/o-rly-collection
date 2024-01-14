@@ -14,6 +14,7 @@ export default function handler(
 
   kv.ping()
     .then((pong) => {
+      console.log(pong);
       response.status(200).json({ result: pong });
     })
     .catch((error) => {
