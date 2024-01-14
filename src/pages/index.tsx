@@ -1,5 +1,5 @@
 import Fuse from "fuse.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { copyImageToClipboard } from "~/utils/copy-image";
 import { MdOutlineClear } from "react-icons/md";
 import { PopupProvider, usePopup } from "~/components/Popup";
@@ -36,6 +36,17 @@ const BookSearch = () => {
 
   const { mutate: observeImageCopy } = api.observation.image_copy.useMutation();
   const { mutate: observeImageView } = api.observation.image_view.useMutation();
+  const { mutate: observeSearch } = api.observation.user_search.useMutation();
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (searchTerm) {
+        observeSearch({ query: searchTerm });
+      }
+    }, 1500); // 2 seconds delay
+
+    return () => clearTimeout(timeoutId); // Clear timeout if searchTerm changes
+  }, [searchTerm, observeSearch]);
 
   const fuse = new Fuse(BOOKS_LIBRARY, {
     threshold: 0.3,

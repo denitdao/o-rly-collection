@@ -17,4 +17,12 @@ export const observationRouter = createTRPCRouter({
       const number = await kv.incr(key);
       console.log(`Image ${key} has been viewed ${number} times`);
     }),
+  user_search: publicProcedure
+    .input(z.object({ query: z.string() }))
+    .mutation(async ({ input }) => {
+      const key = "search__queries";
+      await kv.lpush(key, input.query);
+      await kv.ltrim(key, 0, 9999);
+      console.log(`User searched for "${input.query}"`);
+    }),
 });
