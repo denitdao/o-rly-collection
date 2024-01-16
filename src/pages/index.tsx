@@ -12,6 +12,7 @@ import { env } from "~/env.mjs";
 import Link from "next/link";
 import BookTile from "~/components/BookTile";
 import { api } from "~/utils/api";
+import { sendGAEvent } from "@next/third-parties/google";
 
 export default function Home() {
   return (
@@ -42,8 +43,15 @@ const BookSearch = () => {
     const timeoutId = setTimeout(() => {
       if (searchTerm) {
         observeSearch({ query: searchTerm });
+        sendGAEvent({
+          event: "user_search",
+          category: "search",
+          action: "search",
+          label: "User Search",
+          value: searchTerm,
+        });
       }
-    }, 1500); // 2 seconds delay
+    }, 1500); // 1.5 seconds delay
 
     return () => clearTimeout(timeoutId); // Clear timeout if searchTerm changes
   }, [searchTerm, observeSearch]);
@@ -79,6 +87,13 @@ const BookSearch = () => {
 
     // Non-blocking call to KV to increase counter for image copy
     observeImageCopy({ imageName: imageId });
+    sendGAEvent({
+      event: "image_copy",
+      category: "image",
+      action: "copy",
+      label: "Image Copy",
+      value: imageId,
+    });
 
     copyImageToClipboard(imageUrl)
       .then(() => {
@@ -125,6 +140,13 @@ const BookSearch = () => {
               onImageClick={() => {
                 // Non-blocking call to KV to increase counter for image view
                 observeImageView({ imageName: book.image });
+                sendGAEvent({
+                  event: "image_view",
+                  category: "image",
+                  action: "view",
+                  label: "Image View",
+                  value: book.image,
+                });
                 setPreviewImage({
                   url: `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`,
                   id: book.image,
