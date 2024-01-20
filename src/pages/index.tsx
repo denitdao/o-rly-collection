@@ -12,7 +12,7 @@ import { env } from "~/env.mjs";
 import Link from "next/link";
 import BookTile from "~/components/BookTile";
 import { api } from "~/utils/api";
-import { sendGAEvent } from "@next/third-parties/google";
+import { sendGAEvent } from "~/components/ga";
 
 export default function Home() {
   return (
@@ -44,9 +44,8 @@ const BookSearch = () => {
       if (searchTerm) {
         observeSearch({ query: searchTerm });
         sendGAEvent({
-          event: "user_search",
+          action: "user_search",
           category: "search",
-          action: "search",
           label: "User Search",
           value: searchTerm,
         });
@@ -88,9 +87,8 @@ const BookSearch = () => {
     // Non-blocking call to KV to increase counter for image copy
     observeImageCopy({ imageName: imageId });
     sendGAEvent({
-      event: "image_copy",
+      action: "image_copy",
       category: "image",
-      action: "copy",
       label: "Image Copy",
       value: imageId,
     });
@@ -141,9 +139,8 @@ const BookSearch = () => {
                 // Non-blocking call to KV to increase counter for image view
                 observeImageView({ imageName: book.image });
                 sendGAEvent({
-                  event: "image_view",
+                  action: "image_view",
                   category: "image",
-                  action: "view",
                   label: "Image View",
                   value: book.image,
                 });
