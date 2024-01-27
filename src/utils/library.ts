@@ -485,6 +485,20 @@ export const BOOKS_LIBRARY = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    title: "Implementing Dumb Features",
+    image: "implementing-dumb-features.jpg",
+    headline: 'When nobody has the confidence to say "No"',
+    tags: "features, product management, development, communication, client",
+    createdAt: "2024-01-27T14:00:00.000Z",
+  },
+  {
+    title: "Insulting SHA-1 Collisions",
+    image: "insulting-sha1-collisions.jpg",
+    headline: "Leave unmistakable traces in the project logs | git log",
+    tags: "SHA-1, git, version control, security, cryptography",
+    createdAt: "2024-01-27T14:00:00.000Z",
+  },
+  {
     title: "It Depends",
     image: "it-depends.jpg",
     headline: "The answer to every programming question ever conceived",
@@ -521,6 +535,14 @@ export const BOOKS_LIBRARY = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    title: "Making Jeff Bezos Richer",
+    image: "making-jeff-bezos-richer.jpg",
+    headline:
+      "Why did I get charged $240 if I was just testing? | Depend utterly on AWS",
+    tags: "AWS, cloud, Amazon, hosting, billing, devops",
+    createdAt: "2024-01-27T14:00:00.000Z",
+  },
+  {
     title: "Managing IP Networks",
     image: "managing-ip-networks.jpg",
     headline: "with Cisco Router | Help for IP Network Administrators",
@@ -541,6 +563,21 @@ export const BOOKS_LIBRARY = [
       'Because "They are not capable of understanding a brilliant language". | if err != nil',
     tags: "Go, type system, programming, development, nil",
     createdAt: "2023-08-08T12:00:00.000Z",
+  },
+  {
+    title: "Memorizing Six Git Commands",
+    image: "memorizing-six-git-commands.jpg",
+    headline: "The popular approach to version control",
+    tags: "Git, version control, commands, complexity",
+    createdAt: "2024-01-27T14:00:00.000Z",
+  },
+  {
+    title: "Microservices",
+    image: "microservices.jpg",
+    headline:
+      "Protecting yourself against gratuitous network layers | Their Prevention and Cure",
+    tags: "microservices, architecture, distributed systems, scalability",
+    createdAt: "2024-01-27T14:00:00.000Z",
   },
   {
     title: "Excuses to Miss Meetings",
@@ -717,6 +754,20 @@ export const BOOKS_LIBRARY = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    title: "Saturday",
+    image: "saturday.jpg",
+    headline: "How to handle work saturation",
+    tags: "work, life, balance, sleep, burnout, productivity",
+    createdAt: "2024-01-27T14:00:00.000Z",
+  },
+  {
+    title: "Scalable parallel computational models",
+    image: "scalable-parallel-computational-models.jpg",
+    headline: "It works on my machine",
+    tags: "parallel computing, scalability, distributed systems, cloud",
+    createdAt: "2024-01-27T14:00:00.000Z",
+  },
+  {
     title: "Shrodinger's backup",
     image: "schrodingers-backup.jpg",
     headline:
@@ -731,6 +782,13 @@ export const BOOKS_LIBRARY = [
       "Putting off critical tasks until everyone forgets about them | If there's time",
     tags: "security, procrastination, risk management, priorities",
     createdAt: "2023-08-08T12:00:00.000Z",
+  },
+  {
+    title: "Self-Documenting Code",
+    image: "self-documenting-code.jpg",
+    headline: "Who needs comments anyway?",
+    tags: "comments, documentation, code, programming, joke",
+    createdAt: "2024-01-27T14:00:00.000Z",
   },
   {
     title: "Loosing files",
@@ -759,6 +817,14 @@ export const BOOKS_LIBRARY = [
     headline: "",
     tags: "data, analytics, information",
     createdAt: "2023-08-08T12:00:00.000Z",
+  },
+  {
+    title: "Surviving the Kincade Fire",
+    image: "surviving-the-kincade-fire.jpg",
+    headline:
+      "Or how not to put your servers in California | Our website melted",
+    tags: "disaster recovery, risk management",
+    createdAt: "2024-01-27T14:00:00.000Z",
   },
   {
     title: "Temporary Workarounds",
