@@ -79,6 +79,14 @@ export const BOOKS_LIBRARY = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    title: "Breaking important stuff on Friday",
+    image: "breaking-important-stuff-on-friday.jpg",
+    headline:
+      "When the clock hits five, that's your problem now | Just let the intern fix it",
+    tags: "Friday, deployment, software development, risk management",
+    createdAt: "2024-01-27T12:00:00.000Z",
+  },
+  {
     title: "Resolving Broken Dependencies",
     image: "broken-dependencies.jpg",
     headline: "What did I do to deserve this?",
@@ -196,6 +204,20 @@ export const BOOKS_LIBRARY = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    title: "Copying snippets from pages made in 2003",
+    image: "copying-snippets-from-pages-made-in-2003.jpg",
+    headline: "No, no. That's not what I want.",
+    tags: "Overflow, development",
+    createdAt: "2024-01-27T12:00:00.000Z",
+  },
+  {
+    title: "C++ profiling on Linux",
+    image: "cpp-profiling-on-linux.jpg",
+    headline: "Powered by Rolex | Bring your watch, mate",
+    tags: "C++, Linux, profiling, performance, optimization",
+    createdAt: "2024-01-27T12:00:00.000Z",
+  },
+  {
     title: "My Code is Cross-Browser Compatible",
     image: "cross-browser-code.png",
     headline:
@@ -204,11 +226,25 @@ export const BOOKS_LIBRARY = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    title: "CTR+C CTR+V",
+    image: "ctr-c-ctr-v.jpg",
+    headline: "Licensing Guide",
+    tags: "copy, paste, licensing, github, open source",
+    createdAt: "2024-01-27T12:00:00.000Z",
+  },
+  {
     title: "Whatever Dan Abramov says to do",
     image: "dan-abramov-says.jpeg",
     headline: "Pure, functional, predictable, time travelling, handsome",
     tags: "Dan Abramov, functional programming, React, JavaScript, tutorial",
     createdAt: "2023-08-08T12:00:00.000Z",
+  },
+  {
+    title: "Deleting a dropped project",
+    image: "deleting-a-dropped-project.jpg",
+    headline: "As clients minds change, so does your self esteem",
+    tags: "project management, development",
+    createdAt: "2024-01-27T12:00:00.000Z",
   },
   {
     title: "Deleting Code",
@@ -390,6 +426,13 @@ export const BOOKS_LIBRARY = [
     headline: "It's only a clever hack if you're the one who wrote it",
     tags: "code review, programming, development, collaboration",
     createdAt: "2023-08-08T12:00:00.000Z",
+  },
+  {
+    title: "Hiring Ninjas",
+    image: "hiring-ninjas.jpg",
+    headline: "Ninjas love open office layouts and unlimited vacation time",
+    tags: "hiring, recruiting, HR, job search",
+    createdAt: "2024-01-27T12:00:00.000Z",
   },
   {
     title: "Hoping Nobody Hacks You",
