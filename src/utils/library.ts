@@ -328,6 +328,13 @@ export const BOOKS_LIBRARY = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    title: "Fake news generation",
+    image: "fake-news-generation.jpg",
+    headline: "Putting NLP to good use",
+    tags: "NLP, GPT, chatgpt, fake news, generation, datascience",
+    createdAt: "2024-01-27T13:00:00.000Z",
+  },
+  {
     title: "Throwing Faster Hardware At The Problem",
     image: "faster-hardware.jpg",
     headline:
@@ -342,6 +349,13 @@ export const BOOKS_LIBRARY = [
       "If you're not running distributed Rust, Go, Elixir and Scala microservices with an elm front end, Apache Storm stream processing, and integrating with Facebook Messenger, Amazon Echo, and gathering machine learning data from my Samsung refrigerator, what are you even doing?",
     tags: "FOMO, technology, trends, microservices",
     createdAt: "2023-08-08T12:00:00.000Z",
+  },
+  {
+    title: "Finding Your Own Stack Overflow Posts",
+    image: "finding-your-own-stack-overflow-posts.jpg",
+    headline: "It's almost like you've had this problem before",
+    tags: "Stack Overflow, development, debugging, problem-solving",
+    createdAt: "2024-01-27T13:00:00.000Z",
   },
   {
     title: "Fitting Actual User Data Into The Design",
@@ -624,6 +638,13 @@ export const BOOKS_LIBRARY = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    title: "printf() Debugging",
+    image: "printf-debugging.jpg",
+    headline: "Who needs breakpoints?",
+    tags: "debugging, development, programming",
+    createdAt: "2024-01-27T13:00:00.000Z",
+  },
+  {
     title: "Solving Problems That Don't Exist",
     image: "problem-that-dont-exist.jpg",
     headline: "The Why's and How's",
@@ -644,6 +665,13 @@ export const BOOKS_LIBRARY = [
       "Not thinking about how much pain this is going to cause in the future",
     tags: "rationalizing, hacking, programming, future problems",
     createdAt: "2023-08-08T12:00:00.000Z",
+  },
+  {
+    title: "Redownloading the Git Repo",
+    image: "redownloading-the-git-repo.jpg",
+    headline: "Paste the changes | Ignoring Git Merge",
+    tags: "GitHub, version control, merge, development, conflicts",
+    createdAt: "2024-01-27T13:00:00.000Z",
   },
   {
     title: "Regex by Trial and Error",
@@ -761,6 +789,20 @@ export const BOOKS_LIBRARY = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    title: "The Importance of Backing Up Data",
+    image: "the-importance-of-backing-up-data.jpg",
+    headline: "Oh god please copy | Copying from dying drives",
+    tags: "data, backup, loss, recovery, devops",
+  },
+  {
+    title: "The Joys of Generic Parameter Types",
+    image: "the-joys-of-generic-parameter-types.jpg",
+    headline:
+      "Map<T, List<Map<? super Key, U>>> simpleMap | Java's Take on Abstraction",
+    tags: "Java, generics, abstraction, programming, development, oop",
+    createdAt: "2024-01-27T13:00:00.000Z",
+  },
+  {
     title: "Trivial Details",
     image: "trivial-details.jpeg",
     headline: "Perfecting the parts that don't matter",
@@ -784,9 +826,16 @@ export const BOOKS_LIBRARY = [
   {
     title: "Useless Git Commit Messages",
     image: "useless-git-commit-message.jpg",
-    headline: "",
+    headline: 'git commit -m "changes"',
     tags: "Git, commit messages, version control, collaboration",
     createdAt: "2023-08-08T12:00:00.000Z",
+  },
+  {
+    title: "Using Open Source Software",
+    image: "using-open-source-software.jpg",
+    headline: "That'll show 'em | Yelling at the maintainer",
+    tags: "open source, software, community, github",
+    createdAt: "2024-01-27T13:00:00.000Z",
   },
   {
     title: "Vague Understanding Of Computer Science",
@@ -833,11 +882,25 @@ export const BOOKS_LIBRARY = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    title: "Windows RAM forensics",
+    image: "windows-ram-forensics.jpg",
+    headline: "Official guide | Navigating Task Manager",
+    tags: "Windows, RAM, task manager, troubleshooting",
+    createdAt: "2024-01-27T13:00:00.000Z",
+  },
+  {
     title: "Using won't fix in your linter",
     image: "wont-fix-in-linter.png",
     headline: "How to improve your code quality",
     tags: "linter, code quality, SonarQube, development",
     createdAt: "2023-08-08T12:00:00.000Z",
+  },
+  {
+    title: "Working with Users",
+    image: "working-with-users.jpg",
+    headline: "I didn't do anything! | You broke it! | I don't see ANYTHING",
+    tags: "users, development, collaboration, communication, support",
+    createdAt: "2024-01-27T13:00:00.000Z",
   },
   {
     title: "Works on my machine",
