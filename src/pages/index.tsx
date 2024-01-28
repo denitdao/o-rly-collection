@@ -12,7 +12,7 @@ import { env } from "~/env.mjs";
 import Link from "next/link";
 import BookTile from "~/components/BookTile";
 import { api } from "~/utils/api";
-import { sendGAEvent } from "~/components/ga";
+import { sendGAEvent } from "~/components/GoogleAnalytics";
 
 export default function Home() {
   return (
