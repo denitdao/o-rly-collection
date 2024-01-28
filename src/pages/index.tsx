@@ -1,18 +1,18 @@
 import Fuse from "fuse.js";
-import { useEffect, useState } from "react";
-import { copyImageToClipboard } from "~/utils/copy-image";
-import { MdOutlineClear } from "react-icons/md";
-import { PopupProvider, usePopup } from "~/components/Popup";
+import { useState } from "react";
+import { PopupProvider } from "~/components/Popup";
 import { BOOKS_LIBRARY } from "~/utils/library";
 import OrlyFooter from "~/components/OrlyFooter";
-import OrlyHead from "~/components/OrlyHead";
+import OrlyHead from "~/components/meta/OrlyHead";
 import { motion } from "framer-motion";
 import ImagePreview from "~/components/ImagePreview";
 import { env } from "~/env.mjs";
 import Link from "next/link";
 import BookTile from "~/components/BookTile";
-import { api } from "~/utils/api";
-import { sendGAEvent } from "~/components/GoogleAnalytics";
+import SearchBar from "~/components/SearchBar";
+import useImageCopy from "~/hooks/useImageCopy";
+import { useObserveSearchEffect } from "~/hooks/useObservabilityEvents";
+import useImageView from "~/hooks/useImageView";
 
 export default function Home() {
   return (
@@ -27,33 +27,15 @@ export default function Home() {
 }
 
 const BookSearch = () => {
-  const { showPopup } = usePopup();
-
   const [searchTerm, setSearchTerm] = useState("");
   const [previewImage, setPreviewImage] = useState<{
     url: string | null;
     id: string | null;
-  }>({ url: null, id: null });
+  }>({ url: null, id: null }); // TODO: use context as for image copy
 
-  const { mutate: observeImageCopy } = api.observation.image_copy.useMutation();
-  const { mutate: observeImageView } = api.observation.image_view.useMutation();
-  const { mutate: observeSearch } = api.observation.user_search.useMutation();
-
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      if (searchTerm) {
-        observeSearch({ query: searchTerm });
-        sendGAEvent({
-          action: "user_search",
-          category: "search",
-          label: "User Search",
-          value: searchTerm,
-        });
-      }
-    }, 1500); // 1.5 seconds delay
-
-    return () => clearTimeout(timeoutId); // Clear timeout if searchTerm changes
-  }, [searchTerm, observeSearch]);
+  useObserveSearchEffect(searchTerm);
+  const imageCopyHandler = useImageCopy();
+  const imageViewHandler = useImageView(setPreviewImage);
 
   const fuse = new Fuse(BOOKS_LIBRARY, {
     threshold: 0.3,
@@ -74,33 +56,6 @@ const BookSearch = () => {
       },
     ],
   });
-
-  const handleCopyClick = ({
-    imageUrl,
-    imageId,
-  }: {
-    imageUrl: string;
-    imageId: string;
-  }) => {
-    if (imageUrl === null) return;
-
-    // Non-blocking call to KV to increase counter for image copy
-    observeImageCopy({ imageName: imageId });
-    sendGAEvent({
-      action: "image_copy",
-      category: "image",
-      label: "Image Copy",
-      value: imageId,
-    });
-
-    copyImageToClipboard(imageUrl)
-      .then(() => {
-        showPopup("Image copied to the clipboard!", 3000);
-      })
-      .catch(() => {
-        showPopup("Failed to copy image to the clipboard", 3000, "warning");
-      });
-  };
 
   const booksToShow = searchTerm
     ? fuse.search(searchTerm).map((result) => result.item)
@@ -130,25 +85,12 @@ const BookSearch = () => {
               alt={book.title + " | " + book.headline}
               imageUrl={`${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`}
               onCopyClick={() =>
-                void handleCopyClick({
-                  imageUrl: `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`,
-                  imageId: book.image,
-                })
+                void imageCopyHandler(
+                  `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`,
+                  book.image
+                )
               }
-              onImageClick={() => {
-                // Non-blocking call to KV to increase counter for image view
-                observeImageView({ imageName: book.image });
-                sendGAEvent({
-                  action: "image_view",
-                  category: "image",
-                  label: "Image View",
-                  value: book.image,
-                });
-                setPreviewImage({
-                  url: `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`,
-                  id: book.image,
-                });
-              }}
+              onImageClick={() => void imageViewHandler(book.image)}
             />
           ))}
         </motion.div>
@@ -159,41 +101,10 @@ const BookSearch = () => {
         imageUrl={previewImage.url}
         onClose={() => setPreviewImage({ url: null, id: null })}
         onCopy={() =>
-          void handleCopyClick({
-            imageUrl: previewImage.url!,
-            imageId: previewImage.id!,
-          })
+          void imageCopyHandler(previewImage.url!, previewImage.id!)
         }
       />
     </main>
-  );
-};
-
-const SearchBar = ({
-  value,
-  onChange,
-}: {
-  value: string;
-  onChange: (value: string) => void;
-}) => {
-  return (
-    <div className="relative mb-12 w-full max-w-lg">
-      <input
-        className="w-full rounded-md border py-2 pl-4 pr-8 font-mono"
-        type="text"
-        placeholder="Type your keywords..."
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-      />
-      {value && (
-        <button
-          className="absolute inset-y-0 right-0 flex items-center pr-3 text-xl"
-          onClick={() => onChange("")}
-        >
-          <MdOutlineClear />
-        </button>
-      )}
-    </div>
   );
 };
 
