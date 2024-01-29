@@ -36,6 +36,7 @@ async function collectStats() {
   statsString += "\n\n" + formatTopStats("🌅 *Image View Stats:*", viewStats);
   statsString +=
     "\n\n" + formatSearchStats("🔎 *User Search Queries:*", searchStats);
+  statsString += "\n\n#orlybooks";
 
   return statsString;
 }
@@ -43,11 +44,11 @@ async function collectStats() {
 function formatTopStats(title: string, stats: ImageStats | null) {
   let statsString = `${title}\n`;
   if (stats) {
-    // Sort and get top 5
+    // Sort and get top 10
     const sortedStats = Object.entries(stats)
       .filter(([_, count]) => count > 1)
       .sort(([_, a], [__, b]) => b - a)
-      .slice(0, 7);
+      .slice(0, 10);
 
     for (const [name, count] of sortedStats) {
       statsString += `_${name}_:  ${count}\n`;
@@ -78,7 +79,7 @@ function formatSearchStats(title: string, stats: SearchStats | null) {
 
     const sortedSearches = Object.entries(searchAggregates)
       .sort(([_, a], [__, b]) => b - a)
-      .slice(0, 14);
+      .slice(0, 20);
 
     statsString += "`";
     for (const [query, count] of sortedSearches) {
