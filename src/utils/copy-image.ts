@@ -2,7 +2,7 @@
  * Gets a blob from an image source attribute using the Fetch API.
  *
  * @param {string} imageSource The image source attribute.
- * @returns {Promise<Blob>} A promise that resolves to a image blob.
+ * @returns {Promise<Blob>} A promise that resolves to an image blob.
  */
 export async function getBlobFromImageSource(
   imageSource: string
@@ -35,7 +35,7 @@ export function isPngBlob(blob: Blob): boolean {
  * Created an image element for a given image source attribute.
  *
  * @param {string} imageSource The image source attribute.
- * @returns {Promise<HTMLImageElement>} A promise that resolves to an image element. Rejects the promise if cannot create an image element.
+ * @returns {Promise<HTMLImageElement>} A promise that resolves to an image element. Rejects the promise if it cannot create an image element.
  */
 export async function createImageElement(
   imageSource: string
@@ -59,7 +59,7 @@ export async function createImageElement(
  * Gets a blob from an image element.
  *
  * @param {HTMLImageElement} imageElement An image element
- * @returns {Promise<Blob>} A Promise that resolves to a image blob. Rejects the promise if cannot get a blob from the image element.
+ * @returns {Promise<Blob>} A Promise that resolves to an image blob. Rejects the promise if it cannot get a blob from the image element.
  */
 export async function getBlobFromImageElement(
   imageElement: HTMLImageElement
@@ -90,7 +90,7 @@ export async function getBlobFromImageElement(
  * Converts a JPEG image blob to PNG.
  *
  * @param {Blob} imageBlob JPEG blob that will be converted to PNG.
- * @returns {Promise<Blob>} A Promise that resolves to a PNG image blob. Rejects the promise if cannot create an image element or if cannot get a blob from the image element.
+ * @returns {Promise<Blob>} A Promise that resolves to a PNG image blob. Rejects the promise if it cannot create an image element or cannot get a blob from the image element.
  */
 export async function convertBlobToPng(imageBlob: Blob): Promise<Blob> {
   const imageSource = URL.createObjectURL(imageBlob);
@@ -101,7 +101,7 @@ export async function convertBlobToPng(imageBlob: Blob): Promise<Blob> {
 /**
  * Copies a blob to user's clipboard.
  *
- * Throws an error if cannot write on the user's clipboard.
+ * Throws an error if it cannot write on the user's clipboard.
  *
  * @param {Blob} blobProvider returns Blob to be copied.
  */
@@ -117,7 +117,7 @@ export async function copyBlobToClipboard(
 /**
  * Copies a PNG or JPEG image to clipboard.
  *
- * This function downloads the image to copy with it's original dimensions.
+ * This function downloads the image to copy with its original dimensions.
  *
  * - If the image is JPEG it will be converted automatically to PNG and then copied.
  * - If the image is not PNG or JPEG an error will be thrown.
