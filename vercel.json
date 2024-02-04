@@ -2,11 +2,11 @@
   "crons": [
     {
       "path": "/api/cron/ping-kv",
-      "schedule": "0 8 * * 1"
+      "schedule": "0 6 * * 1"
     },
     {
       "path": "/api/cron/notify-tg",
-      "schedule": "0 8 * * 1"
+      "schedule": "0 6 * * 1"
     }
   ]
 }

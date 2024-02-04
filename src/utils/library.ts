@@ -169,7 +169,7 @@ export const BOOKS_LIBRARY = [
   {
     title: "Collective Intelligence",
     image: "collective-intelligence.jpg",
-    headline: "",
+    headline: "Building Smart Web 2.0 Applications",
     tags: "intelligence, collaboration, teamwork, data science",
     createdAt: "2023-08-08T12:00:00.000Z",
   },
@@ -183,7 +183,7 @@ export const BOOKS_LIBRARY = [
   {
     title: "JPEG compression",
     image: "compression.jpeg",
-    headline: "",
+    headline: "jpeg",
     tags: "JPEG, compression, image processing, optimization",
     createdAt: "2023-08-08T12:00:00.000Z",
   },
@@ -402,7 +402,7 @@ export const BOOKS_LIBRARY = [
   {
     title: "Functional Thinking",
     image: "functional-thinking.png",
-    headline: "",
+    headline: "Paradigm over syntax",
     tags: "functional programming, development, programming paradigms",
     createdAt: "2023-08-08T12:00:00.000Z",
   },
@@ -713,7 +713,7 @@ export const BOOKS_LIBRARY = [
   {
     title: "Procrastination",
     image: "procrastination.png",
-    headline: "",
+    headline: "The Why's and How's",
     tags: "procrastination, time management, productivity, lazy",
     createdAt: "2023-08-08T12:00:00.000Z",
   },
@@ -771,7 +771,7 @@ export const BOOKS_LIBRARY = [
   {
     title: "Adding and Removing & and * at random until rustc is happy",
     image: "rust-is-happy.png",
-    headline: "",
+    headline: "50 essential concepts",
     tags: "cpp, Rust, programming, reference, pointer",
     createdAt: "2023-08-08T12:00:00.000Z",
   },
@@ -822,7 +822,7 @@ export const BOOKS_LIBRARY = [
   {
     title: "Loosing files",
     image: "server-down.png",
-    headline: "",
+    headline: "book cover",
     tags: "file loss, server down, error, HTML, not found",
     createdAt: "2023-08-08T12:00:00.000Z",
   },
@@ -843,8 +843,8 @@ export const BOOKS_LIBRARY = [
   {
     title: "Such Data",
     image: "such-data.jpg",
-    headline: "",
-    tags: "data, analytics, information",
+    headline: "So DevOps | Much Cloud | Very Agile",
+    tags: "data, analytics, information, devops",
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
@@ -858,7 +858,7 @@ export const BOOKS_LIBRARY = [
   {
     title: "Temporary Workarounds",
     image: "temporary-workarounds.jpeg",
-    headline: "",
+    headline: "Who are you kidding?",
     tags: "workarounds, temporary solutions, bad code, development",
     createdAt: "2023-08-08T12:00:00.000Z",
   },
