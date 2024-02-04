@@ -1,18 +1,15 @@
 import { useObserveImageView } from "~/hooks/useObservabilityEvents";
-import { env } from "~/env.mjs";
+import { useImagePreview } from "~/components/ImagePreview";
+import useImageCopy from "~/hooks/useImageCopy";
 
-const useImageView = (
-  setPreviewImage: (image: { url: string; id: string }) => void
-) => {
-  // const { showPopup } = usePopup();
+const useImageView = () => {
   const observeImageView = useObserveImageView();
+  const imageCopyHandler = useImageCopy();
+  const { showImage } = useImagePreview();
 
-  return (imageName: string) => {
-    observeImageView(imageName);
-    setPreviewImage({
-      url: `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${imageName}`,
-      id: imageName,
-    });
+  return (imageUrl: string, imageId: string) => {
+    observeImageView(imageId);
+    showImage(imageUrl, imageId, imageCopyHandler);
   };
 };
 
