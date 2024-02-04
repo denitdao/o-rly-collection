@@ -14,6 +14,13 @@ export const BOOKS_LIBRARY = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    title: "Anchor",
+    image: "anchor.jpg",
+    headline: "Eating glass on Solana painlessly",
+    tags: "Solana, Rust, blockchain, cryptocurrency, development",
+    createdAt: "2024-02-04T13:00:00.000Z",
+  },
+  {
     title: "Arbitrary Forecasts",
     image: "arbitrary-forecasts.jpg",
     headline: "Saying something so people feel better about giving you money",
@@ -276,6 +283,13 @@ export const BOOKS_LIBRARY = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    title: "Drinking with Ansible",
+    image: "drinking-with-ansible.jpg",
+    headline: "Running playbook again and again | Drunk from kvas",
+    tags: "patience, automation, devops",
+    createdAt: "2024-02-04T13:00:00.000Z",
+  },
+  {
     title: "Drop Table",
     image: "drop-table.jpg",
     headline: "Now with user-generated content!",
@@ -398,6 +412,14 @@ export const BOOKS_LIBRARY = [
     headline: "Achievement despite ignorance",
     tags: "problem-solving, development, achievement, programming",
     createdAt: "2023-08-08T12:00:00.000Z",
+  },
+  {
+    title: 'Getting "LGTM" Out of This Obstructionist Prick',
+    image: "getting-lgtm-out-of-this-obstructionist.jpg",
+    headline:
+      "The Essential Guide to His Mental Code Linter & Outdated SQL Performance Tips",
+    tags: "code review, collaboration, communication, senior, github",
+    createdAt: "2024-02-04T13:00:00.000Z",
   },
   {
     title: "Good Enough to Ship",
@@ -738,6 +760,13 @@ export const BOOKS_LIBRARY = [
       "This time you have definitely chosen the right libraries and build tools",
     tags: "front-end development, rewriting, libraries, build tools",
     createdAt: "2023-08-08T12:00:00.000Z",
+  },
+  {
+    title: "Rubber Duck Debugging",
+    image: "rubber-duck-debugging.jpg",
+    headline: "Figuring it out without wasting someone elses time",
+    tags: "debugging, development, programming, problem-solving, junior",
+    createdAt: "2024-02-04T13:00:00.000Z",
   },
   {
     title: "Adding and Removing & and * at random until rustc is happy",
