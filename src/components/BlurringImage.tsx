@@ -26,7 +26,7 @@ const BlurringImage = ({
             ? "scale-105 blur-xl grayscale"
             : "scale-100 blur-0 grayscale-0 group-hover:scale-95 group-hover:duration-200"
         )}
-        onLoadingComplete={() => setLoading(false)}
+        onLoad={() => setLoading(false)}
       />
     </div>
   );
