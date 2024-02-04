@@ -4,9 +4,9 @@ import React, { createContext, useContext, useState } from "react";
 
 type ImagePreviewContextType = {
   showImage: (
-    imageUrl: string,
     imageId: string,
-    onCopy?: (imageUrl: string, imageId: string) => void
+    imageUrl: string,
+    onCopy?: (imageId: string, imageUrl: string) => void
   ) => void;
 };
 
@@ -29,7 +29,7 @@ type ImagePreviewState = {
   imageId: string | null;
   imageUrl: string | null;
   onClose: () => void;
-  onCopy?: (imageUrl: string, imageId: string) => void;
+  onCopy?: (imageId: string, imageUrl: string) => void;
 };
 
 export const ImagePreviewProvider = ({
@@ -54,9 +54,9 @@ export const ImagePreviewProvider = ({
   );
 
   const showImage = (
-    imageUrl: string,
     imageId: string,
-    onCopy?: (imageUrl: string, imageId: string) => void
+    imageUrl: string,
+    onCopy?: (imageId: string, imageUrl: string) => void
   ) => {
     setImagePreviewState((prev) => ({
       ...prev,
@@ -108,7 +108,7 @@ const ImagePreview: React.FC<ImagePreviewState> = (props) => {
       <button
         className="absolute right-5 top-20 z-50 text-2xl text-white"
         onClick={() => {
-          props.onCopy && props.onCopy(imageUrl, imageId);
+          props.onCopy && props.onCopy(imageId, imageUrl);
         }}
       >
         <MdOutlineFileCopy />

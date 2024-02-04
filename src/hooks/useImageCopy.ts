@@ -2,13 +2,14 @@ import { copyImageToClipboard } from "~/utils/copy-image";
 import { usePopup } from "~/components/Popup";
 import { useObserveImageCopy } from "~/hooks/useObservabilityEvents";
 
+/**
+ * Encapsulates the logic for observing and copying an image to the clipboard.
+ */
 const useImageCopy = () => {
   const { showPopup } = usePopup();
   const observeImageCopy = useObserveImageCopy();
 
-  return (imageUrl: string, imageId: string) => {
-    if (imageUrl === null) return;
-
+  return (imageId: string, imageUrl: string) => {
     observeImageCopy(imageId);
     copyImageToClipboard(imageUrl)
       .then(() => {

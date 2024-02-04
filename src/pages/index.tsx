@@ -79,11 +79,9 @@ const BookSearch = () => {
                 title={bookTitle}
                 alt={bookAlt}
                 imageUrl={imageUrl}
-                onCopyClick={() => void imageCopyHandler(imageUrl, imageId)} // TODO: swap url and id everywhere.
-                onImageClick={() => void imageViewHandler(imageUrl, imageId)}
+                onCopyClick={() => void imageCopyHandler(imageId, imageUrl)}
+                onImageClick={() => void imageViewHandler(imageId, imageUrl)}
               />
-
-              // TODO: set imageViewHandler for ImagePreview
             );
           })}
         </motion.div>
