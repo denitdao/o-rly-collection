@@ -1,4 +1,12 @@
-export const BOOKS_LIBRARY = [
+export type Book = {
+  title: string;
+  image: string;
+  headline: string;
+  tags: string;
+  createdAt: string;
+};
+
+const BOOK_LIBRARY: Book[] = [
   {
     title: "10x Engineering",
     image: "10x-engineer.jpg",
@@ -888,6 +896,7 @@ export const BOOKS_LIBRARY = [
     image: "the-importance-of-backing-up-data.jpg",
     headline: "Oh god please copy | Copying from dying drives",
     tags: "data, backup, loss, recovery, devops",
+    createdAt: "2024-01-27T13:00:00.000Z",
   },
   {
     title: "The Joys of Generic Parameter Types",
@@ -1047,3 +1056,5 @@ export const BOOKS_LIBRARY = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
 ];
+
+export default BOOK_LIBRARY;

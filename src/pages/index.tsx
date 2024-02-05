@@ -1,7 +1,4 @@
-import Fuse from "fuse.js";
-import { useState } from "react";
 import { PopupProvider } from "~/components/Popup";
-import { BOOKS_LIBRARY } from "~/utils/library";
 import OrlyFooter from "~/components/OrlyFooter";
 import OrlyHead from "~/components/meta/OrlyHead";
 import { motion } from "framer-motion";
@@ -13,6 +10,7 @@ import SearchBar from "~/components/SearchBar";
 import useImageCopy from "~/hooks/useImageCopy";
 import { useObserveSearchEffect } from "~/hooks/useObservabilityEvents";
 import useImageView from "~/hooks/useImageView";
+import useBookSearch from "~/hooks/useBookSearch";
 
 export default function Home() {
   return (
@@ -28,42 +26,33 @@ export default function Home() {
   );
 }
 
+type SortMode = "default" | "newest" | "oldest" | "alphabetical";
+
 const BookSearch = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const { booksToShow, searchTerm, setSearchTerm, sortMode, setSortMode } =
+    useBookSearch();
 
   useObserveSearchEffect(searchTerm);
   const imageCopyHandler = useImageCopy();
   const imageViewHandler = useImageView();
-
-  const fuse = new Fuse(BOOKS_LIBRARY, {
-    threshold: 0.3,
-    includeScore: true,
-    ignoreLocation: true,
-    keys: [
-      {
-        name: "title",
-        weight: 0.4,
-      },
-      {
-        name: "headline",
-        weight: 0.4,
-      },
-      {
-        name: "tags",
-        weight: 0.4,
-      },
-    ],
-  });
-
-  const booksToShow = searchTerm
-    ? fuse.search(searchTerm).map((result) => result.item)
-    : BOOKS_LIBRARY;
 
   return (
     <main className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
       <div className="container mx-auto flex w-full flex-col items-center justify-center px-4">
         <Heading />
         <SearchBar value={searchTerm} onChange={setSearchTerm} />
+        <div className="mb-10 flex w-full justify-center">
+          <select
+            className="rounded-md border py-2 pl-4 pr-8 font-mono"
+            value={sortMode}
+            onChange={(e) => setSortMode(e.target.value as SortMode)}
+          >
+            <option value="default">Default</option>
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="alphabetical">Alphabetical</option>
+          </select>
+        </div>
       </div>
       {booksToShow && booksToShow.length !== 0 ? (
         <motion.div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
