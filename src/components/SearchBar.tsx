@@ -1,4 +1,5 @@
-import { MdOutlineClear } from "react-icons/md";
+import { Input } from "~/components/ui/input";
+import { X } from "lucide-react";
 
 const SearchBar = ({
   value,
@@ -8,9 +9,9 @@ const SearchBar = ({
   onChange: (value: string) => void;
 }) => {
   return (
-    <div className="relative mb-12 w-full max-w-lg">
-      <input
-        className="w-full rounded-md border py-2 pl-4 pr-8 font-mono"
+    <div className="relative">
+      <Input
+        className="pr-8 font-mono"
         type="text"
         placeholder="Type your keywords..."
         value={value}
@@ -18,10 +19,10 @@ const SearchBar = ({
       />
       {value && (
         <button
-          className="absolute inset-y-0 right-0 flex items-center pr-3 text-xl"
+          className="absolute inset-y-0 right-0 flex items-center pr-2"
           onClick={() => onChange("")}
         >
-          <MdOutlineClear />
+          <X />
         </button>
       )}
     </div>

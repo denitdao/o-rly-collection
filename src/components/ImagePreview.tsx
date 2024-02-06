@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MdOutlineClear, MdOutlineFileCopy } from "react-icons/md";
+import { Copy, X } from "lucide-react";
 import React, { createContext, useContext, useState } from "react";
 
 type ImagePreviewContextType = {
@@ -103,7 +103,7 @@ const ImagePreview: React.FC<ImagePreviewState> = (props) => {
         className="absolute right-5 top-5 z-50 text-3xl text-white"
         onClick={() => props.onClose()}
       >
-        <MdOutlineClear />
+        <X />
       </button>
       <button
         className="absolute right-5 top-20 z-50 text-2xl text-white"
@@ -111,7 +111,7 @@ const ImagePreview: React.FC<ImagePreviewState> = (props) => {
           props.onCopy && props.onCopy(imageId, imageUrl);
         }}
       >
-        <MdOutlineFileCopy />
+        <Copy />
       </button>
     </div>
   ) : null;
