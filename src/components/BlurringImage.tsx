@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
-import { cn } from "~/utils/helpers";
+import { AspectRatio } from "~/components/ui/aspect-ratio";
+import { cn } from "~/lib/utils";
 
 const BlurringImage = ({
   alt,
@@ -14,7 +15,10 @@ const BlurringImage = ({
   const [isLoading, setLoading] = useState(true);
 
   return (
-    <div className="aspect-h-4 aspect-w-3 w-full overflow-hidden rounded-lg bg-gray-200 hover:cursor-pointer">
+    <AspectRatio
+      ratio={3 / 4.1}
+      className="w-full overflow-hidden rounded-lg bg-gray-200 hover:cursor-pointer"
+    >
       <Image
         alt={alt}
         src={imageUrl}
@@ -28,7 +32,7 @@ const BlurringImage = ({
         )}
         onLoad={() => setLoading(false)}
       />
-    </div>
+    </AspectRatio>
   );
 };
 
