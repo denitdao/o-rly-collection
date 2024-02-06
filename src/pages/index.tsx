@@ -11,6 +11,7 @@ import useImageCopy from "~/hooks/useImageCopy";
 import { useObserveSearchEffect } from "~/hooks/useObservabilityEvents";
 import useImageView from "~/hooks/useImageView";
 import useBookSearch from "~/hooks/useBookSearch";
+import SortSelect from "~/components/SortSelect";
 
 export default function Home() {
   return (
@@ -40,18 +41,11 @@ const BookSearch = () => {
     <main className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
       <div className="container mx-auto flex w-full flex-col items-center justify-center px-4">
         <Heading />
-        <SearchBar value={searchTerm} onChange={setSearchTerm} />
-        <div className="mb-10 flex w-full justify-center">
-          <select
-            className="rounded-md border py-2 pl-4 pr-8 font-mono"
-            value={sortMode}
-            onChange={(e) => setSortMode(e.target.value as SortMode)}
-          >
-            <option value="default">Default</option>
-            <option value="newest">Newest</option>
-            <option value="oldest">Oldest</option>
-            <option value="alphabetical">Alphabetical</option>
-          </select>
+        <div className="relative mb-4 w-full max-w-lg">
+          <SearchBar value={searchTerm} onChange={setSearchTerm} />
+        </div>
+        <div className="mb-10 w-full max-w-48">
+          <SortSelect value={sortMode} onChange={setSortMode} />
         </div>
       </div>
       {booksToShow && booksToShow.length !== 0 ? (

@@ -24,7 +24,7 @@ const BookTile = ({
     </button>
     <BlurringImage alt={alt} imageUrl={imageUrl} onClick={onImageClick} />
     <h3 className="m-2 font-mono text-sm font-medium text-gray-900">
-      {title.length < 45 ? title : title.slice(0, 40) + "..."}
+      {title.length < 50 ? title : title.slice(0, 46) + "..."}
     </h3>
   </motion.div>
 );

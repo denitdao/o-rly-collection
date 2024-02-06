@@ -8,7 +8,7 @@ const SearchBar = ({
   onChange: (value: string) => void;
 }) => {
   return (
-    <div className="relative mb-2 w-full max-w-lg">
+    <>
       <input
         className="w-full rounded-md border py-2 pl-4 pr-8 font-mono"
         type="text"
@@ -24,7 +24,7 @@ const SearchBar = ({
           <MdOutlineClear />
         </button>
       )}
-    </div>
+    </>
   );
 };
 
