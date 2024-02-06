@@ -27,8 +27,6 @@ export default function Home() {
   );
 }
 
-type SortMode = "default" | "newest" | "oldest" | "alphabetical";
-
 const BookSearch = () => {
   const { booksToShow, searchTerm, setSearchTerm, sortMode, setSortMode } =
     useBookSearch();
@@ -41,7 +39,7 @@ const BookSearch = () => {
     <main className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
       <div className="container mx-auto flex w-full flex-col items-center justify-center px-4">
         <Heading />
-        <div className="relative mb-4 w-full max-w-lg">
+        <div className="mb-4 w-full max-w-lg">
           <SearchBar value={searchTerm} onChange={setSearchTerm} />
         </div>
         <div className="mb-10 w-full max-w-48">
