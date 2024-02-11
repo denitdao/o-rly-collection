@@ -29,13 +29,15 @@ async function collectStats() {
   const copyStats = await kv.hgetall<ImageStats>("copy__images");
   const viewStats = await kv.hgetall<ImageStats>("view__images");
   const searchStats = await kv.hgetall<SearchStats>("search__queries");
+  const sortStats = await kv.hgetall<SearchStats>("sort__modes");
 
   // Format stats
   let statsString = "📊 *OrlyBooks Statistics* 📊\n\n\n";
   statsString += formatTopStats("📎 *Image Copy Stats:*", copyStats);
-  statsString += "\n\n" + formatTopStats("🌅 *Image View Stats:*", viewStats);
+  statsString += "\n" + formatTopStats("🌅 *Image View Stats:*", viewStats);
   statsString +=
-    "\n\n" + formatSearchStats("🔎 *User Search Queries:*", searchStats);
+    "\n" + formatSearchStats("🔎 *User Search Queries:*", searchStats);
+  statsString += "\n" + formatSearchStats("↕️ *Sort Stats:*", sortStats);
   statsString += "\n\n#orlybooks";
 
   return statsString;

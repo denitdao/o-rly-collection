@@ -1,7 +1,7 @@
 import { sendGAEvent } from "~/components/meta/GoogleAnalytics";
 import { api } from "~/utils/api";
 import { useEffect, useRef } from "react";
-import { SortMode } from "~/hooks/useBookSearch";
+import { type SortMode } from "~/hooks/useBookSearch";
 
 export const useObserveImageCopy = () => {
   const { mutate: observeImageCopy } = api.observation.image_copy.useMutation();
