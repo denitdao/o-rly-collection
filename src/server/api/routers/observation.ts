@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { kv } from "@vercel/kv";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
-import { env } from "~/env.mjs";
+import { env } from "~/env.js";
 
 const isDevEnv = env.NODE_ENV === "development";
 

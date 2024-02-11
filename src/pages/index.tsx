@@ -3,7 +3,7 @@ import OrlyFooter from "~/components/OrlyFooter";
 import OrlyHead from "~/components/meta/OrlyHead";
 import { motion } from "framer-motion";
 import { ImagePreviewProvider } from "~/components/ImagePreview";
-import { env } from "~/env.mjs";
+import { env } from "~/env.js";
 import Link from "next/link";
 import BookTile from "~/components/BookTile";
 import SearchBar from "~/components/SearchBar";

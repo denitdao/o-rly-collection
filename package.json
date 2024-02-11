@@ -1,15 +1,20 @@
 {
   "name": "o-rly-collection",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "next build",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
     "dev": "next dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
     "start": "next start"
   },
   "dependencies": {
+    "@planetscale/database": "^1.16.0",
+    "@prisma/adapter-planetscale": "^5.9.1",
     "@prisma/client": "^5.9.1",
     "@radix-ui/react-aspect-ratio": "^1.0.3",
     "@radix-ui/react-select": "^2.0.0",
@@ -42,8 +47,8 @@
     "@types/node": "^20.11.17",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
-    "@typescript-eslint/eslint-plugin": "6.21.0",
-    "@typescript-eslint/parser": "6.21.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
     "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
     "eslint-config-next": "^14.1.0",
@@ -55,6 +60,7 @@
     "typescript": "^5.3.3"
   },
   "ct3aMetadata": {
-    "initVersion": "7.18.0"
-  }
+    "initVersion": "7.26.0"
+  },
+  "packageManager": "pnpm@8.14.1"
 }
