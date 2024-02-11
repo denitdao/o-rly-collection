@@ -1,4 +1,4 @@
-import { copyImageToClipboard } from "~/utils/copy-image";
+import { copyImageToClipboard } from "~/lib/copy-image";
 import { useObserveImageCopy } from "~/hooks/useObservabilityEvents";
 import { toast } from "sonner";
 

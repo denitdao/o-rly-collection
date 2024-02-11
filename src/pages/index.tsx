@@ -7,7 +7,10 @@ import Link from "next/link";
 import BookTile from "~/components/BookTile";
 import SearchBar from "~/components/SearchBar";
 import useImageCopy from "~/hooks/useImageCopy";
-import { useObserveSearchEffect } from "~/hooks/useObservabilityEvents";
+import {
+  useObserveSearchEffect,
+  useObserveSortModeEffect,
+} from "~/hooks/useObservabilityEvents";
 import useImageView from "~/hooks/useImageView";
 import useBookSearch from "~/hooks/useBookSearch";
 import SortSelect from "~/components/SortSelect";
@@ -31,6 +34,7 @@ const BookSearch = () => {
     useBookSearch();
 
   useObserveSearchEffect(searchTerm);
+  useObserveSortModeEffect(sortMode);
   const imageCopyHandler = useImageCopy();
   const imageViewHandler = useImageView();
 

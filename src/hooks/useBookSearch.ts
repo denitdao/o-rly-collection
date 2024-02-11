@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import Fuse from "fuse.js";
-import BOOK_LIBRARY, { type Book } from "~/utils/library";
+import BOOK_LIBRARY, { type Book } from "~/lib/library";
 
 export type SortMode = "default" | "newest" | "oldest" | "alphabetical";
 

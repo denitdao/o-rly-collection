@@ -30,4 +30,12 @@ export const observationRouter = createTRPCRouter({
       const number = await kv.hincrby(key, input.query, 1);
       console.log(`User searched for "${input.query}". ${number} times`);
     }),
+  sort_mode: publicProcedure
+    .input(z.object({ mode: z.string() }))
+    .mutation(async ({ input }) => {
+      // if (isDevEnv) return;
+      const key = "sort__modes";
+      const number = await kv.hincrby(key, input.mode, 1);
+      console.log(`Sort mode "${input.mode}" has been used ${number} times`);
+    }),
 });

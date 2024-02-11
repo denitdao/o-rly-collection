@@ -1,6 +1,7 @@
 import { sendGAEvent } from "~/components/meta/GoogleAnalytics";
 import { api } from "~/utils/api";
 import { useEffect } from "react";
+import { SortMode } from "~/hooks/useBookSearch";
 
 export const useObserveImageCopy = () => {
   const { mutate: observeImageCopy } = api.observation.image_copy.useMutation();
@@ -48,4 +49,19 @@ export const useObserveImageView = () => {
       value: imageName,
     });
   };
+};
+
+export const useObserveSortModeEffect = (sortMode: SortMode) => {
+  const { mutate: observeSortModeChange } =
+    api.observation.sort_mode.useMutation();
+
+  useEffect(() => {
+    observeSortModeChange({ mode: sortMode });
+    sendGAEvent({
+      action: "sort_mode",
+      category: "search",
+      label: "Sort Mode",
+      value: sortMode,
+    });
+  }, [sortMode, observeSortModeChange]);
 };
