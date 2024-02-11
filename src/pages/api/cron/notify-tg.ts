@@ -3,7 +3,7 @@ import { kv } from "@vercel/kv";
 
 export default async function handler(
   request: NextApiRequest,
-  response: NextApiResponse
+  response: NextApiResponse,
 ) {
   if (
     !process.env.CRON_SECRET ||
@@ -57,7 +57,7 @@ function formatTopStats(title: string, stats: ImageStats | null) {
     // Total counts
     const totalCounts = Object.values(stats).reduce(
       (acc, count) => acc + Number(count),
-      0
+      0,
     );
     const distinctCounts = Object.keys(stats).length;
 

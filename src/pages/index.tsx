@@ -1,4 +1,3 @@
-import { PopupProvider } from "~/components/Popup";
 import OrlyFooter from "~/components/OrlyFooter";
 import OrlyHead from "~/components/meta/OrlyHead";
 import { motion } from "framer-motion";
@@ -12,16 +11,16 @@ import { useObserveSearchEffect } from "~/hooks/useObservabilityEvents";
 import useImageView from "~/hooks/useImageView";
 import useBookSearch from "~/hooks/useBookSearch";
 import SortSelect from "~/components/SortSelect";
+import { Toaster } from "~/components/ui/sonner";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-gray-50">
       <OrlyHead />
-      <PopupProvider>
-        <ImagePreviewProvider>
-          <BookSearch />
-        </ImagePreviewProvider>
-      </PopupProvider>
+      <ImagePreviewProvider>
+        <BookSearch />
+      </ImagePreviewProvider>
+      <Toaster richColors closeButton />
       <OrlyFooter />
     </div>
   );

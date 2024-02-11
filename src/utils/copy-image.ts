@@ -5,7 +5,7 @@
  * @returns {Promise<Blob>} A promise that resolves to an image blob.
  */
 export async function getBlobFromImageSource(
-  imageSource: string
+  imageSource: string,
 ): Promise<Blob> {
   const response = await fetch(`${imageSource}`);
   return await response.blob();
@@ -38,7 +38,7 @@ export function isPngBlob(blob: Blob): boolean {
  * @returns {Promise<HTMLImageElement>} A promise that resolves to an image element. Rejects the promise if it cannot create an image element.
  */
 export async function createImageElement(
-  imageSource: string
+  imageSource: string,
 ): Promise<HTMLImageElement> {
   return new Promise(function (resolve, reject) {
     const imageElement = document.createElement("img");
@@ -62,7 +62,7 @@ export async function createImageElement(
  * @returns {Promise<Blob>} A Promise that resolves to an image blob. Rejects the promise if it cannot get a blob from the image element.
  */
 export async function getBlobFromImageElement(
-  imageElement: HTMLImageElement
+  imageElement: HTMLImageElement,
 ): Promise<Blob> {
   return new Promise(function (resolve, reject) {
     const canvas = document.createElement("canvas");
@@ -80,7 +80,7 @@ export async function getBlobFromImageElement(
           else reject("Cannot get blob from image element");
         },
         "image/png",
-        1
+        1,
       );
     }
   });
@@ -106,7 +106,7 @@ export async function convertBlobToPng(imageBlob: Blob): Promise<Blob> {
  * @param {Blob} blobProvider returns Blob to be copied.
  */
 export async function copyBlobToClipboard(
-  blobProvider: Promise<Blob>
+  blobProvider: Promise<Blob>,
 ): Promise<void> {
   const clipboardItem = new ClipboardItem({
     "image/png": blobProvider,

@@ -28,7 +28,7 @@ const BlurringImage = ({
           "rounded-lg object-cover duration-500 ease-in-out",
           isLoading
             ? "scale-105 blur-xl grayscale"
-            : "scale-100 blur-0 grayscale-0 group-hover:scale-95 group-hover:duration-200"
+            : "scale-100 blur-0 grayscale-0 group-hover:scale-95 group-hover:duration-200",
         )}
         onLoad={() => setLoading(false)}
       />

@@ -6,19 +6,19 @@ type ImagePreviewContextType = {
   showImage: (
     imageId: string,
     imageUrl: string,
-    onCopy?: (imageId: string, imageUrl: string) => void
+    onCopy?: (imageId: string, imageUrl: string) => void,
   ) => void;
 };
 
 const ImagePreviewContext = createContext<ImagePreviewContextType | undefined>(
-  undefined
+  undefined,
 );
 
 export const useImagePreview = () => {
   const context = useContext(ImagePreviewContext);
   if (!context) {
     throw new Error(
-      "useImagePreview must be used within a ImagePreviewProvider"
+      "useImagePreview must be used within a ImagePreviewProvider",
     );
   }
   return context;
@@ -50,13 +50,13 @@ export const ImagePreviewProvider = ({
           imageUrl: null,
         }));
       },
-    }
+    },
   );
 
   const showImage = (
     imageId: string,
     imageUrl: string,
-    onCopy?: (imageId: string, imageUrl: string) => void
+    onCopy?: (imageId: string, imageUrl: string) => void,
   ) => {
     setImagePreviewState((prev) => ({
       ...prev,

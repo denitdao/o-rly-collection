@@ -38,7 +38,7 @@ const useBookSearch = (initialSortMode: SortMode = "default") => {
           { name: "tags", weight: 0.4 },
         ],
       }),
-    [sortedBookLibrary]
+    [sortedBookLibrary],
   );
 
   const booksToShow = useMemo(
@@ -46,7 +46,7 @@ const useBookSearch = (initialSortMode: SortMode = "default") => {
       searchTerm
         ? fuseIndex.search(searchTerm).map((result) => result.item)
         : sortedBookLibrary,
-    [searchTerm, fuseIndex, sortedBookLibrary]
+    [searchTerm, fuseIndex, sortedBookLibrary],
   );
 
   return { booksToShow, searchTerm, setSearchTerm, sortMode, setSortMode };

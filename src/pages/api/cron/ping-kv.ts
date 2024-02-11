@@ -3,7 +3,7 @@ import { kv } from "@vercel/kv";
 
 export default function handler(
   request: NextApiRequest,
-  response: NextApiResponse
+  response: NextApiResponse,
 ) {
   if (
     !process.env.CRON_SECRET ||
