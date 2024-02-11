@@ -23,7 +23,7 @@ export default function Home() {
       <ImagePreviewProvider>
         <BookSearch />
       </ImagePreviewProvider>
-      <Toaster richColors closeButton />
+      <Toaster richColors closeButton theme="light" />
       <OrlyFooter />
     </div>
   );
