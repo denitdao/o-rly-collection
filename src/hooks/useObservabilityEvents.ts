@@ -1,6 +1,6 @@
 import { sendGAEvent } from "~/components/meta/GoogleAnalytics";
 import { api } from "~/utils/api";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { SortMode } from "~/hooks/useBookSearch";
 
 export const useObserveImageCopy = () => {
@@ -52,16 +52,26 @@ export const useObserveImageView = () => {
 };
 
 export const useObserveSortModeEffect = (sortMode: SortMode) => {
-  const { mutate: observeSortModeChange } =
-    api.observation.sort_mode.useMutation();
+  const isMount = useIsMount();
+  const { mutate: observeSortMode } = api.observation.sort_mode.useMutation();
 
   useEffect(() => {
-    observeSortModeChange({ mode: sortMode });
-    sendGAEvent({
-      action: "sort_mode",
-      category: "search",
-      label: "Sort Mode",
-      value: sortMode,
-    });
-  }, [sortMode, observeSortModeChange]);
+    if (!isMount) {
+      observeSortMode({ mode: sortMode });
+      sendGAEvent({
+        action: "sort_mode",
+        category: "search",
+        label: "Sort Mode",
+        value: sortMode,
+      });
+    }
+  }, [sortMode, observeSortMode]); // eslint-disable-line react-hooks/exhaustive-deps
+};
+
+const useIsMount = () => {
+  const isMountRef = useRef(true);
+  useEffect(() => {
+    isMountRef.current = false;
+  }, []);
+  return isMountRef.current;
 };

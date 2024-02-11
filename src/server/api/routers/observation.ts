@@ -33,7 +33,7 @@ export const observationRouter = createTRPCRouter({
   sort_mode: publicProcedure
     .input(z.object({ mode: z.string() }))
     .mutation(async ({ input }) => {
-      // if (isDevEnv) return;
+      if (isDevEnv) return;
       const key = "sort__modes";
       const number = await kv.hincrby(key, input.mode, 1);
       console.log(`Sort mode "${input.mode}" has been used ${number} times`);
