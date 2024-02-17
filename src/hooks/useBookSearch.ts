@@ -4,23 +4,24 @@ import BOOK_LIBRARY, { type Book } from "~/lib/library";
 
 export type SortMode = "default" | "newest" | "oldest" | "alphabetical";
 
-const useBookSearch = (initialSortMode: SortMode = "default") => {
+const useBookSearch = (
+  numberOfKeywords = 5,
+  initialSortMode: SortMode = "default",
+) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortMode, setSortMode] = useState<SortMode>(initialSortMode);
   const [keywords, setKeywords] = useState<string[]>([]);
   const [sortedBookLibrary, setSortedBookLibrary] =
     useState<Book[]>(BOOK_LIBRARY);
 
-  useEffect(() => {
+  const refreshKeywords = useCallback(() => {
     const uniqueTags = getUniqueTags();
-    const randomTags = getRandomTags(uniqueTags, 5);
+    const randomTags = getRandomTags(uniqueTags, numberOfKeywords);
     setKeywords(randomTags);
   }, []);
 
-  const refreshKeywords = useCallback(() => {
-    const uniqueTags = getUniqueTags();
-    const randomTags = getRandomTags(uniqueTags, 5);
-    setKeywords(randomTags);
+  useEffect(() => {
+    refreshKeywords();
   }, []);
 
   useEffect(() => {

@@ -8,17 +8,25 @@ import {
   SelectTrigger,
   SelectValue,
 } from "~/components/ui/select";
+import { SelectTriggerProps } from "@radix-ui/react-select";
+import { cn } from "~/lib/utils";
+
+interface SortSelectProps extends SelectTriggerProps {
+  value: SortMode;
+  onSortModeChange: (value: SortMode) => void;
+}
 
 const SortSelect = ({
   value,
-  onChange,
-}: {
-  value: SortMode;
-  onChange: (value: SortMode) => void;
-}) => {
+  onSortModeChange,
+  className,
+}: SortSelectProps) => {
   return (
-    <Select value={value} onValueChange={(v) => onChange(v as SortMode)}>
-      <SelectTrigger className="w-[160px] font-mono">
+    <Select
+      value={value}
+      onValueChange={(v) => onSortModeChange(v as SortMode)}
+    >
+      <SelectTrigger className={cn(className, "w-[160px] font-mono")}>
         <SelectValue placeholder="Select a sorting mode" />
       </SelectTrigger>
       <SelectContent

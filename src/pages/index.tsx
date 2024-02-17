@@ -15,7 +15,8 @@ import useImageView from "~/hooks/useImageView";
 import useBookSearch from "~/hooks/useBookSearch";
 import SortSelect from "~/components/SortSelect";
 import { Toaster } from "~/components/ui/sonner";
-import SearchPill from "~/components/SearchPill";
+import RefreshButton from "~/components/RefreshButton";
+import SearchPills from "~/components/SearchPills";
 
 export default function Home() {
   return (
@@ -39,7 +40,7 @@ const BookSearch = () => {
     setSortMode,
     keywords,
     refreshKeywords,
-  } = useBookSearch();
+  } = useBookSearch(8);
 
   useObserveSearchEffect(searchTerm);
   useObserveSortModeEffect(sortMode);
@@ -49,22 +50,24 @@ const BookSearch = () => {
   return (
     <main className="px-4 py-16">
       <div className="mx-auto max-w-screen-2xl">
-        <div className="flex flex-col items-center">
+        <div className="flex w-full flex-col items-center">
           <Heading />
-          <div className="mb-4 w-full max-w-lg">
-            <SearchBar value={searchTerm} onChange={setSearchTerm} />
+          <div className="mb-4 flex w-full justify-center gap-4">
+            <SearchBar
+              className="w-full max-w-lg"
+              value={searchTerm}
+              onInputChange={setSearchTerm}
+            />
+            <SortSelect value={sortMode} onSortModeChange={setSortMode} />
           </div>
-          <div className="mb-10 flex min-w-full max-w-48 items-center justify-between">
-            <div className="mr-2">
-              <SortSelect value={sortMode} onChange={setSortMode} />
-            </div>
-            <div>
-              <SearchPill
+          <div className="mb-10 flex w-full justify-between">
+            <div className="flex w-full flex-wrap items-center gap-2">
+              <SearchPills
                 keywords={keywords}
                 onKeywordClick={(keyword) => setSearchTerm(keyword)}
-                onRefresh={refreshKeywords}
               />
             </div>
+            <RefreshButton onRefresh={refreshKeywords} />
           </div>
         </div>
         {booksToShow && booksToShow.length !== 0 ? (

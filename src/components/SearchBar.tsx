@@ -1,28 +1,29 @@
 import { Input } from "~/components/ui/input";
 import { X } from "lucide-react";
+import { HTMLAttributes } from "react";
+import { cn } from "~/lib/utils";
 
-const SearchBar = ({
-  value,
-  onChange,
-}: {
+interface SearchBarProps extends HTMLAttributes<HTMLDivElement> {
   value: string;
-  onChange: (value: string) => void;
-}) => {
+  onInputChange: (value: string) => void;
+}
+
+const SearchBar = ({ value, onInputChange, className }: SearchBarProps) => {
   return (
-    <div className="relative">
+    <div className={cn(className, "relative")}>
       <Input
         className="pr-8 font-mono focus:ring-blue-400"
         type="text"
         placeholder="Type your keywords..."
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(e) => onInputChange(e.target.value)}
       />
       {value && (
         <button
           className="absolute inset-y-0 right-0 flex items-center pr-2"
-          onClick={() => onChange("")}
+          onClick={() => onInputChange("")}
         >
-          <X />
+          <X className="h-5 w-5" />
         </button>
       )}
     </div>
