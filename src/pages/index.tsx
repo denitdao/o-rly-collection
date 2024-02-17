@@ -47,8 +47,8 @@ const BookSearch = () => {
   const imageViewHandler = useImageView();
 
   return (
-    <main className="flex flex-row justify-center">
-      <div className="max-w-screen-2xl grow px-4 py-16">
+    <main className="px-4 py-16">
+      <div className="mx-auto max-w-screen-2xl">
         <div className="flex flex-col items-center">
           <Heading />
           <div className="mb-4 w-full max-w-lg">
@@ -68,7 +68,7 @@ const BookSearch = () => {
           </div>
         </div>
         {booksToShow && booksToShow.length !== 0 ? (
-          <motion.div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+          <motion.div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             {booksToShow.map((book) => {
               const imageId = book.image;
               const imageUrl = `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`;

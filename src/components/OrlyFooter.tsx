@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const OrlyFooter = () => {
   return (
-    <footer className="mt-auto bg-white py-8">
-      <div className="mx-auto max-w-screen-2xl px-4 text-center">
+    <footer className="mt-auto bg-white px-4 py-8">
+      <div className="mx-auto max-w-screen-2xl text-center">
         <div
           className="mb-4 flex rounded-lg bg-blue-50 p-4 text-left text-sm text-blue-800"
           role="alert"
@@ -34,7 +34,6 @@ const OrlyFooter = () => {
             </ul>
           </div>
         </div>
-        <p className="text-mono mb-6 text-gray-500"></p>
         <span className="mx-auto font-mono text-sm text-gray-500">
           © {new Date().getFullYear() + " "}
           <Link
