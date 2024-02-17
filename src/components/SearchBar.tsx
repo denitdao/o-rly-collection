@@ -11,7 +11,7 @@ const SearchBar = ({
   return (
     <div className="relative">
       <Input
-        className="pr-8 font-mono"
+        className="pr-8 font-mono focus:ring-blue-400"
         type="text"
         placeholder="Type your keywords..."
         value={value}
