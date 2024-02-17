@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const OrlyFooter = () => {
   return (
-    <footer className="mt-auto bg-white p-4 md:p-6 lg:p-8">
-      <div className="mx-auto max-w-screen-xl text-center">
+    <footer className="mt-auto bg-white py-8">
+      <div className="mx-auto max-w-screen-2xl px-4 text-center">
         <div
           className="mb-4 flex rounded-lg bg-blue-50 p-4 text-left text-sm text-blue-800"
           role="alert"

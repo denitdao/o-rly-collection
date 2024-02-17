@@ -15,6 +15,7 @@ import useImageView from "~/hooks/useImageView";
 import useBookSearch from "~/hooks/useBookSearch";
 import SortSelect from "~/components/SortSelect";
 import { Toaster } from "~/components/ui/sonner";
+import SearchPill from "~/components/SearchPill";
 
 export default function Home() {
   return (
@@ -30,8 +31,15 @@ export default function Home() {
 }
 
 const BookSearch = () => {
-  const { booksToShow, searchTerm, setSearchTerm, sortMode, setSortMode } =
-    useBookSearch();
+  const {
+    booksToShow,
+    searchTerm,
+    setSearchTerm,
+    sortMode,
+    setSortMode,
+    keywords,
+    refreshKeywords,
+  } = useBookSearch();
 
   useObserveSearchEffect(searchTerm);
   useObserveSortModeEffect(sortMode);
@@ -39,39 +47,50 @@ const BookSearch = () => {
   const imageViewHandler = useImageView();
 
   return (
-    <main className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-      <div className="container mx-auto flex w-full flex-col items-center justify-center px-4">
-        <Heading />
-        <div className="mb-4 w-full max-w-lg">
-          <SearchBar value={searchTerm} onChange={setSearchTerm} />
-        </div>
-        <div className="mb-10 w-full max-w-48">
-          <SortSelect value={sortMode} onChange={setSortMode} />
-        </div>
-      </div>
-      {booksToShow && booksToShow.length !== 0 ? (
-        <motion.div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          {booksToShow.map((book) => {
-            const imageId = book.image;
-            const imageUrl = `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`;
-            const bookTitle = book.title;
-            const bookAlt = book.title + " | " + book.headline;
-
-            return (
-              <BookTile
-                key={imageId}
-                title={bookTitle}
-                alt={bookAlt}
-                imageUrl={imageUrl}
-                onCopyClick={() => void imageCopyHandler(imageId, imageUrl)}
-                onImageClick={() => void imageViewHandler(imageId, imageUrl)}
+    <main className="flex flex-row justify-center">
+      <div className="max-w-screen-2xl grow px-4 py-16">
+        <div className="flex flex-col items-center">
+          <Heading />
+          <div className="mb-4 w-full max-w-lg">
+            <SearchBar value={searchTerm} onChange={setSearchTerm} />
+          </div>
+          <div className="mb-10 flex min-w-full max-w-48 items-center justify-between">
+            <div className="mr-2">
+              <SortSelect value={sortMode} onChange={setSortMode} />
+            </div>
+            <div>
+              <SearchPill
+                keywords={keywords}
+                onKeywordClick={(keyword) => setSearchTerm(keyword)}
+                onRefresh={refreshKeywords}
               />
-            );
-          })}
-        </motion.div>
-      ) : (
-        <NoResultsMessage />
-      )}
+            </div>
+          </div>
+        </div>
+        {booksToShow && booksToShow.length !== 0 ? (
+          <motion.div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+            {booksToShow.map((book) => {
+              const imageId = book.image;
+              const imageUrl = `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`;
+              const bookTitle = book.title;
+              const bookAlt = book.title + " | " + book.headline;
+
+              return (
+                <BookTile
+                  key={imageId}
+                  title={bookTitle}
+                  alt={bookAlt}
+                  imageUrl={imageUrl}
+                  onCopyClick={() => void imageCopyHandler(imageId, imageUrl)}
+                  onImageClick={() => void imageViewHandler(imageId, imageUrl)}
+                />
+              );
+            })}
+          </motion.div>
+        ) : (
+          <NoResultsMessage />
+        )}
+      </div>
     </main>
   );
 };

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Fuse from "fuse.js";
 import BOOK_LIBRARY, { type Book } from "~/lib/library";
 
@@ -7,8 +7,21 @@ export type SortMode = "default" | "newest" | "oldest" | "alphabetical";
 const useBookSearch = (initialSortMode: SortMode = "default") => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortMode, setSortMode] = useState<SortMode>(initialSortMode);
+  const [keywords, setKeywords] = useState<string[]>([]);
   const [sortedBookLibrary, setSortedBookLibrary] =
     useState<Book[]>(BOOK_LIBRARY);
+
+  useEffect(() => {
+    const uniqueTags = getUniqueTags();
+    const randomTags = getRandomTags(uniqueTags, 5);
+    setKeywords(randomTags);
+  }, []);
+
+  const refreshKeywords = useCallback(() => {
+    const uniqueTags = getUniqueTags();
+    const randomTags = getRandomTags(uniqueTags, 5);
+    setKeywords(randomTags);
+  }, []);
 
   useEffect(() => {
     const sortBooks = BOOK_LIBRARY.slice().sort((a, b) => {
@@ -49,7 +62,36 @@ const useBookSearch = (initialSortMode: SortMode = "default") => {
     [searchTerm, fuseIndex, sortedBookLibrary],
   );
 
-  return { booksToShow, searchTerm, setSearchTerm, sortMode, setSortMode };
+  return {
+    booksToShow,
+    searchTerm,
+    setSearchTerm,
+    sortMode,
+    setSortMode,
+    keywords,
+    refreshKeywords,
+  };
+};
+
+const getUniqueTags = () => {
+  const tags = new Set<string>();
+  BOOK_LIBRARY.forEach((book) => {
+    book.tags
+      .split(",")
+      .map((tag) => tag.trim().toLowerCase())
+      .forEach((tag) => tags.add(tag));
+  });
+  return Array.from(tags);
+};
+
+const getRandomTags = (tags: string[], count: number) => {
+  const randomTags: string[] = [];
+  for (let i = 0; i < count; i++) {
+    const randomIndex = Math.floor(Math.random() * tags.length);
+    randomTags.push(tags[randomIndex]!);
+    tags.splice(randomIndex, 1); // Remove used tag
+  }
+  return randomTags;
 };
 
 export default useBookSearch;
