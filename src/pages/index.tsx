@@ -63,6 +63,7 @@ const BookSearch = () => {
           <div className="mb-10 flex w-full justify-between">
             <div className="flex w-full flex-wrap items-center gap-2">
               <SearchPills
+                activeKeyword={searchTerm}
                 keywords={keywords}
                 onKeywordClick={(keyword) => setSearchTerm(keyword)}
               />
