@@ -18,11 +18,11 @@ const useBookSearch = (
     const uniqueTags = getUniqueTags();
     const randomTags = getRandomTags(uniqueTags, numberOfKeywords);
     setKeywords(randomTags);
-  }, []);
+  }, [numberOfKeywords]);
 
   useEffect(() => {
     refreshKeywords();
-  }, []);
+  }, [refreshKeywords]);
 
   useEffect(() => {
     const sortBooks = BOOK_LIBRARY.slice().sort((a, b) => {
