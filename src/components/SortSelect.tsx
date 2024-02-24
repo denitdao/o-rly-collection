@@ -8,7 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "~/components/ui/select";
-import { SelectTriggerProps } from "@radix-ui/react-select";
+import { type SelectTriggerProps } from "@radix-ui/react-select";
 import { cn } from "~/lib/utils";
 
 interface SortSelectProps extends SelectTriggerProps {
@@ -46,6 +46,7 @@ const SortSelect = ({
           <SelectItem value="newest">Newest</SelectItem>
           <SelectItem value="oldest">Oldest</SelectItem>
           <SelectItem value="alphabetical">Alphabetical</SelectItem>
+          <SelectItem value="color">Color</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

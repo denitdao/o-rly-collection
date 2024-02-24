@@ -12,7 +12,7 @@ import {
   useObserveSortModeEffect,
 } from "~/hooks/useObservabilityEvents";
 import useImageView from "~/hooks/useImageView";
-import useBookSearch from "~/hooks/useBookSearch";
+import { useBookKeywords, useBookSearch } from "~/hooks/useBookSearch";
 import SortSelect from "~/components/SortSelect";
 import { Toaster } from "~/components/ui/sonner";
 import RefreshButton from "~/components/RefreshButton";
@@ -20,27 +20,25 @@ import SearchPills from "~/components/SearchPills";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-gray-50">
-      <OrlyHead />
-      <ImagePreviewProvider>
-        <BookSearch />
-      </ImagePreviewProvider>
-      <Toaster richColors closeButton theme="light" />
-      <OrlyFooter />
-    </div>
+    <>
+      <div className="flex min-h-screen flex-col bg-gray-50">
+        <OrlyHead />
+        <ImagePreviewProvider>
+          <BookSearch />
+        </ImagePreviewProvider>
+        <Toaster richColors closeButton theme="light" />
+        <OrlyFooter />
+      </div>
+      <div style={{ height: 0.5 }}></div>
+    </>
   );
 }
 
 const BookSearch = () => {
-  const {
-    booksToShow,
-    searchTerm,
-    setSearchTerm,
-    sortMode,
-    setSortMode,
-    keywords,
-    refreshKeywords,
-  } = useBookSearch(8);
+  const { booksToShow, searchTerm, setSearchTerm, sortMode, setSortMode } =
+    useBookSearch();
+
+  const { keywords, refreshKeywords } = useBookKeywords(8);
 
   useObserveSearchEffect(searchTerm);
   useObserveSortModeEffect(sortMode);
@@ -64,7 +62,7 @@ const BookSearch = () => {
             <div className="flex w-full flex-wrap items-center gap-2">
               <SearchPills
                 activeKeyword={searchTerm}
-                keywords={keywords}
+                pillDataArray={keywords}
                 onKeywordClick={(keyword) => setSearchTerm(keyword)}
               />
             </div>
