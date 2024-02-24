@@ -2,7 +2,12 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import Fuse from "fuse.js";
 import BOOK_LIBRARY, { type Book, type BookColor } from "~/lib/library";
 
-export type SortMode = "default" | "newest" | "oldest" | "alphabetical";
+export type SortMode =
+  | "default"
+  | "newest"
+  | "oldest"
+  | "alphabetical"
+  | "color";
 
 interface KeywordColor {
   keyword: string;
@@ -17,6 +22,7 @@ const FUSE_INDEX_DEFAULT = new Fuse(BOOK_LIBRARY, {
     { name: "title", weight: 0.4 },
     { name: "headline", weight: 0.4 },
     { name: "tags", weight: 0.4 },
+    { name: "color", weight: 0.1 },
   ],
 });
 
@@ -53,6 +59,10 @@ const useBookSearch = (initialSortMode: SortMode = "default") => {
             return Date.parse(a.createdAt) - Date.parse(b.createdAt);
           case "alphabetical":
             return a.title.localeCompare(b.title);
+          case "color":
+            return (
+              COLOR_PALETTE.indexOf(a.color) - COLOR_PALETTE.indexOf(b.color)
+            );
           default:
             return 0;
         }
@@ -70,6 +80,7 @@ const useBookSearch = (initialSortMode: SortMode = "default") => {
           { name: "title", weight: 0.4 },
           { name: "headline", weight: 0.4 },
           { name: "tags", weight: 0.4 },
+          { name: "color", weight: 0.1 },
         ],
         shouldSort: sortMode === "default",
       }),
