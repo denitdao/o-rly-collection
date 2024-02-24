@@ -20,14 +20,17 @@ import SearchPills from "~/components/SearchPills";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-gray-50">
-      <OrlyHead />
-      <ImagePreviewProvider>
-        <BookSearch />
-      </ImagePreviewProvider>
-      <Toaster richColors closeButton theme="light" />
-      <OrlyFooter />
-    </div>
+    <>
+      <div className="flex min-h-screen flex-col bg-gray-50">
+        <OrlyHead />
+        <ImagePreviewProvider>
+          <BookSearch />
+        </ImagePreviewProvider>
+        <Toaster richColors closeButton theme="light" />
+        <OrlyFooter />
+      </div>
+      <div style={{ height: 0.5 }}></div>
+    </>
   );
 }
 
