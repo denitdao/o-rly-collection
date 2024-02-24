@@ -12,7 +12,7 @@ import {
   useObserveSortModeEffect,
 } from "~/hooks/useObservabilityEvents";
 import useImageView from "~/hooks/useImageView";
-import useBookSearch from "~/hooks/useBookSearch";
+import { useBookKeywords, useBookSearch } from "~/hooks/useBookSearch";
 import SortSelect from "~/components/SortSelect";
 import { Toaster } from "~/components/ui/sonner";
 import RefreshButton from "~/components/RefreshButton";
@@ -32,15 +32,10 @@ export default function Home() {
 }
 
 const BookSearch = () => {
-  const {
-    booksToShow,
-    searchTerm,
-    setSearchTerm,
-    sortMode,
-    setSortMode,
-    keywords,
-    refreshKeywords,
-  } = useBookSearch(8);
+  const { booksToShow, searchTerm, setSearchTerm, sortMode, setSortMode } =
+    useBookSearch();
+
+  const { keywords, refreshKeywords } = useBookKeywords(8);
 
   useObserveSearchEffect(searchTerm);
   useObserveSortModeEffect(sortMode);
@@ -64,7 +59,7 @@ const BookSearch = () => {
             <div className="flex w-full flex-wrap items-center gap-2">
               <SearchPills
                 activeKeyword={searchTerm}
-                keywords={keywords}
+                pillDataArray={keywords}
                 onKeywordClick={(keyword) => setSearchTerm(keyword)}
               />
             </div>

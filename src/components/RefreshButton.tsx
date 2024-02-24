@@ -12,7 +12,10 @@ const RefreshButton = ({ onRefresh, className }: RefreshButtonProps) => {
     <Button
       onClick={onRefresh}
       variant="outline"
-      className={cn(className, "hover:bg-white focus:ring-blue-400")}
+      className={cn(
+        className,
+        "hover:border-blue-300 hover:bg-white focus:ring-blue-400",
+      )}
       size="icon"
     >
       <RefreshCw className="h-4 w-4" />
