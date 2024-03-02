@@ -1,4 +1,5 @@
 export type Book = {
+  id: string;
   title: string;
   image: string;
   headline: string;
@@ -25,6 +26,7 @@ export type BookColor =
 
 const BOOK_LIBRARY: Book[] = [
   {
+    id: "10x-engineer",
     title: "10x Engineering",
     image: "10x-engineer.jpg",
     headline: "Money, fame, maintainable code",
@@ -33,6 +35,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "agile-micromanagement",
     title: "Agile Project Micromanagement",
     image: "agile-micromanagement.png",
     headline: 'Cognitive Dissonance as "Process" | Water-Fall with Stand-ups',
@@ -41,6 +44,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "anchor",
     title: "Anchor",
     image: "anchor.jpg",
     headline: "Eating glass on Solana painlessly",
@@ -49,6 +53,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-02-04T13:00:00.000Z",
   },
   {
+    id: "arbitrary-forecasts",
     title: "Arbitrary Forecasts",
     image: "arbitrary-forecasts.jpg",
     headline: "Saying something so people feel better about giving you money",
@@ -57,6 +62,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "arduino-led-to-blink",
     title: "Getting an Arduino LED to Blink",
     image: "arduino-led-to-blink.jpg",
     headline:
@@ -66,6 +72,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "avoid-using-dark-patterns",
     title: "Avoid Using Dark Patterns",
     image: "avoid-using-dark-patterns.jpg",
     headline: "Do. Or do not. There is no try.",
@@ -74,6 +81,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "avoiding-data-structures",
     title: "Avoiding Data Structures",
     image: "avoiding-data-structures.jpg",
     headline: "Just use HashMaps! | For Minecraft Modders",
@@ -82,6 +90,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T12:00:00.000Z",
   },
   {
+    id: "blaming-architecture",
     title: "Blaming the Architecture",
     image: "blaming-architecture.jpeg",
     headline: "Fundamentals of establishing a scapegoat",
@@ -90,6 +99,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "blaming-the-user",
     title: "Blaming the User",
     image: "blaming-the-user.jpg",
     headline: "You're a 10x hacker and it must be someone else's fault.",
@@ -98,6 +108,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "bloated-jabbascript",
     title: "Bloated JabbaScript Frameworks",
     image: "bloated-jabbascript.jpg",
     headline:
@@ -107,6 +118,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "bracket-placement",
     title: "Bracket Placement",
     image: "bracket-placement.png",
     headline: "From Friend To Enemy In Just One Day",
@@ -115,6 +127,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "breaking-back-button",
     title: "Breaking the Back Button",
     image: "breaking-back-button.jpg",
     headline: "Ruining something the browser gave you for free",
@@ -123,6 +136,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "breaking-important-stuff-on-friday",
     title: "Breaking important stuff on Friday",
     image: "breaking-important-stuff-on-friday.jpg",
     headline:
@@ -132,6 +146,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T12:00:00.000Z",
   },
   {
+    id: "broken-dependencies",
     title: "Resolving Broken Dependencies",
     image: "broken-dependencies.jpg",
     headline: "What did I do to deserve this?",
@@ -140,6 +155,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "building-ai-with-html",
     title: "Building AI with HTML",
     image: "building-ai-with-html.jpg",
     headline: "HyperText Machine Icarning",
@@ -148,6 +164,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "buzzword-first-design",
     title: "Buzzword-first Design",
     image: "buzzword-first-design.jpg",
     headline: "Fashion-forward development",
@@ -156,6 +173,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "casual-sexism",
     title: "Casual Sexism",
     image: "casual-sexism.jpg",
     headline:
@@ -165,6 +183,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "changing-stuff-and-seeing",
     title: "Changing Stuff and Seeing What Happens",
     image: "changing-stuff-and-seeing.jpg",
     headline: "How to actually learn any new programming concept",
@@ -173,6 +192,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "choosing-based-on-github",
     title: "Choosing Based on GitHub Stars",
     image: "choosing-based-on-github.jpg",
     headline: "Depending on a vague popularity contest",
@@ -181,6 +201,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "code-quality",
     title: "Useless Code Quality Metrics",
     image: "code-quality.jpeg",
     headline: "Blindly adhering to arbitrary standards",
@@ -189,6 +210,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "coding-drunk",
     title: "Coding Drunk",
     image: "coding-drunk.jpg",
     headline: "Thinking Outside The Bottle | Make Programming Fun Again",
@@ -197,6 +219,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "coding-on-weekend",
     title: "Coding on the Weekend",
     image: "coding-on-weekend.jpg",
     headline:
@@ -206,6 +229,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "coffee-into-code",
     title: "Turning Coffee Into Code",
     image: "coffee-into-code.jpg",
     headline:
@@ -215,6 +239,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "collective-intelligence",
     title: "Collective Intelligence",
     image: "collective-intelligence.jpg",
     headline: "Building Smart Web 2.0 Applications",
@@ -223,6 +248,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "compile-and-pray",
     title: "Compile Again and Pray to Work",
     image: "compile-and-pray.jpeg",
     headline: "Because something may change",
@@ -231,6 +257,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "compression",
     title: "JPEG compression",
     image: "compression.jpeg",
     headline: "jpeg",
@@ -239,6 +266,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "convoluted-coding-practices",
     title:
       "Using Convoluted Coding Practices to Piece Together a Somehow Functional Product",
     image: "convoluted-coding-practices.jpg",
@@ -249,6 +277,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "cookie-consent",
     title: "Cookie Consent and Other Ways to Obstruct the Web Page",
     image: "cookie-consent.png",
     headline: "Because the Web isn't unusable enough yet",
@@ -257,6 +286,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "copying-and-pasting",
     title: "Copying and Pasting from Stack Overflow",
     image: "copying-and-pasting.jpg",
     headline: "Cutting corners to meet arbitrary management deadlines",
@@ -265,6 +295,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "copying-snippets-from-pages-made-in-2003",
     title: "Copying snippets from pages made in 2003",
     image: "copying-snippets-from-pages-made-in-2003.jpg",
     headline: "No, no. That's not what I want.",
@@ -273,6 +304,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T12:00:00.000Z",
   },
   {
+    id: "cpp-profiling-on-linux",
     title: "C++ profiling on Linux",
     image: "cpp-profiling-on-linux.jpg",
     headline: "Powered by Rolex | Bring your watch, mate",
@@ -281,6 +313,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T12:00:00.000Z",
   },
   {
+    id: "cross-browser-code",
     title: "My Code is Cross-Browser Compatible",
     image: "cross-browser-code.png",
     headline:
@@ -290,6 +323,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "ctr-c-ctr-v",
     title: "CTR+C CTR+V",
     image: "ctr-c-ctr-v.jpg",
     headline: "Licensing Guide",
@@ -298,6 +332,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T12:00:00.000Z",
   },
   {
+    id: "dan-abramov-says",
     title: "Whatever Dan Abramov says to do",
     image: "dan-abramov-says.jpeg",
     headline: "Pure, functional, predictable, time travelling, handsome",
@@ -306,6 +341,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "deleting-a-dropped-project",
     title: "Deleting a dropped project",
     image: "deleting-a-dropped-project.jpg",
     headline: "As clients minds change, so does your self esteem",
@@ -314,6 +350,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T12:00:00.000Z",
   },
   {
+    id: "deleting-code",
     title: "Deleting Code",
     image: "deleting-code.jpg",
     headline:
@@ -323,6 +360,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "demon-extraction",
     title: "Demon Extraction",
     image: "demon-extraction.jpg",
     headline: "A Guide To Removing Unwanted Evil Spirits",
@@ -331,6 +369,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "destructive-git-commands",
     title: "Destructive Git Commands",
     image: "destructive-git-commands.jpg",
     headline: "WTF just happened? | I hope you backed up your code",
@@ -339,6 +378,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "develop-in-prod",
     title: "Developing in Production",
     image: "develop-in-prod.jpeg",
     headline: "The fastest time to market",
@@ -347,6 +387,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "drinking-with-ansible",
     title: "Drinking with Ansible",
     image: "drinking-with-ansible.jpg",
     headline: "Running playbook again and again | Drunk from kvas",
@@ -355,6 +396,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-02-04T13:00:00.000Z",
   },
   {
+    id: "drop-table",
     title: "Drop Table",
     image: "drop-table.jpg",
     headline: "Now with user-generated content!",
@@ -363,6 +405,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "endless-boilerplate",
     title: "Endless Boilerplate",
     image: "endless-boilerplate.jpg",
     headline: "Hello, ridiculously complicated world",
@@ -371,6 +414,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "everything-is-a-fscking-dns-problem",
     title: "Everything is a Fscking DNS Problem",
     image: "everything-is-a-fscking-dns-problem.jpg",
     headline: "Editing /etc/hosts for a living",
@@ -379,6 +423,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "excuses-for-no-documentation",
     title: "Excuses for Now Writing Documentation",
     image: "excuses-for-no-documentation.jpg",
     headline:
@@ -388,6 +433,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "exiting-vim",
     title: "Exiting Vim",
     image: "exiting-vim.jpg",
     headline:
@@ -397,6 +443,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "explaining-monads-to-people-who-dont-care",
     title: "Explaining Monads to people who don't care",
     image: "explaining-monads-to-people-who-dont-care.jpg",
     headline:
@@ -406,6 +453,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "exploiting-goodwill",
     title: "Exploiting Goodwill to advance your agenda",
     image: "exploiting-goodwill.png",
     headline: "why deny equal opportunity for all to contribute?",
@@ -414,6 +462,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "fake-news-generation",
     title: "Fake news generation",
     image: "fake-news-generation.jpg",
     headline: "Putting NLP to good use",
@@ -422,6 +471,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T13:00:00.000Z",
   },
   {
+    id: "faster-hardware",
     title: "Throwing Faster Hardware At The Problem",
     image: "faster-hardware.jpg",
     headline:
@@ -431,6 +481,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "fear-of-missing-out",
     title: "Fear of Missing Out",
     image: "fear-of-missing-out.jpg",
     headline:
@@ -440,6 +491,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "finding-your-own-stack-overflow-posts",
     title: "Finding Your Own Stack Overflow Posts",
     image: "finding-your-own-stack-overflow-posts.jpg",
     headline: "It's almost like you've had this problem before",
@@ -448,6 +500,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T13:00:00.000Z",
   },
   {
+    id: "fitting-actual-user-data",
     title: "Fitting Actual User Data Into The Design",
     image: "fitting-actual-user-data.jpg",
     headline: "People have names of varying lengths, who knew?",
@@ -456,6 +509,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "fizz-buzz",
     title: "Fizz Buzz",
     image: "fizz-buzz.jpeg",
     headline: "Ensuring the futility of your interview process",
@@ -464,6 +518,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "forgetting-network",
     title: "Forgetting how your Legacy Network Works",
     image: "forgetting-network.jpg",
     headline: "The art of excuses",
@@ -472,6 +527,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "friend-gay-furries",
     title: "Being Friends with Gay Furries",
     image: "friend-gay-furries.jpg",
     headline: "Learn to Accept That the Other Engineers Are Dogs",
@@ -480,6 +536,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "functional-thinking",
     title: "Functional Thinking",
     image: "functional-thinking.png",
     headline: "Paradigm over syntax",
@@ -488,6 +545,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "getting-it-to-work",
     title: "Getting it to Work",
     image: "getting-it-to-work.jpg",
     headline: "Achievement despite ignorance",
@@ -496,6 +554,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "getting-lgtm-out-of-this-obstructionist",
     title: 'Getting "LGTM" Out of This Obstructionist Prick',
     image: "getting-lgtm-out-of-this-obstructionist.jpg",
     headline:
@@ -505,6 +564,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-02-04T13:00:00.000Z",
   },
   {
+    id: "good-enough-to-ship",
     title: "Good Enough to Ship",
     image: "good-enough-to-ship.jpg",
     headline: "Letting your baby out of the nest - for better or worse",
@@ -513,6 +573,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "google-error-message",
     title: "Googling the Error Message",
     image: "google-error-message.jpg",
     headline: "The internet will make those bad words go away",
@@ -521,6 +582,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "googling-for-the-regex",
     title: "Googling for the Regex",
     image: "googling-for-the-regex.jpg",
     headline: "The Internet will do the remembering for you",
@@ -529,6 +591,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "guy-who-wrote-this-is-gone",
     title: "The Guy Who Wrote This Is Gone",
     image: "guy-who-wrote-this-is-gone.jpg",
     headline: "No comments, no documentation but 20 tickets",
@@ -537,6 +600,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "hating-language",
     title: "Hating on Languages You Don't Use",
     image: "hating-language.jpeg",
     headline: "Your taste, experiences, and objectives are the absolute truth",
@@ -545,6 +609,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "hating-other-code",
     title: "Hating Other People's Code",
     image: "hating-other-code.jpg",
     headline: "It's only a clever hack if you're the one who wrote it",
@@ -553,6 +618,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "hiring-ninjas",
     title: "Hiring Ninjas",
     image: "hiring-ninjas.jpg",
     headline: "Ninjas love open office layouts and unlimited vacation time",
@@ -561,6 +627,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T12:00:00.000Z",
   },
   {
+    id: "hoping-nobody-hacks",
     title: "Hoping Nobody Hacks You",
     image: "hoping-nobody-hacks.jpg",
     headline: "Security by optimism and prayer",
@@ -569,6 +636,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "hoping-right-interview",
     title: "Hoping for the Right Interview Questions",
     image: "hoping-right-interview.jpg",
     headline: "Banking on the 10% you know without Googling",
@@ -577,6 +645,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "hoping-this-works",
     title: "Hoping This Works",
     image: "hoping-this-works.jpg",
     headline: "Solutions that might fix the problem without breaking anything",
@@ -585,6 +654,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "ignoring-deprecation-warnings",
     title: "Ignoring Deprecation Warnings",
     image: "ignoring-deprecation-warnings.jpg",
     headline: "Maybe they'll just go away on their own.",
@@ -593,6 +663,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "imaginary-scaling-issues",
     title: "Solving Imaginary Scaling Issues",
     image: "imaginary-scaling-issues.jpg",
     headline:
@@ -602,6 +673,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "implementing-dumb-features",
     title: "Implementing Dumb Features",
     image: "implementing-dumb-features.jpg",
     headline: 'When nobody has the confidence to say "No"',
@@ -610,6 +682,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T14:00:00.000Z",
   },
   {
+    id: "insulting-sha1-collisions",
     title: "Insulting SHA-1 Collisions",
     image: "insulting-sha1-collisions.jpg",
     headline: "Leave unmistakable traces in the project logs | git log",
@@ -618,6 +691,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T14:00:00.000Z",
   },
   {
+    id: "it-depends",
     title: "It Depends",
     image: "it-depends.jpg",
     headline: "The answer to every programming question ever conceived",
@@ -626,6 +700,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "kubernetes-beginners",
     title: "Kubernetes for beginners",
     image: "kubernetes-beginners.jpg",
     headline: "Containers, that'll fix it. | What could go wrong?",
@@ -634,6 +709,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "learn-ml",
     title: "Learning Machine Learning",
     image: "learn-ml.png",
     headline: "Better buy 12 more GPUs",
@@ -642,6 +718,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "loosing-your-will-to-live",
     title: "Losing Your Will To Live",
     image: "loosing-your-will-to-live.png",
     headline:
@@ -651,6 +728,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "maintaining-open-source",
     title: "Thanklessly Maintaining Open Source Software",
     image: "maintaining-open-source.jpg",
     headline: "Acting out of the goodness of your heart, or something",
@@ -659,6 +737,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "making-jeff-bezos-richer",
     title: "Making Jeff Bezos Richer",
     image: "making-jeff-bezos-richer.jpg",
     headline:
@@ -668,6 +747,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T14:00:00.000Z",
   },
   {
+    id: "managing-ip-networks",
     title: "Managing IP Networks",
     image: "managing-ip-networks.jpg",
     headline: "with Cisco Router | Help for IP Network Administrators",
@@ -676,6 +756,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "managing-managers",
     title: "Managing Managers",
     image: "managing-managers.png",
     headline: "Dealing With Bad Managers | How To Fix What Your Manager Did",
@@ -684,6 +765,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "mastering-the-go-type-system",
     title: "Mastering the Go type system",
     image: "mastering-the-go-type-system.jpg",
     headline:
@@ -693,6 +775,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "memorizing-six-git-commands",
     title: "Memorizing Six Git Commands",
     image: "memorizing-six-git-commands.jpg",
     headline: "The popular approach to version control",
@@ -701,6 +784,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T14:00:00.000Z",
   },
   {
+    id: "microservices",
     title: "Microservices",
     image: "microservices.jpg",
     headline:
@@ -710,6 +794,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T14:00:00.000Z",
   },
   {
+    id: "miss-meeting",
     title: "Excuses to Miss Meetings",
     image: "miss-meeting.jpg",
     headline: "Timing critical tasks to coincide with morning stand-up",
@@ -718,6 +803,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "moving-fast-and-breaking",
     title: "Moving Fast and Breaking Things",
     image: "moving-fast-and-breaking.jpg",
     headline: "Just put the technical debt on my credit card",
@@ -726,6 +812,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "needless-dependencies",
     title: "Taking on Needless Dependencies",
     image: "needless-dependencies.jpeg",
     headline: "Code written by some stranger on the internet is always perfect",
@@ -734,6 +821,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "not-writing-unit-tests",
     title: "Excuses for Not Writing Unit Tests",
     image: "not-writing-unit-tests.jpg",
     headline: "Your application is a special snowflake",
@@ -742,6 +830,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "overwriting-code",
     title: "Overwriting your teammates' code",
     image: "overwriting-code.png",
     headline: '"My code is better than yours anyway" | Be a team player',
@@ -750,6 +839,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "own-parody-covers",
     title: "Making Your Own Parody Covers",
     image: "own-parody-covers.jpg",
     headline: "Dont even leave Slack to do it",
@@ -758,6 +848,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "parsing-html-using-regex",
     title: "Parsing HTML using Regular Expressions",
     image: "parsing-html-using-regex.jpg",
     headline:
@@ -767,6 +858,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "pasting-code-from-2012-tutorial",
     title: "Pasting Code from Some Random 2012 Node.js Tutorial",
     image: "pasting-code-from-2012-tutorial.jpg",
     headline:
@@ -776,6 +868,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "pedantic-arguments",
     title: "Winning Pedantic Arguments",
     image: "pedantic-arguments.jpg",
     headline:
@@ -785,6 +878,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "phishing",
     title: "Phishing",
     image: "phishing.jpg",
     headline: "Professional Identity Theft Techniques",
@@ -793,6 +887,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "pointless-meeting",
     title: "Pointless Meetings",
     image: "pointless-meeting.jpg",
     headline: "How To Survive All The Pointless Meetings",
@@ -801,6 +896,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "practical-testing",
     title: "Practical Testing",
     image: "practical-testing.jpg",
     headline:
@@ -810,6 +906,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "pretending-you-know",
     title: "Pretending you know what you're doing",
     image: "pretending-you-know.jpeg",
     headline: "Advanced stack overflow copy pasting for beginners",
@@ -818,6 +915,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "printf-debugging",
     title: "printf() Debugging",
     image: "printf-debugging.jpg",
     headline: "Who needs breakpoints?",
@@ -826,6 +924,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T13:00:00.000Z",
   },
   {
+    id: "problem-that-dont-exist",
     title: "Solving Problems That Don't Exist",
     image: "problem-that-dont-exist.jpg",
     headline: "The Why's and How's",
@@ -834,6 +933,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "procrastination",
     title: "Procrastination",
     image: "procrastination.png",
     headline: "The Why's and How's",
@@ -842,6 +942,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "rationalizing-hackjob",
     title: "Rationalizing Your Awful Hackjob",
     image: "rationalizing-hackjob.jpg",
     headline:
@@ -851,6 +952,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "redownloading-the-git-repo",
     title: "Redownloading the Git Repo",
     image: "redownloading-the-git-repo.jpg",
     headline: "Paste the changes | Ignoring Git Merge",
@@ -859,6 +961,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T13:00:00.000Z",
   },
   {
+    id: "regex-by-error",
     title: "Regex by Trial and Error",
     image: "regex-by-error.jpg",
     headline: "Combining slashes and dots until a thing happens",
@@ -867,6 +970,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "remembering-what-to-google",
     title: "Remembering What to Google",
     image: "remembering-what-to-google.jpg",
     headline: "How you get anything done ever",
@@ -875,6 +979,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "resume-driven-dev",
     title: "Resume Driven Development",
     image: "resume-driven-dev.jpg",
     headline: "The passionate, functional, micro-serviced approach",
@@ -883,6 +988,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "rewriting-frontend",
     title: "Rewriting Your Front End Every Six Weeks",
     image: "rewriting-frontend.jpeg",
     headline:
@@ -892,6 +998,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "rubber-duck-debugging",
     title: "Rubber Duck Debugging",
     image: "rubber-duck-debugging.jpg",
     headline: "Figuring it out without wasting someone elses time",
@@ -900,6 +1007,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-02-04T13:00:00.000Z",
   },
   {
+    id: "rust-is-happy",
     title: "Adding and Removing & and * at random until rustc is happy",
     image: "rust-is-happy.png",
     headline: "50 essential concepts",
@@ -908,6 +1016,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "saas-addiction",
     title: "SAAS Addiction",
     image: "saas-addiction.jpg",
     headline: "Maybe there's an API for that",
@@ -916,6 +1025,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "saturday",
     title: "Saturday",
     image: "saturday.jpg",
     headline: "How to handle work saturation",
@@ -924,6 +1034,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T14:00:00.000Z",
   },
   {
+    id: "scalable-parallel-computational-models",
     title: "Scalable parallel computational models",
     image: "scalable-parallel-computational-models.jpg",
     headline: "It works on my machine",
@@ -932,6 +1043,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T14:00:00.000Z",
   },
   {
+    id: "schrodingers-backup",
     title: "Shrodinger's backup",
     image: "schrodingers-backup.jpg",
     headline:
@@ -941,6 +1053,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "security-next-month",
     title: "Getting Around to Security Next Month",
     image: "security-next-month.jpg",
     headline:
@@ -950,6 +1063,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "self-documenting-code",
     title: "Self-Documenting Code",
     image: "self-documenting-code.jpg",
     headline: "Who needs comments anyway?",
@@ -958,6 +1072,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T14:00:00.000Z",
   },
   {
+    id: "server-down",
     title: "Loosing files",
     image: "server-down.png",
     headline: "book cover",
@@ -966,6 +1081,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "shitty-ddl-ref",
     title: "Restoring shitty .ddl references",
     image: "shitty-ddl-ref.jpg",
     headline: "Inheritance isn't always a good thing",
@@ -974,6 +1090,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "startup-success",
     title: "Startup Success",
     image: "startup-success.jpeg",
     headline: "TechCrunch Said This Was A Billion Dollar Market",
@@ -982,6 +1099,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "such-data",
     title: "Such Data",
     image: "such-data.jpg",
     headline: "So DevOps | Much Cloud | Very Agile",
@@ -990,6 +1108,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "surviving-the-kincade-fire",
     title: "Surviving the Kincade Fire",
     image: "surviving-the-kincade-fire.jpg",
     headline:
@@ -999,6 +1118,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T14:00:00.000Z",
   },
   {
+    id: "temporary-workarounds",
     title: "Temporary Workarounds",
     image: "temporary-workarounds.jpeg",
     headline: "Who are you kidding?",
@@ -1007,6 +1127,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "testing-in-production",
     title: "Testing In Production",
     image: "testing-in-production.jpg",
     headline: "Never worry about multiple environments again!",
@@ -1015,6 +1136,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "thankfulness",
     title: "Thankfulness",
     image: "thankfulness.jpeg",
     headline: "Recognizing how great we have it",
@@ -1023,6 +1145,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "the-cyber",
     title: "The Cyber",
     image: "the-cyber.jpg",
     headline: "Great cyber, the best cyber, yuuuuuge cyber",
@@ -1031,6 +1154,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "the-importance-of-backing-up-data",
     title: "The Importance of Backing Up Data",
     image: "the-importance-of-backing-up-data.jpg",
     headline: "Oh god please copy | Copying from dying drives",
@@ -1039,6 +1163,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T13:00:00.000Z",
   },
   {
+    id: "the-joys-of-generic-parameter-types",
     title: "The Joys of Generic Parameter Types",
     image: "the-joys-of-generic-parameter-types.jpg",
     headline:
@@ -1048,6 +1173,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T13:00:00.000Z",
   },
   {
+    id: "trivial-details",
     title: "Trivial Details",
     image: "trivial-details.jpeg",
     headline: "Perfecting the parts that don't matter",
@@ -1056,6 +1182,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "trying-stuff-until-it-works",
     title: "Trying Stuff Until it Works",
     image: "trying-stuff-until-it-works.jpg",
     headline: "Software can be chaotic, but we make it work",
@@ -1064,6 +1191,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "upsetting-with-python",
     title: "Upsetting Your Coworkers With Python",
     image: "upsetting-with-python.png",
     headline: "Using list, map, lambda, and filter on a single line",
@@ -1072,6 +1200,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "useless-git-commit-message",
     title: "Useless Git Commit Messages",
     image: "useless-git-commit-message.jpg",
     headline: 'git commit -m "changes"',
@@ -1080,6 +1209,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "using-open-source-software",
     title: "Using Open Source Software",
     image: "using-open-source-software.jpg",
     headline: "That'll show 'em | Yelling at the maintainer",
@@ -1088,6 +1218,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T13:00:00.000Z",
   },
   {
+    id: "vague-understanding-of-computer-science",
     title: "Vague Understanding Of Computer Science",
     image: "vague-understanding-of-computer-science.jpg",
     headline:
@@ -1097,6 +1228,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "variable-naming",
     title: "Variable Naming",
     image: "variable-naming.png",
     headline: "The hardest part of coding | Shave Hours Off Any Project",
@@ -1105,6 +1237,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "what-is-ligma",
     title: "What is Ligma",
     image: "what-is-ligma.png",
     headline: "Prepare for the worst",
@@ -1113,6 +1246,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "whiteboard-algo",
     title: "Whiteboard Algorithms",
     image: "whiteboard-algo.jpeg",
     headline: "Useless skills for interviews at public tech companies.",
@@ -1121,6 +1255,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "whiteboard-interviews",
     title: "Whiteboard Interviews",
     image: "whiteboard-interviews.png",
     headline:
@@ -1130,6 +1265,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "whole-app-in-head",
     title: "Keeping the Whole App in Your Head",
     image: "whole-app-in-head.jpg",
     headline: 'Also known as "job security"',
@@ -1138,6 +1274,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "windows-ram-forensics",
     title: "Windows RAM forensics",
     image: "windows-ram-forensics.jpg",
     headline: "Official guide | Navigating Task Manager",
@@ -1146,6 +1283,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T13:00:00.000Z",
   },
   {
+    id: "wont-fix-in-linter",
     title: "Using won't fix in your linter",
     image: "wont-fix-in-linter.png",
     headline: "How to improve your code quality",
@@ -1154,6 +1292,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "working-with-users",
     title: "Working with Users",
     image: "working-with-users.jpg",
     headline: "I didn't do anything! | You broke it! | I don't see ANYTHING",
@@ -1162,6 +1301,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T13:00:00.000Z",
   },
   {
+    id: "works-on-my-pc",
     title: "Works on my machine",
     image: "works-on-my-pc.jpeg",
     headline: "How to convince your manager",
@@ -1170,6 +1310,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "writing-code-nobody-else-can-read",
     title: "Writing Code that Nobody Else Can Read",
     image: "writing-code-nobody-else-can-read.jpg",
     headline: "Does it run? Just leave it alone.",
@@ -1178,6 +1319,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "writing-documentation",
     title: "Writing documentation",
     image: "writing-documentation.png",
     headline: "ToDo | Coming soon",
@@ -1186,6 +1328,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "z-index-1000",
     title: "Z-Index: 100000000000",
     image: "z-index-1000.jpg",
     headline: "Real World CSS | You've come this far, no going back now.",
@@ -1194,6 +1337,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "zoom-account",
     title: "ZOOM account, I have one!",
     image: "zoom-account.jpg",
     headline: "sharing my private information | who needs privacy",
@@ -1202,6 +1346,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "ack",
     title: "ACK",
     image: "ack.jpg",
     headline: "UNIX Power Tools",
@@ -1210,6 +1355,7 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
+    id: "angry-admin",
     title: "Angry Admin",
     image: "angry-admin.jpg",
     headline: "Keeping Uppity Users At Bay | Find Your Inner Rage",
