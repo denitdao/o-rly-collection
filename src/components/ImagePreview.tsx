@@ -6,7 +6,7 @@ type ImagePreviewContextType = {
   showImage: (
     imageId: string,
     imageUrl: string,
-    onCopy?: (imageId: string, imageUrl: string) => void,
+    onCopy?: (imageUrl: string) => void,
   ) => void;
 };
 
@@ -29,7 +29,7 @@ type ImagePreviewState = {
   imageId: string | null;
   imageUrl: string | null;
   onClose: () => void;
-  onCopy?: (imageId: string, imageUrl: string) => void;
+  onCopy?: (imageUrl: string) => void;
 };
 
 export const ImagePreviewProvider = ({
@@ -56,7 +56,7 @@ export const ImagePreviewProvider = ({
   const showImage = (
     imageId: string,
     imageUrl: string,
-    onCopy?: (imageId: string, imageUrl: string) => void,
+    onCopy?: (imageUrl: string) => void,
   ) => {
     setImagePreviewState((prev) => ({
       ...prev,
@@ -108,7 +108,7 @@ const ImagePreview: React.FC<ImagePreviewState> = (props) => {
       <button
         className="absolute right-5 top-20 z-50 text-2xl text-white"
         onClick={() => {
-          props.onCopy && props.onCopy(imageId, imageUrl);
+          props.onCopy && props.onCopy(imageUrl);
         }}
       >
         <Copy />

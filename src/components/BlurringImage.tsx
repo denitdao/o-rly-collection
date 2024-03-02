@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Image from "next/image";
 import { AspectRatio } from "~/components/ui/aspect-ratio";
 import { cn } from "~/lib/utils";
@@ -12,8 +11,6 @@ const BlurringImage = ({
   imageUrl: string;
   onClick: () => void;
 }) => {
-  const [isLoading, setLoading] = useState(true);
-
   return (
     <AspectRatio
       ratio={3 / 4.1}
@@ -25,12 +22,8 @@ const BlurringImage = ({
         fill
         onClick={onClick}
         className={cn(
-          "rounded-lg object-cover duration-500 ease-in-out",
-          isLoading
-            ? "scale-105 blur-xl grayscale"
-            : "scale-100 blur-0 grayscale-0 group-hover:scale-95 group-hover:duration-200",
+          "scale-100 rounded-lg object-cover blur-0 grayscale-0 duration-500 ease-in-out group-hover:scale-95 group-hover:duration-200",
         )}
-        onLoad={() => setLoading(false)}
       />
     </AspectRatio>
   );

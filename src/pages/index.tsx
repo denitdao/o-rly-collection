@@ -14,7 +14,6 @@ import {
 import useImageView from "~/hooks/useImageView";
 import { useBookKeywords, useBookSearch } from "~/hooks/useBookSearch";
 import SortSelect from "~/components/SortSelect";
-import { Toaster } from "~/components/ui/sonner";
 import RefreshButton from "~/components/RefreshButton";
 import SearchPills from "~/components/SearchPills";
 
@@ -26,7 +25,6 @@ export default function Home() {
         <ImagePreviewProvider>
           <BookSearch />
         </ImagePreviewProvider>
-        <Toaster richColors closeButton theme="light" />
         <OrlyFooter />
       </div>
       <div style={{ height: 0.5 }}></div>
@@ -72,19 +70,20 @@ const BookSearch = () => {
         {booksToShow && booksToShow.length !== 0 ? (
           <motion.div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             {booksToShow.map((book) => {
-              const imageId = book.image;
+              const bookId = book.id;
               const imageUrl = `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`;
               const bookTitle = book.title;
               const bookAlt = book.title + " | " + book.headline;
 
               return (
                 <BookTile
-                  key={imageId}
+                  key={bookId}
                   title={bookTitle}
                   alt={bookAlt}
+                  bookId={bookId}
                   imageUrl={imageUrl}
-                  onCopyClick={() => void imageCopyHandler(imageId, imageUrl)}
-                  onImageClick={() => void imageViewHandler(imageId, imageUrl)}
+                  onCopyClick={() => void imageCopyHandler(imageUrl)}
+                  onImageClick={() => void imageViewHandler(bookId, imageUrl)}
                 />
               );
             })}
