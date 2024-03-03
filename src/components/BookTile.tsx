@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import BlurringImage from "~/components/BlurringImage";
-import { Copy } from "lucide-react";
+import { Link as LinkIcon } from "lucide-react";
 import Link from "next/link";
 
 const BookTile = ({
@@ -24,7 +24,7 @@ const BookTile = ({
         className="absolute right-0 top-0 z-10 hidden rounded-lg bg-gray-200 p-2 text-xl opacity-70 hover:opacity-90 group-hover:block"
         onClick={onCopyClick}
       >
-        <Copy />
+        <LinkIcon />
       </button>
       <BlurringImage alt={alt} imageUrl={imageUrl} onClick={onImageClick} />
     </div>

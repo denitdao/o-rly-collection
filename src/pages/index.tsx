@@ -6,7 +6,6 @@ import { env } from "~/env.js";
 import Link from "next/link";
 import BookTile from "~/components/BookTile";
 import SearchBar from "~/components/SearchBar";
-import useImageCopy from "~/hooks/useImageCopy";
 import {
   useObserveSearchEffect,
   useObserveSortModeEffect,
@@ -17,6 +16,7 @@ import SortSelect from "~/components/SortSelect";
 import RefreshButton from "~/components/RefreshButton";
 import SearchPills from "~/components/SearchPills";
 import OrlyHeader from "~/components/OrlyHeader";
+import useLinkCopy from "~/hooks/useLinkCopy";
 
 export default function Home() {
   return (
@@ -42,7 +42,7 @@ const BookSearch = () => {
 
   useObserveSearchEffect(searchTerm);
   useObserveSortModeEffect(sortMode);
-  const imageCopyHandler = useImageCopy();
+  const linkCopyHandler = useLinkCopy();
   const imageViewHandler = useImageView();
 
   return (
@@ -76,6 +76,10 @@ const BookSearch = () => {
               const bookTitle = book.title;
               const bookAlt = book.title + " | " + book.headline;
 
+              const theLinkCopyHandler = () => {
+                linkCopyHandler(`${env.NEXT_PUBLIC_SITE_URL}/books/${bookId}`);
+              };
+
               return (
                 <BookTile
                   key={bookId}
@@ -83,8 +87,10 @@ const BookSearch = () => {
                   alt={bookAlt}
                   bookId={bookId}
                   imageUrl={imageUrl}
-                  onCopyClick={() => void imageCopyHandler(imageUrl)}
-                  onImageClick={() => void imageViewHandler(bookId, imageUrl)}
+                  onCopyClick={theLinkCopyHandler}
+                  onImageClick={() =>
+                    void imageViewHandler(bookId, imageUrl, theLinkCopyHandler)
+                  }
                 />
               );
             })}

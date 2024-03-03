@@ -3,6 +3,20 @@ import { api } from "~/utils/api";
 import { useEffect, useRef } from "react";
 import { type SortMode } from "~/hooks/useBookSearch";
 
+export const useObserveLinkCopy = () => {
+  const { mutate: observeLinkCopy } = api.observation.link_copy.useMutation();
+
+  return (link: string) => {
+    observeLinkCopy({ link });
+    sendGAEvent({
+      action: "link_copy",
+      category: "link",
+      label: "Link Copy",
+      value: link,
+    });
+  };
+};
+
 export const useObserveImageCopy = () => {
   const { mutate: observeImageCopy } = api.observation.image_copy.useMutation();
 

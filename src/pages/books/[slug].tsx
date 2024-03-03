@@ -8,6 +8,7 @@ import OrlyHead from "~/components/meta/OrlyHead";
 import OrlyFooter from "~/components/OrlyFooter";
 import Link from "next/link";
 import { Button } from "~/components/ui/button";
+import useLinkCopy from "~/hooks/useLinkCopy";
 
 export default function BookPage() {
   const router = useRouter();
@@ -40,7 +41,9 @@ export default function BookPage() {
 }
 
 const BookContent = ({ book }: { book: Book }) => {
-  const onCopy = useImageCopy();
+  const imageCopy = useImageCopy();
+  const linkCopy = useLinkCopy();
+
   const imageUrl = env.NEXT_PUBLIC_IMAGE_SOURCE + "/" + book.image;
 
   return (

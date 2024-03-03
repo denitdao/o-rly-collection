@@ -1,13 +1,9 @@
 import Image from "next/image";
-import { Copy, X } from "lucide-react";
+import { Link, X } from "lucide-react";
 import React, { createContext, useContext, useState } from "react";
 
 type ImagePreviewContextType = {
-  showImage: (
-    imageId: string,
-    imageUrl: string,
-    onCopy?: (imageUrl: string) => void,
-  ) => void;
+  showImage: (imageId: string, imageUrl: string, onCopy: () => void) => void;
 };
 
 const ImagePreviewContext = createContext<ImagePreviewContextType | undefined>(
@@ -29,7 +25,7 @@ type ImagePreviewState = {
   imageId: string | null;
   imageUrl: string | null;
   onClose: () => void;
-  onCopy?: (imageUrl: string) => void;
+  onCopy: () => void;
 };
 
 export const ImagePreviewProvider = ({
@@ -50,14 +46,13 @@ export const ImagePreviewProvider = ({
           imageUrl: null,
         }));
       },
+      onCopy: () => {
+        /* default behavior - do nothing */
+      },
     },
   );
 
-  const showImage = (
-    imageId: string,
-    imageUrl: string,
-    onCopy?: (imageUrl: string) => void,
-  ) => {
+  const showImage = (imageId: string, imageUrl: string, onCopy: () => void) => {
     setImagePreviewState((prev) => ({
       ...prev,
       isVisible: true,
@@ -109,10 +104,10 @@ const ImagePreview: React.FC<ImagePreviewState> = (props) => {
       <button
         className="absolute right-5 top-20 z-50 text-2xl text-white"
         onClick={() => {
-          props.onCopy && props.onCopy(imageUrl);
+          props.onCopy();
         }}
       >
-        <Copy />
+        <Link />
       </button>
     </div>
   ) : null;
