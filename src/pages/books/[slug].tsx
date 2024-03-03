@@ -55,10 +55,7 @@ export default function BookPage({
 
   return (
     <>
-      <OrlyHead
-        description={book.title}
-        imageUrl={`${env.NEXT_PUBLIC_SITE_URL}${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`}
-      />
+      <OrlyHead description={book.title} imageName={book.image} />
       <div className="flex min-h-screen flex-col bg-gray-50">
         <Header title={book.title} />
         <BookContent book={book} />
