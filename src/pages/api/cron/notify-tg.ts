@@ -26,14 +26,14 @@ type SearchStats = Record<string, number>;
 
 async function collectStats() {
   // Retrieve stats
-  const copyStats = await kv.hgetall<ImageStats>("copy__images");
+  const copyStats = await kv.hgetall<ImageStats>("copy__links");
   const viewStats = await kv.hgetall<ImageStats>("view__images");
   const searchStats = await kv.hgetall<SearchStats>("search__queries");
   const sortStats = await kv.hgetall<SearchStats>("sort__modes");
 
   // Format stats
   let statsString = "📊 *OrlyBooks Statistics* 📊\n\n\n";
-  statsString += formatTopStats("📎 *Image Copy Stats:*", copyStats);
+  statsString += formatTopStats("📎 *Link Copy Stats:*", copyStats);
   statsString += "\n" + formatTopStats("🌅 *Image View Stats:*", viewStats);
   statsString +=
     "\n" + formatSearchStats("🔎 *User Search Queries:*", searchStats);
