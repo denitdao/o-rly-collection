@@ -1,23 +1,49 @@
 import { env } from "~/env.js";
 import useImageCopy from "~/hooks/useImageCopy";
-import { useRouter } from "next/router";
 import Image from "next/image";
-import React, { useMemo } from "react";
+import React from "react";
 import BOOK_LIBRARY, { type Book } from "~/lib/library";
 import OrlyHead from "~/components/meta/OrlyHead";
 import OrlyFooter from "~/components/OrlyFooter";
 import Link from "next/link";
 import { Button } from "~/components/ui/button";
 import useLinkCopy from "~/hooks/useLinkCopy";
+import type {
+  GetStaticPaths,
+  GetStaticProps,
+  GetStaticPropsContext,
+  InferGetStaticPropsType,
+} from "next";
 
-export default function BookPage() {
-  const router = useRouter();
-  const bookId: string = router.query.slug as string;
-  const book = useMemo(
-    () => BOOK_LIBRARY.find((book) => book.id === bookId),
-    [bookId],
-  );
+export const getStaticProps: GetStaticProps = async (
+  context: GetStaticPropsContext,
+) => {
+  const bookId = context.params?.slug as string;
+  const book = BOOK_LIBRARY.find((book) => book.id === bookId) ?? null;
 
+  return {
+    props: {
+      book,
+    },
+  };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = BOOK_LIBRARY.map((book) => ({
+    params: { slug: book.id },
+  }));
+
+  return {
+    paths,
+    fallback: true,
+  };
+};
+
+export default function BookPage({
+  book,
+}: {
+  book: Book | null;
+}): InferGetStaticPropsType<typeof getStaticProps> {
   if (!book) {
     return (
       <>
@@ -54,7 +80,6 @@ const BookContent = ({ book }: { book: Book }) => {
             priority
             alt={book.id}
             src={imageUrl}
-            objectFit="contain"
             quality={100}
             height={600}
             width={600}
