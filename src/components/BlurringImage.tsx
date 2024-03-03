@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { AspectRatio } from "~/components/ui/aspect-ratio";
-import { cn } from "~/lib/utils";
 
 const BlurringImage = ({
   alt,
@@ -21,9 +20,7 @@ const BlurringImage = ({
         src={imageUrl}
         fill
         onClick={onClick}
-        className={cn(
-          "scale-100 rounded-lg object-cover blur-0 grayscale-0 duration-500 ease-in-out group-hover:scale-95 group-hover:duration-200",
-        )}
+        className="scale-100 rounded-lg object-cover blur-0 grayscale-0 duration-500 ease-in-out group-hover:scale-95 group-hover:duration-200"
       />
     </AspectRatio>
   );

@@ -97,6 +97,7 @@ const ImagePreview: React.FC<ImagePreviewState> = (props) => {
           alt={imageId}
           fill
           style={{ objectFit: "contain" }}
+          quality={100}
         />
       </div>
       <button

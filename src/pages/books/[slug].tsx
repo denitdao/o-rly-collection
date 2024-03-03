@@ -2,19 +2,20 @@ import { env } from "~/env.js";
 import useImageCopy from "~/hooks/useImageCopy";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { Copy, X } from "lucide-react";
-import React from "react";
+import React, { useMemo } from "react";
 import BOOK_LIBRARY, { type Book } from "~/lib/library";
 import OrlyHead from "~/components/meta/OrlyHead";
 import OrlyFooter from "~/components/OrlyFooter";
-import OrlyHeader from "~/components/OrlyHeader";
 import Link from "next/link";
 import { Button } from "~/components/ui/button";
 
 export default function BookPage() {
   const router = useRouter();
   const bookId: string = router.query.slug as string;
-  const book = BOOK_LIBRARY.find((book) => book.id === bookId);
+  const book = useMemo(
+    () => BOOK_LIBRARY.find((book) => book.id === bookId),
+    [bookId],
+  );
 
   if (!book) {
     return (
@@ -29,7 +30,7 @@ export default function BookPage() {
     <>
       <OrlyHead />
       <div className="flex min-h-screen flex-col bg-gray-50">
-        <OrlyHeader />
+        <Header title={book.title} />
         <BookContent book={book} />
         <OrlyFooter />
       </div>
@@ -39,44 +40,46 @@ export default function BookPage() {
 }
 
 const BookContent = ({ book }: { book: Book }) => {
-  const router = useRouter();
   const onCopy = useImageCopy();
-
   const imageUrl = env.NEXT_PUBLIC_IMAGE_SOURCE + "/" + book.image;
 
   return (
-    <main className="px-4 py-16">
+    <main className="px-4 pb-16">
       <div className="mx-auto max-w-screen-2xl">
-        <div className="flex w-full flex-col items-center"></div>
-        <div
-          className="fixed inset-0 z-40 flex cursor-pointer items-center justify-center bg-black bg-opacity-70"
-          onClick={() => router.back()}
-        >
-          <div className="relative h-[80%] w-full max-w-screen-lg">
-            <Image
-              src={imageUrl}
-              alt={book.id}
-              fill
-              style={{ objectFit: "contain" }}
-            />
-          </div>
-          <button
-            className="absolute right-5 top-5 z-50 text-3xl text-white"
-            onClick={() => router.back()}
-          >
-            <X />
-          </button>
-          <button
-            className="absolute right-5 top-20 z-50 text-2xl text-white"
-            onClick={() => {
-              onCopy(imageUrl);
-            }}
-          >
-            <Copy />
-          </button>
+        <div className="flex w-full flex-col items-center">
+          <Image
+            priority
+            alt={book.id}
+            src={imageUrl}
+            objectFit="contain"
+            quality={100}
+            height={600}
+            width={600}
+          />
         </div>
       </div>
     </main>
+  );
+};
+
+const Header = ({ title }: { title: string }) => {
+  return (
+    <header className="px-4 py-16">
+      <div className="mx-auto flex w-full max-w-screen-2xl flex-col items-center">
+        <h1 className="mb-5 max-w-[800px] text-4xl font-extrabold tracking-tight text-black">
+          {title}
+        </h1>
+        <p className="text-center font-mono tracking-tight text-gray-600">
+          View the collection of compelling{" "}
+          <Link
+            href={"/"}
+            className="underline decoration-blue-400 decoration-2 underline-offset-2"
+          >
+            programming book covers
+          </Link>
+        </p>
+      </div>
+    </header>
   );
 };
 

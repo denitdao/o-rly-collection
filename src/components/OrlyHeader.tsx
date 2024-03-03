@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const OrlyHeader = () => {
   return (
     <header className="px-4 py-16">
@@ -7,9 +9,12 @@ const OrlyHeader = () => {
         </h1>
         <p className="text-center font-mono tracking-tight text-gray-600">
           Strengthen your{" "}
-          <span className="underline decoration-blue-400 decoration-2 underline-offset-2">
+          <Link
+            href={"/"}
+            className="underline decoration-blue-400 decoration-2 underline-offset-2"
+          >
             arguments
-          </span>{" "}
+          </Link>{" "}
           with compelling programming book covers
         </p>
       </div>
