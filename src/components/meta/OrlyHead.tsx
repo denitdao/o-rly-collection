@@ -21,7 +21,10 @@ const OrlyHead = ({
   return (
     <Head>
       <title>{title}</title>
-      <meta name="description" content={description} />
+      <meta
+        name="description"
+        content="Find O'RLY meme book cover. Use for your programming arguments. ORLY book parodies. Funny programming book covers. O RLY?"
+      />
       <link rel="icon" href="/favicon.ico" />
       <link
         rel="apple-touch-icon"

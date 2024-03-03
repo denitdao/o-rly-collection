@@ -55,7 +55,10 @@ export default function BookPage({
 
   return (
     <>
-      <OrlyHead />
+      <OrlyHead
+        description={book.title}
+        imageUrl={`${env.NEXT_PUBLIC_SITE_URL}${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`}
+      />
       <div className="flex min-h-screen flex-col bg-gray-50">
         <Header title={book.title} />
         <BookContent book={book} />
@@ -72,7 +75,7 @@ const BookContent = ({ book }: { book: Book }) => {
     colors: [book.color],
   }));
 
-  const imageUrl = env.NEXT_PUBLIC_IMAGE_SOURCE + "/" + book.image;
+  const imageUrl = `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`;
 
   return (
     <main className="px-4 pb-16">
