@@ -8,8 +8,8 @@ import { toast } from "sonner";
 const useImageCopy = () => {
   const observeImageCopy = useObserveImageCopy();
 
-  return (imageId: string, imageUrl: string) => {
-    observeImageCopy(imageId);
+  return (imageUrl: string) => {
+    observeImageCopy(imageUrl);
     copyImageToClipboard(imageUrl)
       .then(() => {
         toast.success("Image copied to the clipboard!", {

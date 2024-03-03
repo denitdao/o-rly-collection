@@ -6,7 +6,6 @@ import { env } from "~/env.js";
 import Link from "next/link";
 import BookTile from "~/components/BookTile";
 import SearchBar from "~/components/SearchBar";
-import useImageCopy from "~/hooks/useImageCopy";
 import {
   useObserveSearchEffect,
   useObserveSortModeEffect,
@@ -14,19 +13,20 @@ import {
 import useImageView from "~/hooks/useImageView";
 import { useBookKeywords, useBookSearch } from "~/hooks/useBookSearch";
 import SortSelect from "~/components/SortSelect";
-import { Toaster } from "~/components/ui/sonner";
 import RefreshButton from "~/components/RefreshButton";
 import SearchPills from "~/components/SearchPills";
+import OrlyHeader from "~/components/OrlyHeader";
+import useLinkCopy from "~/hooks/useLinkCopy";
 
 export default function Home() {
   return (
     <>
+      <OrlyHead />
       <div className="flex min-h-screen flex-col bg-gray-50">
-        <OrlyHead />
+        <OrlyHeader />
         <ImagePreviewProvider>
           <BookSearch />
         </ImagePreviewProvider>
-        <Toaster richColors closeButton theme="light" />
         <OrlyFooter />
       </div>
       <div style={{ height: 0.5 }}></div>
@@ -42,14 +42,13 @@ const BookSearch = () => {
 
   useObserveSearchEffect(searchTerm);
   useObserveSortModeEffect(sortMode);
-  const imageCopyHandler = useImageCopy();
+  const linkCopyHandler = useLinkCopy();
   const imageViewHandler = useImageView();
 
   return (
-    <main className="px-4 py-16">
+    <main className="px-4 pb-16">
       <div className="mx-auto max-w-screen-2xl">
         <div className="flex w-full flex-col items-center">
-          <Heading />
           <div className="mb-4 flex w-full justify-center gap-4">
             <SearchBar
               className="w-full max-w-lg"
@@ -72,19 +71,26 @@ const BookSearch = () => {
         {booksToShow && booksToShow.length !== 0 ? (
           <motion.div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             {booksToShow.map((book) => {
-              const imageId = book.image;
+              const bookId = book.id;
               const imageUrl = `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`;
               const bookTitle = book.title;
               const bookAlt = book.title + " | " + book.headline;
 
+              const theLinkCopyHandler = () => {
+                linkCopyHandler(`${env.NEXT_PUBLIC_SITE_URL}/books/${bookId}`);
+              };
+
               return (
                 <BookTile
-                  key={imageId}
+                  key={bookId}
                   title={bookTitle}
                   alt={bookAlt}
+                  bookId={bookId}
                   imageUrl={imageUrl}
-                  onCopyClick={() => void imageCopyHandler(imageId, imageUrl)}
-                  onImageClick={() => void imageViewHandler(imageId, imageUrl)}
+                  onCopyClick={theLinkCopyHandler}
+                  onImageClick={() =>
+                    void imageViewHandler(bookId, imageUrl, theLinkCopyHandler)
+                  }
                 />
               );
             })}
@@ -94,23 +100,6 @@ const BookSearch = () => {
         )}
       </div>
     </main>
-  );
-};
-
-const Heading = () => {
-  return (
-    <>
-      <h1 className="mb-5 text-4xl font-extrabold tracking-tight text-black">
-        Search O&apos;RLY Covers
-      </h1>
-      <p className="mb-16 text-center font-mono tracking-tight text-gray-600">
-        Strengthen your{" "}
-        <span className="underline decoration-blue-400 decoration-2 underline-offset-2">
-          arguments
-        </span>{" "}
-        with compelling programming book covers
-      </p>
-    </>
   );
 };
 

@@ -1,3 +1,5 @@
 User-Agent: *
 
 Allow: /
+Allow: /books/*
+Allow: /api/og/*

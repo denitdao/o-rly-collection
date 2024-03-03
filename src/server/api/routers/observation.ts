@@ -6,6 +6,14 @@ import { env } from "~/env.js";
 const isDevEnv = env.NODE_ENV === "development";
 
 export const observationRouter = createTRPCRouter({
+  link_copy: publicProcedure
+    .input(z.object({ link: z.string() }))
+    .mutation(async ({ input }) => {
+      if (isDevEnv) return;
+      const key = `copy__links`;
+      const number = await kv.hincrby(key, input.link, 1);
+      console.log(`Link ${input.link} has been copied ${number} times`);
+    }),
   image_copy: publicProcedure
     .input(z.object({ imageName: z.string() }))
     .mutation(async ({ input }) => {

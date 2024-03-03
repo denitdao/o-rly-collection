@@ -4,7 +4,7 @@ import { env } from "~/env.js";
 type HeadProps = {
   title?: string;
   description?: string;
-  imageUrl?: string;
+  imageName?: string;
 };
 
 /**
@@ -16,12 +16,16 @@ type HeadProps = {
 const OrlyHead = ({
   title = "O'RLY Covers",
   description = "Find O'RLY meme book cover. Use for your programming arguments. ORLY book parodies. Funny programming book covers. O RLY?",
-  imageUrl = `${env.NEXT_PUBLIC_SITE_URL}${env.NEXT_PUBLIC_OG_SOURCE}/og.jpeg`,
+  imageName = ``,
 }: HeadProps) => {
+  const imageUrl = `${env.NEXT_PUBLIC_SITE_URL}/api/og?image_file=${imageName}`;
   return (
     <Head>
       <title>{title}</title>
-      <meta name="description" content={description} />
+      <meta
+        name="description"
+        content="Find O'RLY meme book cover. Use for your programming arguments. ORLY book parodies. Funny programming book covers. O RLY?"
+      />
       <link rel="icon" href="/favicon.ico" />
       <link
         rel="apple-touch-icon"
@@ -51,7 +55,7 @@ const OrlyHead = ({
       <meta property="og:site_name" content="O'RLY Covers" />
       <meta property="og:determiner" content="the" />
 
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />

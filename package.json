@@ -27,6 +27,7 @@
     "@trpc/server": "^10.45.1",
     "@vercel/analytics": "^1.2.0",
     "@vercel/kv": "^1.0.1",
+    "@vercel/og": "^0.6.2",
     "@vercel/speed-insights": "^1.0.10",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
