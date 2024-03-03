@@ -3,7 +3,7 @@ import { Button, type ButtonProps } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
 import { type BookColor } from "~/lib/library";
 
-type PillData = {
+export type PillData = {
   keyword: string;
   colors: BookColor[];
 };

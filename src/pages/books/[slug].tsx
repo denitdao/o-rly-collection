@@ -1,5 +1,4 @@
 import { env } from "~/env.js";
-import useImageCopy from "~/hooks/useImageCopy";
 import Image from "next/image";
 import React from "react";
 import BOOK_LIBRARY, { type Book } from "~/lib/library";
@@ -7,13 +6,14 @@ import OrlyHead from "~/components/meta/OrlyHead";
 import OrlyFooter from "~/components/OrlyFooter";
 import Link from "next/link";
 import { Button } from "~/components/ui/button";
-import useLinkCopy from "~/hooks/useLinkCopy";
 import type {
   GetStaticPaths,
   GetStaticProps,
   GetStaticPropsContext,
   InferGetStaticPropsType,
 } from "next";
+import SearchPills, { type PillData } from "~/components/SearchPills";
+import { toast } from "sonner";
 
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext,
@@ -67,8 +67,10 @@ export default function BookPage({
 }
 
 const BookContent = ({ book }: { book: Book }) => {
-  const imageCopy = useImageCopy();
-  const linkCopy = useLinkCopy();
+  const keywords: PillData[] = book.tags.split(",").map((tag) => ({
+    keyword: tag.trim(),
+    colors: [book.color],
+  }));
 
   const imageUrl = env.NEXT_PUBLIC_IMAGE_SOURCE + "/" + book.image;
 
@@ -83,13 +85,24 @@ const BookContent = ({ book }: { book: Book }) => {
             quality={100}
             height={600}
             width={600}
+            className="mb-4"
           />
+          <div className="flex flex-wrap items-center gap-2">
+            <SearchPills
+              activeKeyword={""}
+              pillDataArray={keywords}
+              onKeywordClick={(_) => {
+                toast.info("Will be implemented soon", {
+                  duration: 2000,
+                });
+              }}
+            />
+          </div>
         </div>
       </div>
     </main>
   );
 };
-
 const Header = ({ title }: { title: string }) => {
   return (
     <header className="px-4 py-16">
