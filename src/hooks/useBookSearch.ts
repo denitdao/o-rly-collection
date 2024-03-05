@@ -1,13 +1,17 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Fuse from "fuse.js";
 import BOOK_LIBRARY, { type Book, type BookColor } from "~/lib/library";
+import { parseAsString, parseAsStringLiteral, useQueryState } from "nuqs";
 
-export type SortMode =
-  | "default"
-  | "newest"
-  | "oldest"
-  | "alphabetical"
-  | "color";
+const ValidSortModes = [
+  "default",
+  "newest",
+  "oldest",
+  "alphabetical",
+  "color",
+] as const;
+
+export type SortMode = (typeof ValidSortModes)[number];
 
 interface KeywordColor {
   keyword: string;
@@ -44,8 +48,22 @@ const COLOR_PALETTE: BookColor[] = [
 ];
 
 const useBookSearch = (initialSortMode: SortMode = "default") => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [sortMode, setSortMode] = useState<SortMode>(initialSortMode);
+  const [searchTerm, setSearchTerm] = useQueryState(
+    "search",
+    parseAsString
+      .withOptions({
+        clearOnDefault: true,
+      })
+      .withDefault(""),
+  );
+  const [sortMode, setSortMode] = useQueryState(
+    "sort",
+    parseAsStringLiteral(ValidSortModes)
+      .withOptions({
+        clearOnDefault: true,
+      })
+      .withDefault(initialSortMode),
+  );
   const [sortedBookLibrary, setSortedBookLibrary] =
     useState<Book[]>(BOOK_LIBRARY);
 

@@ -50,7 +50,7 @@ const OrlyHead = ({
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={imageUrl} />
-      <meta property="og:url" content={`${env.NEXT_PUBLIC_SITE_URL}`} />
+      <meta property="og:url" content={env.NEXT_PUBLIC_SITE_URL} />
       <meta property="og:locale" content="en_US" />
       <meta property="og:site_name" content="O'RLY Covers" />
       <meta property="og:determiner" content="the" />

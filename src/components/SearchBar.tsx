@@ -1,6 +1,6 @@
 import { Input } from "~/components/ui/input";
 import { X } from "lucide-react";
-import { HTMLAttributes } from "react";
+import { type HTMLAttributes } from "react";
 import { cn } from "~/lib/utils";
 
 interface SearchBarProps extends HTMLAttributes<HTMLDivElement> {
