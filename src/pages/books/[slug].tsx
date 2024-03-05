@@ -13,6 +13,7 @@ import type {
   InferGetStaticPropsType,
 } from "next";
 import SearchPills, { type PillData } from "~/components/SearchPills";
+import { useRouter } from "next/router";
 import { toast } from "sonner";
 
 export const getStaticProps: GetStaticProps = async (
@@ -67,6 +68,8 @@ export default function BookPage({
 }
 
 const BookContent = ({ book }: { book: Book }) => {
+  const router = useRouter();
+
   const keywords: PillData[] = book.tags.split(",").map((tag) => ({
     keyword: tag.trim(),
     colors: [book.color],
@@ -91,10 +94,17 @@ const BookContent = ({ book }: { book: Book }) => {
             <SearchPills
               activeKeyword={""}
               pillDataArray={keywords}
-              onKeywordClick={(_) => {
-                toast.info("Will be implemented soon", {
-                  duration: 2000,
-                });
+              onKeywordClick={(keyword) => {
+                router
+                  .push({
+                    pathname: "/",
+                    query: { search: keyword },
+                  })
+                  .catch((_) => {
+                    toast.info("Will be implemented soon", {
+                      duration: 2000,
+                    });
+                  });
               }}
             />
           </div>
