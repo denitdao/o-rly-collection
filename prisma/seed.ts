@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import BOOK_LIBRARY from "~/lib/library";
+import STORY_LIBRARY from "./stories";
 
 const prisma = new PrismaClient();
 
@@ -27,6 +28,25 @@ async function main() {
         tags: book.tags,
         createdAt: new Date(Date.parse(book.createdAt)),
         updatedAt: new Date(Date.parse(book.createdAt)),
+      },
+    });
+  }
+
+  for (const story of STORY_LIBRARY) {
+    await prisma.story.upsert({
+      select: {
+        id: true,
+      },
+      where: { id: story.id },
+      update: {
+        content: story.content,
+        updatedAt: new Date(),
+      },
+      create: {
+        id: story.id,
+        content: story.content,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
     });
   }

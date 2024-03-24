@@ -25,10 +25,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const story = await trpc.datasource.getStoryById(bookId);
 
   return {
-    props: {
-      book,
-      story: story?.content,
-    },
+    props: story
+      ? {
+          book,
+          story: story.content,
+        }
+      : {
+          book,
+        },
   };
 };
 
@@ -95,7 +99,7 @@ const BookContent = ({ book, story }: { book: Book; story?: string }) => {
             width={600}
             className="mb-4"
           />
-          <div className="mb-8 flex flex-wrap items-center gap-2">
+          <div className="mb-12 flex flex-wrap items-center gap-2">
             <SearchPills
               activeKeyword={""}
               pillDataArray={keywords}
@@ -113,9 +117,15 @@ const BookContent = ({ book, story }: { book: Book; story?: string }) => {
               }}
             />
           </div>
-          <div className="container font-mono">
-            <p className="">{story}</p>
-            <p>{getLoremIpsum()}</p>
+          <div className="max-w-3xl">
+            {story
+              ?.split("\n")
+              .filter((text) => text.length > 0)
+              .map((paragraph, index) => (
+                <p className="leading-7 [&:not(:first-child)]:mt-6" key={index}>
+                  {paragraph}
+                </p>
+              ))}
           </div>
         </div>
       </div>
