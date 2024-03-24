@@ -9,22 +9,25 @@ import { Button } from "~/components/ui/button";
 import type {
   GetStaticPaths,
   GetStaticProps,
-  GetStaticPropsContext,
   InferGetStaticPropsType,
 } from "next";
 import SearchPills, { type PillData } from "~/components/SearchPills";
 import { useRouter } from "next/router";
 import { toast } from "sonner";
+import { db } from "~/server/db";
+import { createCaller } from "~/server/api/root";
 
-export const getStaticProps: GetStaticProps = async (
-  context: GetStaticPropsContext,
-) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const bookId = context.params?.slug as string;
   const book = BOOK_LIBRARY.find((book) => book.id === bookId) ?? null;
+
+  const trpc = createCaller({ db });
+  const story = await trpc.datasource.getStoryById(bookId);
 
   return {
     props: {
       book,
+      story: story?.content,
     },
   };
 };
@@ -42,8 +45,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export default function BookPage({
   book,
+  story,
 }: {
   book: Book | null;
+  story?: string;
 }): InferGetStaticPropsType<typeof getStaticProps> {
   if (!book) {
     return (
@@ -59,7 +64,7 @@ export default function BookPage({
       <OrlyHead description={book.title} imageName={book.image} />
       <div className="flex min-h-screen flex-col bg-gray-50">
         <Header title={book.title} />
-        <BookContent book={book} />
+        <BookContent book={book} story={story} />
         <OrlyFooter />
       </div>
       <div style={{ height: 0.5 }}></div>
@@ -67,7 +72,7 @@ export default function BookPage({
   );
 }
 
-const BookContent = ({ book }: { book: Book }) => {
+const BookContent = ({ book, story }: { book: Book; story?: string }) => {
   const router = useRouter();
 
   const keywords: PillData[] = book.tags.split(",").map((tag) => ({
@@ -90,7 +95,7 @@ const BookContent = ({ book }: { book: Book }) => {
             width={600}
             className="mb-4"
           />
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="mb-8 flex flex-wrap items-center gap-2">
             <SearchPills
               activeKeyword={""}
               pillDataArray={keywords}
@@ -108,11 +113,20 @@ const BookContent = ({ book }: { book: Book }) => {
               }}
             />
           </div>
+          <div className="container font-mono">
+            <p className="">{story}</p>
+            <p>{getLoremIpsum()}</p>
+          </div>
         </div>
       </div>
     </main>
   );
 };
+
+const getLoremIpsum = (): string => {
+  return `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
+};
+
 const Header = ({ title }: { title: string }) => {
   return (
     <header className="px-4 py-16">

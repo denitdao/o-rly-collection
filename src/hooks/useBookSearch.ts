@@ -1,6 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Fuse from "fuse.js";
-import BOOK_LIBRARY, { type Book, type BookColor } from "~/lib/library";
+import BOOK_LIBRARY, {
+  type Book,
+  type BookColor,
+  ColorPalette,
+} from "~/lib/library";
 import { parseAsString, parseAsStringLiteral, useQueryState } from "nuqs";
 
 const ValidSortModes = [
@@ -29,23 +33,6 @@ const FUSE_INDEX_DEFAULT = new Fuse(BOOK_LIBRARY, {
     { name: "color", weight: 0.1 },
   ],
 });
-
-const COLOR_PALETTE: BookColor[] = [
-  "gray",
-  "red",
-  "orange",
-  "yellow",
-  "lime",
-  "green",
-  "teal",
-  "cyan",
-  "sky",
-  "blue",
-  "indigo",
-  "violet",
-  "fuchsia",
-  "pink",
-];
 
 const useBookSearch = (initialSortMode: SortMode = "default") => {
   const [searchTerm, setSearchTerm] = useQueryState(
@@ -79,7 +66,7 @@ const useBookSearch = (initialSortMode: SortMode = "default") => {
             return a.title.localeCompare(b.title);
           case "color":
             return (
-              COLOR_PALETTE.indexOf(a.color) - COLOR_PALETTE.indexOf(b.color)
+              ColorPalette.indexOf(a.color) - ColorPalette.indexOf(b.color)
             );
           default:
             return 0;
@@ -146,7 +133,7 @@ const useBookKeywords = (numberOfKeywords = 5) => {
 
       const colorFrequency = books
         .map((book) => book.color)
-        .sort((a, b) => COLOR_PALETTE.indexOf(a) - COLOR_PALETTE.indexOf(b))
+        .sort((a, b) => ColorPalette.indexOf(a) - ColorPalette.indexOf(b))
         .reduce(
           (acc, color) => {
             acc[color] = (acc[color] ?? 0) + 1;
@@ -159,7 +146,7 @@ const useBookKeywords = (numberOfKeywords = 5) => {
         .sort((a, b) => b[1] - a[1])
         .slice(0, 3)
         .map(([color]) => color as BookColor)
-        .sort((a, b) => COLOR_PALETTE.indexOf(a) - COLOR_PALETTE.indexOf(b));
+        .sort((a, b) => ColorPalette.indexOf(a) - ColorPalette.indexOf(b));
 
       return { keyword, colors: topColors };
     });

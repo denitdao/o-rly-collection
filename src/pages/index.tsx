@@ -83,8 +83,8 @@ const BookSearch = () => {
               return (
                 <BookTile
                   key={bookId}
-                  title={bookTitle}
                   alt={bookAlt}
+                  title={bookTitle}
                   bookId={bookId}
                   imageUrl={imageUrl}
                   onCopyClick={theLinkCopyHandler}
