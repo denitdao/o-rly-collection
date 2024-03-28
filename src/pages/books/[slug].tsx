@@ -1,11 +1,10 @@
 import { env } from "~/env.js";
 import Image from "next/image";
 import React from "react";
-import BOOK_LIBRARY, { type Book } from "~/lib/library";
+import { type Book, toColorLiteral } from "~/lib/library";
 import OrlyHead from "~/components/meta/OrlyHead";
 import OrlyFooter from "~/components/OrlyFooter";
 import Link from "next/link";
-import { Button } from "~/components/ui/button";
 import type {
   GetStaticPaths,
   GetStaticProps,
@@ -19,31 +18,47 @@ import { createCaller } from "~/server/api/root";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const bookId = context.params?.slug as string;
-  const book = BOOK_LIBRARY.find((book) => book.id === bookId) ?? null;
 
   const trpc = createCaller({ db });
-  const story = await trpc.datasource.getStoryById(bookId);
+  const dbBook = await trpc.datasource.getBookById(bookId);
+
+  if (!dbBook) {
+    return {
+      notFound: true,
+    };
+  }
+
+  // todo: improve type system to simplify such mappings
+  const book: Book = {
+    id: dbBook.id,
+    title: dbBook.title,
+    image: dbBook.image,
+    color: toColorLiteral(dbBook.color),
+    headline: dbBook.headline,
+    tags: dbBook.tags,
+    createdAt: dbBook.createdAt.toISOString(),
+  };
+  const story = dbBook.stories[0]?.content ?? "";
 
   return {
-    props: story
-      ? {
-          book,
-          story: story.content,
-        }
-      : {
-          book,
-        },
+    props: {
+      book,
+      story,
+    },
   };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = BOOK_LIBRARY.map((book) => ({
-    params: { slug: book.id },
+  const trpc = createCaller({ db });
+  const bookIds = await trpc.datasource.getBookIds();
+
+  const paths = bookIds.map((id) => ({
+    params: { slug: id },
   }));
 
   return {
     paths,
-    fallback: true,
+    fallback: "blocking",
   };
 };
 
@@ -51,18 +66,9 @@ export default function BookPage({
   book,
   story,
 }: {
-  book: Book | null;
-  story?: string;
+  book: Book;
+  story: string;
 }): InferGetStaticPropsType<typeof getStaticProps> {
-  if (!book) {
-    return (
-      <>
-        <OrlyHead />
-        <BookNotFound />
-      </>
-    );
-  }
-
   return (
     <>
       <OrlyHead description={book.title} imageName={book.image} />
@@ -76,7 +82,7 @@ export default function BookPage({
   );
 }
 
-const BookContent = ({ book, story }: { book: Book; story?: string }) => {
+const BookContent = ({ book, story }: { book: Book; story: string }) => {
   const router = useRouter();
 
   const keywords: PillData[] = book.tags.split(",").map((tag) => ({
@@ -117,24 +123,25 @@ const BookContent = ({ book, story }: { book: Book; story?: string }) => {
               }}
             />
           </div>
-          <div className="max-w-3xl">
-            {story
-              ?.split("\n")
-              .filter((text) => text.length > 0)
-              .map((paragraph, index) => (
-                <p className="leading-7 [&:not(:first-child)]:mt-6" key={index}>
-                  {paragraph}
-                </p>
-              ))}
-          </div>
+          {story.length > 0 && (
+            <div className="max-w-3xl">
+              {story
+                .split("\n")
+                .filter((text) => text.length > 0)
+                .map((paragraph, index) => (
+                  <p
+                    className="leading-7 [&:not(:first-child)]:mt-6"
+                    key={index}
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+            </div>
+          )}
         </div>
       </div>
     </main>
   );
-};
-
-const getLoremIpsum = (): string => {
-  return `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
 };
 
 const Header = ({ title }: { title: string }) => {
@@ -155,21 +162,5 @@ const Header = ({ title }: { title: string }) => {
         </p>
       </div>
     </header>
-  );
-};
-
-const BookNotFound = () => {
-  return (
-    <div className="flex min-h-screen w-full items-center justify-center">
-      <div className="grid gap-2 text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight">Oops!</h1>
-        <p className="mx-auto mb-5 font-mono text-gray-600">
-          The book you are looking for could not be found.
-        </p>
-        <Link className="mx-auto" href="/">
-          <Button variant="outline">Navigate Home 🧭</Button>
-        </Link>
-      </div>
-    </div>
   );
 };
