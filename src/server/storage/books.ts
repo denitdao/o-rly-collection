@@ -630,6 +630,15 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T12:00:00.000Z",
   },
   {
+    id: "holy-c",
+    title: "Holy C",
+    image: "holy-c.jpg",
+    headline: "Divine Instructions | Gods software temple",
+    color: "violet",
+    tags: "cpp, development",
+    createdAt: "2024-03-29T22:00:00.000Z",
+  },
+  {
     id: "hoping-nobody-hacks",
     title: "Hoping Nobody Hacks You",
     image: "hoping-nobody-hacks.jpg",
@@ -719,6 +728,16 @@ const BOOK_LIBRARY: Book[] = [
     color: "violet",
     tags: "machine learning, chatgpt, GPU, education",
     createdAt: "2023-08-08T12:00:00.000Z",
+  },
+  {
+    id: "lets-put-it-on-the-internet",
+    title: "Let's Put It On The Internet",
+    image: "lets-put-it-on-the-internet.jpg",
+    headline:
+      "Seriously, who's gonna find it? | A comprehensive guide to putting critical infrastructure online",
+    color: "blue",
+    tags: "internet, security, devops, deployment",
+    createdAt: "2024-03-29T22:00:00.000Z",
   },
   {
     id: "loosing-your-will-to-live",
@@ -1119,6 +1138,16 @@ const BOOK_LIBRARY: Book[] = [
     color: "red",
     tags: "recovery, risk, devops, server",
     createdAt: "2024-01-27T14:00:00.000Z",
+  },
+  {
+    id: "talk-now-learn-later",
+    title: "Talk Now Learn Later",
+    image: "talk-now-learn-later.jpg",
+    headline:
+      "A guide to bluff at the project meetings to look smart | All-in-one book",
+    color: "gray",
+    tags: "communication, meetings, development, management",
+    createdAt: "2024-03-29T22:00:00.000Z",
   },
   {
     id: "temporary-workarounds",

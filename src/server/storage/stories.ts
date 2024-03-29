@@ -1125,6 +1125,10 @@ const STORY_LIBRARY: Story[] = [
     content: "",
   },
   {
+    id: "holy-c",
+    content: "",
+  },
+  {
     id: "hoping-nobody-hacks",
     content: "",
   },
@@ -1162,6 +1166,10 @@ const STORY_LIBRARY: Story[] = [
   },
   {
     id: "learn-ml",
+    content: "",
+  },
+  {
+    id: "lets-put-it-on-the-internet",
     content: "",
   },
   {
@@ -1334,6 +1342,10 @@ const STORY_LIBRARY: Story[] = [
   },
   {
     id: "surviving-the-kincade-fire",
+    content: "",
+  },
+  {
+    id: "talk-now-learn-later",
     content: "",
   },
   {
