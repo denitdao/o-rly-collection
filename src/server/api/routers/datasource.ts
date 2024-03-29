@@ -10,6 +10,9 @@ export const datasourceRouter = createTRPCRouter({
   getBookById: publicProcedure.input(z.string()).query(({ input }) => {
     return BOOK_LIBRARY.find((book) => book.id === input);
   }),
+  getAllBooks: publicProcedure.query(() => {
+    return BOOK_LIBRARY;
+  }),
   getStoryById: publicProcedure.input(z.string()).query(({ input }) => {
     return STORY_LIBRARY.find((story) => story.id === input);
   }),

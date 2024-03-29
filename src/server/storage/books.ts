@@ -27,17 +27,6 @@ export const ColorPalette = [
 
 export type BookColor = (typeof ColorPalette)[number];
 
-export const toColorLiteral = (color: string): BookColor => {
-  if (!isColorLiteral(color)) {
-    return "gray";
-  }
-  return color;
-};
-
-const isColorLiteral = (color: string): color is BookColor => {
-  return ColorPalette.includes(color as BookColor);
-};
-
 const BOOK_LIBRARY: Book[] = [
   {
     id: "10x-engineer",

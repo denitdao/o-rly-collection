@@ -17,15 +17,34 @@ import RefreshButton from "~/components/RefreshButton";
 import SearchPills from "~/components/SearchPills";
 import OrlyHeader from "~/components/OrlyHeader";
 import useLinkCopy from "~/hooks/useLinkCopy";
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
+import { createCaller } from "~/server/api/root";
+import { createTRPCContext } from "~/server/api/trpc";
+import { Book } from "~/server/storage/books";
 
-export default function Home() {
+export const getStaticProps: GetStaticProps = async () => {
+  const trpc = createCaller(createTRPCContext);
+  const books = await trpc.datasource.getAllBooks();
+
+  return {
+    props: {
+      books,
+    },
+  };
+};
+
+export default function Home({
+  books,
+}: {
+  books: Book[];
+}): InferGetStaticPropsType<typeof getStaticProps> {
   return (
     <>
       <OrlyHead />
       <div className="flex min-h-screen flex-col bg-gray-50">
         <OrlyHeader />
         <ImagePreviewProvider>
-          <BookSearch />
+          <BookSearch books={books} />
         </ImagePreviewProvider>
         <OrlyFooter />
       </div>
@@ -34,11 +53,11 @@ export default function Home() {
   );
 }
 
-const BookSearch = () => {
+const BookSearch = ({ books }: { books: Book[] }) => {
   const { booksToShow, searchTerm, setSearchTerm, sortMode, setSortMode } =
-    useBookSearch();
+    useBookSearch(books);
 
-  const { keywords, refreshKeywords } = useBookKeywords(8);
+  const { keywords, refreshKeywords } = useBookKeywords(books, 8);
 
   useObserveSearchEffect(searchTerm);
   useObserveSortModeEffect(sortMode);
