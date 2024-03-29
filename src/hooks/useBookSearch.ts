@@ -4,7 +4,7 @@ import BOOK_LIBRARY, {
   type Book,
   type BookColor,
   ColorPalette,
-} from "~/lib/library";
+} from "~/server/storage/books";
 import { parseAsString, parseAsStringLiteral, useQueryState } from "nuqs";
 
 const ValidSortModes = [

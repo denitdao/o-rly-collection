@@ -1,7 +1,7 @@
 import { env } from "~/env.js";
 import Image from "next/image";
 import React from "react";
-import { type Book, toColorLiteral } from "~/lib/library";
+import { type Book } from "~/server/storage/books";
 import OrlyHead from "~/components/meta/OrlyHead";
 import OrlyFooter from "~/components/OrlyFooter";
 import Link from "next/link";
@@ -13,32 +13,22 @@ import type {
 import SearchPills, { type PillData } from "~/components/SearchPills";
 import { useRouter } from "next/router";
 import { toast } from "sonner";
-import { db } from "~/server/db";
 import { createCaller } from "~/server/api/root";
+import { createTRPCContext } from "~/server/api/trpc";
+import { type Story } from "~/server/storage/stories";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const bookId = context.params?.slug as string;
 
-  const trpc = createCaller({ db });
-  const dbBook = await trpc.datasource.getBookById(bookId);
+  const trpc = createCaller(createTRPCContext);
+  const book = await trpc.datasource.getBookById(bookId);
+  const story = await trpc.datasource.getStoryById(bookId);
 
-  if (!dbBook) {
+  if (!book) {
     return {
       notFound: true,
     };
   }
-
-  // todo: improve type system to simplify such mappings
-  const book: Book = {
-    id: dbBook.id,
-    title: dbBook.title,
-    image: dbBook.image,
-    color: toColorLiteral(dbBook.color),
-    headline: dbBook.headline,
-    tags: dbBook.tags,
-    createdAt: dbBook.createdAt.toISOString(),
-  };
-  const story = dbBook.stories[0]?.content ?? "";
 
   return {
     props: {
@@ -49,7 +39,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const trpc = createCaller({ db });
+  const trpc = createCaller(createTRPCContext);
   const bookIds = await trpc.datasource.getBookIds();
 
   const paths = bookIds.map((id) => ({
@@ -67,7 +57,7 @@ export default function BookPage({
   story,
 }: {
   book: Book;
-  story: string;
+  story?: Story;
 }): InferGetStaticPropsType<typeof getStaticProps> {
   return (
     <>
@@ -82,7 +72,7 @@ export default function BookPage({
   );
 }
 
-const BookContent = ({ book, story }: { book: Book; story: string }) => {
+const BookContent = ({ book, story }: { book: Book; story?: Story }) => {
   const router = useRouter();
 
   const keywords: PillData[] = book.tags.split(",").map((tag) => ({
@@ -123,9 +113,9 @@ const BookContent = ({ book, story }: { book: Book; story: string }) => {
               }}
             />
           </div>
-          {story.length > 0 && (
+          {story && (
             <div className="max-w-3xl">
-              {story
+              {story.content
                 .split("\n")
                 .filter((text) => text.length > 0)
                 .map((paragraph, index) => (

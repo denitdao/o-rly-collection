@@ -499,6 +499,8 @@ const STORY_LIBRARY: Story[] = [
       "\n" +
       'Thus, the story of "Compile Again and Pray to Work" serves as a testament to the enduring spirit of developers everywhere. It reminds us that in the realm of software development, sometimes success is borne not just of skill and knowledge, but of hope and perseverance. And perhaps, just perhaps, it speaks to a deeper truth: that within the heart of every coder beats the unwavering belief that no bug is insurmountable, and that, with enough tries, anything is possible.',
   },
+  // TODO: sqlite db doesn't work.
+  //  try using stories and library files on the BE only to avoid loading them to FE !!!
   {
     id: "compression",
     content: "",

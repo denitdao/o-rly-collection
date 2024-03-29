@@ -1,22 +1,16 @@
 import { z } from "zod";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
+import BOOK_LIBRARY from "~/server/storage/books";
+import STORY_LIBRARY from "~/server/storage/stories";
 
 export const datasourceRouter = createTRPCRouter({
-  getBookIds: publicProcedure.query(async ({ ctx }) => {
-    const books = await ctx.db.book.findMany({
-      select: { id: true },
-    });
-    return books.map((book) => book.id);
+  getBookIds: publicProcedure.query(() => {
+    return BOOK_LIBRARY.map((book) => book.id);
   }),
-  getBookById: publicProcedure.input(z.string()).query(({ ctx, input }) => {
-    return ctx.db.book.findFirst({
-      where: { id: input },
-      include: { stories: true },
-    });
+  getBookById: publicProcedure.input(z.string()).query(({ input }) => {
+    return BOOK_LIBRARY.find((book) => book.id === input);
   }),
-  getStoryById: publicProcedure.input(z.string()).query(({ ctx, input }) => {
-    return ctx.db.story.findFirst({
-      where: { id: input },
-    });
+  getStoryById: publicProcedure.input(z.string()).query(({ input }) => {
+    return STORY_LIBRARY.find((story) => story.id === input);
   }),
 });
