@@ -20,7 +20,7 @@ import useLinkCopy from "~/hooks/useLinkCopy";
 import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import { createCaller } from "~/server/api/root";
 import { createTRPCContext } from "~/server/api/trpc";
-import { Book } from "~/server/storage/books";
+import { type Book } from "~/server/storage/books";
 
 export const getStaticProps: GetStaticProps = async () => {
   const trpc = createCaller(createTRPCContext);

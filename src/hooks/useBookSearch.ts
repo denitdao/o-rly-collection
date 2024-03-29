@@ -50,7 +50,7 @@ const useBookSearch = (
   );
   useEffect(() => {
     setSortedBookLibrary(sortBooks(books, sortMode));
-  }, [sortMode]);
+  }, [books, sortMode]);
 
   // Create index based on sorted books
   const FUSE_INDEX_SORTED = useMemo(
@@ -116,10 +116,7 @@ const useBookKeywords = (books: ReadonlyArray<Book>, numberOfKeywords = 5) => {
     return Array.from(tags);
   }, [books]);
 
-  const [keywords, setKeywords] = useState<KeywordColor[]>(() =>
-    generateKeywordColors(UNIQUE_TAGS, FUSE_INDEX_DEFAULT, numberOfKeywords),
-  );
-
+  const [keywords, setKeywords] = useState<KeywordColor[]>([]);
   const refreshKeywords = useCallback(() => {
     const keywordColors = generateKeywordColors(
       UNIQUE_TAGS,
@@ -129,6 +126,10 @@ const useBookKeywords = (books: ReadonlyArray<Book>, numberOfKeywords = 5) => {
 
     setKeywords(keywordColors);
   }, [UNIQUE_TAGS, FUSE_INDEX_DEFAULT, numberOfKeywords]);
+
+  useEffect(() => {
+    refreshKeywords();
+  }, [refreshKeywords]);
 
   return {
     keywords,
