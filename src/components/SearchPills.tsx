@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, type ButtonProps } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
-import { type BookColor } from "~/lib/library";
+import { type BookColor } from "~/server/storage/books";
 
 export type PillData = {
   keyword: string;

@@ -8,21 +8,24 @@ export type Book = {
   createdAt: string;
 };
 
-export type BookColor =
-  | "gray"
-  | "red"
-  | "orange"
-  | "yellow"
-  | "lime"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "sky"
-  | "blue"
-  | "indigo"
-  | "violet"
-  | "fuchsia"
-  | "pink";
+export const ColorPalette = [
+  "gray",
+  "red",
+  "orange",
+  "yellow",
+  "lime",
+  "green",
+  "teal",
+  "cyan",
+  "sky",
+  "blue",
+  "indigo",
+  "violet",
+  "fuchsia",
+  "pink",
+] as const;
+
+export type BookColor = (typeof ColorPalette)[number];
 
 const BOOK_LIBRARY: Book[] = [
   {

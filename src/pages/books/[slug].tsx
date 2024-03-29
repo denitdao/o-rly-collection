@@ -1,65 +1,70 @@
 import { env } from "~/env.js";
 import Image from "next/image";
 import React from "react";
-import BOOK_LIBRARY, { type Book } from "~/lib/library";
+import { type Book } from "~/server/storage/books";
 import OrlyHead from "~/components/meta/OrlyHead";
 import OrlyFooter from "~/components/OrlyFooter";
 import Link from "next/link";
-import { Button } from "~/components/ui/button";
 import type {
   GetStaticPaths,
   GetStaticProps,
-  GetStaticPropsContext,
   InferGetStaticPropsType,
 } from "next";
 import SearchPills, { type PillData } from "~/components/SearchPills";
 import { useRouter } from "next/router";
 import { toast } from "sonner";
+import { createCaller } from "~/server/api/root";
+import { createTRPCContext } from "~/server/api/trpc";
+import { type Story } from "~/server/storage/stories";
 
-export const getStaticProps: GetStaticProps = async (
-  context: GetStaticPropsContext,
-) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const bookId = context.params?.slug as string;
-  const book = BOOK_LIBRARY.find((book) => book.id === bookId) ?? null;
+
+  const trpc = createCaller(createTRPCContext);
+  const book = await trpc.datasource.getBookById(bookId);
+  const story = await trpc.datasource.getStoryById(bookId);
+
+  if (!book) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {
       book,
+      story,
     },
   };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = BOOK_LIBRARY.map((book) => ({
-    params: { slug: book.id },
+  const trpc = createCaller(createTRPCContext);
+  const bookIds = await trpc.datasource.getBookIds();
+
+  const paths = bookIds.map((id) => ({
+    params: { slug: id },
   }));
 
   return {
     paths,
-    fallback: true,
+    fallback: "blocking",
   };
 };
 
 export default function BookPage({
   book,
+  story,
 }: {
-  book: Book | null;
+  book: Book;
+  story?: Story;
 }): InferGetStaticPropsType<typeof getStaticProps> {
-  if (!book) {
-    return (
-      <>
-        <OrlyHead />
-        <BookNotFound />
-      </>
-    );
-  }
-
   return (
     <>
       <OrlyHead description={book.title} imageName={book.image} />
       <div className="flex min-h-screen flex-col bg-gray-50">
         <Header title={book.title} />
-        <BookContent book={book} />
+        <BookContent book={book} story={story} />
         <OrlyFooter />
       </div>
       <div style={{ height: 0.5 }}></div>
@@ -67,7 +72,7 @@ export default function BookPage({
   );
 }
 
-const BookContent = ({ book }: { book: Book }) => {
+const BookContent = ({ book, story }: { book: Book; story?: Story }) => {
   const router = useRouter();
 
   const keywords: PillData[] = book.tags.split(",").map((tag) => ({
@@ -90,7 +95,7 @@ const BookContent = ({ book }: { book: Book }) => {
             width={600}
             className="mb-4"
           />
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="mb-12 flex flex-wrap items-center gap-2">
             <SearchPills
               activeKeyword={""}
               pillDataArray={keywords}
@@ -108,11 +113,27 @@ const BookContent = ({ book }: { book: Book }) => {
               }}
             />
           </div>
+          {story && (
+            <div className="max-w-3xl">
+              {story.content
+                .split("\n")
+                .filter((text) => text.length > 0)
+                .map((paragraph, index) => (
+                  <p
+                    className="leading-7 [&:not(:first-child)]:mt-6"
+                    key={index}
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+            </div>
+          )}
         </div>
       </div>
     </main>
   );
 };
+
 const Header = ({ title }: { title: string }) => {
   return (
     <header className="px-4 py-16">
@@ -131,21 +152,5 @@ const Header = ({ title }: { title: string }) => {
         </p>
       </div>
     </header>
-  );
-};
-
-const BookNotFound = () => {
-  return (
-    <div className="flex min-h-screen w-full items-center justify-center">
-      <div className="grid gap-2 text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight">Oops!</h1>
-        <p className="mx-auto mb-5 font-mono text-gray-600">
-          The book you are looking for could not be found.
-        </p>
-        <Link className="mx-auto" href="/">
-          <Button variant="outline">Navigate Home 🧭</Button>
-        </Link>
-      </div>
-    </div>
   );
 };
