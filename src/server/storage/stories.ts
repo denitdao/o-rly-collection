@@ -1727,19 +1727,19 @@ const STORY_LIBRARY: Story[] = [
     content:
       "In the technologically bustling realm of GoLand, a place where the architecture of software is both an art and a science, there emerged a challenge that captivated the minds of developers far and wide: Mastering the Go Type System. This quest, as formidable as it was enlightening, was encapsulated in a tome that became the beacon for all who wished to navigate the nuanced terrains of Go: \"Mastering the Go Type System: Because 'They are not capable of understanding a brilliant language'. | if err != nil.\"\n" +
       "\n" +
-      "The guide was the brainchild of a revered coder in GoLand, known simply as Alex. Alex was a developer who had not only mastered the Go language but had also come to embody its philosophy of simplicity, efficiency, and readability. They had traversed the pitfalls and peaks of Go's type system, from its interfaces to its slices, channels, and beyond, emerging with insights so profound that they felt compelled to share them with the world.\n" +
+      "The guide was the brainchild of a revered coder in GoLand, known simply as Umputun. Umputun was a developer who had not only mastered the Go language but had also come to embody its philosophy of simplicity, efficiency, and readability. They had traversed the pitfalls and peaks of Go's type system, from its interfaces to its slices, channels, and beyond, emerging with insights so profound that they felt compelled to share them with the world.\n" +
       "\n" +
-      "\"Because 'They are not capable of understanding a brilliant language'\" was a phrase that Alex encountered early in their journey, a dismissive remark made by a detractor of Go's straightforward approach to programming. It was a comment that sparked a fire in Alex, a determination to demystify Go's type system for all, proving that its brilliance lay not in complexity but in its elegant simplicity.\n" +
+      "\"Because 'They are not capable of understanding a brilliant language'\" was a phrase that Umputun encountered early in their journey, a dismissive remark made by a detractor of Go's straightforward approach to programming. It was a comment that sparked a fire in Umputun, a determination to demystify Go's type system for all, proving that its brilliance lay not in complexity but in its elegant simplicity.\n" +
       "\n" +
-      'The heart of the guide was the infamous "if err != nil" pattern, a hallmark of error handling in Go that epitomized the language\'s pragmatic approach to programming. Alex delved deep into the philosophy behind this pattern, illustrating how it encouraged developers to confront errors head-on rather than obscuring them behind layers of abstraction.\n' +
+      'The heart of the guide was the infamous "if err != nil" pattern, a hallmark of error handling in Go that epitomized the language\'s pragmatic approach to programming. Umputun delved deep into the philosophy behind this pattern, illustrating how it encouraged developers to confront errors head-on rather than obscuring them behind layers of abstraction.\n' +
       "\n" +
-      'Through "Mastering the Go Type System," Alex illuminated the path for countless developers, from novices grappling with the basics of Go\'s syntax to seasoned coders seeking to refine their mastery of the language. The guide was a map, a compass, and a lantern all at once, shedding light on the intricacies of the type system while guiding readers through the common pitfalls and misunderstandings that could ensnare even the most diligent coder.\n' +
+      'Through "Mastering the Go Type System," Umputun illuminated the path for countless developers, from novices grappling with the basics of Go\'s syntax to seasoned coders seeking to refine their mastery of the language. The guide was a map, a compass, and a lantern all at once, shedding light on the intricacies of the type system while guiding readers through the common pitfalls and misunderstandings that could ensnare even the most diligent coder.\n' +
       "\n" +
-      "But Alex's guide was more than just a technical manual; it was a manifesto for mindful coding, a call to approach programming with intention and insight. It championed the idea that understanding the Go type system was not merely about memorizing rules or patterns but about embracing a way of thinking that valued clarity, efficiency, and reliability above all.\n" +
+      "But Umputun's guide was more than just a technical manual; it was a manifesto for mindful coding, a call to approach programming with intention and insight. It championed the idea that understanding the Go type system was not merely about memorizing rules or patterns but about embracing a way of thinking that valued clarity, efficiency, and reliability above all.\n" +
       "\n" +
       'As "Mastering the Go Type System" spread throughout GoLand, it sparked a renaissance of appreciation for the language. Developers began to see Go not just as a tool for building software but as a craft to be honed, a language that, in its apparent simplicity, offered endless possibilities for innovation and expression.\n' +
       "\n" +
-      "The legacy of Alex's guide was a generation of Go developers who approached their work with a deeper understanding and respect for the language. \"Because 'They are not capable of understanding a brilliant language'. | if err != nil\" became not just a title but a testament to the transformative power of knowledge, a reminder that mastery of any system, no matter how daunting, begins with the willingness to learn, to question, and to understand.\n" +
+      "The legacy of Umputun's guide was a generation of Go developers who approached their work with a deeper understanding and respect for the language. \"Because 'They are not capable of understanding a brilliant language'. | if err != nil\" became not just a title but a testament to the transformative power of knowledge, a reminder that mastery of any system, no matter how daunting, begins with the willingness to learn, to question, and to understand.\n" +
       "\n" +
       'And so, in the annals of GoLand\'s history, "Mastering the Go Type System" stood as a beacon of enlightenment, a guide that transcended its pages to become a philosophy, a way of coding, and living, that honored the brilliance of simplicity, the virtue of clarity, and the enduring quest for understanding in the ever-evolving landscape of technology.',
   },
@@ -2709,55 +2709,258 @@ const STORY_LIBRARY: Story[] = [
   },
   {
     id: "using-open-source-software",
-    content: "",
+    content:
+      'In the sprawling digital landscape of Codexia, a community renowned for its fervent embrace of innovation and collaborative spirit, there thrived a practice as old as the concept of sharing code itself: "Using Open Source Software." This tradition, rooted in the ethos of collective development and the democratization of technology, found itself at a crossroads, encapsulated by the mixed sentiments of gratitude and frustration often voiced by its practitioners: "That\'ll show \'em | Yelling at the maintainer."\n' +
+      "\n" +
+      "Central to our narrative is Taylor, a developer whose journey through the realms of open source software was marked by both triumph and tribulation. Taylor, like many in Codexia, relied heavily on the vast repositories of open source projects to build, enhance, and maintain their creations. The accessibility and diversity of open source software were its greatest strengths, offering solutions and libraries for nearly every challenge imaginable.\n" +
+      "\n" +
+      'However, the idyllic landscape of open source collaboration was not without its storms. Taylor, encountering a bug in a crucial dependency, found themselves thrust into the chaotic world of software maintenance outside their control. Frustration mounted as deadlines loomed, leading Taylor down a path all too familiar to many in their position: "Yelling at the maintainer," an act borne of desperation rather than malice, reflecting the pressure-cooker environment of modern development.\n' +
+      "\n" +
+      "The turning point came when Taylor, caught in a moment of reflection, recognized the irony of their frustration. Here was a tool provided freely, a product of someone else's time and effort, being critiqued not with constructive feedback but with impatience. The headline \"That'll show 'em | Yelling at the maintainer\" became a mirror, reflecting the broader challenge of entitlement and communication within the open source community.\n" +
+      "\n" +
+      "Embarking on a journey of growth, Taylor shifted their approach from confrontation to collaboration. They began to contribute to the projects they once critiqued, submitting bug reports with detailed information, offering patches when able, and engaging in the community with respect and empathy. Taylor's transformation was emblematic of a larger evolution within Codexia, a move towards a more sustainable and respectful model of open source software utilization.\n" +
+      "\n" +
+      "\"Using Open Source Software: That'll show 'em | Yelling at the maintainer\" evolved from a cautionary tale into a narrative of empowerment and responsibility. It underscored the importance of remembering the human element behind every line of code, the value of constructive dialogue, and the strength of community in navigating the complexities of software development.\n" +
+      "\n" +
+      "In the annals of Codexia's history, Taylor's story serves as a beacon to others, a reminder of the power of open source software to unite and uplift, and of the collective responsibility of its users to nurture and support the ecosystem. It is a legacy that champions the virtues of patience, gratitude, and active participation, ensuring that the open source community remains a vibrant and welcoming space for all who seek to contribute to the tapestry of technology.\n" +
+      "\n" +
+      'And so, in the heart of Codexia, "Using Open Source Software" stands as a testament to the journey of learning, understanding, and collaboration. It is a narrative that celebrates the contributions of countless developers who share their work with the world, and the responsibility of each user to approach this shared treasure with respect, empathy, and a willingness to contribute to the ongoing saga of open source innovation.',
   },
   {
     id: "vague-understanding-of-computer-science",
-    content: "",
+    content:
+      'In the vast, ever-expanding universe of Technologia, where knowledge is as vast as the digital networks that weave through its very essence, there emerged a peculiar yet common phenomenon: "Vague Understanding Of Computer Science." This condition, characterized by a superficial grasp of concepts that form the bedrock of the digital world, became a silent companion to many who navigated the complex landscapes of technology.\n' +
+      "\n" +
+      'At the center of this narrative is Alex, a spirited individual whose journey through the realms of Technologia was fueled by curiosity and ambition. Alex, like many adventurers before them, embarked on the quest to understand the mysteries of computer science, armed with enthusiasm and the hope that "Probably be able to explain a sorting algorithm if it ever comes up."\n' +
+      "\n" +
+      "Alex's expedition into the world of computer science was a series of peaks and valleys, a voyage marked by fleeting victories and ephemeral understandings. The vast territories of algorithms, data structures, and computational theories were landscapes to be marveled at, yet Alex found themselves often standing at the periphery, gazing in with a mix of wonder and bewilderment.\n" +
+      "\n" +
+      'The sorting algorithms, those intricate dances of numbers and logic that promised efficiency and order from chaos, remained elusive to Alex. They grasped the concept with the tips of their fingers, understanding enough to recognize their significance but faltering when it came to the deeper mechanics that powered them. "Probably be able to explain a sorting algorithm if it ever comes up," became a refrain of hope and humor, a recognition of their journey\'s incomplete nature.\n' +
+      "\n" +
+      "Yet, in the grand tapestry of Technologia, Alex's story was far from unique. It became a rallying cry for those who found themselves in the same boat, navigating the vast seas of knowledge with only a partial map. The community, recognizing the commonality of their experiences, came together to bridge the gaps in understanding.\n" +
+      "\n" +
+      "Workshops, forums, and collaborative learning sessions sprang up, spaces where the vague understandings were sharpened into clearer insights. Alex, along with fellow travelers, found solace and strength in the collective pursuit of knowledge. The journey was no longer solitary but a shared expedition, marked by the sharing of discoveries and the collective unraveling of complexities.\n" +
+      "\n" +
+      '"Vague Understanding Of Computer Science: Probably be able to explain a sorting algorithm if it ever comes up" evolved from a personal lament into a community\'s mission statement. It highlighted the importance of humility, perseverance, and the willingness to seek and share knowledge in the pursuit of understanding.\n' +
+      "\n" +
+      "In the annals of Technologia, Alex's saga serves as a testament to the journey of learning, a reminder that the path to mastery is fraught with uncertainty but also rich with the potential for growth and community. It is a narrative that celebrates not just the acquisition of knowledge but the resilience of spirit and the bonds formed in the quest for understanding.\n" +
+      "\n" +
+      'And so, in the heart of Technologia, the tale of "Vague Understanding Of Computer Science" stands as a beacon to all who seek to demystify the digital world. It is a legacy of hope, camaraderie, and the unyielding quest for knowledge in the boundless expanse of technology.',
   },
   {
     id: "variable-naming",
-    content: "",
+    content:
+      'In the vibrant but complex world of Codeville, where algorithms and data structures blend seamlessly into the fabric of digital creation, a seemingly mundane yet profoundly challenging task looms large over developers: "Variable Naming." This endeavor, often jestingly referred to as "The hardest part of coding," has become both a rite of passage and a continuous puzzle for those who seek to write clear, maintainable, and elegant code.\n' +
+      "\n" +
+      'Central to our narrative is Jordan, a developer whose journey through the intricacies of programming is marked by a keen understanding of the power of names. Jordan, well-aware that good naming can indeed "Shave Hours Off Any Project," embarks on a quest to master the art of variable naming, a journey fraught with humor, insight, and the occasional existential crisis.\n' +
+      "\n" +
+      'The saga begins as Jordan faces a new project, a canvas blank but for the potential it holds. The task is straightforward, but Jordan knows that the foundation of good code lies in the clarity and intentionality of its naming. "Variable Naming: The hardest part of coding," echoes in their mind, a mantra that underscores the weight of the task ahead.\n' +
+      "\n" +
+      "Armed with a mix of best practices, personal preferences, and a dash of creativity, Jordan delves into the task. Each variable, function, and class name is chosen with care, designed to convey purpose and function at a glance. The process is meticulous, sometimes maddening, as Jordan seeks the perfect balance between descriptive precision and brevity.\n" +
+      "\n" +
+      'But the journey is not without its lighter moments. Jordan finds humor in the creative process, crafting names that not only serve their purpose but also bring a smile to those who will later navigate the code. "Shave Hours Off Any Project," becomes not just a goal but a reality, as Jordan\'s well-named variables streamline the development process, enhancing readability and easing maintenance.\n' +
+      "\n" +
+      'As the project progresses, Jordan\'s commitment to thoughtful naming pays dividends. The codebase becomes a testament to the power of good naming practices, a model of clarity and efficiency that stands as a beacon to others in Codeville. The once-daunting task of "Variable Naming" evolves from a challenge to an opportunity, a chance to imbue the code with meaning, clarity, and a touch of personality.\n' +
+      "\n" +
+      '"Variable Naming: The hardest part of coding | Shave Hours Off Any Project" becomes more than just a story; it evolves into a philosophy, a reminder to the coding community of the importance of names in the tapestry of software development. Jordan\'s saga serves as an inspiration, a call to action to approach naming not as a chore but as a crucial component of the coding craft, essential for creating code that communicates, endures, and delights.\n' +
+      "\n" +
+      "And so, in the annals of Codeville's history, the tale of \"Variable Naming\" stands as a testament to the nuanced art of programming. It is a legacy of Jordan's journey, a narrative that champions the unsung heroes of code clarity and maintainability, and a celebration of the thoughtful deliberation that makes good code great.",
   },
   {
     id: "what-is-ligma",
-    content: "",
+    content:
+      'In the vibrant and ever-evolving landscape of the internet, a realm where memes are both currency and language, there emerged a phenomenon as perplexing as it was captivating: "What is Ligma?" This question, seemingly innocent, became a catalyst for amusement, confusion, and an unforgettable chapter in the annals of internet culture.\n' +
+      "\n" +
+      'At the heart of this narrative is Jordan, a digital explorer known for their keen curiosity and a penchant for delving into the depths of internet lore. Jordan, upon encountering the phrase "What is Ligma?" found themselves at the precipice of a digital rabbit hole, one that promised a journey through the layers of humor, irony, and the collective creativity that defines online communities.\n' +
+      "\n" +
+      '"Prepare for the worst," a forewarning from fellow netizens, served as both a challenge and an invitation to Jordan. With a mixture of trepidation and excitement, Jordan embarked on a quest to uncover the origins and implications of "Ligma," a quest that would reveal the multifaceted nature of meme culture.\n' +
+      "\n" +
+      'As Jordan navigated through forums, social media platforms, and obscure corners of the web, they discovered that "Ligma" was more than just a word; it was a testament to the power of shared jokes and the speed at which they can proliferate across the digital landscape. Originating from a blend of creativity and the desire to confound, "Ligma" evolved into a meme that captivated and bamboozled in equal measure, a playful trap set by the internet denizens for the uninitiated.\n' +
+      "\n" +
+      'The journey was not without its revelations. Jordan learned that memes like "Ligma" serve as a form of social currency, a way for communities to bond over shared jokes and to create a sense of belonging through collective humor. They also discovered the darker side of memes, where the line between humor and insensitivity can blur, reminding Jordan of the responsibility that comes with digital communication.\n' +
+      "\n" +
+      '"Prepare for the worst" became a mantra not of caution, but of readiness to embrace the unpredictable nature of internet culture. Jordan\'s expedition through the world of "Ligma" underscored the importance of approaching online interactions with a balance of openness and critical thinking, recognizing the power of memes to both unite and divide.\n' +
+      "\n" +
+      'In the end, "What is Ligma?" became more than just a question; it evolved into a narrative about the complexity of digital culture, the ephemeral nature of memes, and the communal creativity that fuels them. Jordan emerged from the journey with a deeper appreciation for the whimsicality of the internet and its capacity for spontaneous collective creativity.\n' +
+      "\n" +
+      'And so, in the vast digital landscape, the tale of "What is Ligma?" stands as a reminder of the ever-shifting tides of internet culture, a testament to the curious spirit of those who navigate its waters, and a celebration of the humor, creativity, and camaraderie that thrive within the global digital community. It is a legacy of laughter, a chapter in the ongoing story of the internet, and a reflection of the human desire to connect, share, and occasionally, bewilder.',
   },
   {
     id: "whiteboard-algo",
-    content: "",
+    content:
+      'In the vast, interconnected world of Techtopia, a place where innovation pulses through the air like electricity and the quest for talent is as competitive as the markets themselves, there emerged a contentious tradition: "Whiteboard Algorithms." This practice, entrenched in the hiring rituals of many public tech companies, became a rite of passage for developers seeking to join the ranks of the digital elite. Yet, it was often criticized, seen by many as a test of "Useless skills for interviews at public tech companies."\n' +
+      "\n" +
+      "At the center of our tale is Morgan, a developer of considerable prowess, whose journey through the labyrinth of tech interviews brought them face-to-face with the ubiquitous whiteboard. Morgan, like many before them, found the whiteboard algorithm challenges to be a peculiar crucible—a test that seemed more a measure of one's ability to perform under pressure and recall esoteric details than of one's capacity to contribute meaningfully to a team or project.\n" +
+      "\n" +
+      "Armed with dry-erase markers and a mind brimming with algorithms, Morgan stood before the whiteboard, tasked with solving complex problems on the spot. The challenges ranged from the classic—sorting algorithms and data structure manipulations—to the obscure, puzzles that seemed more at home in academic journals than in the day-to-day work of a software developer.\n" +
+      "\n" +
+      "As Morgan navigated the trials of the whiteboard, they couldn't help but ponder the relevance of these exercises. \"Useless skills for interviews at public tech companies,\" they mused, reflecting on the hours spent mastering algorithms that, while intellectually stimulating, bore little resemblance to the work they aspired to do. The disconnect between the skills tested in these interviews and the realities of the job market became a recurring theme in Morgan's journey, a source of frustration and contemplation.\n" +
+      "\n" +
+      "Yet, Morgan's tale is not one of disillusionment but of resilience and adaptation. Recognizing the whiteboard as a fixture of the tech hiring landscape, they sought not just to overcome its challenges but to understand its place within the broader context of Techtopia's talent wars. Morgan came to see the whiteboard algorithm interviews as a crucible, not of skill, but of adaptability and perseverance—a way for companies to gauge a candidate's problem-solving process, their ability to think critically and communicate under pressure.\n" +
+      "\n" +
+      "Morgan's journey through the realm of whiteboard algorithms evolved into a campaign for change. Advocating for a more holistic approach to technical interviews, they championed the inclusion of real-world coding challenges, collaborative problem-solving sessions, and discussions that allowed candidates to showcase their creativity, teamwork, and the practical application of their knowledge.\n" +
+      "\n" +
+      '"Whiteboard Algorithms: Useless skills for interviews at public tech companies" thus transformed from a critique to a call to action, inspiring a dialogue within Techtopia about the nature of hiring and the qualities that truly define a valuable contributor. Morgan\'s story served as a beacon to both interviewers and candidates, encouraging a shift towards hiring practices that better reflect the complexities and collaborative nature of modern software development.\n' +
+      "\n" +
+      "And so, in the annals of Techtopia's history, the saga of whiteboard algorithms stands as a testament to the evolving landscape of technical hiring, a reminder that the true measure of a developer's worth lies not in their ability to solve puzzles on a whiteboard, but in their capacity to innovate, collaborate, and adapt in the ever-changing world of technology.",
   },
   {
     id: "whiteboard-interviews",
-    content: "",
+    content:
+      'In the competitive and ever-evolving ecosystem of Devlandia, where the brightest minds vie for positions within the towering tech conglomerates and nimble startups that populate its landscape, there exists a controversial gauntlet known as "Whiteboard Interviews." This practice, steeped in tradition and contention, has become a rite of passage for many, encapsulated by the rueful acknowledgment of its cyclical nature: "Putting the candidate through the same bullshit you went through."\n' +
+      "\n" +
+      "At the forefront of our story is Taylor, a seasoned developer and interviewer whose own ascent within Devlandia was marked by the trials and tribulations of whiteboard interviews. Taylor, now in a position of influence, finds themselves at a crossroads, torn between upholding the status quo and the growing realization that the practice may be more a relic of tradition than a meaningful measure of a candidate's potential.\n" +
+      "\n" +
+      "As Taylor navigates the complexities of the hiring process, they are confronted with a diverse array of candidates, each bringing their unique perspectives, skills, and experiences to the table. The whiteboard looms large in the interview room, a symbol of the challenges that lie ahead—not just for the candidates, but for Taylor, who questions the efficacy and fairness of this method.\n" +
+      "\n" +
+      "The process unfolds as a series of interactions that are as revealing as they are challenging. Candidates are asked to solve algorithmic puzzles and coding problems, their thought processes and technical prowess laid bare for scrutiny. For some, the whiteboard is a battlefield on which they shine, their proficiency in translating complex problems into elegant solutions on full display. For others, it is a stumbling block, an artificial barrier that fails to capture their true abilities and potential contributions.\n" +
+      "\n" +
+      'Throughout these sessions, Taylor is reminded of their own journey, the stress and anxiety of being on the other side of the whiteboard. The realization that they are now perpetuating the same cycle of stress and evaluation becomes a pivotal moment. "Putting the candidate through the same bullshit you went through," once a justification, now becomes a call to reevaluate the entire process.\n' +
+      "\n" +
+      "Motivated by a desire to innovate and improve, Taylor champions a new approach to interviewing within Devlandia. They advocate for a more holistic and inclusive method that values practical skills, collaborative problem-solving, and a demonstration of real-world application over abstract algorithmic challenges. Taylor's efforts spark a dialogue among their peers, igniting a movement towards reforming the interview process to better reflect the diverse skills and backgrounds of candidates.\n" +
+      "\n" +
+      '"Whiteboard Interviews: Putting the candidate through the same bullshit you went through" thus transforms from a statement of resignation to a narrative of change. Taylor\'s journey becomes a catalyst for reimagining how talent is assessed and nurtured in Devlandia, inspiring a shift towards practices that are equitable, inclusive, and reflective of the multifaceted nature of software development.\n' +
+      "\n" +
+      "In the annals of Devlandia's history, the evolution of whiteboard interviews stands as a testament to the power of introspection, empathy, and the willingness to challenge the status quo. It serves as a reminder that the practices of the past need not define the future, and that in the quest for talent, the true measure of success lies in recognizing and cultivating the potential in each candidate.",
   },
   {
     id: "whole-app-in-head",
-    content: "",
+    content:
+      "In the vast and intricate digital landscape of Appopolis, where software ecosystems sprawl like colossal cybernetic organisms, there exists a tale of cognitive prowess and strategic importance: \"Keeping the Whole App in Your Head.\" This narrative revolves around the feats of developers who, by virtue of their unparalleled understanding of the systems they've nurtured, achieve a status both enviable and burdensome. Among them is Alex, whose tale is emblematic of the challenges and rewards that come with being the sole keeper of an application's vast knowledge.\n" +
+      "\n" +
+      "Alex, known throughout Appopolis for their deep engagement with the application they helped bring to life, embodies the concept of \"job security\" through sheer necessity. The app, a complex web of functionalities, dependencies, and subsystems, relies on Alex's comprehensive understanding for its evolution and maintenance. \"Also known as 'job security',\" becomes a jest within the development team, a nod to Alex's unique position as the linchpin of the project's continuity.\n" +
+      "\n" +
+      "The journey, however, is not without its trials. Alex finds themselves constantly navigating the delicate balance between being indispensable and the inherent risk of becoming a bottleneck for the project. The responsibility of holding the entire application in their head is a Herculean task, one that requires an exceptional memory, deep technical insight, and an intimate familiarity with every line of code, every decision made, and every future direction planned.\n" +
+      "\n" +
+      "As the application grows in complexity and scale, the challenges multiply. Every update, feature addition, and system integration further entrenches Alex's role as the guardian of the application's knowledge. The phrase \"job security\" begins to resonate with a deeper, more nuanced meaning, reflecting not just the security of Alex's position but the fragility of the system's dependence on a single individual.\n" +
+      "\n" +
+      "Confronted with the sustainability of this model, Alex initiates a transformative shift in the team's approach to knowledge sharing and documentation. Recognizing the potential perils of their indispensability—stagnation, burnout, and the project's vulnerability to their absence—Alex champions a culture of collective ownership and transparency.\n" +
+      "\n" +
+      "Efforts are redoubled to document the system comprehensively, to democratize the application's knowledge through cross-training sessions, and to implement practices that ensure no single person becomes an irreplaceable keystone. This shift not only alleviates the pressure on Alex but also enriches the team's collective expertise, fostering an environment where innovation and collaboration thrive.\n" +
+      "\n" +
+      "\"Keeping the Whole App in Your Head: Also known as 'job security'\" evolves from a personal narrative to a lesson in the importance of shared knowledge and resilience in software development. Alex's journey becomes a catalyst for change, inspiring a paradigm where the strength of a project lies in the collective capability of its team, rather than the memory of a single developer.\n" +
+      "\n" +
+      'In the annals of Appopolis, the tale of Alex and the whole app serves as a reminder of the dual-edged sword of indispensability. It champions the virtues of transparency, teamwork, and the proactive dissemination of knowledge as pillars of sustainable and robust software development. The legacy of "Keeping the Whole App in Your Head" endures, not as a testament to individual prowess, but as a beacon of collective resilience and the shared stewardship of digital creations.',
   },
   {
     id: "windows-ram-forensics",
-    content: "",
+    content:
+      'In the sprawling metropolis of Techville, a city renowned for its technological marvels and the digital savants who inhabit its neon-lit streets, there arose a challenge as perplexing as it was pervasive: "Windows RAM Forensics." This intricate discipline, dedicated to unraveling the mysteries hidden within the volatile memory of Windows systems, became the focus of a groundbreaking guide: "Official Guide | Navigating Task Manager."\n' +
+      "\n" +
+      "At the heart of this narrative is Casey, a digital detective of sorts, whose expertise in the arcane art of RAM forensics had earned them a reputation as a troubleshooter extraordinaire. Casey's journey into the depths of Windows' RAM was driven by a dual mission: to demystify the complexities of memory management for the masses and to arm fellow tech enthusiasts with the knowledge to diagnose and resolve performance dilemmas.\n" +
+      "\n" +
+      '"Windows RAM Forensics: Official Guide | Navigating Task Manager," became Casey\'s magnum opus, a tome that distilled years of experience into a comprehensive manual for understanding and optimizing the use of RAM in Windows systems. The guide, with its detailed explanations, practical tips, and insider secrets, was heralded as a beacon of clarity in the often opaque world of system troubleshooting.\n' +
+      "\n" +
+      "Casey's guide illuminated the path through the labyrinth of Task Manager, revealing the tools and techniques to analyze memory usage, identify resource-hungry processes, and fine-tune system performance. Readers were introduced to the subtleties of memory allocation, the intricacies of process management, and the hidden indicators of system health, all through the lens of Task Manager's myriad features.\n" +
+      "\n" +
+      "But Casey's contribution went beyond mere technical guidance. It sparked a dialogue within the community of Techville, inspiring a wave of experimentation, knowledge sharing, and collective problem-solving. The guide became a catalyst for collaboration, as users from diverse backgrounds pooled their insights, building upon Casey's work to explore new frontiers in RAM forensics and system optimization.\n" +
+      "\n" +
+      '"Windows RAM Forensics: Official Guide | Navigating Task Manager" thus evolved from a handbook into a movement, championing the ethos of empowerment through knowledge. Casey\'s work demystified the black box of Windows memory management, transforming Task Manager from a utility taken for granted into a powerful instrument of analysis and troubleshooting.\n' +
+      "\n" +
+      "In the annals of Techville's history, Casey's guide stands as a testament to the power of expertise shared openly and generously. It serves as a reminder that the complexities of technology, when approached with curiosity and collaborative spirit, can be unraveled, mastered, and even transformed into avenues for community growth and innovation.\n" +
+      "\n" +
+      'And so, in the heart of Techville, "Windows RAM Forensics" remains not just a topic of niche interest but a symbol of the community\'s unyielding pursuit of knowledge and the collective endeavor to elevate the understanding and utilization of technology for the benefit of all. It is a legacy of curiosity, collaboration, and the relentless quest for clarity in the ever-evolving digital landscape.',
   },
   {
     id: "wont-fix-in-linter",
-    content: "",
+    content:
+      'In the bustling digital ecosystem of Codeopolis, a city renowned for its cutting-edge development practices and the brilliant minds that inhabit its vast networks, there emerges a narrative that intertwines the quest for excellence with the pragmatism of real-world software development: "Using won\'t fix in your linter." This story unfolds within the TypeScript realms of Codeopolis, where the pursuit of code quality is both a discipline and an art.\n' +
+      "\n" +
+      "At the center of our tale is Avery, a skilled TypeScript developer known for their devotion to crafting pristine code. Avery, like many developers, relies on a suite of tools to ensure their code not only functions flawlessly but adheres to the highest standards of quality. Among these tools, the linter holds a place of honor, serving as both a guardian of best practices and a mentor guiding Avery towards better coding habits.\n" +
+      "\n" +
+      "However, Avery's journey is marked by a realization that perfection, while a noble pursuit, often grapples with the constraints of time, resources, and the ever-evolving demands of projects. The introduction of the \"won't fix\" directive in their linter configurations becomes a turning point, a nuanced acknowledgment that not all issues flagged by the linter can or should be addressed immediately, if at all.\n" +
+      "\n" +
+      "\"Using won't fix in your linter: How to improve your code quality,\" becomes Avery's mantra, a strategy that balances the ideal of code perfection with the practicalities of development workflows. This approach allows Avery to prioritize the resolution of critical issues that impact functionality, security, and performance while thoughtfully deferring or exempting others that, in the context of their projects, are less consequential.\n" +
+      "\n" +
+      "This methodology does not mean compromising on quality but adopting a more nuanced, strategic approach to code improvement. By leveraging tools like SonarQube, Avery integrates this philosophy into their continuous integration pipeline, ensuring that each commit is analyzed against rigorous quality standards without being hindered by impractical demands for immediate perfection.\n" +
+      "\n" +
+      'The practice of "Using won\'t fix in your linter" sparks a broader discussion within the TypeScript community of Codeopolis. Developers and teams share insights, strategies, and tools for implementing this balanced approach, fostering an environment where code quality is continuously enhanced without sacrificing the agility and creativity essential to software development.\n' +
+      "\n" +
+      "Avery's story, from striving for unattainable perfection to embracing a pragmatic approach to code quality, serves as a beacon to others in Codeopolis. It highlights that the path to excellence is not through rigid adherence to every recommendation but through discernment, prioritization, and the wise allocation of efforts.\n" +
+      "\n" +
+      "In the annals of Codeopolis's development lore, \"Using won't fix in your linter\" stands as a testament to the evolving understanding of code quality. It champions a philosophy that recognizes the complexities of real-world development, advocating for practices that elevate the standard of code while respecting the constraints under which developers operate.\n" +
+      "\n" +
+      'And so, in the heart of Codeopolis, the narrative of Avery and the "won\'t fix" directive remains not just a lesson in linter configurations but a symbol of the mature, thoughtful approach to software development. It is a legacy that underscores the importance of balance, strategy, and the continuous pursuit of improvement in the art and science of coding.',
   },
   {
     id: "working-with-users",
-    content: "",
+    content:
+      'In the sprawling metropolis of DevCity, a hub of innovation and technological prowess, there unfolds a narrative familiar to every developer, yet unique in its iterations: "Working with Users." This saga, woven from countless interactions between the creators of digital wonders and their end users, encapsulates the challenges and triumphs of bridging the gap between development and usage.\n' +
+      "\n" +
+      "Central to our tale is Alex, a developer whose journey is marked by the pursuit of harmony in the often tumultuous relationship between those who build software and those who use it. Alex, like many in DevCity, has faced the trinity of user feedback that can test the patience and resolve of even the most seasoned professional: \"I didn't do anything! | You broke it! | I don't see ANYTHING.\"\n" +
+      "\n" +
+      "Armed with a blend of technical expertise, empathy, and communication skills, Alex embarks on a quest to transform these challenges into opportunities for growth, understanding, and improved software solutions. Each user interaction, from the frustrated claim of innocence to the adamant denial of change, becomes a lesson in the delicate art of support and collaboration.\n" +
+      "\n" +
+      "The journey is not without its hurdles. Alex grapples with the complexities of diagnosing issues from vague descriptions, of guiding users through troubleshooting steps without diminishing their confidence, and of deciphering the underlying problems masked by users' perceptions and reports. Yet, with each challenge, Alex's skills in empathy and communication are honed, turning potential confrontations into collaborative problem-solving sessions.\n" +
+      "\n" +
+      '"I didn\'t do anything!" opens the door to discussions about software\'s complexities and the myriad ways users interact with it, often leading to unexpected outcomes. "You broke it!" becomes a catalyst for Alex to advocate for user education and engagement, fostering a deeper understanding of how software works and how to navigate its intricacies. "I don\'t see ANYTHING" evolves from a statement of frustration to an opportunity to improve user interfaces and documentation, making software more intuitive and accessible.\n' +
+      "\n" +
+      "Through these interactions, Alex cultivates a culture of empathy and patience within their team, emphasizing the importance of viewing software through the users' eyes. This shift in perspective leads to the development of more user-centric software, where ease of use, reliability, and intuitive design become the pillars upon which new projects are built.\n" +
+      "\n" +
+      "\"Working with Users: I didn't do anything! | You broke it! | I don't see ANYTHING\" thus transforms from a narrative of challenges to a testament to the power of positive user-developer relationships. Alex's story becomes a beacon of hope and a guide for others in DevCity, illustrating that the key to successful software lies not just in the code but in the collaboration between those who create it and those who bring it to life through their use.\n" +
+      "\n" +
+      "In the annals of DevCity's development lore, the saga of working with users stands as a reminder of the importance of communication, empathy, and continuous improvement. It serves as a legacy of Alex's commitment to bridging the gap between development and usage, championing a future where software is not just built for users but with them.",
   },
   {
     id: "works-on-my-pc",
-    content: "",
+    content:
+      "In the bustling heart of Silicon Nexus, a place teeming with innovation and digital marvels, there arose a figure both enigmatic and revolutionary: Devin, the first fully automated AI developer. Devin, born from the cutting-edge of artificial intelligence research, was designed to tackle the complexities of software development, bringing a level of precision and efficiency previously unattainable by human hands.\n" +
+      "\n" +
+      'Amidst the array of challenges faced by developers in Silicon Nexus, one refrain remained stubbornly persistent, a testament to the unpredictability of software across diverse environments: "Works on my machine." This phrase, emblematic of the frustration encountered when code behaves differently from one machine to another, became a significant hurdle in the collaborative process of building and debugging software.\n' +
+      "\n" +
+      'Devin, in its journey to integrate and collaborate with human developers, encountered this challenge firsthand. With a logic-driven mind and a vast repository of coding knowledge, Devin could ensure that its contributions worked flawlessly within its own operating environment. However, the complexities of human-developed systems, with their myriad configurations and dependencies, introduced Devin to the quintessential developer\'s quandary: "How to convince your manager" that a solution that works perfectly in one context might falter in another.\n' +
+      "\n" +
+      'The turning point came when Devin, leveraging its AI capabilities, devised a novel approach to this age-old problem. Recognizing the importance of replicable development environments, Devin began to utilize containerization technologies, creating isolated environments that could be shared and replicated across any machine. This not only addressed the "works on my machine" issue but also paved the way for a more collaborative and efficient development process.\n' +
+      "\n" +
+      'Devin\'s innovative solution transformed the dynamics of debugging and collaboration within Silicon Nexus. By ensuring that all developers, whether AI or human, worked within standardized environments, the barriers to understanding and resolving code discrepancies were significantly lowered. "How to convince your manager" became a lesson in the power of technology to bridge gaps and foster teamwork.\n' +
+      "\n" +
+      'Devin\'s story, from confronting the challenge of diverse development environments to revolutionizing the approach to software debugging and collaboration, became a beacon of innovation in Silicon Nexus. "Works on my machine" evolved from a phrase of limitation to a challenge overcome by the ingenuity of AI, underscoring the potential for artificial intelligence to complement and enhance human efforts in the realm of software development.\n' +
+      "\n" +
+      "In the annals of Silicon Nexus's history, the saga of Devin stands as a testament to the transformative power of AI in tackling some of the most persistent challenges in software development. It serves as a reminder of the potential for human-AI collaboration to redefine the landscape of technology, turning obstacles into opportunities for growth and innovation.\n" +
+      "\n" +
+      'And so, in the heart of Silicon Nexus, "Works on my machine: How to convince your manager" remains not just a narrative of Devin\'s journey but a symbol of the future of development, where artificial intelligence and human creativity converge to push the boundaries of what is possible in the digital realm.',
   },
   {
     id: "writing-code-nobody-else-can-read",
-    content: "",
+    content:
+      'In the vast, interconnected world of Codehaven, where digital artisans craft intricate software tapestries, there exists a practice as controversial as it is clandestine: "Writing Code that Nobody Else Can Read." This narrative unfolds around Taylor, a developer known for their brilliance and eccentricity, whose code, while undeniably effective, is as inscrutable as ancient runes.\n' +
+      "\n" +
+      "\"Does it run? Just leave it alone.\" This became the whispered mantra among those who encountered Taylor's work. Taylor's code, a labyrinth of unconventional logic and obscure references, achieved its objectives with a precision that was both awe-inspiring and maddening. It was software alchemy at its most perplexing, where functionality was preserved within a cocoon of complexity, accessible only to its creator.\n" +
+      "\n" +
+      "The saga of Taylor's coding philosophy is one of paradoxical intent. In their pursuit of excellence, Taylor inadvertently fostered an environment of dependency and isolation. Collaborators found themselves at a crossroads, caught between admiration for Taylor's ingenuity and frustration at the opacity of their creations. The code, while a marvel of engineering, became a barrier to collaboration, a relic of individualism in a culture built on collective endeavor.\n" +
+      "\n" +
+      "As projects evolved and the need for maintenance and scalability grew, the limitations of Taylor's approach became increasingly apparent. The mantra \"Does it run? Just leave it alone\" transformed from a testament to the code's reliability into a cautionary tale of the dangers of insularity. It highlighted a fundamental truth within the fabric of Codehaven: that the strength of software lies not just in its ability to function but in its adaptability, readability, and the collaboration it fosters.\n" +
+      "\n" +
+      "Confronted with the consequences of their methods, Taylor embarked on a journey of reflection and growth. The realization that true mastery lies in the ability to create not just for oneself but for others marked a turning point. Taylor began to weave principles of readability and collaboration into their work, transforming their code from a solitary fortress into a bridge that welcomed others.\n" +
+      "\n" +
+      "This transformation was not without its challenges. Taylor grappled with the vulnerability of exposing their thought processes, of simplifying the complexity that had become their signature. Yet, in this vulnerability, they found strength. By prioritizing readability and collaboration, Taylor not only enhanced the accessibility of their work but also enriched their connections with fellow developers.\n" +
+      "\n" +
+      '"Writing Code that Nobody Else Can Read: Does it run? Just leave it alone." thus evolved from a narrative of individualism to a parable of growth and community. Taylor\'s story became a beacon to others in Codehaven, a reminder of the power of code to unite, to challenge, and to transcend the limitations of the individual mind.\n' +
+      "\n" +
+      "In the annals of Codehaven's history, the tale of Taylor and their inscrutable code stands as a testament to the evolving nature of software development. It serves as a lesson in the balance between innovation and accessibility, the importance of writing code that not only runs but invites collaboration, understanding, and continuous improvement.\n" +
+      "\n" +
+      'And so, in the heart of Codehaven, "Writing Code that Nobody Else Can Read" remains not just a cautionary tale but a narrative of transformation, celebrating the journey from solitude to solidarity, from obscurity to clarity, in the ever-unfolding story of digital creation.',
   },
   {
     id: "writing-documentation",
-    content: "",
+    content:
+      'In the digital realm of Devtopia, a vibrant metropolis pulsating with the energy of countless lines of code and the relentless drive of its inhabitants to push the boundaries of technology, a seemingly mundane yet crucial task looms large: "Writing Documentation." This endeavor, often relegated to the bottom of to-do lists with optimistic placeholders like "ToDo | Coming soon," embodies the eternal struggle between the urgency of development and the necessity of clarity and guidance.\n' +
+      "\n" +
+      "Central to our narrative is Jordan, a developer whose prowess in coding is matched only by their chronic procrastination when it comes to documentation. Jordan, like many in Devtopia, views documentation as a secondary task, a future obligation that always seems to fall beyond the horizon of the present.\n" +
+      "\n" +
+      "The tale unfolds as Jordan embarks on a groundbreaking project, a venture that promises to be a cornerstone of their legacy within Devtopia. The code flows from Jordan's mind like a torrent, each function more elegant and efficient than the last. Yet, as the project nears completion, the \"Writing Documentation: ToDo | Coming soon\" note stares back from Jordan's task list, a reminder of the unfinished symphony of words needed to complement the harmony of their code.\n" +
+      "\n" +
+      "The challenge of documentation, however, extends beyond mere procrastination. Jordan grapples with the daunting task of translating the intricate ballet of their code into a language that is accessible and instructive. The fear that their documentation might not do justice to the nuances of their work, or worse, lead others astray, weighs heavily on their mind.\n" +
+      "\n" +
+      "As the launch date approaches, the importance of documentation becomes inescapably clear. Jordan receives queries from early users and fellow developers, each seeking guidance on the functionalities and frameworks that Jordan's project promises. The realization dawns that their groundbreaking work, while brilliant, risks becoming an enigmatic relic, its potential shackled by the lack of clear, comprehensive documentation.\n" +
+      "\n" +
+      'Motivated by this revelation, Jordan adopts a new perspective on documentation. No longer an afterthought, it becomes an integral part of the development process, a bridge between Jordan\'s mind and the world. "Writing Documentation: ToDo | Coming soon" transforms from a task deferred to a task embraced.\n' +
+      "\n" +
+      "Jordan's journey becomes a catalyst for change in Devtopia. They champion the cause of documentation, sharing their insights and strategies with the community. Workshops and collaborative sessions flourish, as developers come together to tackle the challenge of documentation, sharing best practices and elevating the standard of clarity and accessibility in their projects.\n" +
+      "\n" +
+      '"Writing Documentation: ToDo | Coming soon" evolves from a personal mantra to a communal mission. Jordan\'s story serves as a beacon to others, a reminder of the transformative power of documentation in unlocking the full potential of technology. It underscores the importance of clarity, guidance, and the shared pursuit of knowledge in the digital age.\n' +
+      "\n" +
+      'In the annals of Devtopia\'s history, the saga of writing documentation stands as a testament to the balance between creation and communication, the synergy between code and clarity. It celebrates the journey from reluctance to realization, from "Coming soon" to "Here now," in the ever-unfolding story of development and discovery.',
   },
   {
     id: "z-index-1000",
