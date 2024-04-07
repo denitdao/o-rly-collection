@@ -25,6 +25,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const story = await trpc.datasource.getStoryById(bookId);
 
   if (!book) {
+    console.log(`Page ${bookId} was not found`);
     return {
       notFound: true,
     };
@@ -61,7 +62,7 @@ export default function BookPage({
 }): InferGetStaticPropsType<typeof getStaticProps> {
   return (
     <>
-      <OrlyHead description={book.title} imageName={book.image} />
+      <OrlyHead title={`${book.title} | O'RLY Covers`} imageName={book.image} />
       <div className="flex min-h-screen flex-col bg-gray-50">
         <Header title={book.title} />
         <BookContent book={book} story={story} />
