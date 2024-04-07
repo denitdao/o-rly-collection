@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Link, X } from "lucide-react";
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 type ImagePreviewContextType = {
   showImage: (imageId: string, imageUrl: string, onCopy: () => void) => void;
@@ -76,7 +76,6 @@ export const ImagePreviewProvider = ({
   );
 };
 
-// TODO: handle escape key press to close the image preview.
 const ImagePreview: React.FC<ImagePreviewState> = (props) => {
   const imageId = props.imageId ?? "";
   const imageUrl = props.imageUrl ?? "";
