@@ -24,7 +24,7 @@ const OrlyHead = ({
       <title>{title}</title>
       <meta
         name="description"
-        content="Find O'RLY meme book cover. Use for your programming arguments. ORLY book parodies. Funny programming book covers. O RLY?"
+        content="Find O'RLY meme book cover. Use for your programming arguments. ORLY book parodies. Funny programming book covers. O'Reilly books meme. Parody covers. O RLY books."
       />
       <link rel="icon" href="/favicon.ico" />
       <link
