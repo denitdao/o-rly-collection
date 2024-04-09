@@ -3,9 +3,11 @@ User-Agent: *
 Allow: /
 Allow: /books/*
 Allow: /api/og/*
+Allow: /_next/image?url=*&q=100$
 
 # Next.JS Crawl Budget Performance Updates
 Disallow: /_vercel/*
+Disallow: /_next/image?url=*&q=75$
 
 Disallow: /*.json$
 Disallow: /*_buildManifest.js$
