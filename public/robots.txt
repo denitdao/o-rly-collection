@@ -6,9 +6,10 @@ Allow: /api/og/*
 
 # Next.JS Crawl Budget Performance Updates
 Disallow: /_vercel/*
-Disallow: /_next/image?url=*
 
+Disallow: /*.json$
 Disallow: /*_buildManifest.js$
 Disallow: /*_middlewareManifest.js$
 Disallow: /*_ssgManifest.js$
+Disallow: /*.js$
 
