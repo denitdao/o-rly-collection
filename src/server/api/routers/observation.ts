@@ -19,15 +19,15 @@ export const observationRouter = createTRPCRouter({
       console.log(`Link ${input.link} has been copied ${number} times`);
     }),
   image_copy: publicProcedure
-    .input(z.object({ imageName: z.string() }))
+    .input(z.object({ imageUrl: z.string() }))
     .mutation(async ({ input }) => {
       if (isDevEnv) return;
       const log = new Logger();
       const key = `copy__images`;
-      const number = await kv.hincrby(key, input.imageName, 1);
-      log.info("Image copied", { imageName: input.imageName });
+      const number = await kv.hincrby(key, input.imageUrl, 1);
+      log.info("Image copied", { imageUrl: input.imageUrl });
 
-      console.log(`Image ${input.imageName} has been copied ${number} times`);
+      console.log(`Image ${input.imageUrl} has been copied ${number} times`);
     }),
   image_view: publicProcedure
     .input(z.object({ imageName: z.string() }))

@@ -20,13 +20,13 @@ export const useObserveLinkCopy = () => {
 export const useObserveImageCopy = () => {
   const { mutate: observeImageCopy } = api.observation.image_copy.useMutation();
 
-  return (imageName: string) => {
-    observeImageCopy({ imageName });
+  return (imageUrl: string) => {
+    observeImageCopy({ imageUrl });
     sendGAEvent({
       action: "image_copy",
       category: "image",
       label: "Image Copy",
-      value: imageName,
+      value: imageUrl,
     });
   };
 };

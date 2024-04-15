@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { kv } from "@vercel/kv";
-import { Logger } from "next-axiom";
 
 export default async function handler(
   request: NextApiRequest,
@@ -13,14 +12,13 @@ export default async function handler(
     return response.status(401).json({ success: false });
   }
 
-  const log = new Logger();
   try {
     const stats = await collectStats();
     const notifyResponse = await notify(stats);
-    log.info(notifyResponse);
+    console.log(notifyResponse);
     response.status(200).json({ success: true, message: notifyResponse });
   } catch (error) {
-    log.error("Failed to collect stats", { reason: JSON.stringify(error) });
+    console.error("Failed to collect stats", { reason: JSON.stringify(error) });
     response.status(500).json({ success: false, message: error });
   }
 }
