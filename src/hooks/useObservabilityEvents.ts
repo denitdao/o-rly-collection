@@ -17,20 +17,6 @@ export const useObserveLinkCopy = () => {
   };
 };
 
-export const useObserveImageCopy = () => {
-  const { mutate: observeImageCopy } = api.observation.image_copy.useMutation();
-
-  return (imageUrl: string) => {
-    observeImageCopy({ imageUrl });
-    sendGAEvent({
-      action: "image_copy",
-      category: "image",
-      label: "Image Copy",
-      value: imageUrl,
-    });
-  };
-};
-
 export const useObserveSearchEffect = (searchTerm: string) => {
   const { mutate: observeSearch } = api.observation.user_search.useMutation();
 
