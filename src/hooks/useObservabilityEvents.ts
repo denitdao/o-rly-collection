@@ -2,6 +2,7 @@ import { sendGAEvent } from "~/components/meta/GoogleAnalytics";
 import { api } from "~/utils/api";
 import { useEffect, useRef } from "react";
 import { type SortMode } from "~/hooks/useBookSearch";
+import posthog from "posthog-js";
 
 export const useObserveLinkCopy = () => {
   const { mutate: observeLinkCopy } = api.observation.link_copy.useMutation();
@@ -14,6 +15,7 @@ export const useObserveLinkCopy = () => {
       label: "Link Copy",
       value: link,
     });
+    posthog.capture("link_copy", { property: link });
   };
 };
 
@@ -30,6 +32,7 @@ export const useObserveSearchEffect = (searchTerm: string) => {
           label: "User Search",
           value: searchTerm,
         });
+        posthog.capture("user_search", { property: searchTerm });
       }
     }, 1500); // 1.5 seconds delay
 
@@ -48,6 +51,7 @@ export const useObserveImageView = () => {
       label: "Image View",
       value: imageName,
     });
+    posthog.capture("image_view", { property: imageName });
   };
 };
 
@@ -64,6 +68,7 @@ export const useObserveSortModeEffect = (sortMode: SortMode) => {
         label: "Sort Mode",
         value: sortMode,
       });
+      posthog.capture("sort_mode", { property: sortMode });
     }
   }, [sortMode, observeSortMode]); // eslint-disable-line react-hooks/exhaustive-deps
 };
