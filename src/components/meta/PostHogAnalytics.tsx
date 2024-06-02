@@ -7,7 +7,8 @@ import { env } from "~/env";
 // Initialize PostHog client
 if (typeof window !== "undefined") {
   posthog.init(env.NEXT_PUBLIC_POSTHOG_KEY, {
-    api_host: env.NEXT_PUBLIC_POSTHOG_HOST || "https://eu.i.posthog.com",
+    ui_host: env.NEXT_PUBLIC_POSTHOG_HOST || "https://eu.i.posthog.com",
+    api_host: "/ingest",
     loaded: (ph) => {
       if (env.NODE_ENV === "development") ph.debug();
     },
