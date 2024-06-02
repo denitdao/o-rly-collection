@@ -8,6 +8,7 @@ import { GoogleAnalytics } from "~/components/meta/GoogleAnalytics";
 import { Toaster } from "~/components/ui/sonner";
 import { Inter as FontSans } from "next/font/google";
 import { cn } from "~/lib/utils";
+import PostHogAnalyticsProvider from "~/components/meta/PostHogAnalytics";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -17,7 +18,9 @@ const fontSans = FontSans({
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <div className={cn("font-sans antialiased", fontSans.variable)}>
-      <Component {...pageProps} />
+      <PostHogAnalyticsProvider>
+        <Component {...pageProps} />
+      </PostHogAnalyticsProvider>
       <Analytics />
       <SpeedInsights />
       <AxiomWebVitals />

@@ -22,6 +22,8 @@ export const env = createEnv({
     NEXT_PUBLIC_SITE_URL: z.string().url(),
     NEXT_PUBLIC_IMAGE_SOURCE: z.string().min(1),
     NEXT_PUBLIC_OG_SOURCE: z.string().min(1),
+    NEXT_PUBLIC_POSTHOG_KEY: z.string().min(1),
+    NEXT_PUBLIC_POSTHOG_HOST: z.string().min(1),
   },
 
   /**
@@ -34,6 +36,8 @@ export const env = createEnv({
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
     NEXT_PUBLIC_IMAGE_SOURCE: process.env.NEXT_PUBLIC_IMAGE_SOURCE,
     NEXT_PUBLIC_OG_SOURCE: process.env.NEXT_PUBLIC_OG_SOURCE,
+    NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
+    NEXT_PUBLIC_POSTHOG_HOST: process.env.NEXT_PUBLIC_POSTHOG_HOST,
   },
 
   /**
