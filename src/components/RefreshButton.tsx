@@ -14,7 +14,7 @@ const RefreshButton = ({ onRefresh, className }: RefreshButtonProps) => {
       variant="outline"
       className={cn(
         className,
-        "hover:border-blue-300 hover:bg-white focus:ring-blue-400",
+        "bg-white hover:border-blue-300 focus:ring-blue-400",
       )}
       size="icon"
     >
