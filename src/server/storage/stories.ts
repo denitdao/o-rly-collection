@@ -788,6 +788,44 @@ const STORY_LIBRARY: Story[] = [
       'Thus, the saga of "Developing in Production: The Fastest Time to Market" is etched into the annals of Devtopia, serving as a cautionary tale to all who walk the path of software development. It reminds us that while the road to innovation is paved with risk and daring, the true mark of mastery lies not in the speed of deployment, but in the wisdom to navigate the balance between innovation and stability, ensuring that the quest for progress never comes at the expense of the users we serve. In this balance, Morgan finds redemption, and in redemption, the true essence of development.',
   },
   {
+    id: "docker",
+    content:
+      'In the ever-evolving landscape of DevOps, there is one tool that has revolutionized the way we think about containers and deployment: Docker. Its impact on the development world is so profound that a simple chant of "Docker Docker Docker" can send shivers of excitement or dread through a team.\n' +
+      "\n" +
+      "Meet Jamie, a seasoned DevOps engineer at Techify Inc. Jamie's daily life revolves around making sure everything runs smoothly from development to production, and Docker has become their secret weapon. With Docker, Jamie can spin up isolated environments faster than you can say \"containerization.\" It's like magic—if magic involved YAML files and command-line interfaces.\n" +
+      "\n" +
+      'One day, the CEO announces a major update that needs to go live by the end of the week. The development team panics, but Jamie remains calm, a picture of serenity in the storm, like the "Keep Calm and Carry On" meme. "Docker will save us," Jamie assures everyone, channeling the power of containers.\n' +
+      "\n" +
+      'As Jamie works, the office buzzes with the "Docker Docker Docker" mantra, reminiscent of the "Omae wa mou shindeiru" meme—everyone knows something powerful is about to happen. Jamie sets up Docker containers for development, testing, and production environments, each perfectly mirrored to catch any discrepancies before they reach the end-users.\n' +
+      "\n" +
+      'The developers, initially skeptical, quickly become converts. "Why didn’t we use this earlier?" they wonder, embodying the "Change My Mind" meme. Bugs that used to take days to reproduce are now caught instantly. Deployments that used to be nerve-wracking become routine.\n' +
+      "\n" +
+      'The week ends with a flawless deployment. The CEO is thrilled, the developers are relieved, and Jamie is hailed as the hero of the day. The entire team celebrates, feeling like the "Success Kid" meme, knowing they\'ve just witnessed the transformative power of Docker.\n' +
+      "\n" +
+      '"Docker Docker Docker" becomes the rallying cry at Techify Inc., a symbol of streamlined processes and efficient workflows. It’s the ultimate tool in the DevOps arsenal, turning chaos into order, and complexity into simplicity.\n' +
+      "\n" +
+      "In the end, Jamie’s story with Docker isn't just about technology—it's about revolutionizing the way we work, making life easier, and keeping the chaos at bay. And as long as there are deployments to manage and environments to sync, you can bet that chant will echo through the halls of Techify Inc.: \"Docker Docker Docker.\"",
+  },
+  {
+    id: "draft-testing",
+    content:
+      'In the bustling startup world of DevTown, where deadlines are tight and resources tighter, a peculiar practice emerged: "Draft Testing." It’s the art of pretending you\'ve thoroughly tested your code when, in reality, you’ve only run it once—maybe.\n' +
+      "\n" +
+      "Meet Sam, a developer at the heart of this story. Sam's team is in crunch mode, with a product launch just days away. The pressure is on, and everyone is running on caffeine and adrenaline. Enter the \"This is Fine\" dog meme—a perfect embodiment of the team's current state. Fires everywhere, but somehow, it's all okay.\n" +
+      "\n" +
+      'Sam’s task is to implement and test a critical feature. But with time running out, Sam resorts to Draft Testing. They run the code once, it seems to work, and they mark it as tested. "Just pretend you did it," echoes in their mind, much like the "Distracted Boyfriend" meme, with proper testing being the loyal girlfriend ignored in favor of just getting it done.\n' +
+      "\n" +
+      'In the next stand-up meeting, Sam confidently assures the team that the feature is ready. “Ship it,” the team lead says, channeling the "Confused Nick Young" meme internally, knowing there’s no time for second-guessing.\n' +
+      "\n" +
+      'Launch day arrives, and the product goes live. For the first few hours, everything seems fine, and the team celebrates with the "Success Kid" meme vibes. But then, the bug reports start rolling in, faster than Grumpy Cat can say, “No.” The feature that Sam "tested" begins to show its true colors—random crashes, unexpected behavior, and lots of unhappy users.\n' +
+      "\n" +
+      'The team scrambles to fix the issues, with Sam feeling like the "Distracted Boyfriend" meme again, this time looking longingly at proper testing as the solution they should have focused on. As they huddle to debug the mess, the "This is Fine" dog meme returns, this time more ironic than ever.\n' +
+      "\n" +
+      'Through sheer determination and a lot of coffee, the team manages to patch things up. They learn a valuable lesson: proper testing can’t be skipped, even under tight deadlines. Sam vows to never draft test again, echoing the "One Does Not Simply" meme, as in, "One does not simply skip proper testing."\n' +
+      "\n" +
+      "“Draft Testing: Just pretend you did it” becomes a cautionary tale in DevTown, a reminder that thorough testing is essential. The memes become a humorous, yet poignant, reminder of the chaos that ensues when testing is half-hearted. And in the end, Sam’s story serves as a lesson that resonates far beyond the walls of their startup, reinforcing the importance of quality in development and debugging.",
+  },
+  {
     id: "drinking-with-ansible",
     content:
       "In the sprawling metropolis of DevOpsia, a city where the streams of continuous integration flow into the vast oceans of continuous delivery, there exists a tavern as ancient as the concept of version control itself: The Ansible Alehouse. Known across the lands for its potent brews and its even more potent automation spells, the Alehouse is a haven for weary developers and operations wizards alike, seeking respite and solace in the bottom of a pint of kvas, the traditional fermented beverage of the realm.\n" +
@@ -851,6 +889,21 @@ const STORY_LIBRARY: Story[] = [
       'And there, in the heart of Codeville, beneath the shadow of the Endless Boilerplate, Taylor\'s program came to life. "Hello, World," it said, a simple greeting that echoed through the digital realm, its voice clear and strong despite the cacophony that surrounded it.\n' +
       "\n" +
       "The tale of Taylor and the Endless Boilerplate spread far and wide, a parable for the ages. It reminded the citizens of Codeville that in the pursuit of progress, it is easy to lose sight of the essence of creation. Complexity, while often necessary, should not be the goal but the challenge to overcome. And in the world of software development, the most profound solutions often come not from adding more to the Boilerplate but from finding the courage to take away.",
+  },
+  {
+    id: "estimating-standard-tasks",
+    content:
+      'In the unpredictable world of Agile development, one skill separates the rookies from the legends: estimating standard tasks. Enter Jamie, a developer whose uncanny ability to nail task estimates has earned them the title of "stand-up golden boy."\n' +
+      "\n" +
+      "Every morning, as the team gathers for the daily stand-up meeting, Jamie stands with a quiet confidence. Others fumble with vague timelines and over-optimistic promises, but not Jamie. With a calculating eye, they predict task durations with the precision of a Swiss watch.\n" +
+      "\n" +
+      '"Refactor the login module? Two days," Jamie declares. The team lead nods approvingly, already picturing the seamless sprint ahead. Jamie\'s estimates are so reliable that the project manager secretly uses them to set their own deadlines, basking in the glow of efficient planning.\n' +
+      "\n" +
+      "But what's Jamie's secret? It's not just experience—it's a mix of strategy, realism, and a dash of Jedi intuition. They break down tasks into the smallest possible components, factor in buffer time for unforeseen complications, and, most importantly, never succumb to the temptation of underestimating to appease others.\n" +
+      "\n" +
+      "Colleagues watch in awe, trying to decode Jamie’s magic formula. Some whisper that Jamie must have a hidden algorithm, others believe it's a pact with the code gods. The truth? Jamie just understands the unpredictability of development and plans accordingly.\n" +
+      "\n" +
+      "\"Estimating Standard Tasks: How to become the stand-up golden boy\" is a tale of one developer’s journey to mastery in the art of time estimation. It's a story of precision in a chaotic environment, of becoming the linchpin that holds the Agile process together. Through Jamie’s eyes, we see that being the stand-up golden boy isn’t about perfection—it's about understanding, anticipating, and delivering with consistent reliability.",
   },
   {
     id: "everything-is-a-fscking-dns-problem",
@@ -1444,6 +1497,19 @@ const STORY_LIBRARY: Story[] = [
       "In the end, Devtopia was reminded that while the path of a developer is fraught with challenges, it is also lined with the opportunity for greatness, for those willing to face the unknown with determination, ingenuity, and an unwavering belief in the possibility of success.",
   },
   {
+    id: "hype-driven-development",
+    content:
+      'In the fast-paced world of software development, there exists a curious phenomenon known as "Hype Driven Development." Teams jump from one shiny new framework to another, riding the waves of the latest tech trends, hoping to find the perfect match.\n' +
+      "\n" +
+      'Their motto? "Looking for love in all the wrong frameworks." The office buzzes with excitement every time a new JavaScript library is released. "We\'re switching to FrameworkX!" announces the team lead, eyes gleaming. The developers groan, knowing they’ve been on this merry-go-round before.\n' +
+      "\n" +
+      "Every sprint begins with a crash course in the latest trendy tech, followed by hours of refactoring perfectly good code. The joke around the office is that their project has more versions than an iPhone. “Life on the Bandwagon,” they call it, where stability is sacrificed at the altar of novelty.\n" +
+      "\n" +
+      'Meetings are filled with buzzwords and lofty promises. "This will revolutionize our codebase!" they declare, only to face the reality of half-baked documentation and mysterious bugs. The devs laugh, betting on how long this new fad will last before they pivot again.\n' +
+      "\n" +
+      '"Hype Driven Development: Looking for love in all the wrong frameworks | Life on the Bandwagon" captures the whimsical chaos of chasing trends. It\'s a rollercoaster of excitement, frustration, and the occasional breakthrough, all fueled by the relentless search for the next big thing.',
+  },
+  {
     id: "ignoring-deprecation-warnings",
     content:
       'In the vibrant yet precarious landscape of Codeville, where digital constructs soar high and data rivers flow deep, there existed a practice as ancient as the first line of code ever written: Ignoring Deprecation Warnings. This habit, rooted in the eternal optimism of developers, was governed by a simple yet profound belief: "Maybe they\'ll just go away on their own."\n' +
@@ -1660,6 +1726,34 @@ const STORY_LIBRARY: Story[] = [
       "And so, the Maintainers, once the unsung heroes of Opensourcia, found their efforts recognized. The story of Alex and LibertyCode served as a reminder that behind every project, every repository on GitHub, lay the heart and soul of a Maintainer. Acting out of the goodness of their heart, or something akin to it, they ensured that the open source kingdom remained a land of innovation, collaboration, and, ultimately, appreciation.\n" +
       "\n" +
       'In the end, the legend of the Maintainers inspired a new generation in Opensourcia, a generation that understood the value of a simple "thank you," the importance of community support, and the undeniable truth that the spirit of open source was not just in the code but in the care and dedication of those who kept it alive.',
+  },
+  {
+    id: "maintaining-status-quo",
+    content:
+      'In the quirky world of tech development, there\'s a team notorious for their motto: "Maintaining Status Quo." Their mantra? "When not doing just doesn\'t do."\n' +
+      "\n" +
+      'Every week, they gather for meetings that could easily double as stand-up comedy hours. The boss kicks things off with, "Any updates?" Met with the classic, "Well, the system isn\'t broken, so we didn\'t fix it!"\n' +
+      "\n" +
+      'The developers have perfected the art of looking busy without actually changing a thing. Bug reports are met with, "That\'s not a bug, it\'s a feature!" Any suggestion for improvement is countered with, "Let\'s not rock the boat."\n' +
+      "\n" +
+      'They joke about their codebase being an ancient relic, full of comments like, "TODO: Improve this later." Later never comes. They’ve even named their servers after ancient artifacts, because, like those artifacts, nothing changes.\n' +
+      "\n" +
+      'One developer, Alex, suggests updating a library, but it\'s shot down with, "We\'d hate to ruin our record of zero progress." Another proposes a new feature, met with, "Why complicate a perfectly stagnant system?"\n' +
+      "\n" +
+      "\"Maintaining Status Quo: When not doing just doesn't do\" captures the hilarity of a team mastering the fine art of doing nothing, all while keeping their jobs and sanity intact. It's a reminder that sometimes, the most action happens when you’re committed to inaction—and the jokes that come with it keep the team rolling.",
+  },
+  {
+    id: "making-a-slack-clone",
+    content:
+      'In the bustling startup hub of Byteville, the team at MicroChat is on a mission: "Making a Slack Clone." With a shoestring budget and big dreams, they set out to recreate Slack\'s features without breaking the bank.\n' +
+      "\n" +
+      'Their daily stand-ups become comedy central: "Who\'s got the emojis?" "Anyone figured out notifications yet?" The UI guy, Sam, designs with free icons found on Google, while the backend wizard, Jamie, is held together by coffee and duct tape code.\n' +
+      "\n" +
+      'Management throws around buzzwords like "synergy" and "disruption" while the developers scramble to avoid actual disruption. They reuse open-source libraries like there’s no tomorrow and joke that their budget meetings involve a lot of wishful thinking and ramen noodles.\n' +
+      "\n" +
+      "Through it all, the team’s humor keeps them going. Despite the odds and the tight budget, they manage to build something functional. It’s not Slack, but it’s close enough to make them proud—and just buggy enough to keep them laughing.\n" +
+      "\n" +
+      '"Making a Slack Clone: Implementing their features on a shoestring budget" is a testament to ingenuity, teamwork, and the power of a good joke in the face of impossible deadlines.',
   },
   {
     id: "making-jeff-bezos-richer",
@@ -2765,6 +2859,23 @@ const STORY_LIBRARY: Story[] = [
       '"Variable Naming: The hardest part of coding | Shave Hours Off Any Project" becomes more than just a story; it evolves into a philosophy, a reminder to the coding community of the importance of names in the tapestry of software development. Jordan\'s saga serves as an inspiration, a call to action to approach naming not as a chore but as a crucial component of the coding craft, essential for creating code that communicates, endures, and delights.\n' +
       "\n" +
       "And so, in the annals of Codeville's history, the tale of \"Variable Naming\" stands as a testament to the nuanced art of programming. It is a legacy of Jordan's journey, a narrative that champions the unsung heroes of code clarity and maintainability, and a celebration of the thoughtful deliberation that makes good code great.",
+  },
+  {
+    id: "weekly-design-pivots",
+    content:
+      'In the chaotic ecosystem of DevCo, where the latest design trends and management fads collide with the principles of software architecture, there exists a ritual both dreaded and darkly comedic: "Weekly Design Pivots." This phenomenon, often summarized by the exasperated mantra "Going in circles forever," captures the essence of a development team caught in the whirlwind of perpetual change.\n' +
+      "\n" +
+      'Meet Chris, a seasoned developer who has become a reluctant connoisseur of these weekly design pivots. Every Monday morning, like clockwork, the team gathers around the conference table (or more accurately, a Zoom call filled with muted sighs and eye-rolls) to hear the latest grand vision from management. "This week, we\'re pivoting to a microservices architecture!" announces one manager. The next week? "Let\'s consolidate back to a monolithic structure for efficiency." By the third week, it\'s, "How about a hybrid approach?"\n' +
+      "\n" +
+      "Chris, armed with a bottomless cup of coffee and a sense of dark humor, navigates these meetings with a mixture of resignation and amusement. The team's collective groan is almost audible through the digital ether as yet another pivot is declared, sending their carefully laid plans spiraling into chaos once more.\n" +
+      "\n" +
+      "\"Going in circles forever\" isn't just a motto—it's a lifestyle at DevCo. The developers joke that if they could charge by the pivot, they'd all be millionaires. Whiteboards filled with yesterday's revolutionary design ideas are wiped clean, only to be filled again with today's new hotness, destined to be erased tomorrow. It's a never-ending cycle of reinventing the wheel, usually with more complex and convoluted spokes each time.\n" +
+      "\n" +
+      'The absurdity reaches its peak when Chris starts a "pivot pool," where team members bet on what the next week\'s design pivot will be. Will it be a complete return to a two-week-old design? A bizarre mix of DevOps and blockchain? Or perhaps a radical new approach dubbed "serverless spaghetti code"? Bets are placed, laughs are shared, and sanity is preserved through humor and camaraderie.\n' +
+      "\n" +
+      "Despite the constant churn, Chris and the team find ways to adapt. They develop an almost superhuman ability to rewrite, refactor, and realign their codebase at breakneck speed. They joke that they could pivot faster than a ballerina on a merry-go-round. Through it all, their dark humor and resilience turn what could be a soul-crushing process into a running gag that keeps them bonded and sane.\n" +
+      "\n" +
+      "\"Weekly Design Pivots: Going in circles forever\" captures the essence of a development team's struggle against the endless tide of shifting priorities and fleeting trends. It's a testament to their ability to laugh in the face of absurdity, to find joy in the chaos, and to keep coding, no matter how many circles they have to spin.",
   },
   {
     id: "what-is-ligma",
