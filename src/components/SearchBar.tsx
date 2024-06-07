@@ -12,7 +12,7 @@ const SearchBar = ({ value, onInputChange, className }: SearchBarProps) => {
   return (
     <div className={cn(className, "relative")}>
       <Input
-        className="pr-8 font-mono focus:ring-blue-400"
+        className="pr-8 font-mono"
         type="text"
         placeholder="Type your keywords..."
         value={value}

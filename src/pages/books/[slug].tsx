@@ -142,7 +142,7 @@ const Header = ({ title }: { title: string }) => {
         <h1 className="mb-5 max-w-[800px] text-4xl font-extrabold tracking-tight text-black">
           {title}
         </h1>
-        <p className="text-center font-mono tracking-tight text-gray-600">
+        <h2 className="text-center font-mono tracking-tight text-gray-600">
           View the collection of compelling{" "}
           <Link
             href={"/"}
@@ -150,7 +150,7 @@ const Header = ({ title }: { title: string }) => {
           >
             programming book covers
           </Link>
-        </p>
+        </h2>
       </div>
     </header>
   );
