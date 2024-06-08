@@ -39,7 +39,7 @@ type CreateContextOptions = Record<string, never>;
  */
 export const createInnerTRPCContext = (_opts: CreateContextOptions) => {
   return {
-    db,
+    // db,
   };
 };
 

@@ -1,5 +1,13 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "entries": []
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1717878273937,
+      "tag": "0000_clammy_millenium_guard",
+      "breakpoints": true
+    }
+  ]
 }

@@ -1,7 +1,8 @@
 // Example model schema from the Drizzle docs
 // https://orm.drizzle.team/docs/sql-schema-declaration
 
-import { sqliteTableCreator } from "drizzle-orm/sqlite-core";
+import { index, int, sqliteTableCreator, text } from "drizzle-orm/sqlite-core";
+import { sql } from "drizzle-orm/sql/sql";
 
 /**
  * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same
@@ -11,17 +12,17 @@ import { sqliteTableCreator } from "drizzle-orm/sqlite-core";
  */
 export const createTable = sqliteTableCreator((name) => `orly_${name}`);
 
-// export const posts = createTable(
-//   "post",
-//   {
-//     id: int("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
-//     name: text("name", { length: 256 }),
-//     createdAt: int("created_at", { mode: "timestamp" })
-//       .default(sql`CURRENT_TIMESTAMP`)
-//       .notNull(),
-//     updatedAt: int("updatedAt", { mode: "timestamp" }),
-//   },
-//   (example) => ({
-//     nameIndex: index("name_idx").on(example.name),
-//   }),
-// );
+export const posts = createTable(
+  "post",
+  {
+    id: int("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+    name: text("name", { length: 256 }),
+    createdAt: int("created_at", { mode: "timestamp" })
+      .default(sql`CURRENT_TIMESTAMP`)
+      .notNull(),
+    updatedAt: int("updatedAt", { mode: "timestamp" }),
+  },
+  (example) => ({
+    nameIndex: index("name_idx").on(example.name),
+  }),
+);
