@@ -14,13 +14,13 @@ import SearchPills, { type PillData } from "~/components/SearchPills";
 import { useRouter } from "next/router";
 import { toast } from "sonner";
 import { createCaller } from "~/server/api/root";
-import { createTRPCContext } from "~/server/api/trpc";
+import { createInnerTRPCContext } from "~/server/api/trpc";
 import { type Story } from "~/server/storage/stories";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const bookId = context.params?.slug as string;
 
-  const trpc = createCaller(createTRPCContext);
+  const trpc = createCaller(createInnerTRPCContext({}));
   const book = await trpc.datasource.getBookById(bookId);
   const story = await trpc.datasource.getStoryById(bookId);
 
@@ -40,7 +40,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const trpc = createCaller(createTRPCContext);
+  const trpc = createCaller(createInnerTRPCContext({}));
   const bookIds = await trpc.datasource.getBookIds();
 
   const paths = bookIds.map((id) => ({

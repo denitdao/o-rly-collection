@@ -19,11 +19,11 @@ import OrlyHeader from "~/components/OrlyHeader";
 import useLinkCopy from "~/hooks/useLinkCopy";
 import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import { createCaller } from "~/server/api/root";
-import { createTRPCContext } from "~/server/api/trpc";
+import { createInnerTRPCContext } from "~/server/api/trpc";
 import { type Book } from "~/server/storage/books";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const trpc = createCaller(createTRPCContext);
+  const trpc = createCaller(createInnerTRPCContext({}));
   const books = await trpc.datasource.getAllBooks();
 
   return {

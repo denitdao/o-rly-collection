@@ -37,6 +37,7 @@ export default async function handler(request: NextRequest): Promise<Response> {
               justifyContent: "center",
             }}
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               alt="Book"
               src={image_file}
