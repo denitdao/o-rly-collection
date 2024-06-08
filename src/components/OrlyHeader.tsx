@@ -7,7 +7,7 @@ const OrlyHeader = () => {
         <h1 className="mb-5 text-4xl font-extrabold tracking-tight text-black">
           Search O&apos;RLY Covers
         </h1>
-        <p className="text-center font-mono tracking-tight text-gray-600">
+        <h2 className="text-center font-mono tracking-tight text-gray-600">
           Strengthen your{" "}
           <Link
             href={"/"}
@@ -16,7 +16,7 @@ const OrlyHeader = () => {
             arguments
           </Link>{" "}
           with compelling programming book covers
-        </p>
+        </h2>
       </div>
     </header>
   );

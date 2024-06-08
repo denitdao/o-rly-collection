@@ -11,6 +11,8 @@ import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
 import superjson from "superjson";
 import { ZodError } from "zod";
 
+import { db } from "~/server/db";
+
 /**
  * 1. CONTEXT
  *
@@ -19,6 +21,7 @@ import { ZodError } from "zod";
  * These allow you to access things when processing a request, like the database, the session, etc.
  */
 
+// My note: this should be updated with user_name or other user-specific data to be passed to the backend
 type CreateContextOptions = Record<string, never>;
 
 /**
@@ -29,15 +32,22 @@ type CreateContextOptions = Record<string, never>;
  * - testing, so we don't have to mock Next.js' req/res
  * - tRPC's `createSSGHelpers`, where we don't have req/res
  *
+ * My Note: using it from server-side functions (e.g. getStaticProps, getServerSideProps)
+ * where I don't have request information
+ *
  * @see https://create.t3.gg/en/usage/trpc#-serverapitrpcts
  */
-const createInnerTRPCContext = (_opts: CreateContextOptions) => {
-  return {};
+export const createInnerTRPCContext = (_opts: CreateContextOptions) => {
+  return {
+    db,
+  };
 };
 
 /**
  * This is the actual context you will use in your router. It will be used to process every request
  * that goes through your tRPC endpoint.
+ *
+ * My Note: using it from client-side functions
  *
  * @see https://trpc.io/docs/context
  */

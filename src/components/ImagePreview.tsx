@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Link, X } from "lucide-react";
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 type ImagePreviewContextType = {
   showImage: (imageId: string, imageUrl: string, onCopy: () => void) => void;

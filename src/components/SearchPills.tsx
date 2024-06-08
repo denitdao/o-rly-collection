@@ -21,20 +21,20 @@ const SearchPills = ({
   className,
 }: SearchPillsProps) => {
   const bgColors = new Map<BookColor, string>([
-    ["gray", "bg-gray-50"],
-    ["red", "bg-red-50"],
-    ["orange", "bg-orange-50"],
-    ["yellow", "bg-yellow-50"],
-    ["lime", "bg-lime-50"],
-    ["green", "bg-green-50"],
-    ["teal", "bg-teal-50"],
-    ["cyan", "bg-cyan-50"],
-    ["sky", "bg-sky-50"],
-    ["blue", "bg-blue-50"],
-    ["indigo", "bg-indigo-50"],
-    ["violet", "bg-violet-50"],
-    ["fuchsia", "bg-fuchsia-50"],
-    ["pink", "bg-pink-50"],
+    ["gray", "bg-gray-50 hover:bg-gray-50"],
+    ["red", "bg-red-50 hover:bg-red-50"],
+    ["orange", "bg-orange-50 hover:bg-orange-50"],
+    ["yellow", "bg-yellow-50 hover:bg-yellow-50"],
+    ["lime", "bg-lime-50 hover:bg-lime-50"],
+    ["green", "bg-green-50 hover:bg-green-50"],
+    ["teal", "bg-teal-50 hover:bg-teal-50"],
+    ["cyan", "bg-cyan-50 hover:bg-cyan-50"],
+    ["sky", "bg-sky-50 hover:bg-sky-50"],
+    ["blue", "bg-blue-50 hover:bg-blue-50"],
+    ["indigo", "bg-indigo-50 hover:bg-indigo-50"],
+    ["violet", "bg-violet-50 hover:bg-violet-50"],
+    ["fuchsia", "bg-fuchsia-50 hover:bg-fuchsia-50"],
+    ["pink", "bg-pink-50 hover:bg-pink-50"],
   ]);
 
   const fromColors = new Map<BookColor, string>([
@@ -119,7 +119,7 @@ const SearchPills = ({
           variant="outline"
           className={cn(
             className,
-            "font-mono hover:border-blue-400 focus:ring-blue-400",
+            "font-mono hover:border-primary",
             pillData.keyword === activeKeyword.trim().toLowerCase() &&
               "border-blue-300",
             gradient(pillData.colors),

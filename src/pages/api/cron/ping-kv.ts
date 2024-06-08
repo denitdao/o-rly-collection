@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { kv } from "@vercel/kv";
 
-export default function withAxiom(
+export default function handler(
   request: NextApiRequest,
   response: NextApiResponse,
 ) {

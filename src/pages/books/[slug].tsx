@@ -14,13 +14,13 @@ import SearchPills, { type PillData } from "~/components/SearchPills";
 import { useRouter } from "next/router";
 import { toast } from "sonner";
 import { createCaller } from "~/server/api/root";
-import { createTRPCContext } from "~/server/api/trpc";
+import { createInnerTRPCContext } from "~/server/api/trpc";
 import { type Story } from "~/server/storage/stories";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const bookId = context.params?.slug as string;
 
-  const trpc = createCaller(createTRPCContext);
+  const trpc = createCaller(createInnerTRPCContext({}));
   const book = await trpc.datasource.getBookById(bookId);
   const story = await trpc.datasource.getStoryById(bookId);
 
@@ -40,7 +40,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const trpc = createCaller(createTRPCContext);
+  const trpc = createCaller(createInnerTRPCContext({}));
   const bookIds = await trpc.datasource.getBookIds();
 
   const paths = bookIds.map((id) => ({
@@ -77,7 +77,7 @@ const BookContent = ({ book, story }: { book: Book; story?: Story }) => {
   const router = useRouter();
 
   const keywords: PillData[] = book.tags.split(",").map((tag) => ({
-    keyword: tag.trim(),
+    keyword: tag.trim().toLowerCase(),
     colors: [book.color],
   }));
 
@@ -142,15 +142,15 @@ const Header = ({ title }: { title: string }) => {
         <h1 className="mb-5 max-w-[800px] text-4xl font-extrabold tracking-tight text-black">
           {title}
         </h1>
-        <p className="text-center font-mono tracking-tight text-gray-600">
-          View the collection of compelling{" "}
+        <h2 className="text-center font-mono tracking-tight text-gray-600">
+          View the full collection of compelling{" "}
           <Link
             href={"/"}
             className="underline decoration-blue-400 decoration-2 underline-offset-2"
           >
             programming book covers
           </Link>
-        </p>
+        </h2>
       </div>
     </header>
   );
