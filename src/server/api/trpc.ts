@@ -21,6 +21,7 @@ import { db } from "~/server/db";
  * These allow you to access things when processing a request, like the database, the session, etc.
  */
 
+// My note: this should be updated with user_name or other user-specific data to be passed to the backend
 type CreateContextOptions = Record<string, never>;
 
 /**
