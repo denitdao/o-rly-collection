@@ -77,7 +77,7 @@ const BookContent = ({ book, story }: { book: Book; story?: Story }) => {
   const router = useRouter();
 
   const keywords: PillData[] = book.tags.split(",").map((tag) => ({
-    keyword: tag.trim(),
+    keyword: tag.trim().toLowerCase(),
     colors: [book.color],
   }));
 
@@ -143,7 +143,7 @@ const Header = ({ title }: { title: string }) => {
           {title}
         </h1>
         <h2 className="text-center font-mono tracking-tight text-gray-600">
-          View the collection of compelling{" "}
+          View the full collection of compelling{" "}
           <Link
             href={"/"}
             className="underline decoration-blue-400 decoration-2 underline-offset-2"
