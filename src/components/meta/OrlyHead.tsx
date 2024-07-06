@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { env } from "~/env.js";
 
 type HeadProps = {
@@ -18,6 +19,7 @@ const OrlyHead = ({
   description = "Find O'RLY meme book cover. Use for your programming arguments. ORLY book parodies. Funny programming book covers. O RLY?",
   imageName = ``,
 }: HeadProps) => {
+  const router = useRouter();
   const imageUrl = `${env.NEXT_PUBLIC_SITE_URL}/api/og?image_file=${imageName}`;
   return (
     <Head>
@@ -45,11 +47,16 @@ const OrlyHead = ({
         href="/favicon-16x16.png"
       />
       <link rel="manifest" href="/site.webmanifest" />
+      <link
+        rel="canonical"
+        href={`${env.NEXT_PUBLIC_SITE_URL}${router.asPath}`}
+      />
 
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={imageUrl} />
+      <meta property="og:logo" content="/apple-touch-icon.png" />
       <meta property="og:url" content={env.NEXT_PUBLIC_SITE_URL} />
       <meta property="og:locale" content="en_US" />
       <meta property="og:site_name" content="O'RLY Covers" />
