@@ -188,11 +188,12 @@ const generateKeywordColors = (
 };
 
 const getRandomTags = (tags: string[], count: number) => {
+  const localTags = [...tags];
   const randomTags: string[] = [];
   for (let i = 0; i < count; i++) {
-    const randomIndex = Math.floor(Math.random() * tags.length);
-    randomTags.push(tags[randomIndex]!);
-    tags.splice(randomIndex, 1); // Remove used tag
+    const randomIndex = Math.floor(Math.random() * localTags.length);
+    randomTags.push(localTags[randomIndex]!);
+    localTags.splice(randomIndex, 1); // Remove used tag
   }
   return randomTags;
 };
