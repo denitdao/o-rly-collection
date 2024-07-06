@@ -58,6 +58,21 @@ const STORY_LIBRARY: Story[] = [
       "And so, the legend of Anchor grew, a story not just of a technology, but of a movement, a collective journey towards a future where the pain of eating glass on Solana was nothing but a distant memory, replaced by the sweet taste of achievement and the thrill of creation.",
   },
   {
+    id: "fascism",
+    content:
+      'In the digital age, fascism finds new avenues to erode democracy, one tweet at a time. "Fascism: Eroding democracy, 140 characters at a time" explores how authoritarianism spreads through social media.\n' +
+      "\n" +
+      "Meet Vladimir Putin, a wannabe Napoleon with a smartphone, doing everything he can to get into the history books. Putin fancies himself a master manipulator, but his tactics are as transparent as they are outdated. He deploys a clumsy network of bots and trolls, flooding social media with laughable propaganda and obvious misinformation.\n" +
+      "\n" +
+      "His grand strategy? Mimic historical conquerors while bumbling through the digital landscape. He aims to exploit societal divides and promote conspiracy theories, but his heavy-handed approach often backfires, turning him into a meme rather than a mastermind.\n" +
+      "\n" +
+      "Globally, Putin's attempts to influence elections and destabilize democracies are met with both ridicule and resistance. His efforts to manipulate public opinion with poorly crafted tweets and obvious sock puppet accounts serve as a reminder that, even in the digital age, not all threats are sophisticated.\n" +
+      "\n" +
+      "Despite his blunders, the battle against digital fascism remains critical. Activists, journalists, and ordinary citizens fight back with fact-checking, digital literacy, and a commitment to truth and transparency.\n" +
+      "\n" +
+      "\"Fascism: Eroding democracy, 140 characters at a time\" highlights the absurdity of modern authoritarianism through the lens of Putin's misguided ambitions. It's a call to action to stay vigilant and defend democratic principles against even the most inept attempts at manipulation.",
+  },
+  {
     id: "arbitrary-forecasts",
     content:
       "In the buzzing world of startups, where coffee is more crucial than oxygen and sleep is a myth narrated by the old-timers, there's a groundbreaking book that’s become the stealthy superhero of many aspiring moguls. It's not about coding the next viral app or crafting a marketing strategy so cunning it could sell sand in the Sahara. No, this tome tackles a more elusive beast: the art of Arbitrary Forecasts.\n" +
@@ -1042,6 +1057,37 @@ const STORY_LIBRARY: Story[] = [
       'And so, the tale of "Fake News Generation: Putting NLP to Good Use" serves as a parable for our times, a reminder of the dual-edged nature of technology. It underscores the responsibility that comes with wielding such power, the need for ethical stewardship in the application of advanced tools like NLP. For in the balance between potential and principle lies the future of information, a future where technology enhances our understanding of the world, guided by the immutable light of truth.',
   },
   {
+    id: "farting-in-public",
+    content:
+      'In the socially intricate world of public interactions, few things are as universally awkward as "Farting in Public." It\'s an experience that transcends cultures and settings, from bustling offices to quiet elevators, leaving everyone involved grasping for the right reaction.\n' +
+      "\n" +
+      "Let's explore this phenomenon through the eyes of Chris, a seasoned office worker who has navigated the delicate art of public flatulence with surprising finesse.\n" +
+      "\n" +
+      "The Elevator Incident:\n" +
+      "\n" +
+      'Picture this: Chris steps into a crowded elevator, clutching a morning coffee. Suddenly, the undeniable sound of a fart fills the small space. The initial reaction is one of stunned silence, punctuated by the occasional awkward cough. Chris, ever the quick thinker, adopts a nonchalant expression, as if to say, "Wasn\'t me."\n' +
+      "\n" +
+      "The Blame Game:\n" +
+      "\n" +
+      'In such scenarios, subtlety is key. Chris has perfected the art of the "distracted look," gazing intently at their phone or the ceiling tiles, employing the classic strategy of denial through disinterest. If anyone makes eye contact, Chris responds with a faint smile, implying that the culprit must surely be someone else.\n' +
+      "\n" +
+      "The Meeting Room Muffler:\n" +
+      "\n" +
+      "During a particularly long and boring meeting, Chris feels the familiar rumble of impending embarrassment. The trick here is timing. Chris strategically shifts in their chair, synchronizing the release with the loud rustle of papers. It’s a risky move, but it often goes unnoticed amidst the cacophony of meeting noises.\n" +
+      "\n" +
+      "The Apology:\n" +
+      "\n" +
+      'On rare occasions, the act is too obvious to ignore. In these moments, Chris opts for humor. "Well, at least it wasn\'t a conference call!" They quip, breaking the tension and usually eliciting a few chuckles. Humor, Chris finds, is a great diffuser of awkwardness.\n' +
+      "\n" +
+      "The Cultural Context:\n" +
+      "\n" +
+      "In some cultures, public farting might be considered a minor faux pas, while in others, it’s a serious breach of etiquette. Chris, always culturally aware, tailors their reaction to the social norms of their environment. Whether it's a quick apology or a bold move to shift blame, adaptability is key.\n" +
+      "\n" +
+      '"Farting in Public: Public farting explained" is a humorous guide that delves into the unspoken rules and strategies of handling this universal human experience. Through Chris’s eyes, we learn that while public flatulence is inevitable, the response can range from subtle deflection to outright humor. The goal is to navigate these socially awkward moments with grace, or at least, a good laugh.\n' +
+      "\n" +
+      "In the end, Chris’s experiences remind us that everyone farts, but it’s how you handle it that makes all the difference. With a bit of strategy and a lot of confidence, even the most embarrassing moments can become just another funny story in the grand tapestry of life.",
+  },
+  {
     id: "faster-hardware",
     content:
       "In the bustling realm of Technopolis, a land where the gears of innovation churn ceaselessly and the glow of progress illuminates every corner, there thrived an age-old tactic revered by many as the panacea for all computational woes: Throwing Faster Hardware at the Problem. This strategy, born from the desire to achieve ever-greater speeds and efficiencies, was as simple in concept as it was grand in ambition: when faced with software that crawls and stutters, why delve into the murky depths of optimization when one could simply unleash the beasts of CPU, GPU, and RAM?\n" +
@@ -1941,6 +1987,19 @@ const STORY_LIBRARY: Story[] = [
       'The tale of "Taking on Needless Dependencies: Code written by some stranger on the internet is always perfect" spread throughout Codevania, a cautionary story that echoed in the halls of academies and the forums of the internet. It served as a reminder that while the resources of the digital world are vast and varied, the strength of an application lies in the understanding and intentionality of its creators.\n' +
       "\n" +
       "And so, Sam's journey became a legend, a parable of growth and insight in the realm of code. It underscored the truth that in the pursuit of development, the wisest path is often the one that weaves between the allure of shortcuts and the virtue of craftsmanship, guided by the light of knowledge and the strength of self-reliance.",
+  },
+  {
+    id: "no",
+    content:
+      'In the whimsical world of OfficeLand, where management\'s whims dictate the daily grind, one word reigns supreme: "No." "No: Literally opposite to yes" captures the hilarious antics of employees perfecting the art of refusal.\n' +
+      "\n" +
+      'Meet Sam, the unofficial champion of the "No" culture. Whether it’s a last-minute project, an unnecessary meeting, or an ill-timed favor, Sam has a ready arsenal of excuses. "Can you stay late?" "Nope, got a thing." "Can you handle this task?" "Sorry, swamped."\n' +
+      "\n" +
+      'The office buzzes with creative refusals. Colleagues exchange tips like trading cards. "Say you have a dentist appointment!" "Blame it on a system crash!" The team has even created a "No" bingo, celebrating each inventive excuse with laughter and camaraderie.\n' +
+      "\n" +
+      'Management, baffled by the sudden surge in dental emergencies and technical glitches, tries to counter with incentives. But Sam and the crew hold strong, their mantra clear: "Work smarter, not harder."\n' +
+      "\n" +
+      '"No: Literally opposite to yes" is a lighthearted look at workplace dynamics, where saying no becomes an art form. It’s a reminder that sometimes, pushing back is the key to maintaining sanity and balance in the chaotic world of work.',
   },
   {
     id: "not-writing-unit-tests",

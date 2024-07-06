@@ -56,6 +56,15 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-02-04T13:00:00.000Z",
   },
   {
+    id: "fascism",
+    title: "Fascism",
+    image: "fascism.jpeg",
+    headline: "Eroding democracy, 140 characters at a time",
+    color: "red",
+    tags: "politics, culture",
+    createdAt: "2024-07-06T10:00:00.000Z",
+  },
+  {
     id: "arbitrary-forecasts",
     title: "Arbitrary Forecasts",
     image: "arbitrary-forecasts.jpg",
@@ -501,6 +510,15 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-01-27T13:00:00.000Z",
   },
   {
+    id: "farting-in-public",
+    title: "Farting in Public",
+    image: "farting-in-public.jpg",
+    headline: "Public farting explained",
+    color: "blue",
+    tags: "guide, tutorial, fun, excuses",
+    createdAt: "2024-07-06T10:00:00.000Z",
+  },
+  {
     id: "faster-hardware",
     title: "Throwing Faster Hardware At The Problem",
     image: "faster-hardware.jpg",
@@ -896,6 +914,15 @@ const BOOK_LIBRARY: Book[] = [
     color: "red",
     tags: "dependencies, code, management, risk, development",
     createdAt: "2023-08-08T12:00:00.000Z",
+  },
+  {
+    id: "no",
+    title: "No",
+    image: "no.jpeg",
+    headline: "Literally the opposite of yes",
+    color: "teal",
+    tags: "fun, excuses, management",
+    createdAt: "2024-07-06T11:00:00.000Z",
   },
   {
     id: "not-writing-unit-tests",
