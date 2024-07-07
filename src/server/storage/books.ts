@@ -586,7 +586,7 @@ const BOOK_LIBRARY: Book[] = [
   {
     id: "functional-thinking",
     title: "Functional Thinking",
-    image: "functional-thinking.png",
+    image: "functional-thinking.jpg",
     headline: "Paradigm over syntax",
     color: "fuchsia",
     tags: "functional programming, development, paradigm, syntax",
@@ -797,7 +797,7 @@ const BOOK_LIBRARY: Book[] = [
   {
     id: "loosing-your-will-to-live",
     title: "Losing Your Will To Live",
-    image: "loosing-your-will-to-live.png",
+    image: "loosing-your-will-to-live.jpg",
     headline:
       "Code Maintenance Guide | The original developer isn't here for a reason",
     color: "lime",
