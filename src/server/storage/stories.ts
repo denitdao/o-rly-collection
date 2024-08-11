@@ -1128,6 +1128,21 @@ const STORY_LIBRARY: Story[] = [
       'And so, the tale of "Fear of Missing Out" serves as a reminder to the citizens of Technopolis and beyond. It teaches us that the pursuit of technology, while a noble endeavor, should be guided not by fear, but by passion and purpose. In the balance between the new and the known, the trendy and the timeless, lies the path to true fulfillment in the ever-changing landscape of the digital age.',
   },
   {
+    id: "fiddling-with-the-padding",
+    content:
+      'In the wild world of front-end development, there’s one activity that consumes more time than anyone would like to admit: "Fiddling with the Padding."\n' +
+      "\n" +
+      'Meet Jamie, a seasoned developer who, like many before them, has fallen down the CSS rabbit hole. Today’s mission? Align a button perfectly. Should be simple, right? Fast-forward three hours, and Jamie is still tweaking, nudging padding values by 1px at a time, hoping to find that elusive sweet spot between "too close" and "too far."\n' +
+      "\n" +
+      'With each tweak, Jamie mutters, "Just a little more to the left... no, wait, back to the right." The button looks almost the same as it did three hours ago, but now Jamie’s zoomed in at 400%, eyes squinting at pixels as if deciphering ancient hieroglyphs.\n' +
+      "\n" +
+      'The best part? Jamie is fully aware of the absurdity of this deep dive. "Sure, the client’s paying us for this... but if they knew!" They chuckle, pushing the nagging thought of ROI to the back of their mind.\n' +
+      "\n" +
+      "After what feels like an eternity, the button is finally... acceptable. Jamie leans back, satisfied and exhausted, only to realize they now have to check how it looks on every device and screen size. Cue the groan.\n" +
+      "\n" +
+      '"Fiddling with the Padding: Trying not to think about the economic value of this activity | For hours" is a love letter to every front-end dev who’s ever lost track of time obsessing over the tiniest details. It’s a reminder that in the world of web design, perfection is an endless loop of pixel-pushing—and it’s okay to laugh about it.',
+  },
+  {
     id: "finding-your-own-stack-overflow-posts",
     content:
       "In the digital realm of Codehaven, where questions float like leaves in the wind and answers blossom like flowers in spring, there exists a grand library known to all as Stack Overflow. This boundless repository of knowledge, built from the collective wisdom of countless developers, stands as a beacon of hope and guidance for those who traverse the treacherous paths of code.\n" +
@@ -2002,6 +2017,21 @@ const STORY_LIBRARY: Story[] = [
       '"No: Literally opposite to yes" is a lighthearted look at workplace dynamics, where saying no becomes an art form. It’s a reminder that sometimes, pushing back is the key to maintaining sanity and balance in the chaotic world of work.',
   },
   {
+    id: "nodding-along",
+    content:
+      'In the high-stakes world of tech, there\'s one skill that separates the seasoned pros from the newbies: "Nodding Along." You know the drill—those meetings where acronyms and buzzwords fly around faster than Wi-Fi signals.\n' +
+      "\n" +
+      'Meet Taylor, a developer who’s perfected the art of looking knowledgeable. Today’s meeting? The usual suspects are there, rattling off the latest trends: "So, with our new CI/CD pipeline leveraging AI and ML, we can ensure our MVP is ready for the IoT integration with 5G support."\n' +
+      "\n" +
+      'Taylor\'s response? A confident nod, maybe even an enthusiastic "Absolutely," despite not having a clue what half those acronyms mean. It’s like playing tech buzzword bingo, except instead of shouting "Bingo!" Taylor just keeps nodding.\n' +
+      "\n" +
+      'Inside, though, Taylor’s having a little panic. "MVP? Isn\'t that a sports thing? And ML—Machine Learning or My Lunch? Maybe I’ll just Google it later…" But on the outside, they’re cool as a cucumber, giving the occasional "Mm-hmm" and "Right, right."\n' +
+      "\n" +
+      "The best part? No one else in the room is likely any wiser. They’re all just nodding along, too, riding the wave of jargon and hoping someone else will ask the question they’re all too afraid to voice.\n" +
+      "\n" +
+      '"Nodding Along: Pretending to understand concepts and acronyms" is a comedic snapshot of tech culture, where half the battle is just keeping up appearances. It’s a reminder that sometimes, the best way to navigate a sea of buzzwords is with a smile, a nod, and a well-timed "Exactly!"',
+  },
+  {
     id: "not-writing-unit-tests",
     content:
       'In the sprawling tech landscape of Testopia, where the principles of clean code and rigorous testing form the bedrock of development practices, there exists a notorious undercurrent, a realm of shadows where the art of crafting excuses for Not Writing Unit Tests is honed to perfection. This shadowy domain, whispered about in the corridors of startups and tech giants alike, is where the myth of the "Special Snowflake Application" thrives—a place where the rules of logic and good practice seemingly do not apply.\n' +
@@ -2019,6 +2049,21 @@ const STORY_LIBRARY: Story[] = [
       'The tale of "Excuses for Not Writing Unit Tests: Your Application is a Special Snowflake" became a cautionary legend within Testopia, a reminder of the perils of arrogance and the folly of thinking oneself above the laws of good development practice. It served as a testament to the transformative power of testing, not just as a tool for catching bugs, but as a philosophy that elevates the quality and reliability of software.\n' +
       "\n" +
       "And so, Alex's journey from the realm of excuses to the enlightened lands of unit testing became a beacon for developers far and wide, a story that underscored the truth that no application, no matter how complex or unique, is a special snowflake when it comes to the fundamental principles of software development. In the end, the rigorous application of unit testing illuminated the path to a more stable, reliable, and maintainable SnowFlakeApp, a testament to the enduring wisdom that underpins the craft of coding.",
+  },
+  {
+    id: "one-million-tabs",
+    content:
+      'In the chaotic world of software development, there’s one universal truth: the number of open browser tabs will always multiply to the point of absurdity. Meet Alex, a developer who’s mastered the art of "Managing + Navigating 1 Million Browser Tabs."\n' +
+      "\n" +
+      "It all starts innocently enough—researching a bug, reading a couple of docs, checking Stack Overflow. But before long, Alex’s browser resembles the skyline of New York City, tabs crammed together so tightly you can only see the first letter of each title. Was that tab “D” for Docker or “D” for Design Patterns? Who knows!\n" +
+      "\n" +
+      'Every time Alex opens a new tab, they swear it’s the last one. But then they think, "Wait, I need to compare this with another resource," and boom, another tab joins the fray. It’s a digital Jenga tower—one wrong click, and the whole thing might collapse.\n' +
+      "\n" +
+      'The real fun begins when Alex tries to find that one crucial tab. They squint at the tab bar like a prospector panning for gold, clicking through what feels like an infinite loop of browser history. "I just saw it!" they mutter, growing more frantic with each passing second.\n' +
+      "\n" +
+      "In a moment of desperation, Alex considers the nuclear option: closing all tabs and starting fresh. But then they remember—one of those tabs has something important, like the 200-line command they copy-pasted from Stack Overflow. So they continue the hunt, hoping the right tab will eventually reveal itself like a long-lost friend.\n" +
+      "\n" +
+      '"Managing + Navigating 1 Million Browser Tabs: Because you know you just saw the tab you need" is a light-hearted look at the modern developer’s dilemma. It’s a story of persistence, productivity, and the eternal struggle against the ever-growing tab horde. In the end, Alex embraces the chaos, knowing that even if they lose the battle, they’ll always have Ctrl+Shift+T to bring back that recently closed tab.',
   },
   {
     id: "overwriting-code",
@@ -2179,6 +2224,23 @@ const STORY_LIBRARY: Story[] = [
       'The tale of "Practical Testing: It worked fine three months ago | Just click around and see if anything breaks" became a cautionary legend within CodeVille, a reminder of the perils of complacency and the importance of embracing change. It served as a testament to the fact that while intuition and experience are invaluable assets in the realm of software development, the discipline of testing is the foundation upon which reliable, robust applications are built.\n' +
       "\n" +
       "And so, Jordan's story, from the highs of unfettered creativity to the lows of public failure, and back to the heights of professional growth and recognition, underscored a fundamental truth in the art and science of software development: that the path to excellence is not paved with shortcuts but with a commitment to quality, a dedication to learning, and the courage to evolve.",
+  },
+  {
+    id: "pretending-to-know-about-stuff",
+    content:
+      'In the fast-paced world of tech, sometimes the key to survival is mastering the art of "Pretending to Know About Stuff." Meet Morgan, a developer with a talent for nodding confidently while inwardly panicking about what the heck "Kubernetes" actually is.\n' +
+      "\n" +
+      'It all starts in the Monday morning meeting. The manager drops a new buzzword like it’s hot: “We’re integrating microservices with Kubernetes to optimize our CI/CD pipeline.” Everyone around the table nods in agreement. Morgan nods too—only half sure what was just said, but certain they’ve heard "Kubernetes" at least twice before. Maybe on a podcast? Or was it a tweet?\n' +
+      "\n" +
+      'As the discussion heats up, Morgan’s inner monologue kicks into high gear. "Microservices... okay, that’s like, little apps, right? And Kubernetes… something to do with containers? Docker? I think? Let’s just smile and keep nodding."\n' +
+      "\n" +
+      "The manager then asks Morgan for their thoughts. This is the moment of truth. Morgan leans forward, adopts a thoughtful expression, and responds with a classic non-answer: “Well, we need to ensure our approach aligns with best practices and remains scalable.” Nailed it. Vague enough to sound smart, but not specific enough to get questioned.\n" +
+      "\n" +
+      "The best part? Everyone else is pretending too. A quick glance around the room reveals the same knowing nods and slightly glazed-over eyes. They’re all just as lost but too proud (or afraid) to admit it.\n" +
+      "\n" +
+      "Morgan spends the rest of the day Googling Kubernetes and watching a couple of YouTube videos, just in case it comes up again. The next time they’re in a meeting and Kubernetes gets mentioned, they’ll be ready to throw in a “Yeah, we should definitely consider the orchestration layers.”\n" +
+      "\n" +
+      '"Pretending to Know About Stuff: Feigning knowledge of a word you\'ve heard a few times" is a humorous take on the tech world’s favorite pastime. It’s about the everyday dance of bluffing, learning just enough to stay afloat, and hoping nobody ever calls your bluff. After all, in tech, it’s less about knowing everything and more about knowing how to pretend you do.',
   },
   {
     id: "pretending-you-know",
@@ -2798,6 +2860,23 @@ const STORY_LIBRARY: Story[] = [
       "The tale of \"The Joys of Generic Parameter Types: Map<T, List<Map<? super Key, U>>> simpleMap | Java's Take on Abstraction\" spread far and wide, a legend of Denys's ingenuity and the power of Java generics. It served as a beacon to other developers, an invitation to embrace the complexities of generics not as burdens but as opportunities for innovation and elegance in design.\n" +
       "\n" +
       "And so, in the annals of Codeville's history, Denys's saga stands as a parable of intellectual curiosity, a narrative that champions the pursuit of abstraction and the beauty of crafting solutions that lie beyond the horizon of simplicity. It is a legacy that inspires, a reminder that the depths of programming are as boundless as the creativity and perseverance of those who dare to explore them.",
+  },
+  {
+    id: "three-space-indentation",
+    content:
+      "In the heated trenches of software development, wars are waged not over frameworks or languages, but over the most sacred of all coding choices: indentation style. And in this battlefield, a small but passionate group has emerged, boldly declaring that the only true way is... 3 Space Indentation.\n" +
+      "\n" +
+      'Meet Riley, a developer who has adopted this middle-ground indentation style with the fervor of a convert. Riley’s motto? "Why choose between tabs and 2 or 4 spaces when 3 is clearly superior?" Riley\'s desk is adorned with a sign that reads, "3 Spaces: Because life isn’t binary."\n' +
+      "\n" +
+      'The 3-space cult (as it’s lovingly called by detractors) prides itself on being the Goldilocks of indentation. "Two spaces are too tight," they say, “and four? That\'s just excessive. Three spaces is the perfect balance—visually pleasing and logically sound.” Riley often finds themselves evangelizing to coworkers who, frankly, didn’t even know 3-space indentation was a thing.\n' +
+      "\n" +
+      "“Why 3 spaces?” they ask, baffled. “Why not?” Riley retorts, launching into a passionate monologue about how it combines the compactness of 2 spaces with the readability of 4, creating the ultimate coding experience. “It’s the Switzerland of indentation styles—neutral, peaceful, and universally acceptable.”\n" +
+      "\n" +
+      'Every so often, Riley sneaks into the office at odd hours to "fix" the indentation in shared files. The morning after, the team logs in to find their codebase has mysteriously aligned to the 3-space standard. “This feels… off,” someone says. Riley just grins and nods, secretly basking in the symmetry.\n' +
+      "\n" +
+      "Despite the occasional grumble from colleagues, Riley’s persistence is slowly paying off. A few brave souls have converted, and now there’s a growing pocket of 3-space devotees in the office. Meetings are punctuated with whispered exchanges about the superiority of the format, while the tab users sit in the corner, shaking their heads in disbelief.\n" +
+      "\n" +
+      "“3 Space Indentation: Appreciating the best indentation style | The only true indent” is a playful jab at the endless debates that rage in the coding world. It’s a reminder that in development, as in life, the middle ground is often the most unexpected—and sometimes, just sometimes, it’s also the best place to be. So, the next time you open a file and see those three perfect spaces, just remember: Riley was right.",
   },
   {
     id: "trivial-details",
