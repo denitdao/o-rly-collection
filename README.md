@@ -1,6 +1,6 @@
 # O RLY? Book Cover Collection
 
-This is a website for the quick search of O'Reilly-like meme book covers about programming.
+This is a [website](https://orlybooks.com/?utm_source=github) that shows you the book covers you need to read.
 
 Quickly find the book cover you need and share it with your teammates to highlight a point!
 
