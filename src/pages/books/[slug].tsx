@@ -1,6 +1,7 @@
 import { env } from "~/env.js";
 import Image from "next/image";
 import React from "react";
+import ReactMarkdown from "react-markdown";
 import { type Book } from "~/server/storage/books";
 import OrlyHead from "~/components/meta/OrlyHead";
 import OrlyFooter from "~/components/OrlyFooter";
@@ -116,17 +117,24 @@ const BookContent = ({ book, story }: { book: Book; story?: Story }) => {
           </div>
           {story && (
             <div className="max-w-3xl">
-              {story.content
-                .split("\n")
-                .filter((text) => text.length > 0)
-                .map((paragraph, index) => (
-                  <p
-                    className="leading-7 [&:not(:first-child)]:mt-6"
-                    key={index}
-                  >
-                    {paragraph}
-                  </p>
-                ))}
+              <ReactMarkdown
+                components={{
+                  a: ({ ...props }) => (
+                    <a
+                      className="underline decoration-blue-400 decoration-2 underline-offset-2"
+                      {...props}
+                    />
+                  ),
+                  p: ({ ...props }) => (
+                    <p
+                      className="leading-7 [&:not(:first-child)]:mt-6"
+                      {...props}
+                    />
+                  ),
+                }}
+              >
+                {story.content}
+              </ReactMarkdown>
             </div>
           )}
         </div>

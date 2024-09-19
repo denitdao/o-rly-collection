@@ -47,13 +47,14 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2023-08-08T12:00:00.000Z",
   },
   {
-    id: "anchor",
-    title: "Anchor",
-    image: "anchor.jpg",
-    headline: "Eating glass on Solana painlessly",
-    color: "violet",
-    tags: "Rust, blockchain, cryptocurrency, development",
-    createdAt: "2024-02-04T13:00:00.000Z",
+    id: "mastering-telegram-bot-integration",
+    title: "Mastering Telegram Bot Integration",
+    image: "mastering-telegram-bot-integration.jpeg",
+    headline:
+      "Getting user id from the Telegram API | Ah shit, here we go again",
+    color: "blue",
+    tags: "telegram, bot, development, programming, startup, user",
+    createdAt: "2024-09-19T19:00:00.000Z",
   },
   {
     id: "fascism",
@@ -63,6 +64,15 @@ const BOOK_LIBRARY: Book[] = [
     color: "red",
     tags: "politics, culture",
     createdAt: "2024-07-06T10:00:00.000Z",
+  },
+  {
+    id: "anchor",
+    title: "Anchor",
+    image: "anchor.jpg",
+    headline: "Eating glass on Solana painlessly",
+    color: "violet",
+    tags: "Rust, blockchain, cryptocurrency, development",
+    createdAt: "2024-02-04T13:00:00.000Z",
   },
   {
     id: "arbitrary-forecasts",

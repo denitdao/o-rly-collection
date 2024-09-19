@@ -1878,6 +1878,23 @@ const STORY_LIBRARY: Story[] = [
       'And so, in the annals of Manageria\'s history, "Managing Managers" stood as a monument to the enduring power of positive leadership, a guide that transcended the pages from which it sprang to become a lived philosophy for countless professionals. It was a testament to the belief that within every managerial challenge lies an opportunity for growth, for transformation, and for the kind of leadership that inspires not just productivity and success but fulfillment and purpose.',
   },
   {
+    id: "mastering-telegram-bot-integration",
+    content:
+      'Meet Alex, a developer who just wanted to build a simple Telegram bot. Little did Alex know, the road to bot nirvana is paved with API calls, documentation rabbit holes, and a lot of "Ah shit, here we go again" moments.\n' +
+      "\n" +
+      "The plan was straightforward: create a bot, connect it to Telegram, and have it send notifications to users. How hard could it be, right? Alex quickly learned that Telegram’s bot API had other plans.\n" +
+      "\n" +
+      'First, Alex spent an afternoon just figuring out how to create the bot. After some Googling and scrolling through endless tutorials, success! The bot existed. Now, on to the easy part—getting user IDs and sending notifications. Except, Telegram’s documentation was as clear as mud. "Okay, so how exactly do I get the user ID?" Alex muttered, feeling that familiar wave of developer dread. More API calls, more trial and error, and more frustration followed.\n' +
+      "\n" +
+      "But then Alex discovered *the* tool, a simple bot that could log IDs and make life easier: **[Telegram Logger](https://t.me/tel_logger_bot)**." +
+      "\n" +
+      '"This thing’s a lifesaver," Alex thought, typing commands into the chat to retrieve IDs like magic. Suddenly, the fog lifted.\n' +
+      "\n" +
+      "Finally connected and able to send notifications, Alex's bot was alive, working like a charm. It wasn’t without its headaches, but that sweet moment of receiving the first successful notification made it all worthwhile.\n" +
+      "\n" +
+      '"Mastering Telegram Bot Integration: Getting user ID from the Telegram API | Ah shit, here we go again" is a humorous look at the trials of bot development. It’s a reminder that no matter how frustrating the journey, sometimes all you need is the right tool—and a lot of patience.',
+  },
+  {
     id: "mastering-the-go-type-system",
     content:
       "In the technologically bustling realm of GoLand, a place where the architecture of software is both an art and a science, there emerged a challenge that captivated the minds of developers far and wide: Mastering the Go Type System. This quest, as formidable as it was enlightening, was encapsulated in a tome that became the beacon for all who wished to navigate the nuanced terrains of Go: \"Mastering the Go Type System: Because 'They are not capable of understanding a brilliant language'. | if err != nil.\"\n" +
