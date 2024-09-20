@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Link, X } from "lucide-react";
 import React, { createContext, useContext, useState } from "react";
 
@@ -86,11 +85,11 @@ const ImagePreview: React.FC<ImagePreviewState> = (props) => {
       onClick={() => props.onClose()}
     >
       <div className="relative h-[80%] w-full max-w-screen-lg">
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={imageUrl}
           alt={imageId}
-          fill
-          style={{ objectFit: "contain" }}
+          className="h-full w-full object-contain"
         />
       </div>
       <button
