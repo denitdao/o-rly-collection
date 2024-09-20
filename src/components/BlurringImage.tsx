@@ -18,6 +18,7 @@ const BlurringImage = ({
       <img
         alt={alt}
         src={imageUrl}
+        loading="lazy"
         onClick={onClick}
         className="h-full w-full scale-100 rounded-lg object-cover blur-0 grayscale-0 duration-500 ease-in-out group-hover:scale-95 group-hover:duration-200"
       />
