@@ -1,5 +1,4 @@
 import { env } from "~/env.js";
-import Image from "next/image";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import { type Book } from "~/server/storage/books";
@@ -88,11 +87,11 @@ const BookContent = ({ book, story }: { book: Book; story?: Story }) => {
     <main className="px-4 pb-16">
       <div className="mx-auto max-w-screen-2xl">
         <div className="flex w-full flex-col items-center">
-          <Image
-            priority
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            fetchPriority="high"
             alt={book.id}
             src={imageUrl}
-            quality={100}
             height={600}
             width={600}
             className="mb-4"
