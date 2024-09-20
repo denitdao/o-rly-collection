@@ -89,7 +89,6 @@ const BookContent = ({ book, story }: { book: Book; story?: Story }) => {
         <div className="flex w-full flex-col items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            fetchPriority="high"
             alt={book.id}
             src={imageUrl}
             height={600}
