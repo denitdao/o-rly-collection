@@ -5,7 +5,7 @@ const OrlyFooter = () => {
     <footer className="mt-auto bg-white px-4 py-8">
       <div className="mx-auto max-w-screen-2xl text-center">
         <div
-          className="mb-4 flex rounded-lg bg-blue-50 p-4 text-left text-sm text-blue-800"
+          className="flex rounded-lg bg-blue-50 p-4 text-left text-sm text-blue-800"
           role="alert"
         >
           <svg
@@ -34,15 +34,24 @@ const OrlyFooter = () => {
             </ul>
           </div>
         </div>
-        <span className="mx-auto font-mono text-sm text-gray-500">
-          © {new Date().getFullYear() + " "}
+        <p className="mx-auto mt-8 font-mono text-sm text-gray-500">
+          Open source on{" "}
           <Link
-            href="https://github.com/denitdao"
+            href="https://github.com/denitdao/o-rly-collection"
+            className="decoration-blue-400 decoration-2 hover:underline"
+          >
+            GitHub
+          </Link>
+        </p>
+        <p className="mx-auto mt-2 font-mono text-sm text-gray-500">
+          © {new Date().getFullYear() + " Created by "}
+          <Link
+            href="https://x.com/DChurchyn"
             className="decoration-blue-400 decoration-2 hover:underline"
           >
             DenITDao
           </Link>
-        </span>
+        </p>
       </div>
     </footer>
   );
