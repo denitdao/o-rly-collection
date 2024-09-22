@@ -21,6 +21,7 @@ import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import { createCaller } from "~/server/api/root";
 import { createInnerTRPCContext } from "~/server/api/trpc";
 import { type Book } from "~/server/storage/books";
+import { Badge } from "~/components/ui/badge";
 
 export const getStaticProps: GetStaticProps = async () => {
   const trpc = createCaller(createInnerTRPCContext({}));
@@ -128,10 +129,13 @@ const NoResultsMessage = () => {
       <p className="text-gray-500">
         Try another keyword or{" "}
         <Link
-          href="https://orly.nanmu.me/"
+          href="https://make.orlybooks.com/"
           className="font-bold decoration-blue-400 decoration-2 hover:underline"
         >
-          create your own cover
+          create your own cover{" "}
+          <Badge variant="default" className="animate-bounce bg-blue-400">
+            NEW GENERATOR
+          </Badge>
         </Link>
       </p>
     </div>
