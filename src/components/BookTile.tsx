@@ -27,6 +27,7 @@ const BookTile = ({
     </button>
     <BlurringImage alt={alt} imageUrl={imageUrl} onClick={onImageClick} />
     <Link
+      prefetch={false}
       href={{
         pathname: "/books/[slug]",
         query: { slug: bookId },
