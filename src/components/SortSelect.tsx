@@ -11,6 +11,7 @@ import {
 import { type SelectTriggerProps } from "@radix-ui/react-select";
 import { cn } from "~/lib/utils";
 import { useState } from "react";
+import { GeistMono } from "geist/font/mono";
 
 interface SortSelectProps extends SelectTriggerProps {
   value: SortMode;
@@ -51,7 +52,7 @@ const SortSelect = ({
         )}
       </SelectTrigger>
       <SelectContent
-        className="font-mono"
+        className={GeistMono.className}
         // Fix for mobile tap, triggering onClick for element behind the select
         // https://github.com/shadcn-ui/ui/issues/486
         ref={(ref) => {
@@ -62,7 +63,7 @@ const SortSelect = ({
         }}
       >
         <SelectGroup>
-          <SelectLabel>Sorting Modes</SelectLabel>
+          <SelectLabel className="font-extrabold">Sort by</SelectLabel>
           <SelectItem value="default">Default</SelectItem>
           <SelectItem value="newest">
             <div className="flex">

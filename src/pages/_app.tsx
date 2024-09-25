@@ -4,18 +4,14 @@ import "~/styles/globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "~/components/meta/GoogleAnalytics";
 import { Toaster } from "~/components/ui/sonner";
-import { Inter as FontSans } from "next/font/google";
 import { cn } from "~/lib/utils";
 import PostHogAnalyticsProvider from "~/components/meta/PostHogAnalytics";
-
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <div className={cn("font-sans antialiased", fontSans.variable)}>
+    <div className={cn(GeistSans.variable, GeistMono.variable, "font-sans")}>
       <PostHogAnalyticsProvider>
         <Component {...pageProps} />
       </PostHogAnalyticsProvider>

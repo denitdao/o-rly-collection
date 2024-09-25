@@ -119,7 +119,7 @@ const SearchPills = ({
           variant="outline"
           className={cn(
             className,
-            "font-mono hover:border-primary",
+            "font-mono text-sm font-normal hover:border-primary",
             pillData.keyword === activeKeyword.trim().toLowerCase() &&
               "border-blue-300",
             gradient(pillData.colors),

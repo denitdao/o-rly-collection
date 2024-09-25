@@ -1,5 +1,6 @@
 import { Link, X } from "lucide-react";
 import React, { createContext, useContext, useState } from "react";
+import Image from "next/image";
 
 type ImagePreviewContextType = {
   showImage: (imageId: string, imageUrl: string, onCopy: () => void) => void;
@@ -85,10 +86,11 @@ const ImagePreview: React.FC<ImagePreviewState> = (props) => {
       onClick={() => props.onClose()}
     >
       <div className="relative h-[80%] w-full max-w-screen-lg">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={imageUrl}
+        <Image
           alt={imageId}
+          src={imageUrl}
+          unoptimized={true}
+          fill
           className="h-full w-full object-contain"
         />
       </div>

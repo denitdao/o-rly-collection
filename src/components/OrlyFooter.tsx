@@ -18,7 +18,7 @@ const OrlyFooter = () => {
             <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
           </svg>
           <div>
-            <span className="font-mono font-bold">LEGAL NOTICE:</span>
+            <span className="font-bold">LEGAL NOTICE:</span>
             <ul className="ml-2 mt-1.5 list-inside list-disc">
               <li>
                 This website is not affiliated with O&apos;Reilly Media, Inc.
@@ -34,7 +34,7 @@ const OrlyFooter = () => {
             </ul>
           </div>
         </div>
-        <p className="mx-auto mt-8 font-mono text-sm text-gray-500">
+        <p className="mx-auto mt-8 font-mono text-gray-500">
           Open source on{" "}
           <Link
             href="https://github.com/denitdao/o-rly-collection"
@@ -43,7 +43,7 @@ const OrlyFooter = () => {
             GitHub
           </Link>
         </p>
-        <p className="mx-auto mt-2 font-mono text-sm text-gray-500">
+        <p className="mx-auto mt-2 font-mono text-gray-500">
           © {new Date().getFullYear() + " Created by "}
           <Link
             href="https://x.com/DChurchyn"

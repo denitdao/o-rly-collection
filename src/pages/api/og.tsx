@@ -14,8 +14,8 @@ export default async function handler(request: NextRequest): Promise<Response> {
     const hasImageFile =
       searchParams.has("image_file") && searchParams.get("image_file") !== "";
     const image_file = hasImageFile
-      ? `${env.NEXT_PUBLIC_SITE_URL}${env.NEXT_PUBLIC_IMAGE_SOURCE}/${searchParams.get("image_file")}`
-      : `${env.NEXT_PUBLIC_SITE_URL}${env.NEXT_PUBLIC_OG_SOURCE}/og.jpeg`;
+      ? `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${searchParams.get("image_file")}`
+      : `${env.NEXT_PUBLIC_OG_SOURCE}/og.jpeg`;
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
     return new ImageResponse(

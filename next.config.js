@@ -19,6 +19,7 @@ const config = withAxiom({
     locales: ["en"],
     defaultLocale: "en",
   },
+  transpilePackages: ["geist"],
 
   experimental: {
     scrollRestoration: true,

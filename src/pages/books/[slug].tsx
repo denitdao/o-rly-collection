@@ -16,6 +16,7 @@ import { toast } from "sonner";
 import { createCaller } from "~/server/api/root";
 import { createInnerTRPCContext } from "~/server/api/trpc";
 import { type Story } from "~/server/storage/stories";
+import Image from "next/image";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const bookId = context.params?.slug as string;
@@ -87,17 +88,17 @@ const BookContent = ({ book, story }: { book: Book; story?: Story }) => {
     <main className="px-4 pb-16">
       <div className="mx-auto max-w-screen-2xl">
         <div className="flex w-full flex-col items-center">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             alt={book.id}
             src={imageUrl}
+            unoptimized={true}
             height={600}
             width={600}
             className="mb-4"
           />
           <div className="mb-12 flex flex-wrap items-center gap-2">
             <SearchPills
-              activeKeyword={""}
+              activeKeyword=""
               pillDataArray={keywords}
               onKeywordClick={(keyword) => {
                 router
@@ -145,13 +146,13 @@ const Header = ({ title }: { title: string }) => {
   return (
     <header className="px-4 py-16">
       <div className="mx-auto flex w-full max-w-screen-2xl flex-col items-center">
-        <h1 className="mb-5 max-w-[800px] text-4xl font-extrabold tracking-tight text-black">
+        <h1 className="mb-5 max-w-[800px] text-4xl font-extrabold text-black">
           {title}
         </h1>
-        <h2 className="text-center font-mono tracking-tight text-gray-600">
+        <h2 className="text-center font-mono text-gray-600">
           View the full collection of compelling{" "}
           <Link
-            href={"/"}
+            href="/"
             className="underline decoration-blue-400 decoration-2 underline-offset-2"
           >
             programming book covers
