@@ -57,6 +57,15 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-09-19T19:00:00.000Z",
   },
   {
+    id: "coding-with-gpt",
+    title: "Coding with GPT",
+    image: "coding-with-gpt.jpeg",
+    headline: "Introducing the uncanny valley into your codebase | 7th Edition",
+    color: "blue",
+    tags: "development, chatgpt, machine learning",
+    createdAt: "2024-10-01T12:00:00.000Z",
+  },
+  {
     id: "fascism",
     title: "Fascism",
     image: "fascism.jpeg",

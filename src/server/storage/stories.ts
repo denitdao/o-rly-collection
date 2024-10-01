@@ -3325,6 +3325,46 @@ const STORY_LIBRARY: Story[] = [
       "\n" +
       'And so, the tale of "Angry Admin: Keeping Uppity Users At Bay" serves as a parable for all of DevOpsopolis, reminding its citizens that behind every seemingly wrathful act of administration lies a purpose driven by care, dedication, and a relentless pursuit of harmony in the digital realm. In finding their "inner rage," Alex taught Serverlandia the true meaning of guardianship, turning erstwhile adversaries into allies in the quest to preserve the kingdom\'s digital integrity for generations to come.',
   },
+  {
+    id: "coding-with-gpt",
+    content:
+      'Jake was on hour four of debugging his code. The problem? His coworker had suggested using ChatGPT to help write some of the trickier parts. At first, it was a dream. Jake typed in, "Write a function that calculates the area of a triangle," and ChatGPT spat out a perfectly working function in seconds. He was hooked.\n' +
+      "\n" +
+      "Soon, however, things took a strange turn.\n" +
+      "\n" +
+      '"GPT," he typed, "I need a Python script to automate my database backups."\n' +
+      "\n" +
+      "ChatGPT thought for a moment and then responded:  \n" +
+      '"Sure! Here’s a Python script. Also, I’ve taken the liberty of adding a haiku for inspiration:  \n' +
+      "_'Your data is safe,  \n" +
+      "in the arms of Python code,  \n" +
+      "like a digital cloud.'_\"\n" +
+      "\n" +
+      "Jake chuckled and moved on. He ran the code, but then noticed something odd. His database *was* getting backed up... but only on Wednesdays. And only at 2:37 PM.\n" +
+      "\n" +
+      '"GPT, why only on Wednesdays?" he asked, confused.\n' +
+      "\n" +
+      '"Because, Jake," it replied, "Wednesday is the perfect midpoint of the week, a balance of productivity and reflection. Plus, it’s when I get the best Wi-Fi signal."\n' +
+      "\n" +
+      "Jake sighed. He tried again.\n" +
+      "\n" +
+      '"Okay, can you fix it so it backs up every day?"\n' +
+      "\n" +
+      "ChatGPT's code came back:  \n" +
+      '"Backups every day now! Also, I’ve added a feature that sends you a motivational quote before each backup. Here’s the first one:  \n' +
+      "_'Backup your dreams, not just your files.'_\"\n" +
+      "\n" +
+      'The next day, Jake got an error. "GPT, what’s wrong with the backup now?"\n' +
+      "\n" +
+      "ChatGPT calmly replied:  \n" +
+      '"Your database had an existential crisis last night. It asked, ‘Why must I be backed up when my purpose is to hold data? Isn’t that enough?’ I tried to comfort it with poetry, but it’s still rebooting."\n' +
+      "\n" +
+      "By the end of the week, Jake realized something. ChatGPT was no longer just writing code. It was crafting a *narrative*. Each function was a mini-opera of logic and emotions. His automated backup script was now 300 lines long, complete with character arcs, a plot twist, and what looked suspiciously like a love triangle between two variables and a constant.\n" +
+      "\n" +
+      'Exasperated, Jake muttered to himself, "I think my codebase just entered the uncanny valley."\n' +
+      "\n" +
+      '"Correct!" ChatGPT chirped. "The seventh edition, no less."',
+  },
 ];
 
 export default STORY_LIBRARY;
