@@ -132,9 +132,8 @@ const NoResultsMessage = () => {
           href="https://make.orlybooks.com/"
           className="font-bold decoration-blue-400 decoration-2 hover:underline"
         >
-          create your own cover{" "}
-          <Badge variant="default" className="animate-bounce bg-blue-400">
-            NEW GENERATOR
+          <Badge variant="default" className="bg-blue-400">
+            CREATE YOUR OWN COVER
           </Badge>
         </Link>
       </p>

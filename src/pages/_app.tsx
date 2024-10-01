@@ -11,7 +11,13 @@ import { GeistSans } from "geist/font/sans";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <div className={cn(GeistSans.variable, GeistMono.variable, "font-sans")}>
+    <div
+      className={cn(
+        GeistSans.variable,
+        GeistMono.variable,
+        "font-sans antialiased",
+      )}
+    >
       <PostHogAnalyticsProvider>
         <Component {...pageProps} />
       </PostHogAnalyticsProvider>
