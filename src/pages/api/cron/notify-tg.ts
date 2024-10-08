@@ -16,8 +16,6 @@ export default async function handler(
     const stats = await collectStats();
     const notifyResponse = await notify(stats);
     console.log(notifyResponse);
-    const notifyTGLoggerResponse = await notifyTGLogger(stats);
-    console.log(notifyTGLoggerResponse);
     response.status(200).json({ success: true, message: notifyResponse });
   } catch (error) {
     console.error("Failed to collect stats", { reason: JSON.stringify(error) });
@@ -97,30 +95,12 @@ function formatSearchStats(title: string, stats: SearchStats | null) {
 }
 
 async function notify(data: string) {
-  const API_URL = `https://api.telegram.org/bot${process.env.TG_BOT_TOKEN}/sendMessage`;
-  const body = {
-    chat_id: process.env.TG_CHAT_ID,
-    text: data,
-    parse_mode: "Markdown",
-  };
-
-  const botResponse = await fetch(API_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(body),
-  });
-
-  return JSON.stringify(await botResponse.json());
-}
-
-async function notifyTGLogger(data: string) {
   const API_URL = `https://zdywmlftpexepvakrane.supabase.co/functions/v1/log`;
   const body = {
     tag: "orly_weekly",
     data: data,
     disable_notification: true,
+    parse_mode: "Markdown",
   };
 
   const botResponse = await fetch(API_URL, {
