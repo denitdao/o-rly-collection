@@ -4,6 +4,8 @@ This is a [website](https://orlybooks.com/?utm_source=github) that shows you the
 
 Quickly find the book cover you need and share it with your teammates to highlight a point!
 
+Make your own cover with an open-source [generator](https://make.orlybooks.com/?utm_source=github).
+
 ## Implementation
 
 The idea behind this website is "As simple, as possible".
