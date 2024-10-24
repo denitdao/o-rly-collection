@@ -10,7 +10,7 @@ const OrlyHeader = () => {
       >
         <div className="group relative">
           <span
-            className="animate-rainbow absolute inset-0 rounded-md bg-[linear-gradient(90deg,theme('colors.red.300'),theme('colors.purple.300'),theme('colors.blue.300'),theme('colors.cyan.300'),theme('colors.lime.300'),theme('colors.orange.300'))] bg-[length:200%] blur-[5px] group-hover:blur-[2px]"
+            className="absolute inset-0 animate-rainbow rounded-md bg-[linear-gradient(90deg,theme('colors.red.300'),theme('colors.purple.300'),theme('colors.blue.300'),theme('colors.cyan.300'),theme('colors.lime.300'),theme('colors.orange.300'))] bg-[length:200%] blur-[5px] group-hover:blur-[2px]"
             aria-hidden="true"
           ></span>
           <Button
@@ -21,7 +21,7 @@ const OrlyHeader = () => {
           </Button>
         </div>
       </Link>
-      <div className="mx-auto flex w-full max-w-screen-2xl flex-col items-center">
+      <div className="mx-auto flex w-full max-w-screen-2xl flex-col items-center">
         <h1 className="mb-5 text-4xl font-extrabold text-black">
           Search O&apos;RLY Covers
         </h1>
