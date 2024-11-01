@@ -159,7 +159,7 @@ const Header = ({ title }: { title: string }) => {
       <div className="mx-auto max-w-[800px] flex-col">
         <Link
           href="/"
-          className="flex min-w-[600px] gap-4 pb-3 font-mono text-base font-normal text-gray-600 underline decoration-blue-400 decoration-2 underline-offset-2"
+          className="flex min-w-[min(100vw,600px)] gap-4 pb-3 font-mono text-base font-normal text-gray-600 underline decoration-blue-400 decoration-2 underline-offset-2"
         >
           &lt;- View All Books
         </Link>
