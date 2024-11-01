@@ -17,6 +17,7 @@ import { createCaller } from "~/server/api/root";
 import { createInnerTRPCContext } from "~/server/api/trpc";
 import { type Story } from "~/server/storage/stories";
 import Image from "next/image";
+import { Button } from "~/components/ui/button";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const bookId = context.params?.slug as string;
@@ -144,20 +145,25 @@ const BookContent = ({ book, story }: { book: Book; story?: Story }) => {
 
 const Header = ({ title }: { title: string }) => {
   return (
-    <header className="px-4 py-16">
-      <div className="mx-auto flex w-full max-w-screen-2xl flex-col items-center">
-        <h1 className="mb-5 max-w-[800px] text-4xl font-extrabold text-black">
-          {title}
-        </h1>
-        <h2 className="text-center font-mono text-gray-600">
-          View the full collection of compelling{" "}
-          <Link
-            href="/"
-            className="underline decoration-blue-400 decoration-2 underline-offset-2"
+    <header className="mx-auto flex w-full max-w-screen-2xl flex-col items-center px-4 pb-7 pt-4 text-center">
+      <nav className="mx-auto mb-8 flex w-full max-w-screen-2xl justify-end ">
+        <Link href="https://make.orlybooks.com/" className="flex">
+          <Button
+            variant="rainbow"
+            className="relative font-mono text-sm font-normal"
           >
-            programming book covers
-          </Link>
-        </h2>
+            Make Your Cover -&gt;
+          </Button>
+        </Link>
+      </nav>
+      <div className="mx-auto max-w-[800px] flex-col">
+        <Link
+          href="/"
+          className="flex min-w-[min(100%,600px)] gap-4 pb-3 font-mono text-base font-normal text-gray-600 underline decoration-blue-400 decoration-2 underline-offset-2"
+        >
+          &lt;- View All Books
+        </Link>
+        <h1 className="text-4xl font-extrabold text-black">{title}</h1>
       </div>
     </header>
   );
