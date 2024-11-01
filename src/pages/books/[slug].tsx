@@ -145,11 +145,8 @@ const BookContent = ({ book, story }: { book: Book; story?: Story }) => {
 
 const Header = ({ title }: { title: string }) => {
   return (
-    <header className="mx-auto flex w-full max-w-screen-2xl flex-col items-center px-4 pb-12 pt-4 text-center">
-      <nav className="mx-auto mb-8 flex w-full max-w-screen-2xl items-center justify-between ">
-        <Link href="/" className="flex gap-4 text-xl font-normal">
-          O&apos;RLY Books
-        </Link>
+    <header className="mx-auto flex w-full max-w-screen-2xl flex-col items-center px-4 pb-7 pt-4 text-center">
+      <nav className="mx-auto mb-8 flex w-full max-w-screen-2xl justify-end ">
         <Link href="https://make.orlybooks.com/" className="flex">
           <Button
             variant="rainbow"
@@ -159,9 +156,15 @@ const Header = ({ title }: { title: string }) => {
           </Button>
         </Link>
       </nav>
-      <h1 className="mx-auto max-w-[800px] text-4xl font-extrabold text-black">
-        {title}
-      </h1>
+      <div className="mx-auto max-w-[800px] flex-col">
+        <Link
+          href="/"
+          className="flex min-w-[600px] gap-4 pb-3 font-mono text-base font-normal text-gray-600 underline decoration-blue-400 decoration-2 underline-offset-2"
+        >
+          &lt;- View All Books
+        </Link>
+        <h1 className="text-4xl font-extrabold text-black">{title}</h1>
+      </div>
     </header>
   );
 };
