@@ -145,7 +145,7 @@ const BookContent = ({ book, story }: { book: Book; story?: Story }) => {
 
 const Header = ({ title }: { title: string }) => {
   return (
-    <header className="mx-auto flex w-full max-w-screen-2xl flex-col items-center px-4 pb-7 pt-4 text-center">
+    <header className="mx-auto flex w-full max-w-screen-2xl flex-col items-center bg-red-500 px-4 pb-7 pt-4 text-center">
       <nav className="mx-auto mb-8 flex w-full max-w-screen-2xl justify-end ">
         <Link href="https://make.orlybooks.com/" className="flex">
           <Button
@@ -159,7 +159,7 @@ const Header = ({ title }: { title: string }) => {
       <div className="mx-auto max-w-[800px] flex-col">
         <Link
           href="/"
-          className="flex min-w-[min(100vw,600px)] gap-4 pb-3 font-mono text-base font-normal text-gray-600 underline decoration-blue-400 decoration-2 underline-offset-2"
+          className="flex min-w-[min(100%,600px)] gap-4 pb-3 font-mono text-base font-normal text-gray-600 underline decoration-blue-400 decoration-2 underline-offset-2"
         >
           &lt;- View All Books
         </Link>
