@@ -75,6 +75,25 @@ const BOOK_LIBRARY: Book[] = [
     createdAt: "2024-07-06T10:00:00.000Z",
   },
   {
+    id: "using-hacks",
+    title: "Using Hacks",
+    image: "using-hacks.jpeg",
+    headline:
+      "A CPU is just a rock we tricked into thinking | Temporarily, of course",
+    color: "blue",
+    tags: "hacking, development, startup, code, quality",
+    createdAt: "2024-11-08T12:00:00.000Z",
+  },
+  {
+    id: "error-driven-development",
+    title: "Error - Driven Development",
+    image: "error-driven-development.jpeg",
+    headline: 'Try, Catch, print("Hello World!")',
+    color: "red",
+    tags: "development, error, debugging",
+    createdAt: "2024-11-08T12:00:00.000Z",
+  },
+  {
     id: "anchor",
     title: "Anchor",
     image: "anchor.jpg",

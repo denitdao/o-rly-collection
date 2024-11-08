@@ -1004,4 +1004,16 @@
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
+    <url>
+        <loc>https://orlybooks.com/books/using-hacks</loc>
+        <lastmod>2024-11-08T12:00:00Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://orlybooks.com/books/error-driven-development</loc>
+        <lastmod>2024-11-08T12:00:00Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
 </urlset>

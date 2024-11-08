@@ -3365,6 +3365,64 @@ const STORY_LIBRARY: Story[] = [
       "\n" +
       '"Correct!" ChatGPT chirped. "The seventh edition, no less."',
   },
+  {
+    id: "using-hacks",
+    content:
+      "In the wild world of FinTech startup life, Tyler had one rule: if the code works, it’s good code. He called it “pragmatic coding.” His boss called it “a series of questionable quick hacks.”\n" +
+      "\n" +
+      "It started with a simple API integration that just wasn’t cooperating. Tyler’s solution? A script that refreshed the page every 0.3 seconds until the data appeared. It worked like a charm… until they hit production, and the server bill spiked like an angry teenager’s energy drink bill.\n" +
+      "\n" +
+      "Tyler’s team was always under pressure. Deadlines moved faster than his debugger. So, his hacks began to evolve, like bizarre Pokémon of technical debt. Need a search function? Tyler quickly rigged a workaround that just scanned for the word “search” on the page, then redirected the user to Google. The customers loved it—right up until someone typed “search refund” and got the Wikipedia page for “buyer’s remorse” instead.\n" +
+      "\n" +
+      "By mid-quarter, Tyler had assembled a patchwork quilt of hastily slapped-together hacks that made the entire codebase seem held together with virtual chewing gum and rubber bands. His crowning achievement, though, was the Great Loop Hack. To save time, he wrote a single giant loop to handle everything: payments, refunds, login sessions, password resets… all cycling through one mega-loop. He called it “Tyler’s Loop.” The team called it “The Loop of Doom.”\n" +
+      "\n" +
+      "One day, in the middle of a client demo, something unexpected happened. The Loop of Doom triggered an infinite loop, locking everyone out of the system—*including* Tyler. They spent the next hour stuck in the meeting room, waiting for the code to break itself so they could log in again.\n" +
+      "\n" +
+      "But the worst was the time-travel bug. One of Tyler’s hacks rewired the system clock to refresh whenever it encountered an error, which worked until the company’s payroll system suddenly showed everyone working *negative hours*. In a glorious display of irony, Tyler’s attempt to fix his mistake was to make the clock run *backwards,* claiming it would “cancel out the glitch.” For a brief period, it looked like they’d solved the problem—until HR noticed that it looked like employees hadn’t worked since 1972.\n" +
+      "\n" +
+      "Finally, Tyler’s boss called him in. “Tyler,” he said, eyes fixed on the floor, “a CPU is just a rock we tricked into thinking. And we’re pushing our rock over a cliff.”\n" +
+      "\n" +
+      "Tyler nodded, brimming with confidence. “So… we just need another rock?”",
+  },
+  {
+    id: "error-driven-development",
+    content:
+      'Newcomer Nia had a foolproof debugging method: print statements. Lots and lots of print statements. Her entire codebase was lit up with `print("Hello?")`, `print("Where am I?")`, and `print("Am I here now?")`, like she was programming a haunted house instead of a payroll app. \n' +
+      "\n" +
+      'One afternoon, Nia hit an infinite loop she just couldn’t crack. Her code was churning, throwing out `"Am I here now?"` in a blinding stream, as if the computer itself was having an existential crisis. She decided she needed backup, so she called in Ravi, the senior developer.\n' +
+      "\n" +
+      "Ravi took one look and grinned. “Amateur hour. Watch and learn,” he said, adding just one line to her code:\n" +
+      "```python\n" +
+      'print("I\'m here to make it better.")\n' +
+      "```\n" +
+      "\n" +
+      'The loop continued anyway, firing off `"Am I here now?"` and `"I\'m here to make it better."` endlessly. Ravi shrugged, reaching for the big guns. He opened a new terminal and typed:\n' +
+      "```bash\n" +
+      'for i in {1..100}; do echo "Here to help" && sleep 0.1; done\n' +
+      "```\n" +
+      "He folded his arms and watched proudly as the terminal echoed “Here to help” over and over again, and somehow, the loop still spun on. Nia tried to point out that he’d basically just written a fancier print loop, but he’d already left for coffee.\n" +
+      "\n" +
+      'Meanwhile, their manager Greg, hearing them grumbling, dropped by. “Here’s a trick I learned in ‘98,” he said, adding a strategically placed `print("Hello World!")` right at the start. He sat back, as though expecting his statement to miraculously break the loop with wisdom alone. “There,” he said. “That’ll shake it loose.” \n' +
+      "\n" +
+      "The loop kept going.\n" +
+      "\n" +
+      'By now, the screen was a mess of `"Hello?"`, `"Am I here now?"`, `"I\'m here to make it better."`, and `"Here to help"`, scrolling faster than they could blink. They’d turned the app into an impromptu poetry generator.\n' +
+      "\n" +
+      "Nia sighed, opening a new window and typing:\n" +
+      "```python\n" +
+      'print("Please. Just work.")\n' +
+      "```\n" +
+      "\n" +
+      "Suddenly, the code stopped.\n" +
+      "\n" +
+      "Ravi and Greg stared at her in awe.\n" +
+      "\n" +
+      "“Was it that statement?” Ravi whispered.\n" +
+      "\n" +
+      "Nia blinked, too shocked to answer. “It was… desperation, I think.”\n" +
+      "\n" +
+      'From that day on, she renamed her method *Error-Driven Development,* with one simple mantra: "When in doubt, beg your code to work."',
+  },
 ];
 
 export default STORY_LIBRARY;
