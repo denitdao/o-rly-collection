@@ -8,6 +8,7 @@ import { cn } from "~/lib/utils";
 import PostHogAnalyticsProvider from "~/components/meta/PostHogAnalytics";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
+import { NuqsAdapter } from "nuqs/adapters/next/pages";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
@@ -19,7 +20,9 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       )}
     >
       <PostHogAnalyticsProvider>
-        <Component {...pageProps} />
+        <NuqsAdapter>
+          <Component {...pageProps} />
+        </NuqsAdapter>
       </PostHogAnalyticsProvider>
       <SpeedInsights />
       <GoogleAnalytics gaId="G-VB63CNRL7H" />

@@ -77,7 +77,7 @@ export async function getBlobFromImageElement(
       canvas.toBlob(
         function (blob) {
           if (blob) resolve(blob);
-          else reject("Cannot get blob from image element");
+          else reject(new Error("Cannot get blob from image element"));
         },
         "image/png",
         1,

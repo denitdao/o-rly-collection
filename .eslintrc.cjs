@@ -1,10 +1,11 @@
 /** @type {import("eslint").Linter.Config} */
 const config = {
+  root: true,
   parser: "@typescript-eslint/parser",
   parserOptions: {
     project: true,
   },
-  plugins: ["@typescript-eslint", "drizzle"],
+  plugins: ["@typescript-eslint"],
   extends: [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended-type-checked",
@@ -29,18 +30,6 @@ const config = {
       "error",
       {
         checksVoidReturn: { attributes: false },
-      },
-    ],
-    "drizzle/enforce-delete-with-where": [
-      "error",
-      {
-        drizzleObjectName: ["db", "ctx.db"],
-      },
-    ],
-    "drizzle/enforce-update-with-where": [
-      "error",
-      {
-        drizzleObjectName: ["db", "ctx.db"],
       },
     ],
   },
