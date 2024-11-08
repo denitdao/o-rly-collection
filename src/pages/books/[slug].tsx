@@ -158,11 +158,11 @@ const Header = ({ title }: { title: string }) => {
       </nav>
       <Link
         href="/"
-        className="flex min-w-[min(100%,600px)] gap-4 pb-3 font-mono text-base font-normal text-gray-600 underline decoration-blue-400 decoration-2 underline-offset-2"
+        className="flex min-w-[min(100%,800px)] gap-4 pb-3 font-mono text-base font-normal text-gray-600 underline decoration-blue-400 decoration-2 underline-offset-2"
       >
         &lt;- View All Books
       </Link>
-      <h1 className="max-w-[600px] text-4xl font-extrabold text-black">
+      <h1 className="max-w-[800px] text-4xl font-extrabold text-black">
         {title}
       </h1>
     </header>
