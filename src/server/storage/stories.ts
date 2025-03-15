@@ -3423,6 +3423,43 @@ const STORY_LIBRARY: Story[] = [
       "\n" +
       'From that day on, she renamed her method *Error-Driven Development,* with one simple mantra: "When in doubt, beg your code to work."',
   },
+  {
+    id: "shiny-new-things",
+    content:
+      "Ethan was a man of principle. And that principle was: **Always use the latest technology, no matter what.**  \n" +
+      "\n" +
+      "When JavaScript frameworks changed, Ethan changed with them. He didn’t just *adopt* new tech—he **worshipped** it. If a beta release dropped at 2 AM, Ethan was already in his chair, installing it by 2:01.  \n" +
+      "\n" +
+      "One day, his team was working on a simple company website. **Simple.** Static pages, some forms, a contact section. The kind of thing you could build in an afternoon with HTML and CSS. But Ethan scoffed at such primitive tools.   \n" +
+      "\n" +
+      "“We should do this right,” he declared. “I’m thinking a cutting-edge **React + AI-driven backend** with a blockchain-powered content management system. Oh! And we should definitely integrate a quantum-resistant encryption algorithm. Just in case.”  \n" +
+      "\n" +
+      "“…In case of *what*?” asked Olivia, the team’s weary project manager.  \n" +
+      "\n" +
+      "“In case quantum computers break the internet,” Ethan said solemnly.  \n" +
+      "\n" +
+      "They were just trying to build a page with an **About Us** section. Now, they had microservices, 12 different dependencies, and a build time that required **two coffees and a short nap.**  \n" +
+      "\n" +
+      "Then, disaster struck: **A newer JavaScript framework was released.**  \n" +
+      "\n" +
+      "Ethan panicked. “Guys, we have to migrate.”  \n" +
+      "\n" +
+      "“But we just—”  \n" +
+      "\n" +
+      "“MUST. MIGRATE.”  \n" +
+      "\n" +
+      "After three days of frantic rewrites, dependency conflicts, and a few existential crises, they finally launched the site. It was modern. It was fast. It was **cutting-edge.**  \n" +
+      "\n" +
+      "And then, two minutes later…  \n" +
+      "\n" +
+      "A new framework dropped.  \n" +
+      "\n" +
+      "Ethan stared at the release notes, hands trembling.  \n" +
+      "\n" +
+      "Olivia sighed. “Go on. You know you want to.”  \n" +
+      "\n" +
+      "Ethan was already halfway through the migration before she finished her sentence.",
+  },
 ];
 
 export default STORY_LIBRARY;

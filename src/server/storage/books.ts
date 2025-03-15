@@ -1579,6 +1579,16 @@ const BOOK_LIBRARY: Book[] = [
     tags: "management, user, devops",
     createdAt: "2023-08-08T12:00:00.000Z",
   },
+  {
+    id: "shiny-new-things",
+    title: "Shiny New Things",
+    image: "shiny-new-things.jpeg",
+    headline:
+      "Embracing the irrefutable correlation between novelty and quality",
+    color: "teal",
+    tags: "technology, trends, development",
+    createdAt: "2025-03-15T12:00:00.000Z",
+  },
 ];
 
 export default BOOK_LIBRARY;
