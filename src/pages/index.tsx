@@ -5,6 +5,7 @@ import { ImagePreviewProvider } from "~/components/ImagePreview";
 import { env } from "~/env.js";
 import Link from "next/link";
 import BookTile from "~/components/BookTile";
+import AdvertTile from "~/components/AdvertTile";
 import SearchBar from "~/components/SearchBar";
 import {
   useObserveSearchEffect,
@@ -65,6 +66,11 @@ const BookSearch = ({ books }: { books: Book[] }) => {
   const linkCopyHandler = useLinkCopy();
   const imageViewHandler = useImageView();
 
+  // Separate handler for ads
+  const adLinkCopyHandler = (url: string) => {
+    linkCopyHandler(url);
+  };
+
   return (
     <main className="px-4 pb-16">
       <div className="mx-auto max-w-screen-2xl">
@@ -90,7 +96,7 @@ const BookSearch = ({ books }: { books: Book[] }) => {
         </div>
         {booksToShow && booksToShow.length !== 0 ? (
           <motion.div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-            {booksToShow.map((book) => {
+            {booksToShow.map((book, index) => {
               const bookId = book.id;
               const imageUrl = `${env.NEXT_PUBLIC_IMAGE_SOURCE}/${book.image}`;
               const bookTitle = book.title;
@@ -99,6 +105,44 @@ const BookSearch = ({ books }: { books: Book[] }) => {
               const theLinkCopyHandler = () => {
                 linkCopyHandler(`${env.NEXT_PUBLIC_SITE_URL}/books/${bookId}`);
               };
+
+              // Insert ad at position 6
+              if (index === 5 && booksToShow.length >= 6) {
+                return (
+                  <>
+                    <AdvertTile
+                      key="ad-tile"
+                      title="Sponsored: Voice Notes - Record & Organize Your Thoughts"
+                      imageUrl="/images/voice-notes.png"
+                      externalUrl="https://voicenotes.framer.website/"
+                      alt="Voice Notes - Record, summarize and organize your thoughts with AI"
+                      onCopyClick={() =>
+                        adLinkCopyHandler("https://voicenotes.framer.website/")
+                      }
+                    />
+                    <BookTile
+                      key={bookId}
+                      alt={bookAlt}
+                      title={bookTitle}
+                      bookId={bookId}
+                      imageUrl={imageUrl}
+                      onCopyClick={theLinkCopyHandler}
+                      onImageClick={() =>
+                        void imageViewHandler(
+                          bookId,
+                          imageUrl,
+                          theLinkCopyHandler,
+                        )
+                      }
+                    />
+                  </>
+                );
+              }
+
+              // Skip rendering if it's after position 5 as we've already rendered it above
+              if (index === 5) {
+                return null;
+              }
 
               return (
                 <BookTile
