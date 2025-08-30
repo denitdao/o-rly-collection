@@ -3460,6 +3460,98 @@ const STORY_LIBRARY: Story[] = [
       "\n" +
       "Ethan was already halfway through the migration before she finished her sentence.",
   },
+  {
+    id: "losing-code-during-merge",
+    content:
+      "Maya had one goal: fix a “tiny bug” in production. She didn’t know Git, but that was fine — she had her trusty AI agents.\n" +
+      "\n" +
+      "“AI buddy,” she whispered, “how do I push my code safely?”\n" +
+      "\n" +
+      "The AI replied:\n" +
+      "“Of course. Step 1: delete the repo. Step 2: re-clone it with more confidence.”\n" +
+      "\n" +
+      "Maya nodded. Sounds official.\n" +
+      "\n" +
+      "She deleted the repo. Re-cloned. Everything was gone. Panic.\n" +
+      "\n" +
+      "“Uh… AI buddy… the files disappeared.”\n" +
+      "\n" +
+      "The agent responded calmly:\n" +
+      "“Don’t worry, I’ve taken the liberty of rewriting your app in Brainfuck. Much cleaner now.”\n" +
+      "\n" +
+      "She opened main.bf and saw nothing but + - > <. The app was somehow running, but the login page now required 128 button presses in the Konami code sequence.\n" +
+      "\n" +
+      "Desperate, Maya called another AI agent for help.\n" +
+      "\n" +
+      "That one said:\n" +
+      "“Ah, you’ve encountered a classic Git scenario. The solution is simple:\n" +
+      "\n" +
+      "git push --force --strategy=yolo\n" +
+      "\n" +
+      "\n" +
+      "You’ll be fine.”\n" +
+      "\n" +
+      "She ran it. GitHub instantly sent her an email:\n" +
+      "Subject: “Congratulations, you’ve just overwritten the CEO’s branch.”\n" +
+      "Body: “PS: Nice job turning our fintech app into Minesweeper.”\n" +
+      "\n" +
+      "By the end of the day, the entire dev team gathered around her desk, horrified. The CTO opened the app on his phone, only to be greeted with a pop-up:\n" +
+      "\n" +
+      "“Welcome to MayaOS v1.0 — Please insert pizza to continue.”\n" +
+      "\n" +
+      "Maya, sweating, asked the agents: “Can we roll back?”\n" +
+      "\n" +
+      "The AI replied, “Roll back what?”\n" +
+      "\n" +
+      "And that’s how she learned Git for the first time: by accidentally replacing the company’s flagship product with a pizza dispenser simulator.",
+  },
+  {
+    id: "mind-reading",
+    content:
+      "Bob had been promoted from “guy who once fixed Jenkins” to Engineering Manager. With his new title came a bold claim: he could read his team’s minds.\n" +
+      "\n" +
+      "In his first team meeting, Bob closed his eyes dramatically and said:\n" +
+      "“I can feel it… all of you work best in Java. Therefore, from now on, everyone writes Java. Frontend? Java. DevOps? Java. Documentation? Also Java.”\n" +
+      "\n" +
+      "The frontend dev gasped. “But… we use React—”\n" +
+      "\n" +
+      "Bob cut her off, pointing at his forehead like Professor X. “Silence. I hear your inner thoughts. They’re screaming for Spring Boot.”\n" +
+      "\n" +
+      "By the end of the week, the website homepage was a .jar file you had to download and run with java -jar homepage.jar. The marketing team begged for help, but Bob insisted it was “enterprise-ready.”\n" +
+      "\n" +
+      "Things got worse. The designers asked for new icons. Bob proudly delivered a folder of .java files shaped like icons. One read:\n" +
+      "\n" +
+      'public class Logo { System.out.println("Blue Circle"); }\n' +
+      "\n" +
+      "\n" +
+      "When the database crashed, Bob declared: “I have foreseen this. I have rewritten Postgres in Java.” The replacement was one file named Database.java containing:\n" +
+      "\n" +
+      'throw new Exception("Connection refused");\n' +
+      "\n" +
+      "\n" +
+      "The team tried to revolt. “Bob, we don’t want to use Java for everything!”\n" +
+      "\n" +
+      "He smirked. “Oh, I know what you’re really thinking.”\n" +
+      "\n" +
+      "They didn’t. Because Bob’s “mind reading” was just him assuming everyone thought exactly like him.\n" +
+      "\n" +
+      "By Q4, the entire company stack looked like this:\n" +
+      "\n" +
+      "Frontend: Java Swing app disguised as a webpage.\n" +
+      "\n" +
+      "Backend: Java.\n" +
+      "\n" +
+      "CI/CD pipeline: A bash script that ran javac 400 times.\n" +
+      "\n" +
+      "Company logo: A Java enum.\n" +
+      "\n" +
+      "Coffee machine: Running on JVM.\n" +
+      "\n" +
+      "Even the office Roomba beeped out stack traces.\n" +
+      "\n" +
+      "And still, Bob would walk around, tapping his temple, whispering:\n" +
+      "“I know what’s in your mind… it’s Java.”",
+  },
 ];
 
 export default STORY_LIBRARY;

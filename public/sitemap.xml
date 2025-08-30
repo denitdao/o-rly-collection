@@ -1016,9 +1016,21 @@
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
-    <url> 
+    <url>
         <loc>https://orlybooks.com/books/shiny-new-things</loc>
         <lastmod>2025-03-15T12:00:00Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://orlybooks.com/books/losing-code-during-merge</loc>
+        <lastmod>2025-08-30T12:00:00Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://orlybooks.com/books/mind-reading</loc>
+        <lastmod>2025-08-30T12:00:00Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>

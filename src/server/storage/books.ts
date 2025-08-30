@@ -1589,6 +1589,24 @@ const BOOK_LIBRARY: Book[] = [
     tags: "technology, trends, development",
     createdAt: "2025-03-15T12:00:00.000Z",
   },
+  {
+    id: "losing-code-during-merge",
+    title: "Losing code during merge",
+    image: "losing-code-during-merge.jpeg",
+    headline: "How to use --force and --strategy in your git merge",
+    color: "blue",
+    tags: "GitHub, merge, conflicts, development",
+    createdAt: "2025-08-30T12:00:00.000Z",
+  },
+  {
+    id: "mind-reading",
+    title: "Mind Reading",
+    image: "mind-reading.jpeg",
+    headline: "You work best in Java, therefore everyone else does too!",
+    color: "blue",
+    tags: "management, java, communication, team",
+    createdAt: "2025-08-30T12:00:00.000Z",
+  },
 ];
 
 export default BOOK_LIBRARY;
