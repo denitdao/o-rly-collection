@@ -114,10 +114,10 @@ const BookSearch = ({ books }: { books: Book[] }) => {
                       key="ad-tile"
                       title="Sponsored: Voice Notes - Record & Organize Your Thoughts"
                       imageUrl="/images/voice-notes.png"
-                      externalUrl="https://voicenotes.framer.website/"
+                      externalUrl="https://dumai.app/"
                       alt="Voice Notes - Record, summarize and organize your thoughts with AI"
                       onCopyClick={() =>
-                        adLinkCopyHandler("https://voicenotes.framer.website/")
+                        adLinkCopyHandler("https://dumai.app/")
                       }
                     />
                     <BookTile
