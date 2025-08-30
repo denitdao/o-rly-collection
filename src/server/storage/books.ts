@@ -1607,6 +1607,15 @@ const BOOK_LIBRARY: Book[] = [
     tags: "management, java, communication, team",
     createdAt: "2025-08-30T12:00:00.000Z",
   },
+  {
+    id: "how-to-make-your-company-disappear",
+    title: "How to make your company disappear",
+    image: "how-to-make-your-company-disappear.jpeg",
+    headline: "The best way to reduce your profits | And waste investor's money",
+    color: "red",
+    tags: "management, startup, finance, failure",
+    createdAt: "2025-08-30T12:00:00.000Z",
+  },
 ];
 
 export default BOOK_LIBRARY;

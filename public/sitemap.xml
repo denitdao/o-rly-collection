@@ -1034,4 +1034,10 @@
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
+    <url>
+        <loc>https://orlybooks.com/books/how-to-make-your-company-disappear</loc>
+        <lastmod>2025-08-30T12:00:00Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
 </urlset>

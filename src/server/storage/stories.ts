@@ -3552,6 +3552,34 @@ const STORY_LIBRARY: Story[] = [
       "And still, Bob would walk around, tapping his temple, whispering:\n" +
       "“I know what’s in your mind… it’s Java.”",
   },
+  {
+    id: "how-to-make-your-company-disappear",
+    content:
+      "The founders of InvisiCorp had a vision: not to build a product, not to solve a problem, but to disappear spectacularly while burning through other people’s money.\n" +
+      "\n" +
+      "Step 1: Branding.\n" +
+      "They hired a design agency for $2 million to create a logo that was just the word “logo” in Helvetica. The agency called it “minimalist.” Investors called it “brilliant.”\n" +
+      "\n" +
+      "Step 2: Product.\n" +
+      "When asked what their product was, the CEO explained:\n" +
+      "“It’s a platform. For… things. A synergy hub. A cloud-based AI blockchain metaverse powered by vibes.”\n" +
+      "\n" +
+      "Nobody knew what it did, but they raised $50 million.\n" +
+      "\n" +
+      "Step 3: Scaling.\n" +
+      "Before writing a single line of code, they opened offices in 12 cities, bought beanbag chairs made of “ethical alpaca wool,” and installed kombucha taps in the bathrooms.\n" +
+      "\n" +
+      "The engineering team asked, “Should we maybe build the app?”\n" +
+      "The CEO replied, “Don’t worry. Growth first, product later. That’s how magic happens.”\n" +
+      "\n" +
+      "Step 4: The Disappearing Act.\n" +
+      "By Q3, their runway was gone. The “platform” was still just a PowerPoint deck. The CFO discovered their largest expense was “weekly inspirational balloon releases.”\n" +
+      "\n" +
+      "Investors demanded answers. The CEO stood up, smiled, and said:\n" +
+      "“Ladies and gentlemen… our business model has succeeded. Behold—our company has vanished.”\n" +
+      "\n" +
+      "And with that, InvisiCorp laid off 500 people, sold the kombucha taps on Craigslist, and disappeared into startup legend—remembered only as “that company with the alpaca beanbags.”",
+  },
 ];
 
 export default STORY_LIBRARY;

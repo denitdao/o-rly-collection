@@ -8,21 +8,35 @@ When asked to add a new book given an image filename (e.g., mind-reading.jpeg):
   - Destination: public/book_covers/<filename>
   - Do not overwrite existing files.
 
-- Derive identifiers
+- Derive identifiers and metadata from the cover
 
   - slug/id = filename without extension (kebab-case as-is).
-  - title = human title (start-case of slug, or provided by user).
+  - title = the big red-rectangle title text on the cover. If not readable,
+    use start-case of slug or a title provided by the user.
+  - headlines = the smaller italic sentence(s) above/below the rectangle.
+    If there are two, combine with " | " (space, pipe, space) into one string.
+  - author text on the image is NOT stored anywhere; ignore it.
 
 - Update src/server/storage/books.ts
 
   - Append a new object to BOOK_LIBRARY with:
+
     - id: <slug>
     - title: <title>
     - image: <filename>
-    - headline: use the caption provided by the user; if not provided, use text from the cover or a short placeholder to be edited later.
-    - color: pick from ColorPalette; default to "blue" if not specified.
+    - headline: the combined headline(s) as above; if none, use a short
+      placeholder to be edited later.
+    - color: use the color of the red rectangle on the cover mapped to
+      ColorPalette. Accept only values in ColorPalette. Default to "blue" if
+      unclear.
     - tags: short comma-separated list; default to "development" if not provided.
     - createdAt: current UTC ISO string (YYYY-MM-DDTHH:mm:ss.000Z).
+
+  - Important specifics to avoid searching in the future:
+    - Color options are defined by `ColorPalette` in the same file and must be
+      one of: gray, red, orange, yellow, lime, green, teal, cyan, sky, blue,
+      indigo, violet, fuchsia, pink.
+    - Always append new items at the END of `BOOK_LIBRARY`.
 
 - Update src/server/storage/stories.ts
 
@@ -32,7 +46,8 @@ When asked to add a new book given an image filename (e.g., mind-reading.jpeg):
 
   - Append a <url> entry:
     - <loc>https://orlybooks.com/books/<slug></loc>
-    - <lastmod> same createdAt date (UTC, no milliseconds, suffixed with Z)</lastmod>
+    - <lastmod> same createdAt date (UTC, no milliseconds, suffixed with Z)
+      e.g., 2025-08-30T12:00:00Z
     - <changefreq>monthly</changefreq>
     - <priority>1.0</priority>
 
@@ -41,6 +56,8 @@ When asked to add a new book given an image filename (e.g., mind-reading.jpeg):
   - Do not change existing indentation or formatting in edited files.
   - Keep array/item ordering stable; add new items at the end of arrays.
   - Run linter checks on edited files and fix obvious issues.
+  - The image hosting path used by the app is `env.NEXT_PUBLIC_IMAGE_SOURCE`;
+    just moving the file to `public/book_covers/` is enough for local dev.
 
 - Confirmation to user
   - Summarize: image moved, book added, empty story added, sitemap updated. Ask for story content if they want it filled in now.
