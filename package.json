@@ -64,6 +64,5 @@
   },
   "ct3aMetadata": {
     "initVersion": "7.34.0"
-  },
-  "packageManager": "bun@1.2.18"
+  }
 }
