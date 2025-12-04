@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import OrlyFooter from "~/components/OrlyFooter";
 import OrlyHead from "~/components/meta/OrlyHead";
 import { motion } from "framer-motion";
@@ -109,7 +110,7 @@ const BookSearch = ({ books }: { books: Book[] }) => {
               // Insert ad at position 6
               if (index === 5 && booksToShow.length >= 6) {
                 return (
-                  <>
+                  <Fragment key="ad-fragment">
                     <AdvertTile
                       key="ad-tile"
                       title="Sponsored: Voice Notes - Record & Organize Your Thoughts"
@@ -135,7 +136,7 @@ const BookSearch = ({ books }: { books: Book[] }) => {
                         )
                       }
                     />
-                  </>
+                  </Fragment>
                 );
               }
 

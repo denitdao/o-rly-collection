@@ -31,11 +31,11 @@ const config = withAxiom({
   async rewrites() {
     return [
       {
-        source: "/ingest/static/:path*",
+        source: "/relay-tkMd/static/:path*",
         destination: "https://eu-assets.i.posthog.com/static/:path*",
       },
       {
-        source: "/ingest/:path*",
+        source: "/relay-tkMd/:path*",
         destination: "https://eu.i.posthog.com/:path*",
       },
     ];
