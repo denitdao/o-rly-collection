@@ -19,12 +19,19 @@ import { type Story } from "~/server/storage/stories";
 import Image from "next/image";
 import { Button } from "~/components/ui/button";
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const bookId = context.params?.slug as string;
+export const getStaticProps: GetStaticProps<
+  { book: Book; story?: Story },
+  { slug: string }
+> = async (context) => {
+  const bookId = context.params?.slug;
+
+  if (!bookId) {
+    return { notFound: true };
+  }
 
   const trpc = createCaller(createInnerTRPCContext({}));
-  const book = await trpc.datasource.getBookById(bookId);
-  const story = await trpc.datasource.getStoryById(bookId);
+  const book: Book | undefined = await trpc.datasource.getBookById(bookId);
+  const story: Story | undefined = await trpc.datasource.getStoryById(bookId);
 
   if (!book) {
     console.log(`Page ${bookId} was not found`);
@@ -58,10 +65,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export default function BookPage({
   book,
   story,
-}: {
-  book: Book;
-  story?: Story;
-}): InferGetStaticPropsType<typeof getStaticProps> {
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <OrlyHead title={`${book.title} | O'RLY Covers`} imageName={book.image} />

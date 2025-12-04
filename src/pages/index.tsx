@@ -25,9 +25,9 @@ import { createInnerTRPCContext } from "~/server/api/trpc";
 import { type Book } from "~/server/storage/books";
 import { Badge } from "~/components/ui/badge";
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps<{ books: Book[] }> = async () => {
   const trpc = createCaller(createInnerTRPCContext({}));
-  const books = await trpc.datasource.getAllBooks();
+  const books: Book[] = await trpc.datasource.getAllBooks();
 
   return {
     props: {
@@ -38,9 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 export default function Home({
   books,
-}: {
-  books: Book[];
-}): InferGetStaticPropsType<typeof getStaticProps> {
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <OrlyHead />
