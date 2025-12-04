@@ -42,6 +42,13 @@ const OrlyFooter = () => {
           >
             GitHub
           </Link>
+          {" · "}
+          <Link
+            href="/metrics"
+            className="decoration-blue-400 decoration-2 hover:underline"
+          >
+            Site metrics
+          </Link>
         </p>
         <p className="mx-auto mt-2 font-mono text-gray-500">
           © {new Date().getFullYear() + " Created by "}
