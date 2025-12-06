@@ -1,29 +1,30 @@
-import { Fragment } from "react";
-import OrlyFooter from "~/components/OrlyFooter";
-import OrlyHead from "~/components/meta/OrlyHead";
 import { motion } from "framer-motion";
-import { ImagePreviewProvider } from "~/components/ImagePreview";
-import { env } from "~/env.js";
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import Link from "next/link";
-import BookTile from "~/components/BookTile";
+import { Fragment } from "react";
 import AdvertTile from "~/components/AdvertTile";
+import BookTile from "~/components/BookTile";
+import { ImagePreviewProvider } from "~/components/ImagePreview";
+import OrlyFooter from "~/components/OrlyFooter";
+import OrlyHeader from "~/components/OrlyHeader";
+import RefreshButton from "~/components/RefreshButton";
 import SearchBar from "~/components/SearchBar";
+import SearchPills from "~/components/SearchPills";
+import SortSelect from "~/components/SortSelect";
+import GoogleAdSlot from "~/components/ads/GoogleAdSlot";
+import OrlyHead from "~/components/meta/OrlyHead";
+import { Badge } from "~/components/ui/badge";
+import { env } from "~/env.js";
+import { useBookKeywords, useBookSearch } from "~/hooks/useBookSearch";
+import useImageView from "~/hooks/useImageView";
+import useLinkCopy from "~/hooks/useLinkCopy";
 import {
   useObserveSearchEffect,
   useObserveSortModeEffect,
 } from "~/hooks/useObservabilityEvents";
-import useImageView from "~/hooks/useImageView";
-import { useBookKeywords, useBookSearch } from "~/hooks/useBookSearch";
-import SortSelect from "~/components/SortSelect";
-import RefreshButton from "~/components/RefreshButton";
-import SearchPills from "~/components/SearchPills";
-import OrlyHeader from "~/components/OrlyHeader";
-import useLinkCopy from "~/hooks/useLinkCopy";
-import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import { createCaller } from "~/server/api/root";
 import { createInnerTRPCContext } from "~/server/api/trpc";
 import { type Book } from "~/server/storage/books";
-import { Badge } from "~/components/ui/badge";
 
 export const getStaticProps: GetStaticProps<{ books: Book[] }> = async () => {
   const trpc = createCaller(createInnerTRPCContext({}));
@@ -93,6 +94,7 @@ const BookSearch = ({ books }: { books: Book[] }) => {
             <RefreshButton onRefresh={refreshKeywords} />
           </div>
         </div>
+        <GoogleAdSlot slot="6532856977" />
         {booksToShow && booksToShow.length !== 0 ? (
           <motion.div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             {booksToShow.map((book, index) => {
@@ -161,6 +163,7 @@ const BookSearch = ({ books }: { books: Book[] }) => {
         ) : (
           <NoResultsMessage />
         )}
+        <GoogleAdSlot slot="2433829867" />
       </div>
     </main>
   );

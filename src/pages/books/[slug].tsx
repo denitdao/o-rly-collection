@@ -1,23 +1,23 @@
-import { env } from "~/env.js";
-import React from "react";
-import ReactMarkdown from "react-markdown";
-import { type Book } from "~/server/storage/books";
-import OrlyHead from "~/components/meta/OrlyHead";
-import OrlyFooter from "~/components/OrlyFooter";
-import Link from "next/link";
 import type {
   GetStaticPaths,
   GetStaticProps,
   InferGetStaticPropsType,
 } from "next";
-import SearchPills, { type PillData } from "~/components/SearchPills";
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
+import ReactMarkdown from "react-markdown";
 import { toast } from "sonner";
+import GoogleAdSlot from "~/components/ads/GoogleAdSlot";
+import OrlyHead from "~/components/meta/OrlyHead";
+import OrlyFooter from "~/components/OrlyFooter";
+import SearchPills, { type PillData } from "~/components/SearchPills";
+import { Button } from "~/components/ui/button";
+import { env } from "~/env.js";
 import { createCaller } from "~/server/api/root";
 import { createInnerTRPCContext } from "~/server/api/trpc";
+import { type Book } from "~/server/storage/books";
 import { type Story } from "~/server/storage/stories";
-import Image from "next/image";
-import { Button } from "~/components/ui/button";
 
 export const getStaticProps: GetStaticProps<
   { book: Book; story?: Story },
@@ -99,7 +99,9 @@ const BookContent = ({ book, story }: { book: Book; story?: Story }) => {
             unoptimized={true}
             height={600}
             width={600}
-            className="mb-4"
+            priority
+            sizes="(max-width: 768px) 100vw, 600px"
+            className="mb-4 h-auto w-auto max-w-full"
           />
           <div className="mb-12 flex flex-wrap items-center gap-2">
             <SearchPills
@@ -119,6 +121,7 @@ const BookContent = ({ book, story }: { book: Book; story?: Story }) => {
               }}
             />
           </div>
+          <GoogleAdSlot slot="9732174880" />
           {story && (
             <div className="max-w-3xl">
               <ReactMarkdown
