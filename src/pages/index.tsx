@@ -130,9 +130,9 @@ const BookSearch = ({ books }: { books: Book[] }) => {
                 );
               }
 
-              // Insert Google Ad every 10th position (10, 20, 30, etc.)
-              if ((index + 1) % 10 === 0 && index > 0) {
-                items.push(<GoogleAdTile key={`google-ad-before-${bookId}`} />);
+              // Insert a single Google Ad at the 10th position
+              if (index === 9 && booksToShow.length >= 10) {
+                items.push(<GoogleAdTile key="google-ad-10th" />);
               }
 
               // Add the book tile

@@ -121,12 +121,11 @@ const BookContent = ({ book, story }: { book: Book; story?: Story }) => {
               }}
             />
           </div>
-          <div className="max-w-3xl h-44">
+          <div className="h-44 max-w-3xl">
             <GoogleAdSlot
-              slot="9732174880"
-              data-ad-layout="in-article"
-              data-ad-format="fluid"
-              style={{ textAlign: "center" }}
+              slot="4068174222"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
             />
           </div>
           {story && (
