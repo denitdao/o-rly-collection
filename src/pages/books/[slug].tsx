@@ -121,7 +121,14 @@ const BookContent = ({ book, story }: { book: Book; story?: Story }) => {
               }}
             />
           </div>
-          <GoogleAdSlot slot="9732174880" />
+          <div className="max-w-3xl h-44">
+            <GoogleAdSlot
+              slot="9732174880"
+              data-ad-layout="in-article"
+              data-ad-format="fluid"
+              style={{ textAlign: "center" }}
+            />
+          </div>
           {story && (
             <div className="max-w-3xl">
               <ReactMarkdown

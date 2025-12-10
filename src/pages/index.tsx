@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Fragment } from "react";
 import AdvertTile from "~/components/AdvertTile";
 import BookTile from "~/components/BookTile";
+import GoogleAdTile from "~/components/GoogleAdTile";
 import { ImagePreviewProvider } from "~/components/ImagePreview";
 import OrlyFooter from "~/components/OrlyFooter";
 import OrlyHeader from "~/components/OrlyHeader";
@@ -94,7 +95,13 @@ const BookSearch = ({ books }: { books: Book[] }) => {
             <RefreshButton onRefresh={refreshKeywords} />
           </div>
         </div>
-        <GoogleAdSlot slot="6532856977" />
+        <div style={{ maxHeight: "90px", overflow: "hidden" }}>
+          <GoogleAdSlot
+            slot="6532856977"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          />
+        </div>
         {booksToShow && booksToShow.length !== 0 ? (
           <motion.div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             {booksToShow.map((book, index) => {
@@ -107,45 +114,29 @@ const BookSearch = ({ books }: { books: Book[] }) => {
                 linkCopyHandler(`${env.NEXT_PUBLIC_SITE_URL}/books/${bookId}`);
               };
 
-              // Insert ad at position 6
+              const items = [];
+
+              // Insert Dumai ad at position 6
               if (index === 5 && booksToShow.length >= 6) {
-                return (
-                  <Fragment key="ad-fragment">
-                    <AdvertTile
-                      key="ad-tile"
-                      title="Sponsored: Voice Notes - Record & Organize Your Thoughts"
-                      imageUrl="/images/voice-notes.png"
-                      externalUrl="https://dumai.app/"
-                      alt="Voice Notes - Record, summarize and organize your thoughts with AI"
-                      onCopyClick={() =>
-                        adLinkCopyHandler("https://dumai.app/")
-                      }
-                    />
-                    <BookTile
-                      key={bookId}
-                      alt={bookAlt}
-                      title={bookTitle}
-                      bookId={bookId}
-                      imageUrl={imageUrl}
-                      onCopyClick={theLinkCopyHandler}
-                      onImageClick={() =>
-                        void imageViewHandler(
-                          bookId,
-                          imageUrl,
-                          theLinkCopyHandler,
-                        )
-                      }
-                    />
-                  </Fragment>
+                items.push(
+                  <AdvertTile
+                    key="ad-tile-dumai"
+                    title="Sponsored: Dumai - Record & Organize Your Thoughts"
+                    imageUrl="/images/voice-notes.png"
+                    externalUrl="https://dumai.app/"
+                    alt="Voice Notes - Record, summarize and organize your thoughts with AI"
+                    onCopyClick={() => adLinkCopyHandler("https://dumai.app/")}
+                  />,
                 );
               }
 
-              // Skip rendering if it's after position 5 as we've already rendered it above
-              if (index === 5) {
-                return null;
+              // Insert Google Ad every 10th position (10, 20, 30, etc.)
+              if ((index + 1) % 10 === 0 && index > 0) {
+                items.push(<GoogleAdTile key={`google-ad-before-${bookId}`} />);
               }
 
-              return (
+              // Add the book tile
+              items.push(
                 <BookTile
                   key={bookId}
                   alt={bookAlt}
@@ -156,14 +147,26 @@ const BookSearch = ({ books }: { books: Book[] }) => {
                   onImageClick={() =>
                     void imageViewHandler(bookId, imageUrl, theLinkCopyHandler)
                   }
-                />
+                />,
+              );
+
+              return items.length > 1 ? (
+                <Fragment key={`fragment-${bookId}`}>{items}</Fragment>
+              ) : (
+                items[0]
               );
             })}
           </motion.div>
         ) : (
           <NoResultsMessage />
         )}
-        <GoogleAdSlot slot="2433829867" />
+        <div style={{ maxHeight: "90px", overflow: "hidden" }}>
+          <GoogleAdSlot
+            slot="2433829867"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          />
+        </div>
       </div>
     </main>
   );
