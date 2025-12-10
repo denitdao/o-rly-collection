@@ -49,7 +49,7 @@ const GoogleAdSlot = ({ slot, style, ...rest }: GoogleAdSlotProps) => {
     <ins
       ref={adRef}
       className="adsbygoogle"
-      style={{ display: "block", ...style }}
+      style={{ display: "block", width: "100%", ...style }}
       data-ad-client={clientId}
       data-ad-slot={slot}
       {...rest}

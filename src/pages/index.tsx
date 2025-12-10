@@ -95,12 +95,18 @@ const BookSearch = ({ books }: { books: Book[] }) => {
             <RefreshButton onRefresh={refreshKeywords} />
           </div>
         </div>
-        <div style={{ maxHeight: "90px", overflow: "hidden" }}>
-          <GoogleAdSlot
-            slot="6532856977"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          />
+        <div className="mb-4 flex w-full justify-center">
+          <div className="h-[120px] w-full min-w-[200px] max-w-[970px] overflow-hidden">
+            <GoogleAdSlot
+              slot="6532856977"
+              style={{
+                height: "120px",
+                width: "100%",
+                minWidth: "200px",
+                maxWidth: "970px",
+              }}
+            />
+          </div>
         </div>
         {booksToShow && booksToShow.length !== 0 ? (
           <motion.div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
@@ -160,12 +166,18 @@ const BookSearch = ({ books }: { books: Book[] }) => {
         ) : (
           <NoResultsMessage />
         )}
-        <div style={{ maxHeight: "90px", overflow: "hidden" }}>
-          <GoogleAdSlot
-            slot="2433829867"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          />
+        <div className="mt-8 flex w-full justify-center">
+          <div className="h-[90px] w-full min-w-[200px] max-w-[970px] overflow-hidden">
+            <GoogleAdSlot
+              slot="2433829867"
+              style={{
+                height: "90px",
+                width: "100%",
+                minWidth: "200px",
+                maxWidth: "970px",
+              }}
+            />
+          </div>
         </div>
       </div>
     </main>
