@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Fragment } from "react";
 import AdvertTile from "~/components/AdvertTile";
 import BookTile from "~/components/BookTile";
-import GoogleAdTile from "~/components/GoogleAdTile";
 import { ImagePreviewProvider } from "~/components/ImagePreview";
 import OrlyFooter from "~/components/OrlyFooter";
 import OrlyHeader from "~/components/OrlyHeader";
@@ -134,11 +133,6 @@ const BookSearch = ({ books }: { books: Book[] }) => {
                     onCopyClick={() => adLinkCopyHandler("https://dumai.app/")}
                   />,
                 );
-              }
-
-              // Insert a single Google Ad at the 10th position
-              if (index === 9 && booksToShow.length >= 10) {
-                items.push(<GoogleAdTile key="google-ad-10th" />);
               }
 
               // Add the book tile
