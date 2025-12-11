@@ -121,12 +121,15 @@ const BookContent = ({ book, story }: { book: Book; story?: Story }) => {
               }}
             />
           </div>
-          <div className="h-44 max-w-3xl">
-            <GoogleAdSlot
-              slot="4068174222"
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            />
+          <div className="mb-8 flex w-full justify-center">
+            <div className="w-full min-w-[200px] max-w-[970px]">
+              <GoogleAdSlot
+                slot="4068174222"
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+                style={{ width: "100%", minWidth: "200px" }}
+              />
+            </div>
           </div>
           {story && (
             <div className="max-w-3xl">
