@@ -1,76 +1,84 @@
 import { sendGAEvent } from "~/components/meta/GoogleAnalytics";
-import { api } from "~/utils/api";
 import { useEffect, useRef } from "react";
 import { type SortMode } from "~/hooks/useBookSearch";
 import posthog from "posthog-js";
 
 export const useObserveLinkCopy = () => {
-  const { mutate: observeLinkCopy } = api.observation.link_copy.useMutation();
-
-  return (link: string) => {
-    observeLinkCopy({ link });
+  return (link: string, succeeded: boolean) => {
+    const properties = getLinkCopyProperties(link);
     sendGAEvent({
-      action: "link_copy",
+      action: succeeded ? "link_copy" : "link_copy_failed",
       category: "link",
-      label: "Link Copy",
-      value: link,
+      label: succeeded ? "Link Copy" : "Link Copy Failed",
+      value: properties.book_id ?? properties.destination_host,
     });
-    posthog.capture("link_copy", { property: link });
+    posthog.capture(succeeded ? "link_copy" : "link_copy_failed", properties);
   };
 };
 
-export const useObserveSearchEffect = (searchTerm: string) => {
-  const { mutate: observeSearch } = api.observation.user_search.useMutation();
-
+export const useObserveSearchEffect = (
+  searchTerm: string,
+  resultCount: number,
+) => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       if (searchTerm) {
-        observeSearch({ query: searchTerm });
         sendGAEvent({
           action: "user_search",
           category: "search",
           label: "User Search",
-          value: searchTerm,
+          value: String(resultCount),
         });
-        posthog.capture("user_search", { property: searchTerm });
+        posthog.capture("user_search", {
+          query_length: searchTerm.trim().length,
+          result_count: resultCount,
+          has_results: resultCount > 0,
+        });
       }
     }, 1500); // 1.5 seconds delay
 
     return () => clearTimeout(timeoutId); // Clear timeout if searchTerm changes
-  }, [searchTerm, observeSearch]);
+  }, [searchTerm, resultCount]);
 };
 
 export const useObserveImageView = () => {
-  const { mutate: observeImageView } = api.observation.image_view.useMutation();
-
-  return (imageName: string) => {
-    observeImageView({ imageName });
+  return (bookId: string) => {
     sendGAEvent({
       action: "image_view",
       category: "image",
       label: "Image View",
-      value: imageName,
+      value: bookId,
     });
-    posthog.capture("image_view", { property: imageName });
+    posthog.capture("image_view", { book_id: bookId });
   };
 };
 
 export const useObserveSortModeEffect = (sortMode: SortMode) => {
   const isMount = useIsMount();
-  const { mutate: observeSortMode } = api.observation.sort_mode.useMutation();
 
   useEffect(() => {
     if (!isMount) {
-      observeSortMode({ mode: sortMode });
       sendGAEvent({
         action: "sort_mode",
         category: "search",
         label: "Sort Mode",
         value: sortMode,
       });
-      posthog.capture("sort_mode", { property: sortMode });
+      posthog.capture("sort_mode", { sort_mode: sortMode });
     }
-  }, [sortMode, observeSortMode]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [sortMode]); // eslint-disable-line react-hooks/exhaustive-deps
+};
+
+const getLinkCopyProperties = (link: string) => {
+  const url = new URL(link);
+  const bookId =
+    url.hostname === "orlybooks.com" && url.pathname.startsWith("/books/")
+      ? url.pathname.split("/").filter(Boolean).at(-1)
+      : undefined;
+
+  return bookId
+    ? { target_type: "book", book_id: bookId, destination_host: url.hostname }
+    : { target_type: "external", destination_host: url.hostname };
 };
 
 const useIsMount = () => {

@@ -22,8 +22,4 @@ Hosted on [Vercel](https://vercel.com/)
 
 [Axiom](https://app.axiom.co/) for logs
 
-[Vercel KV](https://vercel.com/docs/storage/vercel-kv) as metrics storage
-
 [PostHog](https://posthog.com/) for analytics
-
-[Telegram Logger](https://t.me/tel_logger_bot) for notifications

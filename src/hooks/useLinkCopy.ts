@@ -9,14 +9,15 @@ const useLinkCopy = () => {
   const observeLinkCopy = useObserveLinkCopy();
 
   return (link: string) => {
-    observeLinkCopy(link);
     copyLinkToClipboard(link)
       .then(() => {
+        observeLinkCopy(link, true);
         toast.success("Link copied to the clipboard!", {
           duration: 2000,
         });
       })
       .catch(() => {
+        observeLinkCopy(link, false);
         toast.error("Failed to copy link to the clipboard", {
           duration: 3000,
         });

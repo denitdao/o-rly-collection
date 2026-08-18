@@ -1,5 +1,4 @@
 import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
-import { observationRouter } from "~/server/api/routers/observation";
 import { datasourceRouter } from "~/server/api/routers/datasource";
 
 /**
@@ -9,7 +8,6 @@ import { datasourceRouter } from "~/server/api/routers/datasource";
  */
 export const appRouter = createTRPCRouter({
   datasource: datasourceRouter,
-  observation: observationRouter,
 });
 
 // export type definition of API

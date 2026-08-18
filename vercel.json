@@ -1,8 +1,0 @@
-{
-  "crons": [
-    {
-      "path": "/api/cron/notify-tg",
-      "schedule": "0 6 * * 1"
-    }
-  ]
-}

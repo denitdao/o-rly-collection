@@ -7,11 +7,9 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    DATABASE_URL: z.string().url(),
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
-    TG_NOTIFIER_TOKEN: z.string().min(1),
   },
 
   /**
@@ -31,9 +29,7 @@ export const env = createEnv({
    * middlewares) or client-side, so we need to destruct manually.
    */
   runtimeEnv: {
-    DATABASE_URL: process.env.DATABASE_URL,
     NODE_ENV: process.env.NODE_ENV,
-    TG_NOTIFIER_TOKEN: process.env.TG_NOTIFIER_TOKEN,
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
     NEXT_PUBLIC_IMAGE_SOURCE: process.env.NEXT_PUBLIC_IMAGE_SOURCE,
     NEXT_PUBLIC_OG_SOURCE: process.env.NEXT_PUBLIC_OG_SOURCE,

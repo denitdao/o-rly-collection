@@ -61,7 +61,7 @@ const BookSearch = ({ books }: { books: Book[] }) => {
 
   const { keywords, refreshKeywords } = useBookKeywords(books, 8);
 
-  useObserveSearchEffect(searchTerm);
+  useObserveSearchEffect(searchTerm, booksToShow.length);
   useObserveSortModeEffect(sortMode);
   const linkCopyHandler = useLinkCopy();
   const imageViewHandler = useImageView();
